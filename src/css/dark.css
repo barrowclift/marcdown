@@ -1,0 +1,189 @@
+.dark-mode {}
+
+/* PAGE ------------------------------------------------------------ */
+
+html {
+	background-color: #272822 !important;
+	color: #F8F8F2 !important;
+}
+/* Provides a nice "sketchpad" like texture to the background */
+#content,
+.active a  {
+    background-image: none !important;
+}
+time, figcaption, .weak, small {
+    color: #A1A1A1;
+}
+del, del code {
+    color: #6B6A6A !important;
+}
+@media (min-width: 700px) {
+	#dark-mode-toggle {
+		background-color: #272822 !important;
+	}
+}
+
+/* LOGO ----------------------------------------------------------- */
+
+#sunglasses {
+	opacity: 1;
+}
+#logo:hover #smirk {
+    opacity: 1;
+}
+#smirk {
+    opacity: 0;
+}
+.signature-color {
+	fill: #F8F8F2;
+}
+
+/* WRITING STYLES ------------------------------------------------------------------- */
+
+h1 a,
+h1 a:link,
+h1 a:visited {
+    color: #F8F8F2 !important;
+}
+
+/* IMAGES & VIDEO ----------------------------------------------------------- */
+
+.fill-color,
+svg:hover .fill-color {
+    fill: #F8F8F2 !important;
+}
+.stroke-color {
+    stroke: #F8F8F2 !important;
+}
+.fill-transparent {
+	fill: #3C3D37 !important;
+}
+.stroke-transparent {
+    stroke: #3C3D37 !important;
+}
+
+.uml-sequence-diagram path,
+.uml-sequence-diagram rect,
+.uml-flowchart rect {
+	stroke: #F8F8F2 !important;
+}
+.uml-sequence-diagram rect,
+.uml-flowchart text,
+.uml-flowchart path {
+	fill: #F8F8F2 !important;
+}
+.uml-flowchart rect {
+	fill: #272822 !important;
+}
+.uml-flowchart path[fill="none"] {
+	fill: none !important;
+	stroke: #F8F8F2 !important;
+}
+.uml-flowchart path[fill="#ffffff"][stroke="#000000"] {
+	fill: #272822 !important;
+	stroke: #F8F8F2 !important;
+}
+
+/* HAND
+.uml-sequence-diagram path,
+.uml-sequence-diagram rect {
+	stroke: #F8F8F2 !important;
+}
+.uml-sequence-diagram rect {
+	fill: #F8F8F2 !important;
+}
+.uml-sequence-diagram rect {
+	fill: none !important;
+	stroke: none !important;
+}
+.uml-sequence-diagram path[fill="#000000"][stroke="none"] {
+	stroke: none !important;
+	fill: #F8F8F2 !important;
+}
+.uml-sequence-diagram path[fill="#ffffff"] {
+	fill: none !important;
+}*/
+
+.show-when-dark {
+    display: inline-block !important;
+}
+.show-when-light {
+    display: none !important;
+}
+
+.macos-screenshot {
+	box-shadow: 0px 0px 1rem #101010;
+	-webkit-box-shadow: 0px 0px 1rem #101010;
+	-moz-box-shadow: 0px 0px 1rem #101010;
+}
+
+/* FOOTNOTES ---------------------------------------------------------------- */
+
+.bigfoot-footnote__content,
+.bigfoot-footnote__wrapper,
+.bigfoot-footnote__tooltip,
+.bigfoot-footnote {
+	background-color: #3C3D37;
+	color: white;
+}
+.bigfoot-footnote__tooltip,
+.bigfoot-footnote {
+	border-color: #3A3B35;
+}
+
+/* DIVIDERS ----------------------------------------------------------------- */
+
+hr {
+	background-color: #1C1B18 !important;
+	background: #1C1B18 !important;
+	background: -moz-linear-gradient(left, #272822 0%, #1C1B18 25%, #1C1B18 50%, #1C1B18 75%, #272822 100%) !important;
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%, #272822), color-stop(25%, #1C1B18), color-stop(50%, #1C1B18), color-stop(75%, #1C1B18), color-stop(100%, #272822)) !important;
+	background: -webkit-linear-gradient(left, #272822 0%, #1C1B18 25%, #1C1B18 50%, #1C1B18 75%, #272822 100%) !important;
+	background: -o-linear-gradient(left, #272822 0%, #1C1B18 25%, #1C1B18 50%, #1C1B18 75%, #272822 100%) !important;
+	background: -ms-linear-gradient(left, #272822 0%, #1C1B18 25%, #1C1B18 50%, #1C1B18 75%, #272822 100%) !important;
+	background: linear-gradient(to right, #272822 0%, #1C1B18 25%, #1C1B18 50%, #1C1B18 75%, #272822 100%) !important;
+	filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#272822', endColorstr='#272822', GradientType=1 ) !important;
+}
+
+/* TABLES ------------------------------------------------------------------- */
+
+table.fancy td {
+    border-color: rgba(16, 15, 14, 0.5);
+}
+table.fancy th {
+    color: #CFCFC2;
+    background-color: rgba(16, 15, 14, 0.5);
+}
+
+/* CARDS -------------------------------------------------------------------- */
+
+.card {
+	background-color: #3C3D37;
+}
+.card .label .primary {
+	color: white;
+}
+.card .label .secondary {
+	color: #CFCFC2;
+}
+
+/* CODE --------------------------------------------------------------------- */
+
+pre, code, .codehilite {
+	background-color: rgba(16, 15, 14, 0.5);
+	color: #CFCFC2;
+}
+pre code {
+	background-color: transparent;
+	color: #CFCFC2 !important;
+}
+kbd {
+	background-color: rgba(16, 15, 14, 0.5);
+	background-image: -moz-linear-gradient(rgba(75, 75, 75, 0.5), rgba(16, 15, 14, 0.5));
+	background-image: -webkit-linear-gradient(rgba(75, 75, 75, 0.5), rgba(16, 15, 14, 0.5));
+	background-image: linear-gradient(rgba(75, 75, 75, 0.5), rgba(16, 15, 14, 0.5));
+	color: rgba(207, 207, 194, 0.9);
+	border-color: #1B1A18;
+	border-bottom-color: #0b0b0b;
+	box-shadow: inset 0 -1px 0 #0b0b0b;
+}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	{{ HEAD }}
+	<script>darkModePath="/usr/local/marcdown/src/css/min/dark.min.css"</script>
+	<script src="/usr/local/marcdown/src/js/min/init.min.js" type="text/javascript"></script>
+	<link href="/usr/local/marcdown/src/css/min/local-fonts.min.css" rel="stylesheet" type="text/css" />
+	<link href="/usr/local/marcdown/src/css/min/style.min.css" rel="stylesheet" type="text/css" />
+	<link href="/usr/local/marcdown/src/css/min/bigfoot-number.min.css" rel="stylesheet" type="text/css" />
+	<link media="print" href="/usr/local/marcdown/src/css/min/print.min.css" rel="stylesheet" type="text/css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+	<div id="wrap">
+		<div id="content" class="center">
+			<menu>
+				<input type="checkbox" name="dark-mode-checkbox" id="dark-mode-checkbox" value="dark-mode" onclick="darkModeToggled(this);" />
+				<label id="dark-mode-toggle" class="no-select" for="dark-mode-checkbox">&#x25d0;&#xFE0E;</label>
+			</menu>
+			<main>
+				{{ BODY }}
+			</main>
+			<script async src="/usr/local/marcdown/src/js/min/core.min.js" type="text/javascript"></script>
+		</div>
+	</div>
+</body>
+</html>

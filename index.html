@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<style>.codehilite pre .hll { background-color: #49483e }
+.codehilite pre  { background: #272822; color: #f8f8f2 }
+.codehilite pre .c { color: #75715e } /* Comment */
+.codehilite pre .err { color: #960050; background-color: #1e0010 } /* Error */
+.codehilite pre .k { color: #66d9ef } /* Keyword */
+.codehilite pre .l { color: #ae81ff } /* Literal */
+.codehilite pre .n { color: #f8f8f2 } /* Name */
+.codehilite pre .o { color: #f92672 } /* Operator */
+.codehilite pre .p { color: #f8f8f2 } /* Punctuation */
+.codehilite pre .ch { color: #75715e } /* Comment.Hashbang */
+.codehilite pre .cm { color: #75715e } /* Comment.Multiline */
+.codehilite pre .cp { color: #75715e } /* Comment.Preproc */
+.codehilite pre .c1 { color: #75715e } /* Comment.Single */
+.codehilite pre .cs { color: #75715e } /* Comment.Special */
+.codehilite pre .gd { color: #f92672 } /* Generic.Deleted */
+.codehilite pre .ge { font-style: italic } /* Generic.Emph */
+.codehilite pre .gi { color: #a6e22e } /* Generic.Inserted */
+.codehilite pre .gs { font-weight: bold } /* Generic.Strong */
+.codehilite pre .gu { color: #75715e } /* Generic.Subheading */
+.codehilite pre .kc { color: #66d9ef } /* Keyword.Constant */
+.codehilite pre .kd { color: #66d9ef } /* Keyword.Declaration */
+.codehilite pre .kn { color: #f92672 } /* Keyword.Namespace */
+.codehilite pre .kp { color: #66d9ef } /* Keyword.Pseudo */
+.codehilite pre .kr { color: #66d9ef } /* Keyword.Reserved */
+.codehilite pre .kt { color: #66d9ef } /* Keyword.Type */
+.codehilite pre .ld { color: #e6db74 } /* Literal.Date */
+.codehilite pre .m { color: #ae81ff } /* Literal.Number */
+.codehilite pre .s { color: #e6db74 } /* Literal.String */
+.codehilite pre .na { color: #a6e22e } /* Name.Attribute */
+.codehilite pre .nb { color: #f8f8f2 } /* Name.Builtin */
+.codehilite pre .nc { color: #a6e22e } /* Name.Class */
+.codehilite pre .no { color: #66d9ef } /* Name.Constant */
+.codehilite pre .nd { color: #a6e22e } /* Name.Decorator */
+.codehilite pre .ni { color: #f8f8f2 } /* Name.Entity */
+.codehilite pre .ne { color: #a6e22e } /* Name.Exception */
+.codehilite pre .nf { color: #a6e22e } /* Name.Function */
+.codehilite pre .nl { color: #f8f8f2 } /* Name.Label */
+.codehilite pre .nn { color: #f8f8f2 } /* Name.Namespace */
+.codehilite pre .nx { color: #a6e22e } /* Name.Other */
+.codehilite pre .py { color: #f8f8f2 } /* Name.Property */
+.codehilite pre .nt { color: #f92672 } /* Name.Tag */
+.codehilite pre .nv { color: #f8f8f2 } /* Name.Variable */
+.codehilite pre .ow { color: #f92672 } /* Operator.Word */
+.codehilite pre .w { color: #f8f8f2 } /* Text.Whitespace */
+.codehilite pre .mb { color: #ae81ff } /* Literal.Number.Bin */
+.codehilite pre .mf { color: #ae81ff } /* Literal.Number.Float */
+.codehilite pre .mh { color: #ae81ff } /* Literal.Number.Hex */
+.codehilite pre .mi { color: #ae81ff } /* Literal.Number.Integer */
+.codehilite pre .mo { color: #ae81ff } /* Literal.Number.Oct */
+.codehilite pre .sb { color: #e6db74 } /* Literal.String.Backtick */
+.codehilite pre .sc { color: #e6db74 } /* Literal.String.Char */
+.codehilite pre .sd { color: #e6db74 } /* Literal.String.Doc */
+.codehilite pre .s2 { color: #e6db74 } /* Literal.String.Double */
+.codehilite pre .se { color: #ae81ff } /* Literal.String.Escape */
+.codehilite pre .sh { color: #e6db74 } /* Literal.String.Heredoc */
+.codehilite pre .si { color: #e6db74 } /* Literal.String.Interpol */
+.codehilite pre .sx { color: #e6db74 } /* Literal.String.Other */
+.codehilite pre .sr { color: #e6db74 } /* Literal.String.Regex */
+.codehilite pre .s1 { color: #e6db74 } /* Literal.String.Single */
+.codehilite pre .ss { color: #e6db74 } /* Literal.String.Symbol */
+.codehilite pre .bp { color: #f8f8f2 } /* Name.Builtin.Pseudo */
+.codehilite pre .vc { color: #f8f8f2 } /* Name.Variable.Class */
+.codehilite pre .vg { color: #f8f8f2 } /* Name.Variable.Global */
+.codehilite pre .vi { color: #f8f8f2 } /* Name.Variable.Instance */
+.codehilite pre .il { color: #ae81ff } /* Literal.Number.Integer.Long */</style><title>marcdown</title>
+	<script>darkModePath="/src/css/min/dark.min.css"</script>
+	<script src="/src/js/min/init.min.js" type="text/javascript"></script>
+	<link href="/src/css/min/web-fonts.min.css" rel="stylesheet" type="text/css" />
+	<link href="/src/css/min/style.min.css" rel="stylesheet" type="text/css" />
+	<link href="/src/css/min/bigfoot-number.min.css" rel="stylesheet" type="text/css" />
+	<link media="print" href="/src/css/min/print.min.css" rel="stylesheet" type="text/css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+	<div id="wrap">
+		<div id="content" class="center">
+			<menu>
+				<input type="checkbox" name="dark-mode-checkbox" id="dark-mode-checkbox" value="dark-mode" onclick="darkModeToggled(this);" />
+				<label id="dark-mode-toggle" class="no-select" for="dark-mode-checkbox">&#x25d0;&#xFE0E;</label>
+			</menu>
+			<main>
+				<h1 id="marcdowna-markdown-theme-for-humans"><a name="user-content-marcdowna-markdown-theme-for-humans" href="#marcdowna-markdown-theme-for-humans" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Marcdown<time>A Markdown theme for humans</time></h1>
+<p>I write everything in <a href="https://daringfireball.net/projects/markdown">Markdown</a>, but I&rsquo;ve never been particularly satisfied with the available styles. Sure, <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet">Github Flavored Markdown</a> is a fine default, but its overemphasis on borders and thick lines adds too much visual noise for my tastes. I found similar issues with other popular styles; while they each had their own strengths, they always fell short by failing to meet at least one of my three requirements:</p>
+<ol>
+<li>Tasteful typography</li>
+<li>Complete support for most &ldquo;unofficial&rdquo; Markdown features (such as syntax highlighting, tables, etc.)</li>
+<li>Wide selection of image formatting options</li>
+</ol>
+<p>Even when I became discouraged in my search and resigned myself to compromise on a couple I found acceptable (one &ldquo;light&rdquo; theme and one &ldquo;dark&rdquo; theme), I found having to choose between the light and dark theme at build time on a document-by-document basis to be a hassle. I wanted dark mode to be an accessibility option at <em>any</em> time, not just statically baked in. Thus began my mission to create a style to finally meet and exceed these requirements.</p>
+<p>That style is &ldquo;Marcdown&rdquo;&#8212;a Markdown theme designed to be just as beautiful for late night journal entries as it is functional for intense computer science notes. Give it a try, I think you&rsquo;re going to love it.</p>
+<ul>
+<li><a href="#design">Design</a><ul>
+<li><a href="#typeface">Typeface</a></li>
+<li><a href="#headers">Headers</a></li>
+<li><a href="#links">Links</a></li>
+<li><a href="#lists">Lists</a></li>
+<li><a href="#strikethroughs">Strikethroughs</a></li>
+<li><a href="#footnotes">Footnotes</a></li>
+<li><a href="#block-quotes">Block Quotes</a></li>
+<li><a href="#images">Images</a></li>
+<li><a href="#code">Code</a></li>
+<li><a href="#tables">Tables</a></li>
+<li><a href="#admonitions">Admonitions</a></li>
+<li><a href="#highlighting">Highlighting</a></li>
+<li><a href="#definitions">Definitions</a></li>
+<li><a href="#abbreviations">Abbreviations</a></li>
+<li><a href="#keyboard-keys">Keyboard Keys</a></li>
+<li><a href="#advanced-features">Advanced Features</a></li>
+</ul>
+</li>
+<li><a href="#installation">Installation</a></li>
+<li><a href="#about-the-author">About the Author</a></li>
+</ul>
+<hr />
+<h2 id="design"><a name="user-content-design" href="#design" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Design</h2>
+<h3 id="typeface"><a name="user-content-typeface" href="#typeface" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Typeface</h3>
+<p>Marcdown was crafted from day one for Apple&rsquo;s <a href="https://developer.apple.com/fonts/">San Francisco</a> typeface, in my opinion one of the <a href="https://medium.com/@mach/the-secret-of-san-francisco-fonts-4b5295d9a745#.34yepmqos">finest sans serif typefaces in recent years</a>.</p>
+<h3 id="headers"><a name="user-content-headers" href="#headers" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Headers</h3>
+<p>All six headers adhere to a <a href="http://type-scale.com">1.2 minor third scale</a> with subtle font weighting every two levels to establish and maintain contextual hierarchy, all <a href="http://practicaltypography.com/headings.html">without the need for noisy underlines</a>. You can see all headers stacked together <a href="/Users/mbarro203/Developer/Projects/Marcdown/headers.html">here</a>.</p>
+<h3 id="links"><a name="user-content-links" href="#links" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Links</h3>
+<p>As you&rsquo;ve already seen, <a href="#links">this is what links look like</a>. Color indicates actionable items, and hovering the link adds the traditional link underline that people have grown to expect.</p>
+<p>For times button-style links are desired, you can use <code>[Button Text](https://google.com){: .link-button }</code> to create buttons like this:</p>
+<p><a class="link-button" href="http://barrowclift.design">Go To barrowclift.design</a></p>
+<h3 id="lists"><a name="user-content-lists" href="#lists" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Lists</h3>
+<ul>
+<li>Unordered lists look like this</li>
+<li>The root level uses filled in circles<ul>
+<li>Sub level uses empty circles</li>
+<li>And then&hellip;<ul>
+<li>The last available level uses dashes</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ol>
+<li>Ordered lists look like this</li>
+<li>The root level uses numbers<ol>
+<li>Sub levels use Latin alphabet characters</li>
+<li>And then&hellip;<ol>
+<li>The last available level uses Roman numerals</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<p>And of course, checklists are also styled appropriately as well.</p>
+<ul class="task-list">
+<li class="task-list-item"><input type="checkbox" disabled> Thing to do</li>
+<li class="task-list-item"><input type="checkbox" disabled> Another thing to do</li>
+<li class="task-list-item"><input type="checkbox" disabled checked> Something I&rsquo;ve actually done</li>
+</ul>
+<h3 id="strikethroughs"><a name="user-content-strikethroughs" href="#strikethroughs" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Strikethroughs</h3>
+<p><del>A good chunk of the writing process is drafting</del> Drafting is a crucial phase of the writing process. Sentences can go through countless revisions before they begin to take proper shape, and strikethroughs are perfect for maintaining a nondestructive backlog of your previous approaches for context and future reference.</p>
+<p>Due to the nature of strikethroughs being text you want to deemphasis, strikethroughs are one of the few textual elements that have a lighter color than the surrounding text to help guide your eyes over the strikethrough toward its replacement.</p>
+<h3 id="footnotes"><a name="user-content-footnotes" href="#footnotes" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Footnotes</h3>
+<p>Footnotes look like this<sup id="fnref:example-footnote"><a class="footnote-ref" href="#fn:example-footnote" rel="footnote">1</a></sup> and are displayed Instapaper-style using <a href="http://www.bigfootjs.com">bigfoot.js</a>. They are also embedded inline at the end of the document.</p>
+<h3 id="block-quotes"><a name="user-content-block-quotes" href="#block-quotes" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Block Quotes</h3>
+<p>Instead of smothering block quotes in a thick left border <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#blockquotes">like other themes do</a>, Marcdown lets the typography itself communicate block quotes with subtle spacing and italics.</p>
+<blockquote>
+<p>Here&rsquo;s to the crazy ones. The misfits. The rebels. The troublemakers. The round pegs in the square holes. The ones who see things differently. They&rsquo;re not fond of rules. And they have no respect for the status quo. You can quote them, disagree with them, glorify or vilify them. About the only thing you can&rsquo;t do is ignore them. Because they change things. They push the human race forward. And while some may see them as the crazy ones, we see genius. Because the people who are crazy enough to think they can change the world, are the ones who do.</p>
+<p>&#8213;Rob Siltanen</p>
+</blockquote>
+<h3 id="images"><a name="user-content-images" href="#images" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Images</h3>
+<p>By default, images are inline and always span the full width of the text.</p>
+<p><img alt="Rocky Mountains National Park - Photo in a misty forest, with light breaking through the tree lines" src="/Users/mbarro203/Developer/Projects/Marcdown/img/rocky-mountains.jpg" /></p>
+<p>This isn&rsquo;t nearly enough, though, which is why Marcdown shamelessly breaks Markdown&rsquo;s rules to allow for a light array of image options, assuming the following structure:</p>
+<div class="codehilite"><pre><span class="p">&lt;</span><span class="nt">figure</span> <span class="na">markdown</span><span class="o">=</span><span class="s">&quot;1&quot;</span><span class="p">&gt;</span>
+![Alt text](image.jpg){: .primary-class .optional-secondary-class }
+<span class="p">&lt;/</span><span class="nt">figure</span><span class="p">&gt;</span>
+</pre></div>
+
+
+<p>With this syntax, you can provide the following primary and optional secondary classes:</p>
+<ul>
+<li><code>.edge-to-edge</code> - The image will fill the page&rsquo;s complete width. These additional decorators are supported:<ul>
+<li><code>.small</code> - The image will only fill the page&rsquo;s width on mobile devices. For any larger sizes, it will switch to be inline with the text.</li>
+<li><code>.medium</code> - Like <code>.small</code>, but will continue to &ldquo;spill&rdquo; a bit beyond the bounding text&rsquo;s width for medium and larger devices.</li>
+<li><code>.large</code> - Like <code>.medium</code>, but the amount of &ldquo;spillage&rdquo; is much greater. Effectively edge-to-edge for all but the largest devices.</li>
+</ul>
+</li>
+<li><code>.inline</code> - Exactly the same as the standard markdown image syntax <code>![alt tag](path/to/image)</code>, where the image will be inline for all three device sizes.</li>
+<li><code>.half-inline</code> - Helpful for very tall images, acts the same as regular <code>.inline</code> images but at half the text&rsquo;s width.</li>
+</ul>
+<p>Here&rsquo;s an example <code>.edge-to-edge</code> image, no additional decorators. This is perfect for very long panoramas:</p>
+<figure>
+<p><img alt="Zion National Park - Panorama atop Angels Landing" class="edge-to-edge" src="/Users/mbarro203/Developer/Projects/Marcdown/img/zion.jpg" /></p>
+</figure>
+<p>Compare that to another panorama, this time with <code>.edge-to-edge .large</code>. This stops the image from expanding beyond 1600px. You won&rsquo;t notice the difference unless you&rsquo;re viewing on a very large device.</p>
+<figure>
+<p><img alt="Smoky Mountains National Park - Mountaintop panorama" class="edge-to-edge large" src="/Users/mbarro203/Developer/Projects/Marcdown/img/smoky-mountains.jpg" /></p>
+</figure>
+<p>For images with a little more height to them, such as desktop screenshots, <code>.edge-to-edge .medium</code> is preferred:</p>
+<figure>
+<p><img alt="Smoky Mountains National Park - Photo of a sunset during one of our hikes" class="edge-to-edge medium" src="/Users/mbarro203/Developer/Projects/Marcdown/img/smoky-mountains-sunset-2.jpg" /></p>
+</figure>
+<p>The final edge-to-edge option is <code>.edge-to-edge .small</code>, which is <em>only</em> edge-to-edge on mobile devices, and inline for every other device class. This is good for ~4:3 images that look very uncomfortable spilling past text width on medium+ devices, but can do so naturally on small devices.</p>
+<figure>
+<p><img alt="Smoky Mountains National Park - Photo of a stream in the forest" class="edge-to-edge small" src="/Users/mbarro203/Developer/Projects/Marcdown/img/smoky-mountains-2.jpg" /></p>
+</figure>
+<p>Finally, for very tall or very small images we have the <code>.half-inline</code> class, which displays images at half the text&rsquo;s width.</p>
+<figure>
+<p><img alt="Happy iMac logo - Square version" class="half-inline" src="/Users/mbarro203/Developer/Projects/Marcdown/img/logo.jpg" /></p>
+</figure>
+<hr />
+<p>That doesn&rsquo;t quite cover it, though. There are times I want to make an inline collection of images, such as iOS screenshots. You can either make a composite image in a separate application and use that, <em>or</em> you can let <abbr title="Cascading Style Sheets">CSS</abbr> do the heavy lifting for you!</p>
+<div class="edge-to-edge large">
+<p><figure markdown="1"><img alt="Overcast iOS Screenshot - home screen" class="ios-three-screens shadow" src="/Users/mbarro203/Developer/Projects/Marcdown/img/ios-1.jpg" /></figure><figure markdown="1"><img alt="Overcast iOS Screenshot 2 - playlist view" class="ios-three-screens shadow" src="/Users/mbarro203/Developer/Projects/Marcdown/img/ios-2.jpg" /></figure><figure markdown="1"><img alt="Overcast iOS Screenshot 3 - player view" class="ios-three-screens shadow" src="/Users/mbarro203/Developer/Projects/Marcdown/img/ios-3.jpg" /></figure></p>
+</div>
+<p>As you&rsquo;d expect for something more complicated like this, the markup for this element is almost entirely <abbr title="Hyper Text Markup Language">HTML</abbr>, as Markdown wasn&rsquo;t intended for such things<sup id="fnref:intended"><a class="footnote-ref" href="#fn:intended" rel="footnote">2</a></sup>. Below, we&rsquo;re providing the class <code>.ios-three-screens</code>, but you can also use this layout for <code>.ios-two-screens</code> if you have just two screenshots, and it will size them accordingly.</p>
+<div class="codehilite"><pre><span class="p">&lt;</span><span class="nt">div</span> <span class="na">markdown</span><span class="o">=</span><span class="s">&quot;1&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;edge-to-edge large&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">figure</span> <span class="na">markdown</span><span class="o">=</span><span class="s">&quot;1&quot;</span><span class="p">&gt;</span>![Alt tag 1](ios-1.jpg){: .ios-three-screens .shadow }<span class="p">&lt;/</span><span class="nt">figure</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">figure</span> <span class="na">markdown</span><span class="o">=</span><span class="s">&quot;1&quot;</span><span class="p">&gt;</span>![Alt tag 2](ios-2.jpg){: .ios-three-screens .shadow }<span class="p">&lt;/</span><span class="nt">figure</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">figure</span> <span class="na">markdown</span><span class="o">=</span><span class="s">&quot;1&quot;</span><span class="p">&gt;</span>![Alt tag 3](ios-3.jpg){: .ios-three-screens .shadow }<span class="p">&lt;/</span><span class="nt">figure</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+
+
+<p>You can also add comments to any of the image classes above. Below is an example applied to an <code>.edge-to-edge.small</code> image.</p>
+<figure>
+<p><img alt="My siblings and I at Smoky Mountains National Park on our third annual &quot;Sibs Trip&quot;, taken on June 26, 2016." class="edge-to-edge small" src="/Users/mbarro203/Developer/Projects/Marcdown/img/sibs.jpg" /><br />
+<figcaption>My siblings and I at Smoky Mountains National Park on our third annual &ldquo;Sibs Trip&rdquo;, taken on June 26, 2016.</figcaption></p>
+</figure>
+<p>As with the image collection above, image comments is not supported by Markdown or any known plugins, so manual use of the <code>&lt;figure&gt;</code> and <code>&lt;figcaption&gt;</code> elements is required. First, decide what kind of image size you want (<code>.edge-to-edge</code>? Or maybe <code>.edge-to-edge.medium</code>? Or maybe it&rsquo;s a smaller image, so <code>.inline</code> will suffice). Whatever image size you choose, the structure remains practically the same.</p>
+<div class="codehilite"><pre><span class="c">&lt;!-- If you end up choosing an image size that&#39;s big (anything larger than</span>
+<span class="c">     .edge-to-edge.medium) then you&#39;ll want to consider add a bit more</span>
+<span class="c">     breathing room around the image &amp; caption to make it fit better in the</span>
+<span class="c">     document, you can achieve this by adding the &quot;.breathing-room&quot; class to</span>
+<span class="c">     the figure element. This additional padding is already added automatically</span>
+<span class="c">     for images without captions. --&gt;</span>
+<span class="p">&lt;</span><span class="nt">figure</span> <span class="na">markdown</span><span class="o">=</span><span class="s">&quot;1&quot;</span><span class="p">&gt;</span><span class="c">&lt;!--class=&quot;breathing-room&quot;--&gt;</span>
+![Alt tag](some-image.jpg){: .primary-class .optional-secondary-class }
+<span class="p">&lt;</span><span class="nt">figcaption</span><span class="p">&gt;</span>Your photo caption goes here.<span class="p">&lt;/</span><span class="nt">figcaption</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">figure</span><span class="p">&gt;</span>
+</pre></div>
+
+
+<h3 id="code"><a name="user-content-code" href="#code" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Code</h3>
+<p>Standard, inline code snippets like <code>exampleMethod()</code> allow you to jot down variable names or short lines of code without breaking your train of thought.</p>
+<p>For larger chunks of code, you can use standard Markdown code blocks. If you provide a language (or if the language could be derived), the code block will be syntax highlighted with a <a href="http://www.sublimetext.com">Sublime Text</a> flavored Monokai theme.</p>
+<div class="codehilite"><pre><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Test</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Hello, world!&quot;</span><span class="o">);</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+
+
+<p>However, sometimes we just want <em>preformatted</em> blocks, not necessarily code blocks. In cases like these, you must manually wrap your text with the <abbr title="Hyper Text Markup Language">HTML</abbr> <code>&lt;pre&gt;</code> and <code>&lt;code&gt;</code> elements. While not ideal, Markdown by design only allows one particular style to be set to any given element<sup id="fnref:one-style-only"><a class="footnote-ref" href="#fn:one-style-only" rel="footnote">3</a></sup>, so in an effort to address not <em>always</em> wanting the Monokai theme to be applied to performed blocks, plain old <code>&lt;pre&gt;&lt;code&gt;Your text&lt;/code&gt;&lt;/pre&gt;</code> is assumed to be plain text and the Monokai theme will not be applied.</p>
+<pre>
+<code>I'm performed text,
+but not code.
+ (please
+   respect
+    my
+     spacing!)</code>
+</pre>
+
+<p>For the <abbr title="American Standard Code for Information Interchange">ASCII</abbr> artists out there, you can also easily tighten the font&rsquo;s line height by providing the <code>.ascii-art</code> class to the <code>&lt;pre&gt;</code> element (example below created by <a href="http://www.ascii-code.com/ascii-art/computers/apple.php">grp</a>).</p>
+<pre class="ascii-art">
+<code>                     __________________________
+             __..--/".'                        '.
+     __..--""      | |                          |
+    /              | |                          |
+   /               | |    ___________________   |
+  ;                | |   :__________________/:  |
+  |                | |   |                 '.|  |
+  |                | |   |                  ||  |
+  |                | |   |                  ||  |
+  |                | |   |                  ||  |
+  |                | |   |                  ||  |
+  |                | |   |                  ||  |
+  |                | |   |                  ||  |
+  |                | |   |                  ||  |
+  |                | |   |______......-----"\|  |
+  |                | |   |_______......-----"   |
+  |                | |                          |
+  |                | |                          |
+  |                | |                  ____----|
+  |                | |_____.....----|#######|---|
+  |                | |______.....----""""       |
+  |                | |                          |
+  |. ..            | |   ,                      |
+  |... ....        | |  (c ----- """           .'
+  |..... ......  |\|_|    ____......------"""|"
+  |. .... .......| |""""""                   |
+  '... ..... ....| |                         |
+    "-._ .....  .| |                         |
+        "-._.....| |             ___...---"""'
+            "-._.| | ___...---"""
+                """""             grp</code>
+</pre>
+
+<h3 id="tables"><a name="user-content-tables" href="#tables" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Tables</h3>
+<p>By default, tables use spacing and font weights to establish structure.</p>
+<table>
+<thead>
+<tr>
+<th align="left">Band Name</th>
+<th align="left">Favorite Record</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">The Beach Boys</td>
+<td align="left">Pet Sounds &amp; SMiLE</td>
+</tr>
+<tr>
+<td align="left">Fleet Foxes</td>
+<td align="left">Helplessness Blues</td>
+</tr>
+<tr>
+<td align="left">Joanna Newsom</td>
+<td align="left">Divers</td>
+</tr>
+<tr>
+<td align="left">The Beatles</td>
+<td align="left">Sgt. Pepper&rsquo;s Lonely Hearts Club Band</td>
+</tr>
+</tbody>
+</table>
+<p>For more complicated data, a more strictly defined, decorated table is desired. That option can be enabled by providing the <code>.fancy</code> class to the table element. Regrettably, this means the table must then be defined in <abbr title="Hyper Text Markup Language">HTML</abbr> instead of Markdown:</p>
+<table class="fancy">
+<thead>
+<tr>
+<th align="left">Band Name</th>
+<th align="left">Favorite Record</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">The Beach Boys</td>
+<td align="left">Pet Sounds &amp; SMiLE</td>
+</tr>
+<tr>
+<td align="left">Fleet Foxes</td>
+<td align="left">Helplessness Blues</td>
+</tr>
+<tr>
+<td align="left">Joanna Newsom</td>
+<td align="left">Divers</td>
+</tr>
+<tr>
+<td align="left">The Beatles</td>
+<td align="left">Sgt. Pepper&rsquo;s Lonely Hearts Club Band</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="admonitions"><a name="user-content-admonitions" href="#admonitions" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Admonitions</h3>
+<p>In rare cases, you may want to preface a document or section with a prominent announcement communicating some kind of information to the reader. Perhaps this is an &ldquo;Update&rdquo; block that adds some new information to the writing below, while still preserving the original writing. Or maybe this is a &ldquo;Warning&rdquo; block of some kind to forewarn that what follows may trigger those with PTSD or other mental trauma. Whatever the reason, there&rsquo;s an admonition flavor for it.</p>
+<p>While standard Markdown has no support for admonitions, the <a href="https://pythonhosted.org/Markdown/extensions/admonition.html">admonition</a> Markdown plugin does. Here&rsquo;s some examples with the various supported flavors:</p>
+<div class="admonition update">
+<p class="admonition-title">Update: March 17, 2017</p>
+<p>This process has changed as of iOS 10. While the steps below still apply for those on older versions, those running iOS 10+ must follow follow <a href="#admonitions">these steps</a> instead.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Trigger Warning</p>
+<p>What follows are recounts of graphically violent stories that may not be suitable for those dealing with trauma such as PTSD. Reader discretion is advised.</p>
+</div>
+<div class="admonition success">
+<p class="admonition-title">All Tests Passed</p>
+<p>All tests passed full regression testing.</p>
+</div>
+<div class="admonition unknown">
+<p class="admonition-title">Title</p>
+<p>Generic admonition block.</p>
+</div>
+<h3 id="highlighting"><a name="user-content-highlighting" href="#highlighting" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Highlighting</h3>
+<p>While organizing study or reference materials, there are times we <em>really</em> want to emphasis a word or snippet, so much so that even <strong>bolding</strong> the text won&rsquo;t suffice. For situations like this, <mark>highlighting is fully supported</mark>. If your Markdown parser of choice supports the highlighting syntax, you can use <code>==section to highlight==</code> to highlight text, otherwise you&rsquo;ll have to manually wrap any highlights in <code>&lt;mark&gt;</code> elements yourself. For the highlight-lovers out there, multiple flavors are supported:</p>
+<ul>
+<li><mark class="red">Red</mark></li>
+<li><mark class="orange">Orange</mark></li>
+<li><mark class="yellow">Yellow</mark></li>
+<li><mark class="blue">Blue</mark></li>
+<li><mark class="green">Green</mark></li>
+<li><mark class="purple">Purple</mark></li>
+<li><mark class="gray">Gray</mark></li>
+<li><mark class="light-gray">Light Gray</mark></li>
+</ul>
+<p>Additionally, if you want your highlights to function instead as tags <mark class="light-gray tag">like this</mark>, just provide the additional <code>.tag</code> class.</p>
+<h3 id="definitions"><a name="user-content-definitions" href="#definitions" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Definitions</h3>
+<p>If you&rsquo;re in class or writing a technical document, having a nice definitions section is crucial to ensuring you and any other readers can follow along. Definition lists look like this:</p>
+<dl>
+<dt>Extensible Markup Language (<abbr title="Extensible Markup Language">XML</abbr>)</dt>
+<dd>
+<p>A markup language with a strict set of rules to encode information so that it can be read by both computers and people. It can be used to markup documents as well as represent data structures.</p>
+</dd>
+<dt>Hypertext Markup Language (<abbr title="Hyper Text Markup Language">HTML</abbr>)</dt>
+<dd>
+<p>A markup language for creating web pages and web applications semantically. This makes it great for delivering complicated web applications, but makes reading and writing it more difficult. While it may appear to be <abbr title="Extensible Markup Language">XML</abbr>, standard <abbr title="Hyper Text Markup Language">HTML</abbr> is not <abbr title="Extensible Markup Language">XML</abbr> compliant.</p>
+</dd>
+<dt>Markdown</dt>
+<dd>
+<p>A lightweight markup language created by <a href="http://daringfireball.net">John Gruber</a> with the intention of being &ldquo;as easy-to-read and easy-to-write as is feasible&rdquo;.</p>
+</dd>
+</dl>
+<h3 id="abbreviations"><a name="user-content-abbreviations" href="#abbreviations" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Abbreviations</h3>
+<p>Marcdown abbreviations are styled in native small caps. Readers with pointing devices can hover over them to read the expanded abbreviation with their browser&rsquo;s standard tooltip. Give it a try with &ldquo;<abbr title="Hyper Text Markup Language">HTML</abbr>&rdquo;!</p>
+<h3 id="keyboard-keys"><a name="user-content-keyboard-keys" href="#keyboard-keys" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Keyboard Keys</h3>
+<p>Representing keyboard keys for things like keyboard shortcuts can be difficult with plain text. Sure, I could write ctrl+alt+del or even <code>ctrl+alt+del</code>, but that doesn&rsquo;t look very nice at all. Thankfully, <abbr title="Hyper Text Markup Language">HTML</abbr> has the <code>&lt;kbd&gt;</code> element for exactly this purpose, so you can have <kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>del</kbd> instead. Your keyboard shortcuts never looked this good.</p>
+<h3 id="advanced-features"><a name="user-content-advanced-features" href="#advanced-features" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Advanced Features</h3>
+<p>While not enabled by default, Marcdown is fully capable of rendering complex <abbr title="Unified Modeling Language">UML</abbr> diagrams with <a href="http://flowchart.js.org">flowchart.js</a> and <a href="https://bramp.github.io/js-sequence-diagrams/">sequence-diagram.js</a>, as well as rendering mathematical equations with <a href="https://www.mathjax.org">MathJax</a>.</p>
+<p><a href="barrowclift.github.io/marcdown/advanced-features.html">Click here to see these features in action</a></p>
+<h2 id="installation"><a name="user-content-installation" href="#installation" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Installation</h2>
+<p>Due to Marcdown relying on Markdown extensions for things like syntax highlighting and the necessary scripting required for enabling/disabling dark mode, some installation is required for Marcdown to operate at its fullest potential. Thankfully, if you already do your writing in <a href="http://www.sublimetext.com">Sublime Text</a> like I do, the installation is very straightforward:</p>
+<ol>
+<li>Clone or download the Marcdown project and place at <code>/usr/local</code> on your file system. You can place it wherever you want on your system, but do note then you must update the paths in the <code>local-template.html</code> file accordingly.</li>
+<li>Install the <a href="https://github.com/revolunet/sublimetext-markdown-preview">Markdown Preview</a> plugin.</li>
+<li>Open the Markdown Preview user settings and edit to match <a href="barrowclift.github.io/marcdown/markdown-preview/MarkdownPreview.sublime-settings">this one</a>, as desired. At a bare minimum, however, you must have <code>"skip_default_stylesheet": true</code> and <code>"html_template": "/usr/local/marcdown/local-template.html"</code> (or the path you installed Marcdown to if you chose somewhere else).<ul>
+<li>Remember, if you want any <a href="barrowclift.github.io/marcdown/advanced-features.html">advanced features</a> like <abbr title="Unified Modeling Language">UML</abbr> or MathJax, you&rsquo;ll have to ensure they&rsquo;re enabled and their required extensions added to the list, since they&rsquo;re disabled by default in the provided <code>MarkdownPreview.sublime-settings</code> file.</li>
+</ul>
+</li>
+</ol>
+<p>Regrettably, there&rsquo;s no detailed guides currently available for setting up Marcdown with other popular Markdown build systems (yet), so your only option at the moment is to use Sublime Text with Markdown Preview or to work it out yourself with your preferred system. More setup instructions for other environments are planned to be added over time, so stay tuned!</p>
+<h2 id="about-the-author"><a name="user-content-about-the-author" href="#about-the-author" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>About the Author</h2>
+<figure>
+<p><img alt="Picture of myself on a hike at Smoky Mountains National Park" class="inline" src="/Users/mbarro203/Developer/Projects/Marcdown/img/marc.jpg" /></p>
+</figure>
+<p>Hey there <img align="absmiddle" alt=":wave:" class="emoji" height="20px" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f44b.png" title=":wave:" width="20px" />, my name is Marc Barrowclift and I&rsquo;m a designer and developer who loves making nice things. You can follow my ramblings over at <a href="http://barrowclift.design">barrowclift.design</a> or check out my other code-related projects on <a href="https://github.com/barrowclift">Github</a>.</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:example-footnote">
+<p>This is an example footnote. You can insert asides, references, inside jokes, and all other sorts of things with footnotes.&#160;<a class="footnote-backref" href="#fnref:example-footnote" rev="footnote" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:intended">
+<p>As if that would stop me. <img align="absmiddle" alt=":wink:" class="emoji" height="20px" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f609.png" title=":wink:" width="20px" />&#160;<a class="footnote-backref" href="#fnref:intended" rev="footnote" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:one-style-only">
+<p>Yes, <a href="https://michelf.ca/projects/php-markdown/extra/#spe-attr">classes can be added to simple elements</a> like links and standard images, but unfortunately this does not extend to more complicated elements like lists or code blocks.&#160;<a class="footnote-backref" href="#fnref:one-style-only" rev="footnote" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+			</main>
+			<script async src="/src/js/min/core.min.js" type="text/javascript"></script>
+		</div>
+	</div>
+</body>
+</html>

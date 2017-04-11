@@ -1,0 +1,42 @@
+{
+	"build_action": "browser",
+
+	"strip_yaml_front_matter": true,
+	"github_inject_header_ids": true,
+
+	//"image_path_conversion": "base64",
+
+	"enabled_parsers": ["markdown"],
+	"enable_mathjax": false,
+	"enable_uml": false,
+	"enable_highlight": true,
+	"enabled_extensions": [
+		"abbr",
+		"admonition",
+		"attr_list",
+		"codehilite(guess_lang=False, pygments_style=monokai)",
+		"def_list",
+		"delete",
+		"extra",
+		"fenced_code",
+		"footnotes",
+		"githubemoji",
+		"headeranchor",
+		"headerid",
+		"magiclink",
+		"meta",
+		"nl2br",
+		"sane_lists",
+		"smart_strong",
+		"smarty",
+		"superfences",
+		"tables",
+		"tasklist",
+		"toc",
+		"wikilinks"
+	],
+
+	// Marcdown
+	"skip_default_stylesheet": true,
+	"html_template": "/usr/local/marcdown/web-template.html"
+}
