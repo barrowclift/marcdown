@@ -1,78 +1,78 @@
 @font-face {
     font-family: 'San Francisco Display';
-    src: url('/fonts/SanFranciscoDisplay-Regular.otf');
+    src: url('/marcdown/src/fonts/SanFranciscoDisplay-Regular.otf');
     font-weight: 400;
     font-style: normal;
 }
 @font-face {
     font-family: 'San Francisco Display';
-    src: url('/fonts/SanFranciscoDisplay-Medium.otf');
+    src: url('/marcdown/src/fonts/SanFranciscoDisplay-Medium.otf');
     font-weight: 500;
     font-style: normal;
 }
 @font-face {
     font-family: 'San Francisco Display';
-    src: url('/fonts/SanFranciscoDisplay-Semibold.otf');
+    src: url('/marcdown/src/fonts/SanFranciscoDisplay-Semibold.otf');
     font-weight: 600;
     font-style: normal;
 }
 @font-face {
     font-family: 'San Francisco Display';
-    src: url('/fonts/SanFranciscoDisplay-Bold.otf');
+    src: url('/marcdown/src/fonts/SanFranciscoDisplay-Bold.otf');
     font-weight: 700;
     font-style: normal;
 }
 @font-face {
     font-family: 'San Francisco Display';
-    src: url('/fonts/SanFranciscoDisplay-Heavy.otf');
+    src: url('/marcdown/src/fonts/SanFranciscoDisplay-Heavy.otf');
     font-weight: 800;
     font-style: normal;
 }
 @font-face {
     font-family: 'San Francisco Display';
-    src: url('/fonts/SanFranciscoDisplay-Black.otf');
+    src: url('/marcdown/src/fonts/SanFranciscoDisplay-Black.otf');
     font-weight: 900;
     font-style: normal;
 }
 @font-face {
     font-family: 'San Francisco';
-    src: url('/fonts/SanFranciscoText-Regular.otf');
+    src: url('/marcdown/src/fonts/SanFranciscoText-Regular.otf');
     font-weight: 400;
     font-style: normal;
 }
 @font-face {
     font-family: 'San Francisco';
-    src: url('/fonts/SanFranciscoText-RegularItalic.otf');
+    src: url('/marcdown/src/fonts/SanFranciscoText-RegularItalic.otf');
     font-weight: 400;
     font-style: italic;
 }
 @font-face {
     font-family: 'San Francisco';
-    src: url('/fonts/SanFranciscoText-Medium.otf');
+    src: url('/marcdown/src/fonts/SanFranciscoText-Medium.otf');
     font-weight: 500;
     font-style: normal;
 }
 @font-face {
     font-family: 'San Francisco';
-    src: url('/fonts/SanFranciscoText-Semibold.otf');
+    src: url('/marcdown/src/fonts/SanFranciscoText-Semibold.otf');
     font-weight: 600;
     font-style: normal;
 }
 @font-face {
     font-family: 'San Francisco';
-    src: url('/fonts/SanFranciscoText-Bold.otf');
+    src: url('/marcdown/src/fonts/SanFranciscoText-Bold.otf');
     font-weight: 700;
     font-style: normal;
 }
 @font-face {
     font-family: 'San Francisco';
-    src: url('/fonts/SanFranciscoText-Heavy.otf');
+    src: url('/marcdown/src/fonts/SanFranciscoText-Heavy.otf');
     font-weight: 800;
     font-style: normal;
 }
 @font-face {
     font-family: 'San Francisco Mono';
-    src: url('/fonts/SFMono-Regular.otf');
+    src: url('/marcdown/src/fonts/SFMono-Regular.otf');
     font-weight: 400;
     font-style: normal;
 }
