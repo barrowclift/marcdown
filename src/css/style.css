@@ -348,11 +348,11 @@ ul ul ul li:before {
 /* Checklists */
 .task-list input {
     padding: 0 !important;
-    margin: 0 !important;
+    margin: 0 0.25rem 0 0 !important;
 }
 .task-list {
     list-style-type: none !important;
-    margin-left: .74rem
+    margin-left: .5rem;
 }
 /* JUST FOR NOTES */
 ol ul,
@@ -896,6 +896,8 @@ figcaption {
 }
 .uml-flowchart, .uml-sequence-diagram {
     overflow-x: scroll;
+    /* Momentum scrolling in iOS */
+    -webkit-overflow-scrolling: touch;
 }
 .inline {
     width: 100%;
@@ -1070,6 +1072,7 @@ kbd {
 }
 .codehilite pre {
     overflow: scroll;
+    -webkit-overflow-scrolling: none;
 }
 pre {
     text-align: left;
@@ -1099,6 +1102,9 @@ pre {
     background-color: #EFF0F1;
     border: 1px solid rgba(0, 0, 0, .02);
     color: rgba(51, 51, 51, 0.9);
+
+    /* Momentum scrolling in iOS */
+    -webkit-overflow-scrolling: touch;
 
     /*background-color: rgba(229, 231, 232, 0.75);
     border-color: rgba(218,219,220,0.75);*/
@@ -1397,6 +1403,15 @@ Font size: 19px, ~Margin&Padding: 28.5px
         font-size: 19px;
     }
 
+
+    /* ----- LISTS ----- */
+    .task-list {
+        margin-left: .65rem;
+    }
+    .task-list input {
+        margin: 0 0.1rem 0 0 !important;
+    }
+
     /* NAVBAR ------------------------------------- */
     
 
@@ -1607,6 +1622,15 @@ Font size: 21px, ~Margin&Padding: 31.5px
     /* --- SIZES, MARGINS, AND WEIGHTS --- */
     html {
         font-size: 21px;
+    }
+
+
+    /* ----- LISTS ----- */
+    .task-list {
+        margin-left: .74rem;
+    }
+    .task-list input {
+        margin: 0 !important;
     }
 
     /* NAVBAR ------------------------------------- */
