@@ -9,7 +9,7 @@ I write everything in [Markdown](https://daringfireball.net/projects/markdown), 
 
 Even when I became discouraged in my search and resigned myself to compromise on a couple I found acceptable (one "light" theme and one "dark" theme), I found having to choose between the light and dark theme at build time on a document-by-document basis to be a hassle. I wanted dark mode to be an accessibility option at *any* time, not just statically baked in. Thus began my mission to create a style to finally meet and exceed these requirements.
 
-That style is "Marcdown"&#8212;a Markdown theme designed to be just as beautiful for late night journal entries as it is functional for intense computer science notes. Give it a try, I think you're going to love it.
+That style is Marcdown&#8212;a Markdown theme designed to be just as beautiful for late night journal entries as it is functional for intense computer science notes. Give it a try, I think you're going to love it.
 
 * [Design](#design)
 	- [Typeface](#typeface)
@@ -343,7 +343,7 @@ Representing keyboard keys for things like keyboard shortcuts can be difficult w
 
 While not enabled by default, Marcdown is fully capable of rendering complex UML diagrams with [flowchart.js](http://flowchart.js.org) and [sequence-diagram.js](https://bramp.github.io/js-sequence-diagrams/), as well as rendering mathematical equations with [MathJax](https://www.mathjax.org).
 
-[Click here to see these features in action](barrowclift.github.io/marcdown/advanced-features.html)
+[Click here to see these features in action](/marcdown/advanced-features.html)
 
 Installation
 ------------
@@ -352,8 +352,8 @@ Due to Marcdown relying on Markdown extensions for things like syntax highlighti
 
 1. Clone or download the Marcdown project and place at `/usr/local` on your file system. You can place it wherever you want on your system, but do note then you must update the paths in the `local-template.html` file accordingly.
 2. Install the [Markdown Preview](https://github.com/revolunet/sublimetext-markdown-preview) plugin.
-3. Open the Markdown Preview user settings and edit to match [this one](barrowclift.github.io/marcdown/markdown-preview/MarkdownPreview.sublime-settings), as desired. At a bare minimum, however, you must have `"skip_default_stylesheet": true` and `"html_template": "/usr/local/marcdown/local-template.html"` (or the path you installed Marcdown to if you chose somewhere else).
-	* Remember, if you want any [advanced features](barrowclift.github.io/marcdown/advanced-features.html) like UML or MathJax, you'll have to ensure they're enabled and their required extensions added to the list, since they're disabled by default in the provided `MarkdownPreview.sublime-settings` file.
+3. Open the Markdown Preview user settings and edit to match [this one](https://github.com/barrowclift/marcdown/blob/master/markdown-preview/MarkdownPreview.sublime-settings), as desired. At a bare minimum, however, you must have `"skip_default_stylesheet": true` and `"html_template": "/usr/local/marcdown/local-template.html"` (or the path you installed Marcdown to if you chose somewhere else).
+	* Remember, if you want any [advanced features](/marcdown/advanced-features.html) like UML or MathJax, you'll have to ensure they're enabled and their required extensions added to the list, since they're disabled by default in the provided `MarkdownPreview.sublime-settings` file.
 
 Regrettably, there's no detailed guides currently available for setting up Marcdown with other popular Markdown build systems (yet), so your only option at the moment is to use Sublime Text with Markdown Preview or to work it out yourself with your preferred system. More setup instructions for other environments are planned to be added over time, so stay tuned!
 

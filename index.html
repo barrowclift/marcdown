@@ -91,7 +91,7 @@
 <li>Wide selection of image formatting options</li>
 </ol>
 <p>Even when I became discouraged in my search and resigned myself to compromise on a couple I found acceptable (one &ldquo;light&rdquo; theme and one &ldquo;dark&rdquo; theme), I found having to choose between the light and dark theme at build time on a document-by-document basis to be a hassle. I wanted dark mode to be an accessibility option at <em>any</em> time, not just statically baked in. Thus began my mission to create a style to finally meet and exceed these requirements.</p>
-<p>That style is &ldquo;Marcdown&rdquo;&#8212;a Markdown theme designed to be just as beautiful for late night journal entries as it is functional for intense computer science notes. Give it a try, I think you&rsquo;re going to love it.</p>
+<p>That style is Marcdown&#8212;a Markdown theme designed to be just as beautiful for late night journal entries as it is functional for intense computer science notes. Give it a try, I think you&rsquo;re going to love it.</p>
 <ul>
 <li><a href="#design">Design</a><ul>
 <li><a href="#typeface">Typeface</a></li>
@@ -405,14 +405,14 @@ but not code.
 <p>Representing keyboard keys for things like keyboard shortcuts can be difficult with plain text. Sure, I could write ctrl+alt+del or even <code>ctrl+alt+del</code>, but that doesn&rsquo;t look very nice at all. Thankfully, <abbr title="Hyper Text Markup Language">HTML</abbr> has the <code>&lt;kbd&gt;</code> element for exactly this purpose, so you can have <kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>del</kbd> instead. Your keyboard shortcuts never looked this good.</p>
 <h3 id="advanced-features"><a name="user-content-advanced-features" href="#advanced-features" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Advanced Features</h3>
 <p>While not enabled by default, Marcdown is fully capable of rendering complex <abbr title="Unified Modeling Language">UML</abbr> diagrams with <a href="http://flowchart.js.org">flowchart.js</a> and <a href="https://bramp.github.io/js-sequence-diagrams/">sequence-diagram.js</a>, as well as rendering mathematical equations with <a href="https://www.mathjax.org">MathJax</a>.</p>
-<p><a href="barrowclift.github.io/marcdown/advanced-features.html">Click here to see these features in action</a></p>
+<p><a href="/marcdown/advanced-features.html">Click here to see these features in action</a></p>
 <h2 id="installation"><a name="user-content-installation" href="#installation" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Installation</h2>
 <p>Due to Marcdown relying on Markdown extensions for things like syntax highlighting and the necessary scripting required for enabling/disabling dark mode, some installation is required for Marcdown to operate at its fullest potential. Thankfully, if you already do your writing in <a href="http://www.sublimetext.com">Sublime Text</a> like I do, the installation is very straightforward:</p>
 <ol>
 <li>Clone or download the Marcdown project and place at <code>/usr/local</code> on your file system. You can place it wherever you want on your system, but do note then you must update the paths in the <code>local-template.html</code> file accordingly.</li>
 <li>Install the <a href="https://github.com/revolunet/sublimetext-markdown-preview">Markdown Preview</a> plugin.</li>
-<li>Open the Markdown Preview user settings and edit to match <a href="barrowclift.github.io/marcdown/markdown-preview/MarkdownPreview.sublime-settings">this one</a>, as desired. At a bare minimum, however, you must have <code>"skip_default_stylesheet": true</code> and <code>"html_template": "/usr/local/marcdown/local-template.html"</code> (or the path you installed Marcdown to if you chose somewhere else).<ul>
-<li>Remember, if you want any <a href="barrowclift.github.io/marcdown/advanced-features.html">advanced features</a> like <abbr title="Unified Modeling Language">UML</abbr> or MathJax, you&rsquo;ll have to ensure they&rsquo;re enabled and their required extensions added to the list, since they&rsquo;re disabled by default in the provided <code>MarkdownPreview.sublime-settings</code> file.</li>
+<li>Open the Markdown Preview user settings and edit to match <a href="https://github.com/barrowclift/marcdown/blob/master/markdown-preview/MarkdownPreview.sublime-settings">this one</a>, as desired. At a bare minimum, however, you must have <code>"skip_default_stylesheet": true</code> and <code>"html_template": "/usr/local/marcdown/local-template.html"</code> (or the path you installed Marcdown to if you chose somewhere else).<ul>
+<li>Remember, if you want any <a href="/marcdown/advanced-features.html">advanced features</a> like <abbr title="Unified Modeling Language">UML</abbr> or MathJax, you&rsquo;ll have to ensure they&rsquo;re enabled and their required extensions added to the list, since they&rsquo;re disabled by default in the provided <code>MarkdownPreview.sublime-settings</code> file.</li>
 </ul>
 </li>
 </ol>
