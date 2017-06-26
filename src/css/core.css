@@ -1,0 +1,2180 @@
+/*
+TABLE OF CONTENTS:
+	* Container
+	* Typography
+		- Typeface
+		- Kerning
+		- Sizes, Margins, and Weights
+		- Lists
+		- Text Styles
+	* Navbar
+		- Menu
+		- Logo
+		- Accessibility Toggles
+	* Elements
+		- Cards
+		- Dividers
+		- Forms, Buttons, and Links
+		- Tables
+		- Tags & Highlighting
+		- Admonitions
+	* Images & Video
+	* Code
+	* Footer
+		- Footnotes
+		- Page Navigation
+		- Footnote Buttons
+	* Misc
+		- Anchors
+		- Animations
+		- Positioning
+	* Media Queries
+	* Default Theme (Blue)
+	* Dark Theme
+
+Small devices (iPhones)
+Font size: 14px, ~Margin&Padding: 20px
+*/
+
+/* CONTAINER ------------------------------------------------------------------------ */
+
+html {
+	background-color: white;
+}
+html, body {
+	height: 100%;
+}
+body, main {
+	text-align: center;
+}
+h1, h2, h3, h4, h5, h6, time,
+p,
+blockquote,
+ol, ul, ol li, ul li {
+	text-align: left;
+}
+main {
+	display: block; /* IE 11 does not fully support main, ignores max-width otherwise */
+	position: relative;
+	padding-left: 5%;
+	padding-right: 5%;
+	max-width: 33em;
+	width: auto;
+	margin: 2.6em auto;
+}
+	.full-width-page main {
+		max-width: 100%;
+		padding: 0;
+	}
+	.extra-wide-page main {
+		max-width: 66em;
+		padding: 0;
+	}
+	.wide-page main {
+		max-width: 38em;
+	}
+
+/* Allows for margin bottom on main page elements and makes it easier to
+   re-add stickied footers, should I want them back anytime going forward */
+#content {
+	overflow: auto;
+	overflow-x: hidden;
+}
+
+
+/* TYPOGRAPHY ----------------------------------------------------------------------- */
+
+
+/* ----- TYPEFACE ----- */
+html,
+textarea { /* Must explicitly add textarea for Firefox bug, proving once again it's the worst browser */
+	font-family: "San Francisco", system, -apple-system, BlinkMacSystemFont, helvetica, roboto, segoe ui, arial, sans-serif;
+
+	text-rendering: optimizeLegibility;
+	/* Font rendering in OS X Firefox is TERRIBLE. This makes the browser tolerable */
+	-moz-osx-font-smoothing: grayscale;
+	/* Default text rendering in WebKit is *way* too heavy, in my opinion. This thins
+	the text a bit and makes it more crisp and pleasing to read. */
+	-webkit-font-smoothing: antialiased;
+}
+h1, h2, h3, h4, h5, h6,
+.admonition-title,
+menu {
+	font-family: "San Francisco Display", system, -apple-system, BlinkMacSystemFont, helvetica, roboto, segoe ui, arial, sans-serif;
+}
+pre,
+code {
+	font-family: "San Francisco Mono", Menlo, Lucida Console, Liberation Mono, DejaVu Sans Mono, monospace, sans-serif;
+}
+
+
+
+/* ----- KERNING ----- */
+input,
+textarea {
+	/* Better experience for user while entering text */
+	letter-spacing: 1px;
+}
+mark code {
+	/* Wrapping inline code with a highlight messes with the default kerning ever so slightly.
+	   This matches mark wrapped inline code with the kerning of regular old inline code */
+	letter-spacing: -0.0076em;
+}
+del code {
+	/* 1em inline code is *way* too spaced out by default. This tightens it up slightly to make
+	   it better match the kerning of the surrounding text. */
+	letter-spacing: -0.076em;
+}
+
+
+/* ----- SIZES, MARGINS, AND WEIGHTS ----- */
+html {
+	font-size: 14px;
+	font-weight: 400;
+}
+body,
+.bigfoot-footnote__content p,
+.footnote ol, .footnote ol li p, /* Marcdown */
+.footnotes ol, .footnotes ol li p, /* Standard */
+dt, dd,
+figcaption,
+code,
+input, select, textarea, button,
+small {
+	/* 1.5 is too loose, ~1.2-1.45 is desired, depending on typeface */
+	line-height: 1.45em;
+}
+menu {
+	font-size: 1.3rem;
+}
+/*
+Following the 1.2 Minor Third type scale 
+http://type-scale.com
+*/
+h1 {
+	font-size: 2.074em;
+}
+h2 {
+	font-size: 1.728em;
+}
+h3 {
+	font-size: 1.44em;
+}
+h4, .admonition-title {
+	font-size: 1.2em;
+}
+h5 {
+	font-size: 1em;
+}
+h6 {
+	font-size: 0.833em;
+}
+h1, h2, h3, h4, h5, h6, time,
+.admonition-title,
+menu ul {
+	/* ~1.1em-1.2em preferred, depending on typeface */
+	line-height: 1.2em;
+	margin: 1.414em 0 0.5em;
+}
+time {
+	font-size: 1rem;
+	margin-bottom: 0;
+	margin-top: 0.5em;
+	/* Always have time below whatever content it's representing */
+	display: block;
+	font-weight: inherit;
+}
+	.toc time {
+		display: none;
+	}
+p,
+blockquote,
+ol, ul, ol li, ul li,
+dl, table,
+.highlight, .codehilite,
+.admonition,
+.uml-sequence-diagram, .uml-flowchart {
+	margin-top: 0;
+	margin-bottom: 1.3em;
+}
+	ol li, ul li {
+		margin-top: 0;
+		margin-bottom: 0.65em; /* 1.3 base type bottom margin / 2 */
+	}
+	li ol, li ul {
+		margin-top: 0.65em; /* 1.3 base type bottom margin / 2 */
+		margin-bottom: 0;
+	}
+ol, ul,
+blockquote,
+dl dd {
+	margin-left: 1.95em; /* 1.3 base type bottom margin * 1.5 */
+}
+code {
+	font-size: 0.9em;
+}
+.footnote ol, .footnote ol li p, /* Marcdown */
+.footnotes ol, .footnotes ol li p, /* Barrowclift.me */
+figcaption,
+input, select, textarea, button,
+small, kbd {
+	font-size: 0.833em;
+	margin-top: 0;
+	margin-bottom: 1.3em;
+}
+pre {
+	font-size: 0.75em;
+	line-height: 1.375em;
+}
+	pre code {
+		font-size: inherit;
+	}
+code,
+mark {
+	padding: 0 0.325em;
+}
+mark.tag {
+	padding: 0 0.5em;
+}
+
+
+/* ----- LISTS ----- */
+/* Normal lists */
+ol {
+	list-style-type: decimal;
+}
+	ol ol {
+		list-style-type: upper-alpha;
+	}
+		ol ol ol {
+			list-style-type: upper-roman;
+		}
+ul {
+	list-style-type: disc;
+}
+	ul ul {
+		list-style-type: none;
+	}
+		ul ul li:before {
+			content: "-";
+			position: absolute;
+			margin-left: -1em;
+		}
+		ul ul ul {
+			list-style-type: circle;
+		}
+			ul ul ul li:before {
+				content: none;
+				margin-left: 0;
+			}
+/* Raw list of items, no bullets, padding, or frills at all (good for UI element lists) */
+.bare-list {
+	list-style: none;
+	padding-left: 0;
+}
+	.bare-list li {
+		margin: 0;
+	}
+	.compact-list li {
+		margin: 0;
+	}
+/* No paragraph margins, keep them one logical block (good for short lists) */
+.compact-list li,
+.compact-list ul,
+.compact-list ol {
+	margin-bottom: 0;
+	margin-top: 0;
+}
+/* Checklists */
+.task-list input {
+	padding: 0;
+	margin: 0 0.25em 0 0;
+}
+.task-list {
+	list-style-type: none;
+	margin-left: 0.5em;
+}
+/* Definition Lists */
+dt, dd {
+	text-align: left;
+}
+	dd p:last-child {
+		margin-bottom: 0;
+	}
+
+
+/* ----- TEXT STYLES ----- */
+h1, h2,
+strong {
+	font-weight: 700;
+}
+h3, h4,
+.admonition-title,
+dt,
+button,
+.link-button,
+table.fancy thead, table.fancy th {
+	font-weight: 600;
+}
+h5, h6,
+menu {
+	font-weight: 500;
+}
+menu {
+	font-weight: 600;
+}
+em,
+blockquote {
+	font-style: italic;
+}
+.small-caps,
+abbr {
+	-moz-font-feature-settings: "c2sc", "smcp";
+	-ms-font-feature-settings: "c2sc", "smcp";
+	-webkit-font-feature-settings: "c2sc", "smcp";
+	font-feature-settings: "c2sc", "smcp";
+}
+.underline {
+	text-decoration: underline;
+}
+html,
+main h1 a,
+main h1 a:link,
+main h1 a:visited {
+	color: #333333;
+}
+del, del code {
+	color: #CECECE !important;
+}
+menu, menu ul a,
+time,
+figcaption,
+.weak,
+small,
+.card .label .secondary {
+	color: #7F7F7F;
+}
+
+
+/* NAVBAR --------------------------------------------------------------------------- */
+
+
+/* ----- MENU ----- */
+menu {
+	background-color: rgba(255, 255, 255, 0.95);
+	border-bottom: 1px solid rgba(51, 51, 51, 0.1);
+	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.03), 0 2px 10px 0 rgba(0, 0, 0, 0.03);
+	
+	text-align: left;
+	position: relative;
+	width: 100%;
+	z-index: 10000;
+	text-align: left;
+	width: 100%;
+}
+.safari menu { /* Use Safari's lovely translucency, if available (see core.js) */
+	-webkit-backdrop-filter: saturate(180%) blur(20px);
+	backdrop-filter: saturate(180%) blur(20px);
+	background-color: rgba(255, 255, 255, 0.7);
+}
+	menu ul {
+		position: relative;
+		list-style-type: none;
+		padding: 0;
+		margin: 0;
+		display: inline-block;
+		text-align: center;
+		width: 100%;
+	}
+		menu ul li {
+			display: inline-block;
+			text-align: center;
+			margin: 0;
+			padding-bottom: 0.5em;
+			padding-top: 0.725em;
+			min-width: 33vw;
+		}
+		menu ul a {
+			margin-bottom: 0;
+			padding-bottom: 0.5375em;
+			padding-top: 0.725em;
+			min-width: 28.5vw;
+			margin-right: -0.125em;
+			margin-left: -0.125em;
+		}
+	menu header {
+		display: inline-block;
+		position: relative;
+		padding: 0;
+		width: 100%;
+		text-align: center;
+	}
+.fixed-menu {
+	position: fixed;
+	left: 0;
+	top: -5.575em;
+}
+#dynamic-menu-height {
+	height: 0;
+}
+#dynamic-menu-height.collapsed {
+	height: 10.125em;
+}
+
+
+/* ----- LOGO ----- */
+.signature-color,
+.mac-line-color {
+	fill: #333333;
+}
+#logo {
+	margin-top: 1.414em;
+	margin-bottom: 0;
+	width: auto;
+	display: inline-block;
+	cursor: pointer;
+}
+#mac {
+	display: inline-block;
+	vertical-align: top;
+	width: 48px;
+	height: 48px;
+	
+	image-rendering: -moz-crisp-edges;
+	image-rendering: -o-crisp-edges;
+	image-rendering: -webkit-optimize-contrast;
+	-ms-interpolation-mode: nearest-neighbor;
+
+	/* FIX FOR SAFARI RENDERING BUG */
+	position: relative;
+	-webkit-transform: translateZ(0);
+}
+#signature {
+	height: 70px;
+	margin-left: 0.5em;
+}
+#logo-eye-opened,
+menu header:hover #logo #logo-eye-closed {
+	opacity: 1;
+}
+#logo-eye-closed,
+menu header:hover #logo #logo-eye-opened {
+	opacity: 0;
+}
+#sunglasses,
+#smirk {
+	opacity: 0;
+}
+
+
+/* ----- ACCESSIBILITY TOGGLES ----- */
+/* Hidden for small devices */
+/* Always hide the checkbox, though, should never be visible */
+#dark-mode-checkbox {
+	display: none !important;
+}
+
+
+/* ELEMENTS ------------------------------------------------------------------------- */
+
+
+/* ----- CARDS ----- */
+.card {
+	background-color: #F9F9F9;
+	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.12), 0 2px 10px 0 rgba(0, 0, 0, 0.10);
+
+	border-radius: 1em;
+	display: inline-block;
+	width: 42.25vw;
+	border-radius: 1em;
+	vertical-align: middle;
+	margin: .5em;
+	margin-top: .625em;
+	margin-bottom: .625em;
+	padding-top: 1.3em;
+	padding-bottom: 1.3em;
+}
+	.card:hover {
+		box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.20), 0 4px 12px 0 rgba(0, 0, 0, 0.28);
+	}
+
+.card.large,
+.card.large-when-small {
+	margin: .5em;
+	margin-top: .625em;
+	margin-bottom: .625em;
+	max-width: 30em;
+	text-align: center;
+}
+.card.large,
+.card.large-when-small {
+	width: 89vw;
+}
+
+.card.bleed {
+	padding-bottom: 1.3em;
+	padding-top: 0;
+	padding-left: 0;
+	padding-right: 0;
+}
+	.card.bleed img,
+	.card.bleed video {
+		border-top-right-radius: 1em;
+		border-top-left-radius: 1em;
+		display: block !important;
+	}
+
+.card .content {
+	padding-left: 5%;
+	padding-right: 5%;
+}
+.card .content .logo {
+	width: auto;
+	height: 15vw;
+	max-height: 6em;
+	text-align: center;
+}
+.card .content .long-logo {
+	width: auto;
+	max-height: 12vh;
+	height: auto;
+}
+
+.card .label {
+	margin-top: 0.5em;
+}
+.card.bleed .label {
+	padding-left: 1em;
+	padding-right: 1em;
+	margin-top: 1em;
+}
+.card.large .label {
+	margin-top: 1.3em;
+}
+	.card .label .primary,
+	.card .label .secondary {
+		text-align: center;
+		margin: 0;
+	}
+	.card .label .secondary {
+		margin-top: 0.25em;
+	}
+
+
+/* ----- DIVIDERS ----- */
+hr {
+	background-color: #EFF0F1;
+	background: #EFF0F1; /* Old browsers */
+	background: -moz-linear-gradient(left,  white 0%, #EFF0F1 25%, #EFF0F1 50%, #EFF0F1 75%, white 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,white), color-stop(25%,#EFF0F1), color-stop(50%,#EFF0F1), color-stop(75%,#EFF0F1), color-stop(100%,white)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(left,  white 0%, #EFF0F1 25%, #EFF0F1 50%, #EFF0F1 75%, white 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(left, white 0%, #EFF0F1 25%, #EFF0F1 50%, #EFF0F1 75%, white 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(left, white 0%, #EFF0F1 25%, #EFF0F1 50%, #EFF0F1 75%, white 100%); /* IE10+ */
+	background: linear-gradient(to right, white 0%, #EFF0F1 25%, #EFF0F1 50%, #EFF0F1 75%, white 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFFFFF', endColorstr='#FFFFFF',GradientType=1 ); /* IE6-9 */
+
+	border: none;
+	height: 1px;
+	margin: 2.6em 0; /* 1.3 base type bottom margin * 2 */
+	max-width: 33em;
+	width: 100%;
+	display: block;
+}
+	.feed-view hr {
+		height: 2px;
+		margin: 3.9em 0; /* 1.3 base type bottom margin * 3 */
+	}
+
+
+/* ----- FORMS, BUTTONS, AND LINKS ----- */
+form {
+	margin-top: 0;
+	margin-bottom: 0;
+	display: inline-block;
+}
+form,
+input, textarea, button, select, .link-button {
+	width: 100%;
+}
+input, textarea, button, select, .link-button {
+	display: block;
+	margin-top: 0;
+	margin-bottom: 0.65rem;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	border-radius: 0.25em;
+	padding: 0.75em;
+}
+button,
+.link-button {
+	color: white !important;
+
+	border: none;
+	text-align: center;
+	padding-left: 0.5em;
+	padding-right: 0.5em;
+	display: inline-block;
+}
+.link-button-group li {
+	width: 100%;
+}
+.link-button-group li a,
+.link-button-group li a p {
+	width: 100%;
+}
+input,
+textarea {
+	border: 1px solid #C7C7C7;
+	width: 100%;
+}
+input[type='checkbox'] {
+	width: 1rem;
+	display: inline-block;
+}
+/* Override iOS textbox shadow */
+input[type="text"],
+input[type="submit"],
+input[type="email"],
+input[type="password"],
+textarea {
+	-webkit-appearance: none !important;
+	-moz-appearance: none !important;
+	appearance: none !important;
+	box-shadow: none !important;
+}
+input:focus, textarea:focus {
+	outline: 0;
+}
+/* Remove box shadow firefox, chrome and opera put around required fields. */
+input:required {
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	-o-box-shadow: none;
+	box-shadow: none;
+}
+
+.no-select {
+	-webkit-touch-callout: none; /* iOS Safari */
+	  -webkit-user-select: none; /* Safari */
+	   -khtml-user-select: none; /* Konqueror HTML */
+		 -moz-user-select: none; /* Firefox */
+		  -ms-user-select: none; /* Internet Explorer/Edge */
+			  user-select: none; /* Non-prefixed version, currently
+									supported by Chrome and Opera */
+}
+
+a.link-button:hover,
+h1 a:hover {
+	text-decoration: none;
+}
+.link-button-group li {
+	display: inline-block;
+	margin: 0.5em 0;
+}
+.link-button-group {
+	list-style-type: none;
+	padding: 0;
+	margin-left: 0;
+	margin-right: 0;
+	display: block;
+	text-align: center;
+}
+.link-button-group .link-button {
+	margin-bottom: 0;
+}
+input:focus,
+textarea:focus {
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+}
+
+
+/* ----- TABLES ----- */
+/* Typographic table (spaces and weights only) */
+table {
+	width: auto;
+	margin-bottom: 1.3em;
+	word-break: normal;
+	word-break: keep-all;
+	border-collapse: collapse;
+	overflow-x: auto;
+}
+thead, th {
+	font-weight: bold;
+}
+td {
+	padding-top: .15em;
+	padding-bottom: .15em;
+	padding-left: 0;
+	padding-right: 0;
+	border: none;
+}
+th {
+	padding-bottom: .13em;
+}
+	td[align="left"],
+	th[align="left"],
+	thead[align="left"] {
+		padding-right: 1em;
+		padding-left: 0;
+	}
+	td[align="left"]:last-child,
+	th[align="left"]:last-child,
+	thead[align="left"]:last-child {
+		padding-right: 0;
+	}
+	td[align="right"],
+	th[align="right"],
+	thead[align="right"] {
+		padding-left: 1em;
+		padding-right: 0;
+	}
+	td[align="right"]:first-child,
+	th[align="right"]:first-child,
+	thead[align="right"]:first-child, {
+		padding-left: 0;
+	}
+	tr:last-child td {
+		padding-bottom: 0;
+	}
+/* Decorated table (Borders, colors, etc.) */
+table.fancy td {
+	border: solid #EFF0F1;
+
+	border-width: 1px;
+	border-right: none;
+	border-left: none;
+}
+table.fancy th {
+	color: rgba(51, 51, 51, 0.9);
+	background-color: #EFF0F1;
+}
+	table.fancy th:first-child {
+		border-top-left-radius: 0.25em;
+	}
+	table.fancy th:last-child {
+		border-top-right-radius: 0.25em;
+	}
+table.fancy td,
+table.fancy th,
+table.fancy thead {
+	padding: .13em .65em !important;
+}
+
+
+/* ----- TAGS & HIGHLIGHTING ----- */
+mark {
+	word-wrap: break-word;
+	margin-left: 0em;
+	margin-right: 0em;
+}
+	mark.tag {
+		border-radius: 1em;
+	}
+	mark,
+	mark.yellow {
+		background-color: #FED558;
+		border: 1px solid #FECD38;
+	}
+	mark.green {
+		background-color: #86DF6A;
+		border-color: #70D94E;
+	}
+	mark.gray,
+	mark.grey {
+		background-color: #A4A4A7;
+		border-color: #8E8E91;
+	}
+	mark.light-gray,
+	mark.light-grey {
+		background-color: rgba(229, 231, 232, 0.75);
+		border-color: rgba(218, 219, 220, 0.75);
+	}
+	mark.red {
+		background-color: #FC6360;
+		border-color: #FC4642;
+	}
+	mark.orange {
+		background-color: #FDA951;
+		border-color: #FD9426;
+	}
+	mark.blue {
+		background-color: #54BEF7;
+		border-color: #2AAEF5;
+	}
+	mark.purple {
+		background-color: #D592E5;
+		border-color: #CB77DF;
+	}
+
+
+/* ----- ADMONITIONS ----- */
+.admonition {
+	color: rgba(51, 51, 51, 0.9);
+	/* Default style is inline code colors */
+	background-color: rgba(229, 231, 232, 0.85);
+	border: 1px solid rgba(218, 219, 220, 0.85);
+
+	padding: 1em;
+	border-radius: 0.25em;
+}
+.admonition-title {
+	margin-top: 0em;
+}
+.admonition p:last-child,
+.admonition ul:last-child,
+.admonition ol:last-child,
+.admonition table:last-child,
+.admonition .admonition {
+	margin-bottom: 0;
+}
+.admonition del {
+	color: rgba(246, 246, 246, 0.75) !important;
+}
+	.admonition.update {
+		background-color: rgba(254, 213, 88, 0.85);
+		border-color: rgba(254, 205, 56, 0.85);
+	}
+	.admonition.error,
+	.admonition.danger,
+	.admonition.warning {
+		background-color: rgba(252, 99, 96, 0.85);
+		border-color: rgba(252, 70, 66, 0.85);
+	}
+	.admonition.success {
+		background-color: rgba(134, 223, 106, 0.85);
+		border-color: rgba(112, 217, 78, 0.85);
+	}
+	.admonition.hint,
+	.admonition.question,
+	.admonition.note {
+		background-color: rgba(84, 190, 247, 0.85);
+		border-color: rgba(42, 174, 245, 0.85);
+	}
+
+
+/* IMAGES & VIDEO ------------------------------------------------------------------- */
+
+
+video {
+	top: 0;
+	left: 0;
+	max-width: 100%;
+	width: 100%;
+	height: auto;
+}
+img {
+	max-width: 100%;
+	width: auto\9;
+}
+
+
+figure {
+	margin-top: 0;
+	margin-bottom: 1.3em;
+}
+figure p {
+	text-align: center;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+figure p:first-child {
+	line-height: 0;
+}
+figcaption {
+	padding: 0 5%;
+	margin-bottom: 0;
+	margin-top: 0.65em;
+	vertical-align: bottom;
+}
+
+
+/* On iOS devices, all edge-to-edge elements are fully edge-to-edge */
+.edge-to-edge,
+.uml-flowchart, .uml-sequence-diagram {
+	display: inline-block;
+	height: auto;
+	width: 100vw;
+	max-width: 1600px;
+	max-height: none;
+
+	margin-left: -35vw;
+	margin-right: -35vw;
+
+	border-radius: 0;
+}
+.edge-to-edge figure {
+	display: inline-block;
+}
+.edge-to-edge p {
+	margin-bottom: 0;
+	line-height: 0;
+}
+.uml-flowchart, .uml-sequence-diagram {
+	overflow-x: scroll;
+	/* Momentum scrolling in iOS */
+	-webkit-overflow-scrolling: touch;
+}
+.inline {
+	width: 100%;
+	margin-left: 0;
+	margin-right: 0;
+}
+.half-inline {
+	display: inline-block;
+	height: auto;
+	width: 50%;
+}
+.half-inline,
+.strict-inline {
+	border-radius: 0.25em;
+}
+
+
+img.no-shadow {
+	box-shadow: none;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+}
+img.shadow {
+	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.12), 0 2px 10px 0 rgba(0, 0, 0, 0.10);
+}
+.apple-watch-screenshot {
+	border-radius: 0.5em;
+}
+.macos-screenshot {
+	box-shadow: 0 0 1rem #acacac;
+	border-radius: 0.25em;
+}
+
+
+/* The size of the iOS screenshot will change depending on how many should be
+shown inline. I have no doubt there's a dynamic, nice way to do it but I doubt
+there's a way to do so with the way the rest of the content is currently
+flowed (my responsive stuff is basically a hack as is...) */
+.ios-one-screen,
+.ios-two-screens,
+.ios-three-screens {
+	border-radius: 0.25em;
+}
+.ios-one-screen {
+	max-width: 100%;
+	text-align: center;
+	margin: 0 auto;
+}
+.ios-two-screens {
+	max-width: 43vw;
+	margin-left: 3vw;
+	margin-right: 3vw;
+}
+.ios-three-screens {
+	max-width: 28vw;
+	margin-left: 2vw;
+	margin-right: 2vw;
+}
+
+
+.stroke-transparent {
+	stroke: white;
+}
+.stroke-color {
+	stroke: #7F7F7F;
+}
+.fill-transparent {
+	fill: white;
+}
+.fill-color {
+	fill: #7F7F7F;
+}
+
+
+h2 img {
+	max-width: 16px;
+	margin-left: 0.1em;
+	display: inline;
+}
+
+
+.permalink {
+	display: inline-block;
+	position: absolute;
+	width: 0.875em;
+	margin-top: 0.175em;
+	margin-left: 0.25em;
+	opacity: 1;
+}
+
+
+/* CODE ----------------------------------------------------------------------------- */
+
+
+code, pre code,
+mark, mark code,
+kbd {
+	color: rgba(51, 51, 51, 0.9);
+}
+
+/**
+ * Inline code snippets
+ */
+code,
+kbd {
+	background-color: #EFF0F1;
+	border: 1px solid rgba(0, 0, 0, .02);
+
+	border-radius: 0.25em;
+	margin: 0;
+	word-wrap: break-word;
+}
+mark code {
+	padding: 0;
+	background-color: transparent;
+	border: none;
+}
+del code {
+	padding: 0;
+	background-color: transparent !important;
+	border: none;
+	font-size: 1em;
+}
+kbd {
+	background-color: #EFF0F1;
+	background-image: -moz-linear-gradient(#FEFEFE, #EFF0F1);
+	background-image: -webkit-linear-gradient(#FEFEFE, #EFF0F1);
+	background-image: linear-gradient(#FEFEFE, #EFF0F1);
+	color: rgba(51, 51, 51, 0.75);
+	border: 1px solid #DDDDDD;
+	border-bottom-color: #CCCCCC;
+	-webkit-box-shadow: inset 0 -1px 0 #CCCCCC;
+	-moz-box-shadow: inset 0 -1px 0 #CCCCCC;
+	-ms-box-shadow: inset 0 -1px 0 #CCCCCC;
+	box-shadow: inset 0 -1px 0 #CCCCCC;
+
+	padding-left: 0.2em;
+	padding-right: 0.2em;
+	box-sizing: border-box;
+}
+
+mark,
+code {
+	border-radius: 0.25em;
+}
+
+/**
+ * There are two core types of code blocks: those that are edge-to-edge, dark
+ * themed, and support advanced features like syntax highlighting
+ * (.codehilite) and those that are inline, gray-themed more suited to
+ * displaying preformatted text (pre).
+ *
+ * This sadly leads to some confusing crossover, however, as pre is also a
+ * child of .codehilite, so the base style is applied first to pre and then
+ * overwritten as necessary with ".codehilite pre" and ".codehilite pre code".
+ */
+.codehilite,
+.highlight {
+	background-color: #272821;
+	color: white;
+
+	overflow: hidden;
+	/**
+	 * iOS used to resize the code block text size to be *far* larger than it was
+	 * supposed to be This prevents this from happening.
+	 */
+	-webkit-text-size-adjust: none;
+	/* Momentum scrolling in iOS */
+	-webkit-overflow-scrolling: touch;
+
+	display: inline-block;
+	text-align: left;
+	width: 101vw;
+	height: auto;
+	max-width: 1600px;
+	max-height: none;
+	margin: 0 -28vw;
+	margin-bottom: 1.3em;
+	line-height: 1em;
+}
+.highlight pre code {
+	color: white;
+}
+.codehilite pre,
+.highlight pre {
+	overflow: scroll;
+	-webkit-overflow-scrolling: none;
+}
+pre {
+	background-color: #EFF0F1;
+	border: 1px solid rgba(0, 0, 0, .02);
+	color: rgba(51, 51, 51, 0.9);
+
+	text-align: left;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	border-radius: 0.25em;
+
+	word-break: normal;
+	max-width: none;
+	width: 100%;
+	margin-top: 0;
+	margin-bottom: 1.3em;
+
+	overflow-y: hidden;
+	/* Fix for that awful, double scrollview thing in Windows */
+	-ms-overflow-style: none;
+	overflow: -moz-scrollbars-none;
+
+	/* Momentum scrolling in iOS */
+	-webkit-overflow-scrolling: touch;
+}
+pre code {
+	max-width: none;
+	padding: 0;
+}
+pre.ascii-art code {
+	line-height: 1.05em;
+}
+pre.wrap,
+pre.wrap code {
+	white-space: normal !important;
+	word-break: break-word;
+}
+.codehilite,
+.highlight,
+pre {
+	box-sizing: border-box;
+}
+pre {
+	padding: 0.65em 0.975em;
+}
+.codehilite pre,
+.highlight pre {
+	color: white;
+
+	max-width: initial;
+	margin: 0;
+	border-radius: none;
+}
+.codehilite pre,
+.highlight pre,
+pre code {
+	white-space: pre;
+	background-color: transparent;
+	display: inline-block;
+	border: 0;
+}
+
+/**
+ * Changes the highlight style for code blocks so it more closely matches that
+ * of Sublime Text's Monokai theme.
+ * 
+ * These must be separate, otherwise the highlighting doesn't work.
+ */
+pre::selection {
+	background: hsla(54, 8%, 26%, 0.9);
+}
+pre::-moz-selection,
+pre ::-moz-selection {
+	text-shadow: none;
+	background: hsla(54, 8%, 26%, 0.9);
+}
+pre::selection,
+pre ::selection {
+	text-shadow: none;
+	background: hsla(54, 8%, 26%, 0.9);
+}
+
+
+/* FOOTER --------------------------------------------------------------------------- */
+
+
+/* ----- FOOTNOTES ----- */
+footer {
+	margin-top: 2.6em;
+	margin-bottom: 0;
+}
+sup[id^=fnref] {
+	font-size: smaller;
+	vertical-align: super;
+}
+
+
+/* ----- PAGE NAVIGATION ----- */
+#navigation-previous {
+	display: inline-block;
+	float: left;
+	text-align: left;
+}
+#navigation-next {
+	display: inline-block;
+	float: right;
+	text-align: right;
+}
+	#navigation-next h4 {
+		text-align: right;
+	}
+#navigation-next,
+#navigation-previous {
+	min-width: 5.5em;
+}
+#navigation-next h4,
+#navigation-previous h4 {
+	margin-top: 0;
+}
+
+
+/* ----- FOOTNOTE BUTTONS ----- */
+#blog-footer-buttons {
+	padding-top: 1.3em;
+	padding-left: 0;
+	display: inline-block;
+	text-align: center;
+	width: 100%;
+	margin-left: 0;
+	margin-right: 0;
+}
+	#blog-footer-buttons svg {
+		position: relative;
+		display: inline-block;
+		text-align: center;
+		width: 24px;
+		height: 24px;
+		margin-left: 1.3em;
+		margin-right: 1.3em;
+	}
+	#blog-footer-buttons a {
+		text-decoration: none;
+	}
+
+
+/* MISC ----------------------------------------------------------------------------- */
+
+
+/* ----- ANCHORS ----- */
+.anchor {
+	text-decoration: none !important;
+	padding: 0 .34em;
+	opacity: 0;
+	float: none;
+	margin-left: 0em;
+	font-size: 1em;
+}
+/* When hovering the header text or the anchor location itself, show anchor */
+.anchored:hover .anchor,
+.anchored .anchor:hover {
+	opacity: 1;
+}
+
+
+/* ----- ANIMATIONS ----- */
+/* Transitioning background colors */
+button, /* For standard, form buttons */
+main,
+html, /* For dark mode transition */
+#dark-mode-toggle,
+.link-button, /* For hovering link buttons, like those on the About page */
+menu,
+input, textarea { 
+	transition: background-color 0.2s ease;
+}
+menu ul a {
+	transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Transitioning background */
+hr {
+	transition: background 0.2s ease;
+}
+
+/* Transitioning shadows */
+.gallery-image, #gallery video, /* For hovering special "cards" like on project pages (TODO refactor to generic .cards) */
+.project { /* For hovering special project "cards" on the project page (TODO refactor to generic .cards) */
+	transition: box-shadow 0.2s ease;
+}
+
+/* Transitioning colors */
+h1 a,
+#dark-mode-toggle label,
+#blog-footer-buttons a,
+#social-buttons a,
+main a,
+menu a {
+	transition: color 0.2s ease;
+}
+
+/* SVG Stroke */
+.stroke-transparent,
+.stroke-color {
+	transition: stroke 0.2s ease;
+}
+/* SVG Fill */
+.fill-transparent,
+.fill-color {
+	transition: fill 0.2s ease;
+}
+
+/* Everything */
+.anchor {
+	transition: all 0.2s ease;
+}
+
+/* Border */
+input, textarea {
+	transition: border 0.1s ease;
+}
+
+/* Resizing / Transformations */
+.card,
+.project {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.show-when-hovered,
+.hide-when-hovered {
+	transition: opacity 0.2s ease;
+}
+
+
+/* ----- POSITIONING ----- */
+.center {
+	text-align: center;
+	width: auto;
+}
+
+
+.vertical-top {
+	vertical-align: top;
+}
+.inline-block {
+	display: inline-block;
+}
+
+
+.large-top-margin {
+	margin-top: 2.6em;
+}
+.large-bottom-margin {
+	margin-bottom: 2.6em;
+}
+.large-top-pad {
+	padding-top: 2.6em;
+}
+.large-bottom-pad {
+	padding-bottom: 2.6em;
+}
+.top-margin {
+	margin-top: 1.3em;
+}
+.bottom-margin {
+	margin-bottom: 1.3em;
+}
+.small-top-margin {
+	margin-top: 0.65em;
+}
+.small-bottom-margin {
+	margin-bottom: 0.65em;
+}
+
+
+.show-when-dark {
+	display: none !important;
+}
+.show-when-light {
+	display: inline-block !important;
+}
+
+.hide-when-small {
+	display: none !important;
+}
+
+
+/* MEDIA QUERIES ==================================================================== */
+
+
+/* Tiny devices (Width smaller than 320px) */
+@media(max-width: 318px) {
+	/* NAVBAR ------------------------------------- */
+
+
+	/* --- MENU --- */
+	#dynamic-menu-height {
+		height: 0 !important;
+	}
+	.fixed-menu {
+		position: relative;
+		left: initial;
+		top: initial;
+	}
+}
+
+/* 
+Medium devices (iPads)
+Font size: 19px, ~Margin&Padding: 28.5px
+*/
+@media (min-width: 700px) {
+	/* CONTAINER ---------------------------------- */
+
+
+	main {
+		margin-top: 5.2em;
+		padding-left: 0;
+		padding-right: 0;
+		max-width: 34em;
+	}
+	.wide-page main {
+		max-width: 36em;
+		padding-left: 5%;
+		padding-right: 5%;
+	}
+
+
+	/* TYPOGRAPHY --------------------------------- */
+
+
+	/* --- SIZES, MARGINS, AND WEIGHTS --- */
+	html {
+		font-size: 19px;
+	}
+	menu ul {
+		line-height: 1.8em; /* 1.2 header line height * 1.5 */
+	}
+	menu {
+		font-weight: 500;
+		font-size: 1rem;
+	}
+
+
+	/* ----- LISTS ----- */
+	.task-list {
+		margin-left: 0.65em;
+	}
+	.task-list input {
+		margin: 0 0.1em 0 0 !important;
+	}
+
+
+	/* NAVBAR ------------------------------------- */
+
+
+	/* --- MENU --- */
+	menu {
+		position: fixed;
+		top: 0 !important;
+	}
+		menu header {
+			text-align: left;
+			position: absolute;
+			padding-left: 0.45em;
+			padding-top: 0.45em;
+		}
+		menu ul {
+			margin-left: 9rem;
+			text-align: left;
+		}
+			menu ul li {
+				min-width: 8rem;
+				line-height: 1em;
+				padding-top: 1.25rem;
+				padding-bottom: 0;
+			}
+			menu ul a {
+				padding-top: 1.1rem;
+				padding-bottom: .36rem;
+				margin-right: -0.125rem;
+				margin-left: -0.125rem;
+			}
+
+
+	/* --- LOGO --- */
+	#logo {
+		margin-top: 0;
+	}
+	#mac {
+		width: 32px;
+		height: 32px;
+	}
+	#signature {
+		height: 47px;
+		margin-left: 0;
+	}
+
+
+	/* --- ACCESSIBILITY TOGGLES --- */
+	#dark-mode-toggle {
+		cursor: pointer;
+
+		float: right;
+		position: absolute;
+		display: inline;
+		
+		width: 100%;
+		left: 100%;
+
+		top: 0;
+		margin-left: -2.75rem;
+		margin-top: 0;
+		padding-left: 0.9rem;
+		padding-bottom: 0.1375rem;
+		padding-top: 1.2rem;
+	}
+		#dark-mode-icon {
+			width: 1em;
+			height: 1em;
+		}
+		#dark-mode-toggle .fill-color {
+			fill: #7F7F7F;
+		}
+		#dark-mode-toggle .stroke-color {
+			stroke: #7F7F7F;
+		}
+
+
+	/* ELEMENTS ----------------------------------- */
+
+
+	/* --- CARDS --- */
+	.card {
+		display: inline-block;
+		margin: 0.65em;
+		margin-right: 0.5em;
+		margin-left: 0.5em;
+		min-width: 17em;
+		width: 46vw;
+		max-width: 22em; 
+	}
+		.card.large {
+			width: 75%;
+			max-width: 40em;
+			min-width: 17em;
+			margin: 0.65em;
+			display: inline-block;
+		}
+		.card.large-when-small {
+			width: 46vw;
+			margin: 0.65em;
+		}
+	.card .content .logo {
+		width: 5em;
+		height: 5em;
+	}
+	.card .content .long-logo {
+		max-height: 6.5em;
+	}
+
+
+	/* --- DIVIDERS --- */
+	hr {
+		max-width: 34em;
+	}
+
+
+	/* --- FORMS, BUTTONS, AND LINKS --- */
+	input, textarea, select, button, .link-button {
+		padding: 0.375em;
+	}
+	.bigfoot-footnote__button {
+		font-size: 18px;
+	}
+	button,
+	.link-button {
+		padding-left: 1em;
+		padding-right: 1em;
+		width: auto;
+	}
+	.link-button-group li {
+		margin-left: 0.65em; /* 1.3 base type bottom margin / 2 */
+		margin-right: 0.65em; /* 1.3 base type bottom margin / 2 */
+		width: 25%;
+	}
+
+
+	/* IMAGES & VIDEO ----------------------------- */
+
+
+	/* When on the home view we want all images AND code blocks to actually be
+	bound, inline objects to provide a less distracting view of the post for
+	speed reading and/or binge reading. This will still allow the code blocks
+	to be completely edge-to-edge in the dedicated post view.*/
+	.feed-view .edge-to-edge.large {
+		display: block;
+		max-width: 800px;
+		width: 100%;
+		margin: 0;
+	}
+	.edge-to-edge {
+		margin-top: 1.3em;
+		margin-bottom: 1.3em;
+	}
+	.edge-to-edge.small {
+		margin-left: 0;
+		margin-right: 0;
+		width: 100%;
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+	.edge-to-edge.medium {
+		max-width: 800px;
+	}
+	.inline,
+	.edge-to-edge.small {
+		border-radius: 0.25em;
+	}
+
+	/* There are times we *don't* want the image itself to provide the top and bottom padding,
+	specifically, when the image also has a caption. If we retained the image padding, the caption
+	would be shoved far away, which we don't want. So, in cases like this, we provide the breathing
+	room to the parent element instead */
+	figure.breathing-room figcaption,
+	.edge-to-edge figcaption {
+		margin-top: 1.3em;
+	}
+	figure.breathing-room {
+		margin-top: 2.6em;
+		margin-bottom: 2.6em;
+	}
+	/* We don't want the image itself to have top and bottom padding when "breakthing room"
+	is in effect. This ensures that the image caption remains close to the image, while giving
+	breathing room to the whole group: both the image AND the caption. */
+	figure.breathing-room .edge-to-edge {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+	figcaption {
+		padding: 0;
+		display: inline-block;
+		max-width: 34em;
+	}
+
+	.edge-to-edge {
+		margin-top: 1.3em;
+		margin-bottom: 1.3em;
+	}
+		.edge-to-edge figure {
+			margin-bottom: 0;
+		}
+	.ios-one-screen,
+	.ios-two-screens,
+	.ios-three-screens {
+		max-width: 28vw;
+	}
+	.ios-two-screens,
+	.ios-three-screens {
+		margin: 0 2vw;
+	}
+
+	h2 img {
+		max-width: 32px;
+	}
+
+
+	/* CODE --------------------------------------- */
+
+
+	.codehilite,
+	.highlight {
+		width: 100%;
+		margin: 0;
+		margin-bottom: 1.3em;
+		display: block;
+	}
+	pre,
+	.codehilite,
+	.highlight {
+		border-radius: 0.25em;
+	}
+	.codehilite + hr,
+	.highlight + hr {
+		margin-top: 2.6em;
+	}
+
+
+	/* FOOTER ------------------------------------- */
+
+
+	/* --- FOOTNOTE BUTTONS --- */
+	#blog-footer-buttons {
+		padding-top: 2px;
+		min-width: 4.5em;
+		width: auto;
+		margin: 0 1.3em;
+	}
+		#blog-footer-buttons svg {
+			width: 1.25em;
+			height: 1.25em;
+		}
+
+
+	/* MISC --------------------------------------- */
+
+
+	.hide-when-small {
+		display: initial !important;
+	}
+	#dynamic-menu-height {
+		height: 0 !important;
+	}
+}
+@media (min-width: 801px) {
+	.edge-to-edge.medium,
+	.feed-view .edge-to-edge {
+		border-radius: 0.25em;
+	}
+}
+
+/* 
+Large devices (Macs)
+Font size: 21px, ~Margin&Padding: 31.5px
+*/
+@media (min-width: 900px) {
+	/* CONTAINER ---------------------------------- */
+
+
+	main {
+		max-width: 35em;
+	}
+	.wide-page main {
+		max-width: 46em;
+	}
+
+
+	/* TYPOGRAPHY --------------------------------- */
+
+
+	/* --- SIZES, MARGINS, AND WEIGHTS --- */
+	html {
+		font-size: 21px;
+	}
+
+
+	/* ----- LISTS ----- */
+	.task-list {
+		margin-left: .74rem;
+	}
+	.task-list input {
+		margin: 0 !important;
+	}
+
+
+	/* NAVBAR ------------------------------------- */
+
+
+	/* --- MENU --- */
+	menu {
+		/* Fix for Chrome and Firefox hover boxes not overlapping the bottom border (the bottom border was on the outside, while Safari had it inside) */
+		box-sizing: border-box;
+		height: 2.675rem;
+	}
+	menu header {
+		padding-left: 0.75em;
+		padding-top: 0.5em;
+	}
+	menu ul li {
+		padding-top: 1.15rem;
+	}
+	menu ul a {
+		padding-top: 1.15rem;
+		padding-bottom: .425rem;
+	}
+
+
+	/* --- ACCESSIBILITY TOGGLES --- */
+	#dark-mode-toggle {
+		margin-left: -2.75rem;
+		margin-top: 0;
+		padding-left: 0.9rem;
+		padding-bottom: 0.1375rem;
+		padding-top: 1.1rem;
+	}	
+	
+
+	/* ELEMENTS ------------------------------------- */
+
+
+	/* --- CARDS --- */
+	.card,
+	.card.large-when-small {
+		width: 42.5vw; 
+		min-width: 18.5em;
+		max-width: 23.5em;
+	}
+
+
+	/* --- DIVIDERS --- */
+	hr {
+		max-width: none;
+	}
+
+
+	/* --- FORMS, BUTTONS, AND LINKS --- */
+	button,
+	.link-button {
+		padding-left: 1em;
+		padding-right: 1em;
+	}
+
+
+	/* IMAGES & VIDEO ------------------------------- */
+
+
+	.edge-to-edge.medium {
+		border-radius: 0;
+		max-width: 1000px;
+		width: 100vw;
+	}
+	.edge-to-edge.large {
+		margin-left: -35vw;
+		margin-right: -35vw;
+		width: 100vw;
+		max-width: 1303px;
+		border-radius: 0;
+	}
+	figcaption {
+		max-width: 35em;
+	}
+	/* Lets iOS Screenshots spill beyond the text width bounds when in post view,
+	   but stay bound for home view. */
+	.ios-one-screen,
+	.ios-two-screens,
+	.ios-three-screens {
+		width: 25vw;
+		max-width: 17em;
+	}
+	.ios-two-screens,
+	.ios-three-screens {
+		margin-left: 1.3em;
+		margin-right: 1.3em;
+	}
+
+
+	/* MISC ----------------------------------------- */
+
+
+	/* --- ANCHORS --- */
+	.anchor {
+		float: left;
+		margin-left: -1.4em;
+		font-size: 1rem;
+	}
+}
+@media (min-width: 1001px) {
+	.edge-to-edge.medium {
+		border-radius: 0.25em;
+	}
+}
+@media (min-width: 1304px) {
+	.edge-to-edge.large {
+		border-radius: 0.25em;
+	}
+}
+@media (min-width: 1601px) {
+	.edge-to-edge {
+		border-radius: 0.25em;
+	}
+}
+
+
+/* DEFAULT THEME (BLUE) ============================================================= */
+
+
+.active,
+.hover:hover:not(.active),
+main a,
+main a:link,
+main a:visited,
+.anchor,
+#blog-footer-buttons a,
+#social-buttons a {
+    color: #007AFF;
+}
+.anchor:hover,
+main a:hover,
+#blog-footer-buttons a:hover,
+#social-buttons a:hover {
+    color: #0063CE;
+}
+
+h1 a:hover {
+    color: #007AFF !important;
+}
+
+#dark-mode-toggle:hover .fill-color,
+a .fill-color {
+    fill: #007AFF;
+}
+#dark-mode-toggle:hover .stroke-color {
+    stroke: #007AFF;
+}
+
+button,
+.link-button {
+    background-color: #007AFF;
+}
+button:hover,
+.link-button:hover {
+    background-color: #0063CE;
+}
+input:focus,
+textarea:focus {
+    border-color: #007AFF !important;
+}
+a:hover .fill-color {
+    fill: #0063CE !important;
+}
+
+/* Highlights (must be seperate, combining them breaks the style) */
+::selection { /* Safari */
+    background: #007AFF;
+    color: white;
+}
+::-moz-selection { /* Firefox */
+    background: #007AFF;
+    color: white;
+}
+
+#dark .active,
+#dark .hover:hover:not(.active) {
+	color: #007AFF;
+}
+
+
+/* DARK THEME ======================================================================= */
+
+
+/* CONTAINER ---------------------------------- */
+
+
+#dark,
+#dark #parallax-foreground {
+	background-color: #272822;
+	color: #F8F8F2;
+}
+#dark #parallax-foreground {
+	box-shadow: 0 -20px 20px -20px rgba(0, 0, 0, 0.75);
+}
+#dark #content,
+#dark .active a  {
+	background-image: none;
+}
+
+
+/* TYPOGRAPHY --------------------------------- */
+
+
+/* --- TEXT STYLES --- */
+#dark h1 a,
+#dark h1 a:link,
+#dark h1 a:visited {
+	color: #F8F8F2;
+}
+#dark del, #dark del code {
+	color: #6B6A6A !important;
+}
+#dark time, #dark figcaption, #dark .weak, #dark small {
+	color: #A1A1A1;
+}
+
+
+/* NAVBAR ------------------------------------- */
+
+
+/* --- MENU --- */
+#dark menu {
+	background-color: rgba(23, 24, 20, 0.95);
+	border-bottom: 1px solid rgba(175, 175, 175, 0.1);
+}
+#dark.safari menu {
+	background-color: rgba(23, 24, 20, 0.7);
+}
+#dark menu,
+#dark menu ul a {
+	color: #D1D1D0;
+}
+#dark .active,
+#dark .hover:hover:not(.active),
+#dark #dark-mode-toggle:hover {
+	background-color: unset;
+}
+
+
+/* --- LOGO --- */
+#dark #sunglasses,
+#dark #logo:hover #smirk {
+	opacity: 1;
+}
+#dark #smirk {
+	opacity: 0;
+}
+#dark .signature-color {
+	fill: #D1D1D0;
+}
+
+
+/* --- ACCESSIBILITY TOGGLES --- */
+#dark #dark-mode-toggle .fill-color {
+	fill: #D1D1D0;
+}
+#dark #dark-mode-toggle .stroke-color {
+	stroke: #D1D1D0;
+}
+#dark #dark-mode-toggle:hover .fill-color {
+    fill: #007AFF;
+}
+#dark #dark-mode-toggle:hover .stroke-color {
+    stroke: #007AFF;
+}
+
+
+/* ELEMENTS ----------------------------------- */
+
+
+/* --- CARDS --- */
+#dark .card {
+	background-color: #3C3D37;
+}
+#dark .card .label .primary {
+	color: white;
+}
+#dark .card .label .secondary,
+#dark .card .label .small {
+	color: #CFCFC2;
+}
+
+/* --- DIVIDERS --- */
+#dark hr {
+	background-color: #5A5B56;
+	background: #5A5B56;
+	background: -moz-linear-gradient(left, #272822 0%, #5A5B56 25%, #5A5B56 50%, #5A5B56 75%, #272822 100%);
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%, #272822), color-stop(25%, #5A5B56), color-stop(50%, #5A5B56), color-stop(75%, #5A5B56), color-stop(100%, #272822));
+	background: -webkit-linear-gradient(left, #272822 0%, #5A5B56 25%, #5A5B56 50%, #5A5B56 75%, #272822 100%);
+	background: -o-linear-gradient(left, #272822 0%, #5A5B56 25%, #5A5B56 50%, #5A5B56 75%, #272822 100%);
+	background: -ms-linear-gradient(left, #272822 0%, #5A5B56 25%, #5A5B56 50%, #5A5B56 75%, #272822 100%);
+	background: linear-gradient(to right, #272822 0%, #5A5B56 25%, #5A5B56 50%, #5A5B56 75%, #272822 100%);
+	filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#272822', endColorstr='#272822', GradientType=1 );
+}
+
+
+/* --- TABLES --- */
+#dark table.fancy td {
+	border-color: rgba(16, 15, 14, 0.5);
+}
+#dark table.fancy th {
+	color: #CFCFC2;
+	background-color: rgba(16, 15, 14, 0.5);
+}
+
+
+/* IMAGES & VIDEO ----------------------------- */
+
+
+#dark .fill-color,
+#dark svg:hover .fill-color {
+	fill: #F8F8F2;
+}
+#dark .stroke-color {
+	stroke: #F8F8F2;
+}
+#dark .fill-transparent {
+	fill: #3C3D37;
+}
+#dark .stroke-transparent {
+	stroke: #3C3D37;
+}
+
+#dark .uml-sequence-diagram path,
+#dark .uml-sequence-diagram rect,
+#dark .uml-flowchart rect {
+	stroke: #F8F8F2;
+}
+#dark .uml-sequence-diagram rect,
+#dark .uml-flowchart text,
+#dark .uml-flowchart path {
+	fill: #F8F8F2;
+}
+#dark .uml-flowchart rect {
+	fill: #272822;
+}
+#dark .uml-flowchart path[fill="none"] {
+	fill: none;
+	stroke: #F8F8F2;
+}
+#dark .uml-flowchart path[fill="#ffffff"][stroke="#000000"] {
+	fill: #272822;
+	stroke: #F8F8F2;
+}
+
+#dark .show-when-dark {
+	display: inline-block !important;
+}
+#dark .show-when-light {
+	display: none !important;
+}
+
+#dark .macos-screenshot {
+	box-shadow: 0px 0px 1rem #101010;
+}
+
+
+/* CODE --------------------------------------- */
+
+
+#dark pre, #dark code {
+	background-color: rgba(16, 15, 14, 0.5);
+	color: #CFCFC2;
+}
+#dark pre code {
+	background-color: transparent;
+	color: #CFCFC2;
+}
+#dark kbd {
+	background-color: rgba(16, 15, 14, 0.5);
+	background-image: -moz-linear-gradient(rgba(75, 75, 75, 0.5), rgba(16, 15, 14, 0.5));
+	background-image: -webkit-linear-gradient(rgba(75, 75, 75, 0.5), rgba(16, 15, 14, 0.5));
+	background-image: linear-gradient(rgba(75, 75, 75, 0.5), rgba(16, 15, 14, 0.5));
+	color: rgba(207, 207, 194, 0.9);
+	border-color: #1B1A18;
+	border-bottom-color: #0b0b0b;
+	box-shadow: inset 0 -1px 0 #0b0b0b;
+}
+#dark input, #dark textarea {
+	background-color: rgba(16, 15, 14, 0.5);
+	color: #F8F8F2;
+	border: 1px solid #1B1A18;
+}
+
+
+/* FOOTNOTES ---------------------------------- */
+
+
+#dark .bigfoot-footnote__content,
+#dark .bigfoot-footnote__wrapper,
+#dark .bigfoot-footnote__tooltip,
+#dark .bigfoot-footnote {
+	background-color: #3C3D37;
+	color: white;
+}
+#dark .bigfoot-footnote__tooltip,
+#dark .bigfoot-footnote {
+	border-color: #3A3B35;
+}
+#dark .hint--bottom-left:before,
+#dark .hint--bottom-right:before,
+#dark .hint--bottom:before {
+	border-bottom-color: #3C3D37;
+}
+
+
+/* MISC --------------------------------------- */
+
+
+/* --- HINT --- */
+#dark .hint--top-left:before,
+#dark .hint--top-right:before,
+#dark .hint--top:before {
+	border-top-color: #3C3D37;
+}
+#dark [data-hint]:after {
+	background-color: #3C3D37;
+	color: white;
+}

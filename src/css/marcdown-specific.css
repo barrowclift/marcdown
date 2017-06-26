@@ -1,0 +1,132 @@
+/* ----- CONTAINER ----- */
+
+main {
+	margin-top: 3.328rem; /* Adding a bit more space for the dark mode toggle */
+}
+
+/* ----- LISTS ----- */
+
+/* The vast majority of the time I'm making lists in my writing, it's short
+   lists. While this is supported with the .compact-list class, that means I'd
+   have to make the lists in HTML far more often than not. Thus, to better
+   accomidate my Markdown writing habits outside of barrowclift.me the default
+   list style is compact.*/
+ol ul,
+ol ol,
+ul ol,
+ul ul,
+li {
+	margin-bottom: 0 !important;
+	margin-top: 0 !important;
+}
+li p,
+li pre {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+/* ----- MENU ----- */
+
+/* The "menu" is much simplier for Marcdown, it's just the dark mode toggle */
+menu {
+	position: absolute;
+	top: 0;
+	left :0;
+	display: inline-block;
+	width: 100%;
+	z-index: 100;
+	box-shadow: none;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	background-image: none;
+	background-color: unset !important;
+}
+menu,
+.safari menu,
+#dark menu,
+#dark.safari menu {
+	border: none;
+	-webkit-backdrop-filter: none;
+	backdrop-filter: none;
+}
+
+
+/* ----- ACCESSIBILITY TOGGLES ----- */
+
+#dark-mode-toggle {
+	border-radius: 0 0 0 .5em;
+	padding: 1em;
+	margin: 0;
+	text-align: right;
+	line-height: 1em;
+	background-color: rgba(255, 255, 255, 0.7);
+	left: 0;
+	min-width: unset;
+	position: relative;    
+	float: right;
+	text-align: right;
+	line-height: 1em;
+	color: #007AFF;
+	transition: background-color 0.2s ease, color 0.2s ease;
+}
+.safari #dark-mode-toggle {
+	-webkit-backdrop-filter: saturate(180%) blur(20px);
+	backdrop-filter: saturate(180%) blur(20px);
+}
+#dark #dark-mode-toggle,
+#dark #dark-mode-toggle:hover {
+	background-color: rgba(39, 40, 34, 0.7);
+}
+#dark-mode-toggle:hover {
+	color: #0063CE;
+}
+
+/* ----- FORMS & BUTTONS ----- */
+
+form, input, button, textarea, .link-button {
+	display: inline-block;
+	margin-bottom: 0;
+}
+
+/* ----- IMAGES & VIDEO ----- */
+
+img {
+	border-radius: 0.25em;
+	-moz-border-radius: 0.25em;
+	-webkit-border-radius: 0.25em;
+}
+
+/* Tiny devices (width smaller than 320px, the original iPhone screen) */
+@media(max-width: 319px) {
+	#dark-mode-toggle {
+		display: inline;
+	}
+}
+
+/* 
+Medium devices (iPads)
+Font size: 19px, ~Margin&Padding: 28.5px
+*/
+@media (min-width: 700px) {
+	main {
+		margin-top: 2.828rem; /* 1.414 base header top margin * 2 */
+	}
+	menu {
+		position: fixed;
+		display: block;
+		width: 100%;
+		z-index: 100;
+		pointer-events: none;
+	}
+	#dark-mode-checkbox,
+	#dark-mode-toggle {
+		pointer-events: initial;
+	}
+	#dark-mode-toggle {
+		margin-left: 0 !important;
+		padding: 0.5em !important;
+		padding-left: 0.6em !important;
+		width: auto;
+		max-width: 1.3em;
+	}
+}
