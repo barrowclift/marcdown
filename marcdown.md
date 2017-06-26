@@ -42,7 +42,7 @@ Marcdown was crafted from day one for Apple's [San Francisco](https://developer.
 
 ### Headers
 
-All six headers adhere to a [1.2 minor third scale](http://type-scale.com) with subtle font weighting every two levels to establish and maintain contextual hierarchy, all [without the need for noisy underlines](http://practicaltypography.com/headings.html). You can see all headers stacked together [here](headers.html).
+All six headers adhere to a [1.2 minor third scale](http://type-scale.com) with subtle font weighting every two levels to establish and maintain contextual hierarchy, all [without the need for noisy underlines](http://practicaltypography.com/headings.html). You can see all headers stacked together [here](/marcdown/headers.html).
 
 ### Links
 
