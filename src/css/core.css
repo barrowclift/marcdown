@@ -182,7 +182,7 @@ time {
 	margin-top: 0.5em;
 	/* Always have time below whatever content it's representing */
 	display: block;
-	font-weight: inherit;
+	font-weight: 600;
 }
 	.toc time {
 		display: none;
@@ -998,10 +998,10 @@ h2 img {
 .permalink {
 	display: inline-block;
 	position: absolute;
-	width: 0.875em;
-	margin-top: 0.175em;
+	width: 0.75em;
+	margin-top: 0.225em;
 	margin-left: 0.25em;
-	opacity: 1;
+	opacity: 1
 }
 
 
@@ -1328,7 +1328,7 @@ input, textarea {
 /* Resizing / Transformations */
 .card,
 .project {
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .show-when-hovered,
