@@ -1,4 +1,4 @@
-Marcdown<time>A Markdown theme for humans</time>
+<time>A Markdown theme for humans</time>Marcdown
 ================================================
 
 I write everything in [Markdown](https://daringfireball.net/projects/markdown), but I've never been particularly satisfied with the available styles. Sure, [Github Flavored Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) is a fine default, but its overemphasis on borders and thick lines adds too much visual noise for my tastes. I found similar issues with other popular styles; while they each had their own strengths, they always fell short by failing to meet at least one of my three requirements:

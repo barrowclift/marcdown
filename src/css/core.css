@@ -36,7 +36,9 @@ Small devices (iPhones)
 Font size: 14px, ~Margin&Padding: 20px
 */
 
+
 /* CONTAINER ------------------------------------------------------------------------ */
+
 
 html {
 	background-color: white;
@@ -108,7 +110,6 @@ code {
 }
 
 
-
 /* ----- KERNING ----- */
 input,
 textarea {
@@ -124,6 +125,12 @@ del code {
 	/* 1em inline code is *way* too spaced out by default. This tightens it up slightly to make
 	   it better match the kerning of the surrounding text. */
 	letter-spacing: -0.076em;
+}
+h1, h2 {
+	letter-spacing: 0.01em;
+}
+time {
+	letter-spacing: 0;
 }
 
 
@@ -166,7 +173,7 @@ h4, .admonition-title {
 h5 {
 	font-size: 1em;
 }
-h6 {
+h6, .anchor {
 	font-size: 0.833em;
 }
 h1, h2, h3, h4, h5, h6, time,
@@ -178,7 +185,7 @@ menu ul {
 }
 time {
 	font-size: 1rem;
-	margin-bottom: 0;
+	margin-bottom: 0.5em;
 	margin-top: 0.5em;
 	/* Always have time below whatever content it's representing */
 	display: block;
@@ -239,7 +246,7 @@ mark.tag {
 
 
 /* ----- LISTS ----- */
-/* Normal lists. CSS only lets us statically define the depth ahead of time, so the max supported depth is 6 */
+/* Normal lists */
 ol {
 	list-style-type: decimal;
 }
@@ -249,47 +256,24 @@ ol {
 		ol ol ol {
 			list-style-type: upper-roman;
 		}
-			ol ol ol ol {
-				list-style-type: lower-alpha;
-			}
-				ol ol ol ol ol {
-					list-style-type: lower-roman;
-				}
-					ol ol ol ol ol ol {
-						list-style-type: lower-greek;
-					}
 ul {
 	list-style-type: disc;
 }
 	ul ul {
 		list-style-type: none;
 	}
-	ul ul li:before {
-		content: "–"; /* long dash */
-		position: absolute;
-		margin-left: -1em;
-	}
+		ul ul li:before {
+			content: "-";
+			position: absolute;
+			margin-left: -1em;
+		}
 		ul ul ul {
 			list-style-type: circle;
 		}
-		ul ul ul li:before {
-			content: none;
-			margin-left: 0;
-		}
-			ul ul ul ul {
-				list-style-type: none;
+			ul ul ul li:before {
+				content: none;
+				margin-left: 0;
 			}
-			ul ul ul ul li:before {
-				content: "▸";
-				position: absolute;
-				margin-left: -1em;
-			}
-				ul ul ul ul ul li:before {
-					content: "-"; /* short dash */
-				}
-					ul ul ul ul ul ul li:before {
-						content: "▹";
-					}
 /* Raw list of items, no bullets, padding, or frills at all (good for UI element lists) */
 .bare-list {
 	list-style: none;
@@ -327,7 +311,9 @@ dt, dd {
 
 
 /* ----- TEXT STYLES ----- */
-h1, h2,
+h1, h2 {
+	font-weight: 900;
+}
 strong {
 	font-weight: 700;
 }
@@ -337,7 +323,7 @@ dt,
 button,
 .link-button,
 table.fancy thead, table.fancy th {
-	font-weight: 600;
+	font-weight: 700;
 }
 h5, h6,
 menu {
@@ -389,11 +375,17 @@ menu {
 	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.03), 0 2px 10px 0 rgba(0, 0, 0, 0.03);
 	
 	text-align: left;
-	position: relative;
+	position: fixed;
 	width: 100%;
 	z-index: 10000;
 	text-align: left;
 	width: 100%;
+}
+.hide-menu menu {
+	transform: translate(0, -5.5em);
+}
+.hide-menu #logo {
+	transform: scale(0.5);
 }
 .safari menu { /* Use Safari's lovely translucency, if available (see core.js) */
 	-webkit-backdrop-filter: saturate(180%) blur(20px);
@@ -432,15 +424,7 @@ menu {
 		width: 100%;
 		text-align: center;
 	}
-.fixed-menu {
-	position: fixed;
-	left: 0;
-	top: -5.575em;
-}
-#dynamic-menu-height {
-	height: 0;
-}
-#dynamic-menu-height.collapsed {
+#menu-height-offset {
 	height: 10.125em;
 }
 
@@ -627,7 +611,7 @@ input, textarea, button, select, .link-button {
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 	border-radius: 0.25em;
-	padding: 0.75em;
+	padding: 0.65em;
 }
 button,
 .link-button {
@@ -1282,7 +1266,6 @@ sup[id^=fnref] {
 	opacity: 0;
 	float: none;
 	margin-left: 0em;
-	font-size: 1em;
 }
 /* When hovering the header text or the anchor location itself, show anchor */
 .anchored:hover .anchor,
@@ -1297,66 +1280,76 @@ button, /* For standard, form buttons */
 main,
 html, /* For dark mode transition */
 #dark-mode-toggle,
-.link-button, /* For hovering link buttons, like those on the About page */
 menu,
+.link-button,
 input, textarea { 
-	transition: background-color 0.2s ease;
+	transition: background-color 0.2s ease-in-out;
 }
 menu ul a {
-	transition: background-color 0.2s ease, color 0.2s ease;
+	transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 }
 
 /* Transitioning background */
 hr {
-	transition: background 0.2s ease;
+	transition: background 0.2s ease-in-out;
 }
 
 /* Transitioning shadows */
 .gallery-image, #gallery video, /* For hovering special "cards" like on project pages (TODO refactor to generic .cards) */
 .project { /* For hovering special project "cards" on the project page (TODO refactor to generic .cards) */
-	transition: box-shadow 0.2s ease;
+	transition: box-shadow 0.2s ease-in-out;
 }
 
 /* Transitioning colors */
 h1 a,
 #dark-mode-toggle label,
 #blog-footer-buttons a,
-#social-buttons a,
 main a,
 menu a {
-	transition: color 0.2s ease;
+	transition: color 0.2s ease-in-out;
 }
 
 /* SVG Stroke */
 .stroke-transparent,
 .stroke-color {
-	transition: stroke 0.2s ease;
+	transition: stroke 0.2s ease-in-out;
 }
 /* SVG Fill */
 .fill-transparent,
 .fill-color {
-	transition: fill 0.2s ease;
+	transition: fill 0.2s ease-in-out;
 }
 
 /* Everything */
 .anchor {
-	transition: all 0.2s ease;
+	transition: all 0.2s ease-in-out;
 }
 
 /* Border */
 input, textarea {
-	transition: border 0.1s ease;
+	transition: border 0.1s ease-in-out;
 }
 
 /* Resizing / Transformations */
 .card,
 .project {
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    transition: transform 0.25s ease-in-out, box-shadow 0.25s ease-in-out;
 }
 
 .show-when-hovered,
 .hide-when-hovered {
-	transition: opacity 0.2s ease;
+	transition: opacity 0.2s ease-in-out;
+}
+
+/* Dynamic menu hiding */
+menu.transform-animation {
+	transition: background-color 0.25s ease-in-out, transform 0.25s ease-out;
+}
+#logo.transform-animation {
+	transition: transform 0.25s ease-out;	
+}
+#menu-height-offset {
+	transition: height 0.25 ease-out;
 }
 
 
@@ -1422,10 +1415,7 @@ input, textarea {
 
 
 	/* --- MENU --- */
-	#dynamic-menu-height {
-		height: 0 !important;
-	}
-	.fixed-menu {
+	.hide-menu {
 		position: relative;
 		left: initial;
 		top: initial;
@@ -1486,6 +1476,10 @@ Font size: 19px, ~Margin&Padding: 28.5px
 		position: fixed;
 		top: 0 !important;
 	}
+	.hide-menu menu,
+	.hide-menu #logo {
+		transform: none;
+	}
 		menu header {
 			text-align: left;
 			position: absolute;
@@ -1508,6 +1502,9 @@ Font size: 19px, ~Margin&Padding: 28.5px
 				margin-right: -0.125rem;
 				margin-left: -0.125rem;
 			}
+	#menu-height-offset {
+		height: 0;
+	}
 
 
 	/* --- LOGO --- */
@@ -1735,9 +1732,6 @@ Font size: 19px, ~Margin&Padding: 28.5px
 	.hide-when-small {
 		display: initial !important;
 	}
-	#dynamic-menu-height {
-		height: 0 !important;
-	}
 }
 @media (min-width: 801px) {
 	.edge-to-edge.medium,
@@ -1877,7 +1871,7 @@ Font size: 21px, ~Margin&Padding: 31.5px
 	/* --- ANCHORS --- */
 	.anchor {
 		float: left;
-		margin-left: -1.4em;
+		margin-left: -1.5em;
 		font-size: 1rem;
 	}
 }
