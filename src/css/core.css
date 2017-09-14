@@ -1101,6 +1101,9 @@ code {
 	margin-bottom: 1.3em;
 	line-height: 1em;
 }
+.codehilite {
+	margin-top: 1.3em;
+}
 .highlight pre code {
 	color: white;
 }
@@ -1698,6 +1701,9 @@ Font size: 19px, ~Margin&Padding: 28.5px
 		margin: 0;
 		margin-bottom: 1.3em;
 		display: block;
+	}
+	.codehilite {
+		margin-top: 1.3em;
 	}
 	pre,
 	.codehilite,

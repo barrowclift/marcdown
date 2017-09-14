@@ -103,6 +103,13 @@ img {
 	}
 }
 
+/* ----- CODE ----- */
+
+/* Bash shell session '$' highlighting */
+span.gp {
+	color: rgb(198, 93, 9);
+}
+
 /* 
 Medium devices (iPads)
 Font size: 19px, ~Margin&Padding: 28.5px
