@@ -246,13 +246,7 @@
 <figcaption>My siblings and I at Smoky Mountains National Park on our third annual &ldquo;Sibs Trip&rdquo;, taken on June 26, 2016.</figcaption></p>
 </figure>
 <p>As with the image collection above, image comments is not supported by Markdown or any known plugins, so manual use of the <code>&lt;figure&gt;</code> and <code>&lt;figcaption&gt;</code> elements is required. First, decide what kind of image size you want (<code>.edge-to-edge</code>? Or maybe <code>.edge-to-edge.medium</code>? Or maybe it&rsquo;s a smaller image, so <code>.inline</code> will suffice). Whatever image size you choose, the structure remains practically the same.</p>
-<div class="codehilite"><pre><span class="c">&lt;!-- If you end up choosing an image size that&#39;s big (anything larger than</span>
-<span class="c">     .edge-to-edge.medium) then you&#39;ll want to consider add a bit more</span>
-<span class="c">     breathing room around the image &amp; caption to make it fit better in the</span>
-<span class="c">     document, you can achieve this by adding the &quot;.breathing-room&quot; class to</span>
-<span class="c">     the figure element. This additional padding is already added automatically</span>
-<span class="c">     for images without captions. --&gt;</span>
-<span class="p">&lt;</span><span class="nt">figure</span> <span class="na">markdown</span><span class="o">=</span><span class="s">&quot;1&quot;</span><span class="p">&gt;</span><span class="c">&lt;!--class=&quot;breathing-room&quot;--&gt;</span>
+<div class="codehilite"><pre><span class="p">&lt;</span><span class="nt">figure</span> <span class="na">markdown</span><span class="o">=</span><span class="s">&quot;1&quot;</span><span class="p">&gt;</span>
 ![Alt tag](some-image.jpg){: .primary-class .optional-secondary-class }
 <span class="p">&lt;</span><span class="nt">figcaption</span><span class="p">&gt;</span>Your photo caption goes here.<span class="p">&lt;/</span><span class="nt">figcaption</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">figure</span><span class="p">&gt;</span>
@@ -460,4 +454,10 @@ but not code.
 		</div>
 	</div>
 </body>
+<script>
+//http://www.beardedhacker.com/blog/2015/08/28/add-class-attribute-to-markdown-table/
+$("div.fancy-tables-start").nextUntil("div.fancy-tables-end", "table").addClass("fancy");
+// Adding additional padding to element that preceeds figcaption (formerly the manually added class "breathing-room")
+$("figcaption").prev().addClass("caption-top-pad");
+</script>
 </html>

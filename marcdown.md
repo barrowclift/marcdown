@@ -169,13 +169,7 @@ You can also add comments to any of the image classes above. Below is an example
 As with the image collection above, image comments is not supported by Markdown or any known plugins, so manual use of the `<figure>` and `<figcaption>` elements is required. First, decide what kind of image size you want (`.edge-to-edge`? Or maybe `.edge-to-edge.medium `? Or maybe it's a smaller image, so `.inline` will suffice). Whatever image size you choose, the structure remains practically the same.
 
 ```html
-<!-- If you end up choosing an image size that's big (anything larger than
-	 .edge-to-edge.medium) then you'll want to consider add a bit more
-	 breathing room around the image & caption to make it fit better in the
-	 document, you can achieve this by adding the ".breathing-room" class to
-	 the figure element. This additional padding is already added automatically
-	 for images without captions. -->
-<figure markdown="1"><!--class="breathing-room"-->
+<figure markdown="1">
 ![Alt tag](some-image.jpg){: .primary-class .optional-secondary-class }
 <figcaption>Your photo caption goes here.</figcaption>
 </figure>

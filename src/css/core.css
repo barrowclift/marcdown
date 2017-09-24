@@ -880,6 +880,9 @@ figure {
 	margin-top: 0;
 	margin-bottom: 1.3em;
 }
+figure + figure {
+	margin-top: -1.3em;
+}
 figure p {
 	text-align: center;
 	margin-top: 0;
@@ -888,10 +891,24 @@ figure p {
 figure p:first-child {
 	line-height: 0;
 }
+figure .caption-top-pad {
+	margin-top: 1.3em;
+}
+/* Adding a bit more padding so the shadow isn't so close to the figcaption text */
+figure .caption-top-pad .macos-screenshot,
+figure .caption-top-pad .shadow {
+	margin-bottom: 0.65em;
+}
+figure .caption-top-pad img {
+	margin-bottom: 0;
+}
+figure .caption-top-pad .inline {
+	margin-top: 1.3em;
+}
 figcaption {
 	padding: 0 5%;
-	margin-bottom: 0;
 	margin-top: 0.65em;
+	margin-bottom: 2.6em;
 	vertical-align: bottom;
 }
 
@@ -909,13 +926,19 @@ figcaption {
 	margin-right: -35vw;
 
 	border-radius: 0;
+	margin-top: 1.3em;
+	margin-bottom: 1.3em;
 }
-.edge-to-edge figure {
-	display: inline-block;
+	.edge-to-edge figure {
+		display: inline-block;
+	}
+	.edge-to-edge p {
+		margin-bottom: 0;
+		line-height: 0;
 }
-.edge-to-edge p {
-	margin-bottom: 0;
-	line-height: 0;
+figure .edge-to-edge {
+	margin-top: 1.3em;
+	margin-bottom: 1.3em;
 }
 .uml-flowchart, .uml-sequence-diagram {
 	overflow-x: scroll;
@@ -1098,11 +1121,9 @@ code {
 	max-width: 1600px;
 	max-height: none;
 	margin: 0 -28vw;
-	margin-bottom: 1.3em;
-	line-height: 1em;
-}
-.codehilite {
 	margin-top: 1.3em;
+	margin-bottom: 2.6em;
+	line-height: 1em;
 }
 .highlight pre code {
 	color: white;
@@ -1620,20 +1641,24 @@ Font size: 19px, ~Margin&Padding: 28.5px
 	bound, inline objects to provide a less distracting view of the post for
 	speed reading and/or binge reading. This will still allow the code blocks
 	to be completely edge-to-edge in the dedicated post view.*/
-	.feed-view .edge-to-edge.large {
+	.feed-view .edge-to-edge:not(.large):not(.medium):not(.small) {
 		display: block;
 		max-width: 800px;
 		width: 100%;
 		margin: 0;
 	}
-	.edge-to-edge {
-		margin-top: 1.3em;
-		margin-bottom: 1.3em;
-	}
+	/**
+	 * .small images are only edge-to-edge on small devices, they turn into
+	 * standard inline images for all larger devices.
+	 */
 	.edge-to-edge.small {
 		margin-left: 0;
 		margin-right: 0;
 		width: 100%;
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+	.caption-top-pad .edge-to-edge {
 		margin-top: 0;
 		margin-bottom: 0;
 	}
@@ -1645,38 +1670,24 @@ Font size: 19px, ~Margin&Padding: 28.5px
 		border-radius: 0.25em;
 	}
 
-	/* There are times we *don't* want the image itself to provide the top and bottom padding,
-	specifically, when the image also has a caption. If we retained the image padding, the caption
-	would be shoved far away, which we don't want. So, in cases like this, we provide the breathing
-	room to the parent element instead */
-	figure.breathing-room figcaption,
-	.edge-to-edge figcaption {
-		margin-top: 1.3em;
-	}
-	figure.breathing-room {
-		margin-top: 2.6em;
-		margin-bottom: 2.6em;
-	}
-	/* We don't want the image itself to have top and bottom padding when "breakthing room"
-	is in effect. This ensures that the image caption remains close to the image, while giving
-	breathing room to the whole group: both the image AND the caption. */
-	figure.breathing-room .edge-to-edge {
-		margin-top: 0;
-		margin-bottom: 0;
-	}
 	figcaption {
 		padding: 0;
 		display: inline-block;
 		max-width: 34em;
-	}
-
-	.edge-to-edge {
-		margin-top: 1.3em;
 		margin-bottom: 1.3em;
 	}
-		.edge-to-edge figure {
-			margin-bottom: 0;
-		}
+	figure .caption-top-pad {
+		margin-top: 2.6em;
+	}
+	figure .caption-top-pad .inline {
+		margin-top: 0;
+	}
+	/* Adding a bit more padding so the shadow isn't so close to the figcaption text */
+	figure .caption-top-pad .macos-screenshot,
+	figure .caption-top-pad .shadow {
+		margin-bottom: 0.65em;
+	}
+
 	.ios-one-screen,
 	.ios-two-screens,
 	.ios-three-screens {
@@ -1698,12 +1709,11 @@ Font size: 19px, ~Margin&Padding: 28.5px
 	.codehilite,
 	.highlight {
 		width: 100%;
-		margin: 0;
+		margin-top: 0;
+		margin-left: 0;
+		margin-right: 0;
 		margin-bottom: 1.3em;
 		display: block;
-	}
-	.codehilite {
-		margin-top: 1.3em;
 	}
 	pre,
 	.codehilite,
@@ -2135,7 +2145,7 @@ a:hover .fill-color {
 }
 
 #dark .macos-screenshot {
-	box-shadow: 0px 0px 1rem #101010;
+	box-shadow: 0px 0px 1rem #000000;
 }
 
 
