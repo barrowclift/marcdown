@@ -29,5 +29,7 @@
 <script>
 //http://www.beardedhacker.com/blog/2015/08/28/add-class-attribute-to-markdown-table/
 $('div.fancy-tables-start').nextUntil('div.fancy-tables-end', 'table').addClass('table fancy');
+// Adding additional padding to element that preceeds figcaption (formerly the manually added class "breathing-room")
+$("figcaption").prev().addClass("caption-top-pad");
 </script>
 </html>
