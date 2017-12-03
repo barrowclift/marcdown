@@ -22,7 +22,6 @@ TABLE OF CONTENTS:
 	* Code
 	* Footer
 		- Footnotes
-		- Page Navigation
 		- Footnote Buttons
 	* Misc
 		- Anchors
@@ -111,6 +110,9 @@ code {
 
 
 /* ----- KERNING ----- */
+html {
+	letter-spacing: -.005em;
+}
 input,
 textarea {
 	/* Better experience for user while entering text */
@@ -333,6 +335,7 @@ menu {
 	font-weight: 600;
 }
 em,
+time,
 blockquote {
 	font-style: italic;
 }
@@ -361,9 +364,27 @@ figcaption,
 .weak,
 small,
 .card .label .secondary {
-	color: #7F7F7F;
+	color: hsla(0, 0%, 0%, 0.5);
 }
 
+main a,
+.anchor {
+	border-radius: 0.25em;
+}
+main a {
+	padding-left: 0.25em;
+	padding-right: 0.25em;
+	margin-left: -0.25em;
+	margin-right: -0.25em;
+}
+main a,
+mark {
+	padding-top: 0.15em;
+	padding-bottom: 0.15em;
+}
+figure a {
+	background-color: unset !important;
+}
 
 /* NAVBAR --------------------------------------------------------------------------- */
 
@@ -408,6 +429,7 @@ menu {
 			padding-bottom: 0.5em;
 			padding-top: 0.725em;
 			min-width: 33vw;
+			text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 		}
 		menu ul a {
 			margin-bottom: 0;
@@ -432,7 +454,7 @@ menu {
 /* ----- LOGO ----- */
 .signature-color,
 .mac-line-color {
-	fill: #333333;
+	fill: hsla(0, 0%, 0%, 0.7);
 }
 #logo {
 	margin-top: 1.414em;
@@ -488,7 +510,7 @@ menu header:hover #logo #logo-eye-opened {
 /* ----- CARDS ----- */
 .card {
 	background-color: #F9F9F9;
-	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.12), 0 2px 10px 0 rgba(0, 0, 0, 0.10);
+	box-shadow: 0 14px 26px -10px rgba(0, 0, 0, 0.2);
 
 	border-radius: 1em;
 	display: inline-block;
@@ -502,7 +524,11 @@ menu header:hover #logo #logo-eye-opened {
 	padding-bottom: 1.3em;
 }
 	.card:hover {
-		box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.20), 0 4px 12px 0 rgba(0, 0, 0, 0.28);
+		box-shadow: 0 14px 26px -5px rgba(0, 0, 0, 0.3);
+		transform: scale(1.025);
+	}
+	.card-animation:hover {
+	    transform: scale(1.025);
 	}
 
 .card.large,
@@ -776,42 +802,55 @@ mark {
 	margin-right: 0em;
 }
 	mark.tag {
+		font-size: 1rem;
 		border-radius: 1em;
+		color: white;
+		border: unset;
+		box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.03), 0 2px 10px 0 rgba(0, 0, 0, 0.03);
+		font-weight: bold;
+		text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+		/* opacity: 0.9; */
 	}
 	mark,
 	mark.yellow {
+		/*background-image: linear-gradient(to bottom right, #FED558 38.66%, #FCE63E);*/
 		background-color: #FED558;
-		border: 1px solid #FECD38;
 	}
 	mark.green {
+		/*background-image: linear-gradient(to bottom right, #86DF6A 38.66%, #70DF6A);*/
 		background-color: #86DF6A;
-		border-color: #70D94E;
 	}
 	mark.gray,
 	mark.grey {
+		/*background-image: linear-gradient(to bottom right, #A4A4A7 38.66%, #8A8A8C);*/
 		background-color: #A4A4A7;
-		border-color: #8E8E91;
 	}
 	mark.light-gray,
 	mark.light-grey {
-		background-color: rgba(229, 231, 232, 0.75);
-		border-color: rgba(218, 219, 220, 0.75);
+		background: unset;
+		text-shadow: unset;
+		/*background-image: linear-gradient(to bottom right, #ECEDEE 38.66%, #D7D8D9);*/
+		background-color: #ECEDEE;
 	}
+		mark.tag.light-gray,
+		mark.tag.light-grey {
+			color: rgba(0, 0, 0, 0.5);
+		}
 	mark.red {
+		/*background-image: linear-gradient(to bottom right, #FC6360 38.66%, #FC8760);*/
 		background-color: #FC6360;
-		border-color: #FC4642;
 	}
 	mark.orange {
+		/*background-image: linear-gradient(to bottom right, #FDA951 38.66%, #FDBB51);*/
 		background-color: #FDA951;
-		border-color: #FD9426;
 	}
 	mark.blue {
+		/*background-image: linear-gradient(to bottom right, #54BEF7 38.66%, #54ABF7);*/
 		background-color: #54BEF7;
-		border-color: #2AAEF5;
 	}
 	mark.purple {
+		/*background-image: linear-gradient(to bottom right, #D592E5 38.66%, #E592E5);*/
 		background-color: #D592E5;
-		border-color: #CB77DF;
 	}
 
 
@@ -854,7 +893,8 @@ mark {
 	}
 	.admonition.hint,
 	.admonition.question,
-	.admonition.note {
+	.admonition.note,
+	.admonition.info {
 		background-color: rgba(84, 190, 247, 0.85);
 		border-color: rgba(42, 174, 245, 0.85);
 	}
@@ -880,9 +920,9 @@ figure {
 	margin-top: 0;
 	margin-bottom: 1.3em;
 }
-figure + figure {
+/*figure + figure {
 	margin-top: -1.3em;
-}
+}*/
 figure p {
 	text-align: center;
 	margin-top: 0;
@@ -973,8 +1013,13 @@ img.shadow {
 	border-radius: 0.5em;
 }
 .macos-screenshot {
-	box-shadow: 0 0 1rem #acacac;
-	border-radius: 0.25em;
+	box-shadow: 0 0 1.3em #b5b5b5;
+	border: 1px solid rgba(0, 0, 0, 0.3);
+	border-radius: 4px;
+
+	/* Extra padding to offsetting the shadow */
+	margin-top: 0.65em;
+	margin-bottom: 0.65em;
 }
 
 
@@ -1008,13 +1053,13 @@ flowed (my responsive stuff is basically a hack as is...) */
 	stroke: white;
 }
 .stroke-color {
-	stroke: #7F7F7F;
+	stroke: hsla(0, 0%, 0%, 0.5);
 }
 .fill-transparent {
 	fill: white;
 }
 .fill-color {
-	fill: #7F7F7F;
+	fill: hsla(0, 0%, 0%, 0.5);
 }
 
 
@@ -1025,6 +1070,11 @@ h2 img {
 }
 
 
+.no-border-radius {
+	border-radius: unset !important;
+}
+
+
 .permalink {
 	display: inline-block;
 	position: absolute;
@@ -1032,6 +1082,17 @@ h2 img {
 	margin-top: 0.225em;
 	margin-left: 0.25em;
 	opacity: 1
+}
+.permalink path {
+	fill: hsla(0, 0%, 0%, 0.5);
+	stroke: hsla(0, 0%, 0%, 0.5);
+}
+.apple-logo {
+	display: inline-block;
+	height: 0.9em;
+}
+.apple-logo path {
+	fill: #333333;
 }
 
 
@@ -1080,8 +1141,8 @@ kbd {
 	-ms-box-shadow: inset 0 -1px 0 #CCCCCC;
 	box-shadow: inset 0 -1px 0 #CCCCCC;
 
-	padding-left: 0.2em;
-	padding-right: 0.2em;
+	padding-left: 0.4em;
+	padding-right: 0.4em;
 	box-sizing: border-box;
 }
 
@@ -1224,7 +1285,7 @@ pre ::selection {
 /* ----- FOOTNOTES ----- */
 footer {
 	margin-top: 2.6em;
-	margin-bottom: 0;
+	margin-bottom: 2.6em;
 }
 sup[id^=fnref] {
 	font-size: smaller;
@@ -1232,52 +1293,11 @@ sup[id^=fnref] {
 }
 
 
-/* ----- PAGE NAVIGATION ----- */
-#navigation-previous {
-	display: inline-block;
-	float: left;
-	text-align: left;
-}
-#navigation-next {
-	display: inline-block;
-	float: right;
-	text-align: right;
-}
-	#navigation-next h4 {
-		text-align: right;
-	}
-#navigation-next,
-#navigation-previous {
-	min-width: 5.5em;
-}
-#navigation-next h4,
-#navigation-previous h4 {
-	margin-top: 0;
-}
-
-
 /* ----- FOOTNOTE BUTTONS ----- */
-#blog-footer-buttons {
-	padding-top: 1.3em;
-	padding-left: 0;
-	display: inline-block;
-	text-align: center;
-	width: 100%;
-	margin-left: 0;
-	margin-right: 0;
+#blog-footer-buttons svg {
+	height: 0.75em;
+	margin-right: 0.325em;
 }
-	#blog-footer-buttons svg {
-		position: relative;
-		display: inline-block;
-		text-align: center;
-		width: 24px;
-		height: 24px;
-		margin-left: 1.3em;
-		margin-right: 1.3em;
-	}
-	#blog-footer-buttons a {
-		text-decoration: none;
-	}
 
 
 /* MISC ----------------------------------------------------------------------------- */
@@ -1306,7 +1326,9 @@ html, /* For dark mode transition */
 #dark-mode-toggle,
 menu,
 .link-button,
-input, textarea { 
+input, textarea,
+main a,
+.anchor { 
 	transition: background-color 0.2s ease-in-out;
 }
 menu ul a {
@@ -1327,8 +1349,6 @@ hr {
 /* Transitioning colors */
 h1 a,
 #dark-mode-toggle label,
-#blog-footer-buttons a,
-main a,
 menu a {
 	transition: color 0.2s ease-in-out;
 }
@@ -1338,10 +1358,20 @@ menu a {
 .stroke-color {
 	transition: stroke 0.2s ease-in-out;
 }
+.card .stroke-transparent,
+.card .stroke-color {
+	transition: stroke 600ms ease;
+}
 /* SVG Fill */
 .fill-transparent,
-.fill-color {
+.fill-color,
+.signature-color {
 	transition: fill 0.2s ease-in-out;
+}
+.card .fill-transparent,
+.card .fill-color,
+.card .signature-color {
+	transition: fill 600ms ease;
 }
 
 /* Everything */
@@ -1357,7 +1387,10 @@ input, textarea {
 /* Resizing / Transformations */
 .card,
 .project {
-    transition: transform 0.25s ease-in-out, box-shadow 0.25s ease-in-out;
+    transition: box-shadow 338ms ease, transform 600ms ease;
+}
+.card-animation {
+	transition: transform 600ms ease;
 }
 
 .show-when-hovered,
@@ -1373,7 +1406,11 @@ menu.transform-animation {
 	transition: transform 0.25s ease-out;	
 }
 #menu-height-offset {
-	transition: height 0.25 ease-out;
+	transition: height 0.25s ease-out;
+}
+
+kbd {
+	transition: all 0.2s ease-in-out;
 }
 
 
@@ -1427,6 +1464,9 @@ menu.transform-animation {
 
 .hide-when-small {
 	display: none !important;
+}
+.show-when-small {
+	display: block !important;
 }
 
 
@@ -1568,10 +1608,10 @@ Font size: 19px, ~Margin&Padding: 28.5px
 			height: 1em;
 		}
 		#dark-mode-toggle .fill-color {
-			fill: #7F7F7F;
+			fill: hsla(0, 0%, 0%, 0.5);
 		}
 		#dark-mode-toggle .stroke-color {
-			stroke: #7F7F7F;
+			stroke: hsla(0, 0%, 0%, 0.5);
 		}
 
 
@@ -1688,6 +1728,10 @@ Font size: 19px, ~Margin&Padding: 28.5px
 		margin-bottom: 0.65em;
 	}
 
+	.macos-screenshot {
+		border-radius: 7px;
+	}
+
 	.ios-one-screen,
 	.ios-two-screens,
 	.ios-three-screens {
@@ -1729,24 +1773,19 @@ Font size: 19px, ~Margin&Padding: 28.5px
 	/* FOOTER ------------------------------------- */
 
 
-	/* --- FOOTNOTE BUTTONS --- */
-	#blog-footer-buttons {
-		padding-top: 2px;
-		min-width: 4.5em;
-		width: auto;
-		margin: 0 1.3em;
-	}
-		#blog-footer-buttons svg {
-			width: 1.25em;
-			height: 1.25em;
-		}
-
-
 	/* MISC --------------------------------------- */
 
 
 	.hide-when-small {
 		display: initial !important;
+	}
+	.show-when-small {
+		display: none !important;
+	}
+	main a,
+	mark {
+		padding-top: 0.1em;
+		padding-bottom: 0.1em;
 	}
 }
 @media (min-width: 801px) {
@@ -1880,6 +1919,10 @@ Font size: 21px, ~Margin&Padding: 31.5px
 		margin-right: 1.3em;
 	}
 
+	.macos-screenshot {
+		border-radius: 8px;
+	}
+
 
 	/* MISC ----------------------------------------- */
 
@@ -1889,6 +1932,12 @@ Font size: 21px, ~Margin&Padding: 31.5px
 		float: left;
 		margin-left: -1.5em;
 		font-size: 1rem;
+	}
+
+	main a,
+	mark {
+		padding-top: 0.125em;
+		padding-bottom: 0.125em;
 	}
 }
 @media (min-width: 1001px) {
@@ -1916,20 +1965,28 @@ Font size: 21px, ~Margin&Padding: 31.5px
 main a,
 main a:link,
 main a:visited,
-.anchor,
-#blog-footer-buttons a,
-#social-buttons a {
+.anchor {
     color: #007AFF;
 }
+#logo:hover .signature-color {
+	fill: #007AFF;
+}
+ul > a,
+li > a {
+	display: inline;
+}
 .anchor:hover,
-main a:hover,
-#blog-footer-buttons a:hover,
-#social-buttons a:hover {
-    color: #0063CE;
+main a:hover {
+    background-color: rgba(0, 122, 255, 0.2);
+}
+.link-button-group a:hover,
+form a:hover {
+	background-color: unset;
 }
 
 h1 a:hover {
     color: #007AFF !important;
+    background-color: unset;
 }
 
 #dark-mode-toggle:hover .fill-color,
@@ -2005,7 +2062,7 @@ a:hover .fill-color {
 	color: #6B6A6A !important;
 }
 #dark time, #dark figcaption, #dark .weak, #dark small {
-	color: #A1A1A1;
+	color: hsla(0, 0%, 100%, 0.6);
 }
 
 
@@ -2022,7 +2079,7 @@ a:hover .fill-color {
 }
 #dark menu,
 #dark menu ul a {
-	color: #D1D1D0;
+	color: hsla(0, 0%, 100%, 0.6);
 }
 #dark .active,
 #dark .hover:hover:not(.active),
@@ -2040,16 +2097,16 @@ a:hover .fill-color {
 	opacity: 0;
 }
 #dark .signature-color {
-	fill: #D1D1D0;
+	fill: hsla(0, 0%, 100%, 0.6);
 }
 
 
 /* --- ACCESSIBILITY TOGGLES --- */
 #dark #dark-mode-toggle .fill-color {
-	fill: #D1D1D0;
+	fill: hsla(0, 0%, 100%, 0.6);
 }
 #dark #dark-mode-toggle .stroke-color {
-	stroke: #D1D1D0;
+	stroke: hsla(0, 0%, 100%, 0.6);
 }
 #dark #dark-mode-toggle:hover .fill-color {
     fill: #007AFF;
@@ -2145,7 +2202,15 @@ a:hover .fill-color {
 }
 
 #dark .macos-screenshot {
-	box-shadow: 0px 0px 1rem #000000;
+	box-shadow: 0 0 1.3em #121212;
+}
+
+#dark .apple-logo path {
+	fill: #F8F8F2;
+}
+#dark .permalink path {
+	fill: #A1A1A1;
+	stroke: #A1A1A1;
 }
 
 
