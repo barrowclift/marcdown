@@ -14,7 +14,7 @@
 	border: none;
 	border-radius: 0.3em;
 	cursor: pointer;
-	background-color: rgb(0, 122, 255);
+	background-color: rgba(0, 122, 255, 0.1);
 	-webkit-backface-visibility: hidden;
 	-ms-backface-visibility: hidden;
 	backface-visibility: hidden;
@@ -312,7 +312,7 @@
 	display: block;
 	font-size: 0.75em;
 	font-weight: bold;
-	color: white;
+	color: #007AFF;
 	-webkit-transition: color 0.25s ease;
 	transition: color 0.25s ease;
 }
