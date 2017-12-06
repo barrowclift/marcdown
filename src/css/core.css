@@ -436,8 +436,8 @@ menu {
 			padding-bottom: 0.5375em;
 			padding-top: 0.725em;
 			min-width: 28.5vw;
-			margin-right: -0.125em;
-			margin-left: -0.125em;
+			margin-right: -0.125rem;
+			margin-left: -0.125rem;
 		}
 	menu header {
 		display: inline-block;
@@ -445,6 +445,7 @@ menu {
 		padding: 0;
 		width: 100%;
 		text-align: center;
+		z-index: 1000; /* Otherwise the happy iMac can't accept hover events */
 	}
 #menu-height-offset {
 	height: 10.125em;
@@ -1546,6 +1547,7 @@ Font size: 19px, ~Margin&Padding: 28.5px
 	}
 		menu header {
 			text-align: left;
+			width: auto;
 			position: absolute;
 			padding-left: 0.45em;
 			padding-top: 0.45em;
@@ -1561,10 +1563,10 @@ Font size: 19px, ~Margin&Padding: 28.5px
 				padding-bottom: 0;
 			}
 			menu ul a {
-				padding-top: 1.1rem;
+				padding-top: 1.15rem;
 				padding-bottom: .36rem;
-				margin-right: -0.125rem;
-				margin-left: -0.125rem;
+				margin-right: -0.0975rem;
+				margin-left: -0.0975rem;
 			}
 	#menu-height-offset {
 		height: 0;
@@ -1838,17 +1840,21 @@ Font size: 21px, ~Margin&Padding: 31.5px
 		box-sizing: border-box;
 		height: 2.675rem;
 	}
-	menu header {
-		padding-left: 0.75em;
-		padding-top: 0.5em;
-	}
-	menu ul li {
-		padding-top: 1.15rem;
-	}
-	menu ul a {
-		padding-top: 1.15rem;
-		padding-bottom: .425rem;
-	}
+		menu header {
+			padding-left: 0.75em;
+			padding-top: 0.5em;
+		}
+			menu ul {
+				margin-left: 0;
+				text-align: center;
+			}
+				menu ul li {
+					padding-top: 1.15rem;
+				}
+				menu ul a {
+					padding-top: 1.15rem;
+					padding-bottom: .425rem;
+				}
 
 
 	/* --- ACCESSIBILITY TOGGLES --- */
@@ -1976,8 +1982,12 @@ li > a {
 	display: inline;
 }
 .anchor:hover,
-main a:hover {
-    background-color: rgba(0, 122, 255, 0.2);
+main a:hover,
+menu a:hover,
+.hover:hover:not(.active),
+#dark .hover:hover:not(.active),
+#dark #dark-mode-toggle:hover {
+    background-color: rgba(0, 122, 255, 0.1);
 }
 .link-button-group a:hover,
 form a:hover {
@@ -2080,11 +2090,6 @@ a:hover .fill-color {
 #dark menu,
 #dark menu ul a {
 	color: hsla(0, 0%, 100%, 0.6);
-}
-#dark .active,
-#dark .hover:hover:not(.active),
-#dark #dark-mode-toggle:hover {
-	background-color: unset;
 }
 
 
