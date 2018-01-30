@@ -93,7 +93,7 @@ form, input, button, textarea, .link-button {
 	background-color: unset !important;
 }
 .link-button:hover {
-	background-color: unset !important;
+	background-color: #007AFF !important;
 }
 
 /* ----- IMAGES & VIDEO ----- */
