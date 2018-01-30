@@ -356,11 +356,10 @@ main h1 a:link,
 main h1 a:visited {
 	color: #333333;
 }
-del, del code {
-	color: #CECECE !important;
+del, del code, time {
+	color: #bababa !important;
 }
 menu, menu ul a,
-time,
 figcaption,
 .weak,
 small,
@@ -1082,12 +1081,12 @@ h2 img {
 	position: absolute;
 	width: 0.75em;
 	margin-top: 0.225em;
-	margin-left: 0.25em;
+	margin-left: 0.5em;
 	opacity: 1
 }
 .permalink path {
-	fill: hsla(0, 0%, 0%, 0.5);
-	stroke: hsla(0, 0%, 0%, 0.5);
+	fill: #bababa;
+	stroke: #bababa;
 }
 .apple-logo {
 	display: inline-block;
@@ -1290,8 +1289,11 @@ pre ::selection {
 
 /* ----- FOOTNOTES ----- */
 footer {
-	margin-top: 2.6em;
 	margin-bottom: 2.6em;
+}
+footer,
+#article-linkback {
+	margin-top: 2.6em;
 }
 sup[id^=fnref] {
 	font-size: smaller;
@@ -1326,43 +1328,46 @@ sup[id^=fnref] {
 
 /* ----- ANIMATIONS ----- */
 /* Transitioning background colors */
-button, /* For standard, form buttons */
 main,
 html, /* For dark mode transition */
 #dark-mode-toggle,
 menu,
-.link-button,
 input, textarea,
 main a,
 .anchor { 
-	transition: background-color 0.2s ease-in-out;
+	transition: background-color 0.2s ease;
 }
 menu ul a {
-	transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+	transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.link-button,
+button {
+	transition: background 0.2s ease, box-shadow 0.2s ease;
 }
 
 /* Transitioning background */
 hr {
-	transition: background 0.2s ease-in-out;
+	transition: background 0.2s ease;
 }
 
 /* Transitioning shadows */
 .gallery-image, #gallery video, /* For hovering special "cards" like on project pages (TODO refactor to generic .cards) */
 .project { /* For hovering special project "cards" on the project page (TODO refactor to generic .cards) */
-	transition: box-shadow 0.2s ease-in-out;
+	transition: box-shadow 0.2s ease;
 }
 
 /* Transitioning colors */
 h1 a,
 #dark-mode-toggle label,
 menu a {
-	transition: color 0.2s ease-in-out;
+	transition: color 0.2s ease;
 }
 
 /* SVG Stroke */
 .stroke-transparent,
 .stroke-color {
-	transition: stroke 0.2s ease-in-out;
+	transition: stroke 0.2s ease;
 }
 .card .stroke-transparent,
 .card .stroke-color {
@@ -1372,7 +1377,7 @@ menu a {
 .fill-transparent,
 .fill-color,
 .signature-color {
-	transition: fill 0.2s ease-in-out;
+	transition: fill 0.2s ease;
 }
 .card .fill-transparent,
 .card .fill-color,
@@ -1382,12 +1387,12 @@ menu a {
 
 /* Everything */
 .anchor {
-	transition: all 0.2s ease-in-out;
+	transition: all 0.2s ease;
 }
 
 /* Border */
 input, textarea {
-	transition: border 0.1s ease-in-out;
+	transition: border 0.1s ease;
 }
 
 /* Resizing / Transformations */
@@ -1401,12 +1406,12 @@ input, textarea {
 
 .show-when-hovered,
 .hide-when-hovered {
-	transition: opacity 0.2s ease-in-out;
+	transition: opacity 0.2s ease;
 }
 
 /* Dynamic menu hiding */
 menu.transform-animation {
-	transition: background-color 0.25s ease-in-out, transform 0.3s ease-out;
+	transition: background-color 0.25s ease, transform 0.3s ease-out;
 }
 #logo.transform-animation {
 	transition: transform 0.3s ease-out;	
@@ -1416,7 +1421,7 @@ menu.transform-animation {
 }
 
 kbd {
-	transition: all 0.2s ease-in-out;
+	transition: all 0.2s ease;
 }
 
 
@@ -2024,14 +2029,43 @@ a .fill-color {
     stroke: #007AFF;
 }
 
-button,
+#social-buttons a:hover {
+	background-color: #007AFF;
+}
+button:not(.bigfoot-footnote__button),
 .link-button {
     background-color: #007AFF;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, .25);
+    /* Old browsers */
+    background-repeat: repeat-x;
+    /* Repeat the gradient */
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #6db2ff), color-stop(100%, #007AFF));
+    /* Chrome,Safari4+ */
+    background-image: -webkit-linear-gradient(top, #6db2ff 0, #007AFF 100%);
+    /* Chrome 10+,Safari 5.1+ */
+    background-image: -moz-linear-gradient(top, #6db2ff 0, #007AFF 100%);
+    /* FF3.6+ */
+    background-image: -ms-linear-gradient(top, #6db2ff 0, #007AFF 100%);
+    /* IE10+ */
+    background-image: -o-linear-gradient(top, #6db2ff 0, #007AFF 100%);
+    /* Opera 11.10+ */
+    background-image: linear-gradient(top, #6db2ff 0, #007AFF 100%);
+    /* W3C */
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#6db2ff', endColorstr='#007AFF', GradientType=0);
+    /* IE6-9 */
+    border: 1px solid #489fff;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, .1), 0 0.43em 0.87em -0.2em rgba(0, 122, 255, 0.2);
 }
-button:hover,
-.link-button:hover {
-    background-color: #0063CE;
-}
+	button:not(.bigfoot-footnote__button):hover,
+	.link-button:hover {
+		background-position: 0 -15px;
+	}
+	button:not(.bigfoot-footnote__button):active,
+	.link-button:active {
+		background-image: none;
+		background-color: #007AFF;
+		box-shadow: inset 0 5px 10px rgba(0, 0, 0, .125), 0 0.43em 0.87em -0.2em rgba(0, 122, 255, 0.1);
+	}
 input:focus,
 textarea:focus {
     border-color: #007AFF !important;
@@ -2085,10 +2119,10 @@ a:hover .fill-color {
 #dark h1 a:visited {
 	color: #F8F8F2;
 }
-#dark del, #dark del code {
+#dark del, #dark del code, #dark time {
 	color: #6B6A6A !important;
 }
-#dark time, #dark figcaption, #dark .weak, #dark small {
+#dark figcaption, #dark .weak, #dark small {
 	color: hsla(0, 0%, 100%, 0.6);
 }
 
