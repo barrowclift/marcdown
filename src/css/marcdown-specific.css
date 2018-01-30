@@ -88,6 +88,14 @@ form, input, button, textarea, .link-button {
 	margin-bottom: 0;
 }
 
+/* Prevents the "double button" effect on anchor links */
+.headeranchor-link:hover {
+	background-color: unset !important;
+}
+.link-button:hover {
+	background-color: unset !important;
+}
+
 /* ----- IMAGES & VIDEO ----- */
 
 img {
