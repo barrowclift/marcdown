@@ -314,7 +314,7 @@ var uml = (function (converter, className, settings) {
 </blockquote>
 <h3 id="images">Images</h3>
 <p>By default, images are inline and span the full width of the text or stop at their own width, whatever comes first.</p>
-<p><img alt="Rocky Mountains National Park - Photo in a misty forest, with light breaking through the tree lines" src="/Users/Barrowclift/Sites/Marcdown/img/rocky-mountains.jpg" /></p>
+<p><img alt="Rocky Mountains National Park - Photo in a misty forest, with light breaking through the tree lines" src="/marcdown/img/rocky-mountains.jpg" /></p>
 <p>This isn&rsquo;t nearly enough for my purposes, which is why Marcdown shamelessly breaks Markdown&rsquo;s rules to allow for an assortment of image options for every occasion using the following structure:</p>
 <div class="codehilite"><pre><span class="p">&lt;</span><span class="nt">figure</span> <span class="na">markdown</span><span class="o">=</span><span class="s">&quot;1&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;$type $option1 $option2 ...&quot;</span><span class="p">&gt;</span>
 ![Alt text](image.jpg)
@@ -344,25 +344,25 @@ var uml = (function (converter, className, settings) {
 </ul>
 <p>Here&rsquo;s an example <code>edge-to-edge</code> image with no sub-type options provided. This is perfect for very long panoramas.</p>
 <figure class="edge-to-edge">
-<p><img alt="Zion National Park - Panorama atop Angels Landing" src="/Users/Barrowclift/Sites/Marcdown/img/zion.jpg" /></p>
+<p><img alt="Zion National Park - Panorama atop Angels Landing" src="/marcdown/img/zion.jpg" /></p>
 </figure>
 <p>Compare that to a taller panorama, this time with the <code>large</code> option. This stops the image from expanding beyond 1303px.</p>
 <figure class="edge-to-edge large">
-<p><img alt="Smoky Mountains National Park - Mountaintop panorama" src="/Users/Barrowclift/Sites/Marcdown/img/smoky-mountains.jpg" /></p>
+<p><img alt="Smoky Mountains National Park - Mountaintop panorama" src="/marcdown/img/smoky-mountains.jpg" /></p>
 </figure>
 <p>For long images with a reasonable amount of height to them&mdash;like desktop screenshots&mdash;consider using the <code>medium</code> option.</p>
 <figure class="edge-to-edge medium">
-<p><img alt="Smoky Mountains National Park - Photo of a sunset during one of our hikes" src="/Users/Barrowclift/Sites/Marcdown/img/smoky-mountains-sunset.jpg" /></p>
+<p><img alt="Smoky Mountains National Park - Photo of a sunset during one of our hikes" src="/marcdown/img/smoky-mountains-sunset.jpg" /></p>
 </figure>
 <p>If the image is pretty tall but you still want that &ldquo;edge-to-edge&rdquo; experience, you can provide the <code>small</code> option to be edge-to-edge on mobile devices only. This is good for ~4:3 aspect ratio images that look uncomfortable going edge-to-edge medium devices or bigger but can can still do so comfortably on small devices.</p>
 <figure class="edge-to-edge small">
-<p><img alt="Smoky Mountains National Park - Photo of a stream in the forest" src="/Users/Barrowclift/Sites/Marcdown/img/smoky-mountains-2.jpg" /></p>
+<p><img alt="Smoky Mountains National Park - Photo of a stream in the forest" src="/marcdown/img/smoky-mountains-2.jpg" /></p>
 </figure>
 <p>For all the above size sub-types, <code>two-images</code> or <code>three-images</code> could also be used as additional options to render side-by-side images. In vanilla Markdown, you&rsquo;d be forced to export a composite image in a separate application to achieve this, but with Marcdown you can just write!</p>
 <div class="edge-to-edge large three-images ios-screenshot">
-<p><img alt="Overcast iOS Screenshot - home screen" src="/Users/Barrowclift/Sites/Marcdown/img/ios-1.jpg" />
-<img alt="Overcast iOS Screenshot 2 - playlist view" src="/Users/Barrowclift/Sites/Marcdown/img/ios-2.jpg" />
-<img alt="Overcast iOS Screenshot 3 - player view" src="/Users/Barrowclift/Sites/Marcdown/img/ios-3.jpg" /></p>
+<p><img alt="Overcast iOS Screenshot - home screen" src="/marcdown/img/ios-1.jpg" />
+<img alt="Overcast iOS Screenshot 2 - playlist view" src="/marcdown/img/ios-2.jpg" />
+<img alt="Overcast iOS Screenshot 3 - player view" src="/marcdown/img/ios-3.jpg" /></p>
 </div>
 <p>However, as you&rsquo;d expect for something more complicated like this, the markup for this element is almost entirely <abbr title="Hyper Text Markup Language">HTML</abbr>, as Markdown wasn&rsquo;t intended for such things<sup id="fnref:intended"><a class="footnote-ref" href="#fn:intended" rel="footnote">2</a></sup>. Below is a basic example for <code>three-images</code>, and for two images you&rsquo;d simply use <code>two-images</code> instead:</p>
 <div class="codehilite"><pre><span class="p">&lt;</span><span class="nt">div</span> <span class="na">markdown</span><span class="o">=</span><span class="s">&quot;1&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;edge-to-edge large three-images&quot;</span><span class="p">&gt;</span>
@@ -379,30 +379,30 @@ var uml = (function (converter, className, settings) {
 <li><code>shadow</code>: Render a nice, general drop-shadow on the image (includes hover animation for linked images)</li>
 </ul>
 <figure class="half-inline shadow">
-<p><a href="/Users/Barrowclift/Sites/Marcdown/img/logo.jpg"><img alt="Example image with the shadow option" src="/Users/Barrowclift/Sites/Marcdown/img/logo.jpg" /></a></p>
+<p><a href="/marcdown/img/logo.jpg"><img alt="Example image with the shadow option" src="/marcdown/img/logo.jpg" /></a></p>
 </figure>
 <ul>
 <li><code>macos-window-screenshot</code>: For macOS window screenshots taken <a href="https://www.macgasm.net/2011/05/23/disable-dropshadow-mac-os-window-screenshots/">with the shadows disabled</a>, you can let Marcdown add back in the appropriate border, border radius, and drop shadow to match the macOS look and feel.</li>
 </ul>
 <figure class="inline macos-window-screenshot">
-<p><img alt="Example image with the macOS screenshot option" src="/Users/Barrowclift/Sites/Marcdown/img/macos-window.png" /></p>
+<p><img alt="Example image with the macOS screenshot option" src="/marcdown/img/macos-window.png" /></p>
 </figure>
 <ul>
 <li><code>watchos-screenshot</code>: Intended for watchOS screenshots. watchOS screenshots are different from the others in that the OS takes into consideration the OLED display and surrounding bezel and makes the OS &ldquo;edge-to-edge&rdquo; to take advantage of this. Unfortunately, this makes screenshots look quite horrible by default since the contents are taken out of their padded context, making everything look crowded. With this option, the appropriate padding, border, border radius, and drop shadow will be reapplied to best emulate the watch face itself.</li>
 </ul>
 <figure class="true-width watchos-screenshot">
-<p><img alt="Example image with the macOS screenshot option" src="/Users/Barrowclift/Sites/Marcdown/img/watchos-screenshot.png" /></p>
+<p><img alt="Example image with the macOS screenshot option" src="/marcdown/img/watchos-screenshot.png" /></p>
 </figure>
 <ul>
 <li><code>ios-screenshot</code>: Intended for iOS screenshots; a light border, border radius, and drop shadow will be added.</li>
 </ul>
 <figure class="edge-to-edge one-image shadow ios-screenshot">
-<p><img alt="Example image with the macOS screenshot option" src="/Users/Barrowclift/Sites/Marcdown/img/ios-screenshot.jpg" /></p>
+<p><img alt="Example image with the macOS screenshot option" src="/marcdown/img/ios-screenshot.jpg" /></p>
 </figure>
 <h4 id="captions">Captions</h4>
 <p>While image comments are not supported in traditional Markdown, they&rsquo;re fully supported in Marcdown for all image types by means of the standard <abbr title="Hyper Text Markup Language">HTML</abbr> <code>&lt;figcaption&gt;</code> element. Below is an example applied to a <code>small</code> <code>edge-to-edge</code> image:</p>
 <figure class="edge-to-edge small">
-<p><img alt="My siblings and I on the fourth annual &quot;Sibs Trip&quot;, photo taken just before beginning the Wild Cave Tour at Mammoth Cave Nation Park" src="/Users/Barrowclift/Sites/Marcdown/img/sibs.jpg" />
+<p><img alt="My siblings and I on the fourth annual &quot;Sibs Trip&quot;, photo taken just before beginning the Wild Cave Tour at Mammoth Cave Nation Park" src="/marcdown/img/sibs.jpg" />
 <figcaption>My siblings and I on the fourth annual &ldquo;Sibs Trip&rdquo;, photo taken just before beginning the Wild Cave Tour at Mammoth Cave Nation Park</figcaption></p>
 </figure>
 <p>The basic markup follows:</p>
@@ -654,7 +654,7 @@ lines</code></pre></div>
 </ol>
 <p>Regrettably, there&rsquo;s no detailed guides currently available for setting up Marcdown with other popular Markdown build systems (yet), so your only option at the moment is to use Sublime Text with Markdown Preview or to work it out yourself with your preferred system. More setup instructions for other environments are planned to be added over time, so stay tuned!</p>
 <h2 id="about-the-author">About the Author</h2>
-<p><img alt="Picture of myself on a hike at Smoky Mountains National Park" src="/Users/Barrowclift/Sites/Marcdown/img/marc.jpg" /></p>
+<p><img alt="Picture of myself on a hike at Smoky Mountains National Park" src="/marcdown/img/marc.jpg" /></p>
 <p>Hey there <img align="absmiddle" alt=":wave:" class="gemoji" height="20px" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f44b.png" title=":wave:" width="20px" />, my name is Marc Barrowclift and I&rsquo;m a designer and developer who loves making nice things. You can follow my writings over at <a href="http://barrowclift.design">barrowclift.design</a> or check out my other projects on <a href="https://github.com/barrowclift">Github</a>.</p>
 <div class="footnote">
 <hr />
