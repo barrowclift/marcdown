@@ -78,7 +78,10 @@ menu,
 	background-color: rgba(39, 40, 34, 0.7);
 }
 #dark-mode-toggle:hover {
-	color: #0063CE;
+	background-color: rgba(0, 122, 255, .1);
+}
+#dark #dark-mode-toggle:hover {
+	background-color: rgba(0, 122, 255, .25);
 }
 
 /* ----- FORMS & BUTTONS ----- */
@@ -96,12 +99,16 @@ form, input, button, textarea, .link-button {
 	background-color: #007AFF !important;
 }
 
+a.link-button:hover {
+	background-color: unset;
+}
+
 /* ----- IMAGES & VIDEO ----- */
 
-img {
+/* Adding border radius to traditional Markdown images while not overriding
+   Marcdown styles*/
+main > p > img {
 	border-radius: 0.25em;
-	-moz-border-radius: 0.25em;
-	-webkit-border-radius: 0.25em;
 }
 
 /* Tiny devices (width smaller than 320px, the original iPhone screen) */

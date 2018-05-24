@@ -31,13 +31,13 @@ While not enabled by default, the ability to perfectly represent mathematics is 
 
 Here's a brief quick-start guide showing how to use MathJax (examples taken from [Hiltmon's "MathJax in Markdown"](http://hiltmon.com/blog/2017/01/28/mathjax-in-markdown/)):
 
-* Centered formulae, wrap your formula in `\\[` and `\\]`.
-* For inline formulae, wrap your formula in `\\(` and `\\)`.
+* For block formulae, wrap your formula in `\\[` and `\\]`.
+* For inline formulae, wrap your formula in `$`.
 
 Below is an example of a centered formula, written as `\\( ax^2 + \sqrt{bx} + c = 0 \\)`:
 
 \\[ x = {-b \pm \sqrt{b^2-4ac} \over 2a} \\]
 
-And here's an example of an inline formula \\( ax^2 + \sqrt{bx} + c = 0 \\, written as `\\( ax^2 + \sqrt{bx} + c = 0 \\)`.
+And here's an example of an inline formula $ax^2 + \sqrt{bx} + c = 0$, written as `$ax^2 + \sqrt{bx} + c = 0$`.
 
 *[UML]: Unified Modeling Language

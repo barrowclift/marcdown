@@ -4,19 +4,59 @@ body, html, main {
     padding: 0;
 }
 main {
-    max-width: none;
+    max-width: 40em;
     margin-left: 10%;
     margin-right: 10%;
+    margin-bottom: 2.6em;
+}
+.anchor {
+    display: none !important;
 }
 body,html,main,h1,h2,h3,h4,h5,h6,
-code span, pre, a, a[href^="http://"] {
+code span, code, pre, pre span, a, a[href^="http://"] {
     color: black !important;
+}
+pre, code,
+.codehilite,
+.highlight {
+    background-color: transparent !important;
+    border: unset;
+}
+code {
+    padding: 0 !important;
+}
+button,
+.link-button {
+    box-shadow: unset !important;
+    text-shadow: unset !important;
+}
+.threeDHover,
+.shadow img,
+.shadow video,
+.ios-screenshot img,
+.ios-screenshot video,
+.watchos-screenshot img,
+.watchos-screenshot video,
+.macos-window-screenshot img,
+.macos-window-screenshot video {
+    box-shadow: unset !important;
+}
+.watchos-screenshot.inline img,
+.watchos-screenshot.inline video {
+    width: auto !important;
 }
 small {
     color: #979797;
 }
 .bigfoot-footnote__button::after {
     color:#333333;
+}
+.bigfoot-footnote__button {
+    padding-right: 0em !important;
+    padding-left: 1.3em !important;
+    background-color: transparent;
+    margin: -0.75em -0.25em 0 -0.25em !important;
+    font-size: 0.8125em;
 }
 /* Hiding elements that shouldn't be printed */
 menu, footer, .hide-for-print, .permalink, .reversefootnote {
@@ -107,9 +147,6 @@ ol, ul,
 blockquote {
     margin-left: 1.95rem; /* 1.3 base type bottom margin * 1.5 */
 }
-blockquote p {
-    margin-left: 0.65em;
-}
 code {
     /* Gets the vertical height of both the Windows and macOS monospace
        fonts as close to San Fransico as I can get */
@@ -131,27 +168,97 @@ pre code {
     font-size: 0.75em;
     line-height: 1.375em;
 }
-code, mark {
-    padding: 0em 0.325em;
-}
 strong {
     font-weight: 700;
+}
+mark.tag {
+    box-shadow: unset;
+    text-shadow: unset;
+    color: rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(0, 0, 0, 0.5);
+}
+    mark,
+    mark.yellow {
+        border-color: #FED558;
+    }
+    mark.green {
+        border-color: #86DF6A;
+    }
+    mark.gray,
+    mark.grey {
+        border-color: #A4A4A7;
+    }
+    mark.light-gray,
+    mark.light-grey {
+        border-color: #ECEDEE;
+    }
+    mark.red {
+        border-color: #FC6360;
+    }
+    mark.orange {
+        border-color: #FDA951;
+    }
+    mark.blue {
+        border-color: #54BEF7;
+    }
+    mark.purple {
+        border-color: #D592E5;
+    }
+mark {
+    background-color: unset !important;
+    background: unset !important;
+    color: black;
+    padding: 0;
 }
 
 /* ----- IMAGES & VIDEO ----- */
 
-.bigfoot-footnote__button {
-    background-color: transparent;
-    margin: -0.75em -0.25em 0 -0.25em !important;
+img:not(.emoji), .edge-to-edge, .inline {
+    width: 20vw !important;
 }
-img, .spilled-inline, .edge-to-edge, .responsive, .inline, .inline-half-size {
-    width: 30vw !important;
+.edge-to-edge.one-image,
+.edge-to-edge.two-images,
+.edge-to-edge.three-images {
+    width: 50vw !important;
 }
-.inline-half-size {
+.edge-to-edge.one-image img {
+    width: 8vw !important;
+}
+.edge-to-edge.two-images img {
+    width: 8vw !important;
+}
+.edge-to-edge.three-images img {
+    width: 8vw !important;
+}
+.half-inline {
     width: 15vw !important;
 }
-.ios-one-screen, .ios-two-screens, .ios-three-screens {
+.one-image, .two-images, .three-images {
     width: 18vw !important;
+}
+ul + figure,
+ol + figure,
+ul + .edge-to-edge,
+ol + .edge-to-edge {
+    margin-left: 1.95em !important;
+}
+.edge-to-edge p,
+figure p,
+figure {
+    text-align: left;
+}
+.edge-to-edge {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    width: 100% !important;
+}
+.edge-to-edge img {
+    border-radius: 0.25em;
+}
+.one-image img,
+.two-images img:first-child,
+.three-images img:first-child {
+    margin-left: 0 !important;
 }
 
 /* ----- WRITING LAYOUT ----- */
@@ -165,10 +272,38 @@ sup .footnote {
 }
 pre {
     margin: 0;
-    padding: 0;
+    padding: 0 !important;
     border: 0;
     font: inherit;
     vertical-align: baseline;
+    font-size: 0.9em;
+    word-wrap: break-word;
+}
+/*.edge-to-edge.infinite pre code,
+.codehilite pre,
+.highlight pre {
+    width: 100% !important;
+    margin-left: 0 !important;
+    max-width: unset !important;
+}*/
+pre {
+    width: 100% !important;
+    max-width: unset !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+.codehilite,
+.highlight {
+    /*width: 85vw !important;*/
+    width: 100% !important;
+    padding-left: 0;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+pre code {
+    font-size: 1em;
 }
 
 hr,
@@ -184,4 +319,24 @@ hr.gray, article hr, footer hr, hr.small {
     margin: 2.6rem 0 !important;
     max-width: 100% !important;
     display: block !important;
+}
+
+table.fancy th {
+    color: black;
+    border: unset;
+    background-color: #E5E5E5;
+}
+table.fancy th:first-child {
+    border-top-left-radius: 0.25em;
+}
+table.fancy th:last-child {
+    border-top-right-radius: 0.25em;
+}
+table.fancy td {
+    border-color: #E5E5E5;
+}
+
+.admonition {
+    background-color: transparent !important;
+    color: black;
 }
