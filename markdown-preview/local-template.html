@@ -3,21 +3,45 @@
 <head>
 	<meta charset="utf-8">
 	{{ HEAD }}
-	<link href="/usr/local/marcdown/src/css/reset.css" rel="stylesheet" type="text/css" />
-	<link href="/usr/local/marcdown/src/css/core.css" rel="stylesheet" type="text/css" />
-	<link href="/usr/local/marcdown/src/css/marcdown-specific.css" rel="stylesheet" type="text/css" />
-	<link href="/usr/local/marcdown/src/css/bigfoot-number.css" rel="stylesheet" type="text/css" />
-	<link media="print" href="/usr/local/marcdown/src/css/print.css" rel="stylesheet" type="text/css" />
+	<link href="/usr/local/marcdown/src/css/min/reset.min.css" rel="stylesheet" type="text/css" />
+	<link href="/usr/local/marcdown/src/css/min/accents.min.css" rel="stylesheet" type="text/css" />
+	<link href="/usr/local/marcdown/src/css/min/core.min.css" rel="stylesheet" type="text/css" />
+	<link href="/usr/local/marcdown/src/css/min/marcdown-specific.min.css" rel="stylesheet" type="text/css" />
+	<link href="/usr/local/marcdown/src/css/min/bigfoot-number.min.css" rel="stylesheet" type="text/css" />
+	<link media="print" href="/usr/local/marcdown/src/css/min/print.min.css" rel="stylesheet" type="text/css" />
 	<script src="/usr/local/marcdown/src/js/min/jquery-2.2.1.min.js" type="text/javascript"></script>
-	<script src="/usr/local/marcdown/src/js/core.js" type="text/javascript"></script>
+	<script src="/usr/local/marcdown/src/js/min/core.min.js" type="text/javascript"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
+	<div class="backdrop"></div>
 	<div id="wrap">
 		<div id="content" class="center">
 			<menu>
-				<input type="checkbox" name="dark-mode-checkbox" id="dark-mode-checkbox" value="dark-mode" onclick="darkModeToggled(this);" />
-				<label id="dark-mode-toggle" class="no-select" for="dark-mode-checkbox">&#x25d0;&#xFE0E;</label>
+				<div onclick="settingsClicked();" class="setting-toggles no-select" id="settings-toggle">
+					<input type="checkbox" name="settings-checkbox" id="settings-checkbox" value="settings" onclick="settingsToggled(this);" />
+					<span><span class="small-caps">A</span>A</span>
+					<!-- https://stackoverflow.com/questions/23072351/css-box-with-arrow-and-shadow -->
+				</div>
+				<div class="popup" id="settings-popup">
+					<div id="dark-mode-settings" class="group checkbox ios-switch">
+						<label>
+							<input onclick="darkModeToggled(this);" value="dark-mode" type="checkbox"><span>Dark Mode:</span>
+						</label>
+					</div>
+					<div id="accent-color-settings" class="group">
+						<label>Accent Color:</label>
+						<ul class="accent-colors">
+							<li><div onclick="changeAccentColor('red')" class="accent-color red"></div></li>
+							<li><div onclick="changeAccentColor('orange')" class="accent-color orange"></div></li>
+							<li><div onclick="changeAccentColor('yellow')" class="accent-color yellow"></div></li>
+							<li><div onclick="changeAccentColor('green')" class="accent-color green"></div></li>
+							<li><div onclick="changeAccentColor('blue')" class="accent-color blue"></div></li>
+							<li><div onclick="changeAccentColor('purple')" class="accent-color purple"></div></li>
+							<li><div onclick="changeAccentColor('pink')" class="accent-color pink"></div></li>
+						</ul>
+					</div>
+				</div>
 			</menu>
 			<main id="marcdown-body">
 				<article>

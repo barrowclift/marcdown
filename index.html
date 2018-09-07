@@ -2,128 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js'></script><script>MathJax.Hub.Config({
-  config: ["MMLorHTML.js"],
-  extensions: ["tex2jax.js"],
-  jax: ["input/TeX", "output/HTML-CSS", "output/NativeMML"],
-  tex2jax: {
-    inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-    displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
-    processEscapes: true
-  },
-  TeX: {
-    extensions: ["AMSmath.js", "AMSsymbols.js"],
-    TagSide: "right",
-    TagIndent: ".8em",
-    MultLineWidth: "85%",
-    equationNumbers: {
-      autoNumber: "AMS",
-    },
-    unicode: {
-      fonts: "STIXGeneral,'Arial Unicode MS'"
-    }
-  },
-  displayAlign: "left",
-  showProcessingMessages: false,
-  messageStyle: 'none'
-});</script><script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js'></script><script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js'></script><script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/js-sequence-diagrams/1.0.6/sequence-diagram-min.js'></script><script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.6.5/flowchart.min.js'></script><script>(function () {
-'use strict';
-
-/**
- * Targets special code or div blocks and converts them to UML.
- * @param {object} converter is the object that transforms the text to UML.
- * @param {string} className is the name of the class to target.
- * @param {object} settings is the settings for converter.
- * @return {void}
- */
-var uml = (function (converter, className, settings) {
-
-  var getFromCode = function getFromCode(parent) {
-    // Handles <pre><code>
-    var text = "";
-    for (var j = 0; j < parent.childNodes.length; j++) {
-      var subEl = parent.childNodes[j];
-      if (subEl.tagName.toLowerCase() === "code") {
-        for (var k = 0; k < subEl.childNodes.length; k++) {
-          var child = subEl.childNodes[k];
-          var whitespace = /^\s*$/;
-          if (child.nodeName === "#text" && !whitespace.test(child.nodeValue)) {
-            text = child.nodeValue;
-            break;
-          }
-        }
-      }
-    }
-    return text;
-  };
-
-  var getFromDiv = function getFromDiv(parent) {
-    // Handles <div>
-    return parent.textContent || parent.innerText;
-  };
-
-  // Change article to whatever element your main Markdown content lives.
-  var article = document.querySelectorAll("article");
-  var blocks = document.querySelectorAll("pre." + className + ",div." + className
-
-  // Is there a settings object?
-  );var config = settings === void 0 ? {} : settings;
-
-  // Find the UML source element and get the text
-  for (var i = 0; i < blocks.length; i++) {
-    var parentEl = blocks[i];
-    var el = document.createElement("div");
-    el.className = className;
-    el.style.visibility = "hidden";
-    el.style.position = "absolute";
-
-    var text = parentEl.tagName.toLowerCase() === "pre" ? getFromCode(parentEl) : getFromDiv(parentEl
-
-    // Insert our new div at the end of our content to get general
-    // typset and page sizes as our parent might be `display:none`
-    // keeping us from getting the right sizes for our SVG.
-    // Our new div will be hidden via "visibility" and take no space
-    // via `poistion: absolute`. When we are all done, use the
-    // original node as a reference to insert our SVG back
-    // into the proper place, and then make our SVG visilbe again.
-    // Lastly, clean up the old node.
-    );
-    article[0].appendChild(el);
-    var diagram = converter.parse(text);
-    diagram.drawSVG(el, config);
-    el.style.visibility = "visible";
-    el.style.position = "static";
-    parentEl.parentNode.insertBefore(el, parentEl);
-    parentEl.parentNode.removeChild(parentEl);
-  }
-});
-
-(function () {
-  var onReady = function onReady(fn) {
-    if (document.addEventListener) {
-      document.addEventListener("DOMContentLoaded", fn);
-    } else {
-      document.attachEvent("onreadystatechange", function () {
-        if (document.readyState === "interactive") {
-          fn();
-        }
-      });
-    }
-  };
-
-  onReady(function () {
-    if (typeof flowchart !== "undefined") {
-      uml(flowchart, "uml-flowchart");
-    }
-
-    if (typeof Diagram !== "undefined") {
-      uml(Diagram, "uml-sequence-diagram", { theme: "simple" });
-    }
-  });
-})();
-
-}());
-</script><style>.codehilite .hll { background-color: #49483e }
+  <style>.codehilite .hll { background-color: #49483e }
 .codehilite  { background: #272822; color: #f8f8f2 }
 .codehilite .c { color: #75715e } /* Comment */
 .codehilite .err { color: #960050; background-color: #1e0010 } /* Error */
@@ -188,13 +67,14 @@ var uml = (function (converter, className, settings) {
 .codehilite .vg { color: #f8f8f2 } /* Name.Variable.Global */
 .codehilite .vi { color: #f8f8f2 } /* Name.Variable.Instance */
 .codehilite .il { color: #ae81ff } /* Literal.Number.Integer.Long */</style><title>marcdown</title>
-  <link href="https://barrowclift.me/marcdown/src/css/min/reset-1527203111.min.css" rel="stylesheet" type="text/css" />
-  <link href="https://barrowclift.me/marcdown/src/css/min/core-1527203111.min.css" rel="stylesheet" type="text/css" />
-  <link href="https://barrowclift.me/marcdown/src/css/min/marcdown-specific-1527203111.min.css" rel="stylesheet" type="text/css" />
-  <link href="https://barrowclift.me/marcdown/src/css/min/bigfoot-number-1527203111.min.css" rel="stylesheet" type="text/css" />
-  <link media="print" href="https://barrowclift.me/marcdown/src/css/min/print-1527203111.min.css" rel="stylesheet" type="text/css" />
+  <link href="https://barrowclift.me/marcdown/src/css/min/reset.min.css" rel="stylesheet" type="text/css" />
+  <link href="https://barrowclift.me/marcdown/src/css/min/accents.min.css" rel="stylesheet" type="text/css" />
+  <link href="https://barrowclift.me/marcdown/src/css/min/core.min.css" rel="stylesheet" type="text/css" />
+  <link href="https://barrowclift.me/marcdown/src/css/min/marcdown-specific.min.css" rel="stylesheet" type="text/css" />
+  <link href="https://barrowclift.me/marcdown/src/css/min/bigfoot-number.min.css" rel="stylesheet" type="text/css" />
+  <link media="print" href="https://barrowclift.me/marcdown/src/css/min/print.min.css" rel="stylesheet" type="text/css" />
   <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
-  <script src="https://barrowclift.me/marcdown/src/js/min/core-1527203111.min.js" type="text/javascript"></script>
+  <script src="https://barrowclift.me/marcdown/src/js/min/core.min.js" type="text/javascript"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link rel="canonical" href="https://barrowclift.me/marcdown/">
@@ -219,13 +99,35 @@ var uml = (function (converter, className, settings) {
   <div id="wrap">
     <div id="content" class="center">
       <menu>
-        <input type="checkbox" name="dark-mode-checkbox" id="dark-mode-checkbox" value="dark-mode" onclick="darkModeToggled(this);" />
-        <label id="dark-mode-toggle" class="no-select" for="dark-mode-checkbox">&#x25d0;&#xFE0E;</label>
+        <div onclick="settingsClicked();" class="setting-toggles no-select" id="settings-toggle">
+          <input type="checkbox" name="settings-checkbox" id="settings-checkbox" value="settings" onclick="settingsToggled(this);" />
+          <span><span class="small-caps">A</span>A</span>
+          <!-- https://stackoverflow.com/questions/23072351/css-box-with-arrow-and-shadow -->
+        </div>
+        <div class="popup" id="settings-popup">
+          <div id="dark-mode-settings" class="group checkbox ios-switch">
+            <label>
+              <input onclick="darkModeToggled(this);" value="dark-mode" type="checkbox"><span>Dark Mode:</span>
+            </label>
+          </div>
+          <div id="accent-color-settings" class="group">
+            <label>Accent Color:</label>
+            <ul class="accent-colors">
+              <li><div onclick="changeAccentColor('red')" class="accent-color red"></div></li>
+              <li><div onclick="changeAccentColor('orange')" class="accent-color orange"></div></li>
+              <li><div onclick="changeAccentColor('yellow')" class="accent-color yellow"></div></li>
+              <li><div onclick="changeAccentColor('green')" class="accent-color green"></div></li>
+              <li><div onclick="changeAccentColor('blue')" class="accent-color blue"></div></li>
+              <li><div onclick="changeAccentColor('purple')" class="accent-color purple"></div></li>
+              <li><div onclick="changeAccentColor('pink')" class="accent-color pink"></div></li>
+            </ul>
+          </div>
+        </div>
       </menu>
       <main>
         <article>
           <h1 id="a-markdown-theme-for-humansmarcdown"><time>A Markdown theme for humans</time>Marcdown</h1>
-<p>I write everything in <a href="https://daringfireball.net/projects/markdown">Markdown</a>, but I&rsquo;ve never been particularly satisfied with the available themes. Sure, <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet">Github Flavored Markdown</a> is a fine default, but its overemphasis on borders and thick lines adds too much visual noise for my tastes. I have similar issues with other popular themes; while they each have their own strengths, they all fall short of meeting my three requirements:</p>
+<p>I write everything in <a href="https://daringfireball.net/projects/markdown">Markdown</a>, but I&rsquo;ve never been particularly satisfied with the available themes. Sure, <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet">Github Flavored Markdown</a> is a fine default, but its overemphasis on dividing lines adds too much visual noise for my tastes. I have similar issues with other popular themes; while they each have their own strengths, they all fall short of meeting my three requirements:</p>
 <ol>
 <li>Tasteful typography</li>
 <li>Complete support for styling most &ldquo;unofficial&rdquo; Markdown features (such as syntax highlighting, tables, etc.)</li>
@@ -307,7 +209,7 @@ var uml = (function (converter, className, settings) {
 <h3 id="footnotes">Footnotes</h3>
 <p>Footnotes look like this<sup id="fnref:example-footnote"><a class="footnote-ref" href="#fn:example-footnote" rel="footnote">1</a></sup> and are displayed Instapaper-style using <a href="http://www.bigfootjs.com">bigfoot.js</a>. They are also appended inline at the end of the document.</p>
 <h3 id="block-quotes">Block Quotes</h3>
-<p>Instead of smothering block quotes in a thick left border <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#blockquotes">like other themes do</a>, Marcdown uses only a subtle background tint and spacing to define the structure.</p>
+<p>Marcdown uses a slightly deemphasized color and line along with italics to distinguish quotes from the rest of the text.</p>
 <blockquote>
 <p>Here&rsquo;s to the crazy ones. The misfits. The rebels. The troublemakers. The round pegs in the square holes. The ones who see things differently. They&rsquo;re not fond of rules. And they have no respect for the status quo. You can quote them, disagree with them, glorify or vilify them. About the only thing you can&rsquo;t do is ignore them. Because they change things. They push the human race forward. And while some may see them as the crazy ones, we see genius. Because the people who are crazy enough to think they can change the world, are the ones who do.</p>
 <p>&ndash; Rob Siltanen</p>
@@ -640,8 +542,7 @@ lines</code></pre></div>
 <h3 id="keyboard-keys">Keyboard Keys</h3>
 <p>Representing keyboard keys for things like keyboard shortcuts can be difficult with plain text. Sure, I could write ctrl+alt+del or even <code>ctrl+alt+del</code>, but that doesn&rsquo;t look very nice at all. Thankfully, <abbr title="Hyper Text Markup Language">HTML</abbr> has the <code>&lt;kbd&gt;</code> element for exactly this purpose, so you can have <kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>del</kbd> instead. Your keyboard shortcuts never looked this good.</p>
 <h3 id="advanced-features">Advanced Features</h3>
-<p>While not enabled by default, Marcdown is fully capable of rendering complex <abbr title="Unified Modeling Language">UML</abbr> diagrams with <a href="http://flowchart.js.org">flowchart.js</a> and <a href="https://bramp.github.io/js-sequence-diagrams/">sequence-diagram.js</a>, as well as rendering mathematical equations with <a href="https://www.mathjax.org">MathJax</a>.</p>
-<p><a href="/marcdown/advanced-features.html">Click here to see these features in action</a></p>
+<p>While not enabled by default, Marcdown is fully capable of rendering complex <abbr title="Unified Modeling Language">UML</abbr> diagrams with <a href="http://flowchart.js.org">flowchart.js</a> and <a href="https://bramp.github.io/js-sequence-diagrams/">sequence-diagram.js</a>. <a href="/marcdown/advanced-features.html">Click here to see these features in action</a></p>
 <h2 id="installation">Installation</h2>
 <p>Due to Marcdown relying on Markdown extensions for things like syntax highlighting and the necessary scripting required for enabling/disabling dark mode, some installation is required for Marcdown to operate at its fullest potential. Thankfully, if you already do your writing in <a href="http://www.sublimetext.com">Sublime Text</a> like I do, the installation is very straightforward:</p>
 <ol>
@@ -655,7 +556,7 @@ lines</code></pre></div>
 <p>Regrettably, there&rsquo;s no detailed guides currently available for setting up Marcdown with other popular Markdown build systems (yet), so your only option at the moment is to use Sublime Text with Markdown Preview or to work it out yourself with your preferred system. More setup instructions for other environments are planned to be added over time, so stay tuned!</p>
 <h2 id="about-the-author">About the Author</h2>
 <p><img alt="Picture of myself on a hike at Smoky Mountains National Park" src="/marcdown/img/marc.jpg" /></p>
-<p>Hey there <img align="absmiddle" alt=":wave:" class="gemoji" height="20px" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f44b.png" title=":wave:" width="20px" />, my name is Marc Barrowclift and I&rsquo;m a designer and developer who loves making nice things. You can follow my writings over at <a href="http://barrowclift.design">barrowclift.design</a> or check out my other projects on <a href="https://github.com/barrowclift">Github</a>.</p>
+<p>Hey there <img alt=":wave:" class="gemoji" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f44b.png" title=":wave:" />, my name is Marc Barrowclift and I&rsquo;m a designer and developer who loves making nice things. You can follow my writings over at <a href="http://barrowclift.design">barrowclift.design</a> or check out my other projects on <a href="https://github.com/barrowclift">Github</a>.</p>
 <div class="footnote">
 <hr />
 <ol>
@@ -663,7 +564,7 @@ lines</code></pre></div>
 <p>This is an example footnote. You can insert asides, references, inside jokes, and all other sorts of things with footnotes.&#160;<a class="footnote-backref" href="#fnref:example-footnote" rev="footnote" title="Jump back to footnote 1 in the text">&#x21A9;&#xFE0E;</a></p>
 </li>
 <li id="fn:intended">
-<p>As if that would stop me. <img align="absmiddle" alt=":wink:" class="gemoji" height="20px" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f609.png" title=":wink:" width="20px" />&#160;<a class="footnote-backref" href="#fnref:intended" rev="footnote" title="Jump back to footnote 2 in the text">&#x21A9;&#xFE0E;</a></p>
+<p>As if that would stop me. <img alt=":wink:" class="gemoji" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f609.png" title=":wink:" />&#160;<a class="footnote-backref" href="#fnref:intended" rev="footnote" title="Jump back to footnote 2 in the text">&#x21A9;&#xFE0E;</a></p>
 </li>
 <li id="fn:one-style-only">
 <p>Yes, <a href="https://michelf.ca/projects/php-markdown/extra/#spe-attr">classes can be added to simple elements</a> like links and standard images, but unfortunately this does not extend to more complicated elements like lists or code blocks.&#160;<a class="footnote-backref" href="#fnref:one-style-only" rev="footnote" title="Jump back to footnote 3 in the text">&#x21A9;&#xFE0E;</a></p>

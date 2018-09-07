@@ -1,7 +1,7 @@
 <time>A Markdown theme for humans</time>Marcdown
 ================================================
 
-I write everything in [Markdown](https://daringfireball.net/projects/markdown), but I've never been particularly satisfied with the available themes. Sure, [Github Flavored Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) is a fine default, but its overemphasis on borders and thick lines adds too much visual noise for my tastes. I have similar issues with other popular themes; while they each have their own strengths, they all fall short of meeting my three requirements:
+I write everything in [Markdown](https://daringfireball.net/projects/markdown), but I've never been particularly satisfied with the available themes. Sure, [Github Flavored Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) is a fine default, but its overemphasis on dividing lines adds too much visual noise for my tastes. I have similar issues with other popular themes; while they each have their own strengths, they all fall short of meeting my three requirements:
 
 1. Tasteful typography
 2. Complete support for styling most "unofficial" Markdown features (such as syntax highlighting, tables, etc.)
@@ -88,7 +88,7 @@ Footnotes look like this[^example-footnote] and are displayed Instapaper-style u
 
 ### Block Quotes
 
-Instead of smothering block quotes in a thick left border [like other themes do](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#blockquotes), Marcdown uses only a subtle background tint and spacing to define the structure.
+Marcdown uses a slightly deemphasized color and line along with italics to distinguish quotes from the rest of the text.
 
 > Here's to the crazy ones. The misfits. The rebels. The troublemakers. The round pegs in the square holes. The ones who see things differently. They're not fond of rules. And they have no respect for the status quo. You can quote them, disagree with them, glorify or vilify them. About the only thing you can't do is ignore them. Because they change things. They push the human race forward. And while some may see them as the crazy ones, we see genius. Because the people who are crazy enough to think they can change the world, are the ones who do.
 >
@@ -452,9 +452,7 @@ Representing keyboard keys for things like keyboard shortcuts can be difficult w
 
 ### Advanced Features
 
-While not enabled by default, Marcdown is fully capable of rendering complex UML diagrams with [flowchart.js](http://flowchart.js.org) and [sequence-diagram.js](https://bramp.github.io/js-sequence-diagrams/), as well as rendering mathematical equations with [MathJax](https://www.mathjax.org).
-
-[Click here to see these features in action](/marcdown/advanced-features.html)
+While not enabled by default, Marcdown is fully capable of rendering complex UML diagrams with [flowchart.js](http://flowchart.js.org) and [sequence-diagram.js](https://bramp.github.io/js-sequence-diagrams/). [Click here to see these features in action](/marcdown/advanced-features.html)
 
 Installation
 ------------

@@ -1,0 +1,1318 @@
+/******************
+ ***    BLUE    ***
+ ******************/
+
+.blue .active,
+.blue .hover:hover:not(.active),
+.blue main a,
+.blue main a:link,
+.blue main a:visited,
+.blue .anchor,
+.blue #settings-toggle:hover {
+	color: #007AFF;
+}
+.blue #submenu {
+	background-color: hsla(211, 100%, 90%, 0.75);
+}
+.blue .block-list a:hover h3,
+#dark.blue .block-list a:hover h3 {
+	color: #007AFF !important
+}
+.blue .anchor:hover,
+.blue main a:hover {
+	color: #0063CE;
+}
+#dark.blue .anchor:hover,
+#dark.blue main a:hover {
+	color: hsl(211, 100%, 60%);
+}
+.blue .anchor:hover,
+.blue main a:not(.link-button):hover,
+.blue menu a:hover, menu a.light-hover,
+.blue .hover:hover:not(.active),
+.blue #submenu {
+	background-color: rgba(0, 122, 255, 0.1);
+}
+#dark.blue main a:not(.link-button):hover,
+#dark.blue menu a:hover, #darkmenu a.light-hover,
+#dark.blue .anchor:hover,
+#dark.blue .hover:hover:not(.active),
+#dark.blue #submenu {
+	background-color: rgba(0, 122, 255, 0.15);
+}
+.blue h1 a:hover {
+	color: #007AFF !important;
+}
+.blue a .fill-color {
+	fill: #007AFF;
+}
+.blue button.bigfoot-footnote__button {
+	background-color: #007AFF;
+}
+	.blue button.bigfoot-footnote__button:after {
+		color: #0063CE;
+	}
+	.blue button.bigfoot-footnote__button {
+		background-color: rgba(0, 122, 255, 0.15) !important;
+	}
+.blue button.bigfoot-footnote__button:hover {
+	background-color: #0063CE;
+}
+	.blue button.bigfoot-footnote__button:hover,
+	.blue button.bigfoot-footnote__button:hover,
+	.blue button.bigfoot-footnote__button:focus,
+	#dark.blue button.bigfoot-footnote__button:hover,
+	#dark.blue button.bigfoot-footnote__button:hover,
+	#dark.blue button.bigfoot-footnote__button:focus {
+		background-color: #007AFF !important;
+	}
+	.blue button.bigfoot-footnote__button:active,
+	.blue button.bigfoot-footnote__button.is-active,
+	#dark.blue button.bigfoot-footnote__button:active,
+	#dark.blue button.bigfoot-footnote__button.is-active {
+		background-color: #0063CE !important;
+	}
+.blue button:not(.bigfoot-footnote__button),
+.blue .link-button {
+	background-color: hsl(211, 100%, 48%);
+	box-shadow: inset 0 .65em 1.3em rgba(255, 255, 255, 0.25), 0 0.43em 0.87em -0.2em rgba(0, 122, 255, 0.2);
+}
+	.blue button:not(.bigfoot-footnote__button):hover,
+	.blue .link-button:hover {
+		background-color: hsl(211, 100%, 45%);
+	}
+	.blue button:not(.bigfoot-footnote__button):active,
+	.blue .link-button:active {
+		background-color: hsl(211, 100%, 45%);
+		box-shadow: inset 0 .65em 1.3em rgba(0, 0, 0, .0625), 0 0.43em 0.87em -0.2em rgba(0, 122, 255, 0.2);
+	}
+.blue input:focus,
+.blue textarea:focus {
+	border-color: #007AFF !important;
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0.43em 0.87em -0.2em rgba(0, 122, 255, 0.2) !important;
+}
+.blue a:hover .fill-color {
+	fill: #0063CE !important;
+}
+#dark.blue .hover:hover:not(.active) {
+	color: #007AFF;
+}
+.blue #logo:hover .signature-color {
+	fill: #007AFF !important;
+}
+.blue a .fill-color {
+	fill: #007AFF;
+}
+#dark.blue .active {
+	background-color: unset;
+	color: #007AFF;
+}
+/* Highlights (must be seperate, combining them breaks the style) */
+.blue ::selection { /* Safari */
+	background: rgba(0, 122, 255, 0.99);
+	color: white;
+}
+.blue ::-moz-selection { /* Firefox */
+	background: rgba(0, 122, 255, 0.99);
+	color: white;
+}
+#dark ::selection { /* Safari */
+	background: rgba(0, 122, 255, 0.85);
+}
+#dark ::-moz-selection { /* Firefox */
+	background: rgba(0, 122, 255, 0.85);
+}
+.backdrop {
+	background-color: #007AFF;
+}
+menu {
+	background-color: rgba(252, 253, 255, 0.95);
+}
+#dark menu {
+	background-color: rgba(22, 25, 28, 0.95);
+}
+.safari menu {
+	background-color: rgba(252, 253, 255, 0.7);
+}
+#dark.safari menu {
+	background-color: rgba(22, 25, 28, 0.7);
+}
+.blue [data-hint]:after,
+.blue .card,
+.blue .bigfoot-footnote__content,
+.blue .bigfoot-footnote__wrapper,
+.blue .bigfoot-footnote__tooltip,
+.blue .bigfoot-footnote {
+	background-color: rgb(246, 247, 249);
+}
+.blue .popup {
+	background-color: rgba(246, 247, 249, 0.95);
+}
+.blue.safari .popup {
+	background-color: rgba(246, 247, 249, 0.9);
+}
+#dark.blue [data-hint]:after,
+#dark.blue .card,
+#dark.blue .bigfoot-footnote__content,
+#dark.blue .bigfoot-footnote__wrapper,
+#dark.blue .bigfoot-footnote__tooltip,
+#dark.blue .bigfoot-footnote {
+	background-color: rgb(59, 62, 65);
+}
+#dark.blue .popup {
+	background-color: rgba(59, 62, 65, 0.95);
+}
+#dark.blue.safari .popup {
+	background-color: rgba(59, 62, 65, 0.9);
+}
+.blue hr {
+	background-color: rgb(240, 240, 240);
+	background: rgb(240, 240, 240); /* Old browsers */
+	background: -moz-linear-gradient(left,  #FCFDFF 0%, rgb(240, 240, 240) 25%, rgb(240, 240, 240) 50%, rgb(240, 240, 240) 75%, #FCFDFF 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,#FCFDFF), color-stop(25%,rgb(240, 240, 240)), color-stop(50%,rgb(240, 240, 240)), color-stop(75%,rgb(240, 240, 240)), color-stop(100%,#FCFDFF)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(left,  #FCFDFF 0%, rgb(240, 240, 240) 25%, rgb(240, 240, 240) 50%, rgb(240, 240, 240) 75%, #FCFDFF 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(left, #FCFDFF 0%, rgb(240, 240, 240) 25%, rgb(240, 240, 240) 50%, rgb(240, 240, 240) 75%, #FCFDFF 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(left, #FCFDFF 0%, rgb(240, 240, 240) 25%, rgb(240, 240, 240) 50%, rgb(240, 240, 240) 75%, #FCFDFF 100%); /* IE10+ */
+	background: linear-gradient(to right, #FCFDFF 0%, rgb(240, 240, 240) 25%, rgb(240, 240, 240) 50%, rgb(240, 240, 240) 75%, #FCFDFF 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FCFDFF', endColorstr='#FCFDFF',GradientType=1 ); /* IE6-9 */
+}
+#dark.blue hr {
+	background-color: #5A5B56;
+	background: #5A5B56;
+	background: -moz-linear-gradient(left, #242629 0%, #5A5B56 25%, #5A5B56 50%, #5A5B56 75%, #242629 100%);
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%, #242629), color-stop(25%, #5A5B56), color-stop(50%, #5A5B56), color-stop(75%, #5A5B56), color-stop(100%, #242629));
+	background: -webkit-linear-gradient(left, #242629 0%, #5A5B56 25%, #5A5B56 50%, #5A5B56 75%, #242629 100%);
+	background: -o-linear-gradient(left, #242629 0%, #5A5B56 25%, #5A5B56 50%, #5A5B56 75%, #242629 100%);
+	background: -ms-linear-gradient(left, #242629 0%, #5A5B56 25%, #5A5B56 50%, #5A5B56 75%, #242629 100%);
+	background: linear-gradient(to right, #242629 0%, #5A5B56 25%, #5A5B56 50%, #5A5B56 75%, #242629 100%);
+	filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#242629', endColorstr='#242629', GradientType=1 );
+}
+
+/******************
+ ***     RED    ***
+ ******************/
+
+.red .active,
+.red .hover:hover:not(.active),
+.red main a,
+.red main a:link,
+.red main a:visited,
+.red .anchor,
+.red #settings-toggle:hover {
+	color: #FF3B30;
+}
+.red .block-list a:hover h3,
+#dark.red .block-list a:hover h3 {
+	color: #FF3B30 !important
+}
+.red .anchor:hover,
+.red main a:hover {
+	color: hsl(3, 100%, 49%);
+}
+#dark.red .anchor:hover,
+#dark.red main a:hover {
+	color: hsl(3, 100%, 69%);
+}
+.red .anchor:hover,
+.red main a:not(.link-button):hover,
+.red menu a:hover, .red menu a.light-hover,
+.red .hover:hover:not(.active),
+.red #submenu {
+	background-color: rgba(255, 59, 48, 0.1);
+}
+#dark.red main a:not(.link-button):hover,
+#dark.red menu a:hover,
+#dark.red .anchor:hover, #dark.red menu a.light-hover,
+#dark.red .hover:hover:not(.active),
+#dark.red #submenu {
+	background-color: rgba(255, 59, 48, 0.15);
+}
+.red h1 a:hover {
+	color: #FF3B30 !important;
+}
+
+.red a .fill-color {
+	fill: #FF3B30;
+}
+.red button.bigfoot-footnote__button {
+	background-color: #FF3B30;
+}
+	.red button.bigfoot-footnote__button:after {
+		color: hsl(3, 100%, 49%);
+	}
+	#dark.red button.bigfoot-footnote__button:after {
+		color: hsl(3, 100%, 69%);
+	}
+	.red button.bigfoot-footnote__button {
+		background-color: rgba(255, 59, 48, 0.1);
+	}
+	#dark.red button.bigfoot-footnote__button {
+		background-color: rgba(255, 59, 48, 0.15);
+	}
+.red button.bigfoot-footnote__button:hover {
+	background-color: hsl(3, 100%, 49%);
+}
+	.red button.bigfoot-footnote__button:hover,
+	.red button.bigfoot-footnote__button:hover,
+	.red button.bigfoot-footnote__button:focus {
+		background-color: #FF3B30 !important;
+	}
+	.red button.bigfoot-footnote__button:active,
+	.red button.bigfoot-footnote__button.is-active {
+		background-color: hsl(3, 100%, 49%) !important;
+	}
+.red button:not(.bigfoot-footnote__button),
+.red .link-button {
+	background-color: hsl(3, 100%, 57%);
+	box-shadow: inset 0 .65em 1.3em rgba(255, 255, 255, 0.25), 0 0.43em 0.87em -0.2em rgba(255, 59, 48, 0.2);
+}
+	.red button:not(.bigfoot-footnote__button):hover,
+	.red .link-button:hover {
+		background-color: hsl(3, 100%, 52%);
+	}
+	.red button:not(.bigfoot-footnote__button):active,
+	.red .link-button:active {
+		background-color: hsl(3, 100%, 52%);
+		box-shadow: inset 0 .65em 1.3em rgba(0, 0, 0, .0625), 0 0.43em 0.87em -0.2em rgba(255, 59, 48, 0.2);
+	}
+.red input:focus,
+.red textarea:focus {
+	border-color: #FF3B30 !important;
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0.43em 0.87em -0.2em rgba(255, 59, 48, 0.2) !important;
+}
+.red a:hover .fill-color {
+	fill: hsl(3, 100%, 49%) !important;
+}
+#dark.red .hover:hover:not(.active) {
+	color: #FF3B30;
+}
+.red #logo:hover .signature-color {
+	fill: #FF3B30 !important;
+}
+.red a .fill-color {
+	fill: #FF3B30;
+}
+#dark.red .active {
+	background-color: unset;
+	color: #FF3B30;
+}
+/* Highlights (must be seperate, combining them breaks the style) */
+.red ::selection { /* Safari */
+	background: rgba(255, 59, 48, 0.99);
+	color: white;
+}
+.red ::-moz-selection { /* Firefox */
+	background: rgba(255, 59, 48, 0.99);
+	color: white;
+}
+#dark.red ::selection { /* Safari */
+	background: rgba(255, 59, 48, 0.85);
+}
+#dark.red ::-moz-selection { /* Firefox */
+	background: rgba(255, 59, 48, 0.85);
+}
+.red .backdrop {
+	background-color: #FF3B30;
+}
+.red menu {
+	background-color: rgba(255, 254, 252, 0.95);
+}
+#dark.red menu {
+	background-color: rgba(28, 23, 23, 0.95);
+}
+.red.safari menu {
+	background-color: rgba(255, 254, 252, 0.7);
+}
+#dark.red.safari menu {
+	background-color: rgba(28, 23, 23, 0.7);
+}
+.red [data-hint]:after,
+.red .card,
+.red .bigfoot-footnote__content,
+.red .bigfoot-footnote__wrapper,
+.red .bigfoot-footnote__tooltip,
+.red .bigfoot-footnote {
+	background-color: rgb(249, 246, 246);
+}
+.red .popup {
+	background-color: rgba(249, 246, 246, 0.95);
+}
+.red.safari .popup {
+	background-color: rgba(249, 246, 246, 0.9);
+}
+#dark.red [data-hint]:after,
+#dark.red .card,
+#dark.red .bigfoot-footnote__content,
+#dark.red .bigfoot-footnote__wrapper,
+#dark.red .bigfoot-footnote__tooltip,
+#dark.red .bigfoot-footnote {
+	background-color: rgb(65, 60, 60);
+}
+#dark.red .popup {
+	background-color: rgba(65, 60, 60, 0.95);
+}
+#dark.red.safari .popup {
+	background-color: rgba(65, 60, 60, 0.9);
+}
+.red hr {
+	background-color: rgb(240, 240, 240);
+	background: rgb(240, 240, 240); /* Old browsers */
+	background: -moz-linear-gradient(left,  #FFFDFC 0%, rgb(240, 240, 240) 25%, rgb(240, 240, 240) 50%, rgb(240, 240, 240) 75%, #FFFDFC 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,#FFFDFC), color-stop(25%,rgb(240, 240, 240)), color-stop(50%,rgb(240, 240, 240)), color-stop(75%,rgb(240, 240, 240)), color-stop(100%,#FFFDFC)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(left,  #FFFDFC 0%, rgb(240, 240, 240) 25%, rgb(240, 240, 240) 50%, rgb(240, 240, 240) 75%, #FFFDFC 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(left, #FFFDFC 0%, rgb(240, 240, 240) 25%, rgb(240, 240, 240) 50%, rgb(240, 240, 240) 75%, #FFFDFC 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(left, #FFFDFC 0%, rgb(240, 240, 240) 25%, rgb(240, 240, 240) 50%, rgb(240, 240, 240) 75%, #FFFDFC 100%); /* IE10+ */
+	background: linear-gradient(to right, #FFFDFC 0%, rgb(240, 240, 240) 25%, rgb(240, 240, 240) 50%, rgb(240, 240, 240) 75%, #FFFDFC 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFFFFF', endColorstr='#FFFFFF',GradientType=1 ); /* IE6-9 */
+}
+#dark.red hr {
+	background-color: #5A5B56;
+	background: #5A5B56;
+	background: -moz-linear-gradient(left, #292524 0%, #5A5B56 25%, #5A5B56 50%, #5A5B56 75%, #292524 100%);
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%, #292524), color-stop(25%, #5A5B56), color-stop(50%, #5A5B56), color-stop(75%, #5A5B56), color-stop(100%, #292524));
+	background: -webkit-linear-gradient(left, #292524 0%, #5A5B56 25%, #5A5B56 50%, #5A5B56 75%, #292524 100%);
+	background: -o-linear-gradient(left, #292524 0%, #5A5B56 25%, #5A5B56 50%, #5A5B56 75%, #292524 100%);
+	background: -ms-linear-gradient(left, #292524 0%, #5A5B56 25%, #5A5B56 50%, #5A5B56 75%, #292524 100%);
+	background: linear-gradient(to right, #292524 0%, #5A5B56 25%, #5A5B56 50%, #5A5B56 75%, #292524 100%);
+	filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#292524', endColorstr='#292524', GradientType=1 );
+}
+
+/******************
+ ***   ORANGE   ***
+ ******************/
+
+.orange .active,
+.orange .hover:hover:not(.active),
+.orange main a,
+.orange main a:link,
+.orange main a:visited,
+.orange .anchor,
+.orange #settings-toggle:hover {
+	color: #FF8100;
+}
+.orange .block-list a:hover h3,
+#dark.orange .block-list a:hover h3 {
+	color: #FF8100 !important
+}
+.orange .anchor:hover,
+.orange main a:hover {
+	color: hsl(30, 100%, 40%);
+}
+#dark.orange .anchor:hover,
+#dark.orange main a:hover {
+	color: hsl(30, 100%, 60%);
+}
+.orange .anchor:hover,
+.orange main a:not(.link-button):hover,
+.orange menu a:hover, .orange menu a.light-hover,
+.orange .hover:hover:not(.active),
+.orange #submenu {
+	background-color: rgba(255, 129, 0, 0.1);
+}
+#dark.orange main a:not(.link-button):hover,
+#dark.orange menu a:hover, #dark.orange menu a.light-hover,
+#dark.orange .anchor:hover,
+#dark.orange .hover:hover:not(.active),
+#dark.orange #submenu {
+	background-color: rgba(255, 129, 0, 0.15);
+}
+.orange h1 a:hover {
+	color: #FF8100 !important;
+}
+.orange a .fill-color {
+	fill: #FF8100;
+}
+.orange button.bigfoot-footnote__button {
+	background-color: #FF8100;
+}
+	.orange button.bigfoot-footnote__button:after {
+		color: hsl(30, 100%, 40%);
+	}
+	#dark.orange button.bigfoot-footnote__button:after {
+		color: hsl(30, 100%, 60%);
+	}
+	.orange button.bigfoot-footnote__button {
+		background-color: rgba(255, 129, 0, 0.1);
+	}
+	#dark.orange button.bigfoot-footnote__button {
+		background-color: rgba(255, 129, 0, 0.15);
+	}
+.orange button.bigfoot-footnote__button:hover {
+	background-color: hsl(30, 100%, 40%);
+}
+	.orange button.bigfoot-footnote__button:hover,
+	.orange button.bigfoot-footnote__button:hover,
+	.orange button.bigfoot-footnote__button:focus {
+		background-color: #FF8100 !important;
+	}
+	.orange button.bigfoot-footnote__button:active,
+	.orange button.bigfoot-footnote__button.is-active {
+		background-color: hsl(30, 100%, 40%) !important;
+	}
+.orange button:not(.bigfoot-footnote__button),
+.orange .link-button {
+	background-color: hsl(30, 100%, 48%);
+	box-shadow: inset 0 .65em 1.3em rgba(255, 255, 255, 0.1875), 0 0.43em 0.87em -0.2em rgba(255, 129, 0, 0.2);
+}
+	.orange button:not(.bigfoot-footnote__button):hover,
+	.orange .link-button:hover {
+		background-color: hsl(30, 100%, 45%);
+	}
+	.orange button:not(.bigfoot-footnote__button):active,
+	.orange .link-button:active {
+		background-color: hsl(30, 100%, 45%);
+		box-shadow: inset 0 .65em 1.3em rgba(0, 0, 0, 0.0625), 0 0.43em 0.87em -0.2em rgba(255, 129, 0, 0.2);
+	}
+.orange input:focus,
+.orange textarea:focus {
+	border-color: #FF8100 !important;
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0.43em 0.87em -0.2em rgba(255, 129, 0, 0.2) !important;
+}
+.orange a:hover .fill-color {
+	fill: hsl(30, 100%, 40%) !important;
+}
+#dark.orange .hover:hover:not(.active) {
+	color: #FF8100;
+}
+.orange #logo:hover .signature-color {
+	fill: #FF8100 !important;
+}
+.orange a .fill-color {
+	fill: #FF8100;
+}
+#dark.orange .active {
+	background-color: unset;
+	color: #FF8100;
+}
+/* Highlights (must be seperate, combining them breaks the style) */
+.orange ::selection { /* Safari */
+	background: rgba(255, 129, 0, 0.99);
+	color: white;
+}
+.orange ::-moz-selection { /* Firefox */
+	background: rgba(255, 129, 0, 0.99);
+	color: white;
+}
+#dark.orange ::selection { /* Safari */
+	background: rgba(255, 129, 0, 0.85);
+}
+#dark.orange ::-moz-selection { /* Firefox */
+	background: rgba(255, 129, 0, 0.85);
+}
+.orange .backdrop {
+	background-color: #FF8100;
+}
+.orange menu {
+	background-color: rgba(255, 254, 252, 0.95);
+}
+#dark.orange menu {
+	background-color: rgba(28, 25, 22, 0.95);
+}
+.orange.safari menu {
+	background-color: rgba(255, 254, 252, 0.7);
+}
+#dark.orange.safari menu {
+	background-color: rgba(28, 25, 22, 0.7);
+}
+.orange [data-hint]:after,
+.orange .card,
+.orange .bigfoot-footnote__content,
+.orange .bigfoot-footnote__wrapper,
+.orange .bigfoot-footnote__tooltip,
+.orange .bigfoot-footnote {
+	background-color: rgb(249, 248, 246);
+}
+.orange .popup {
+	background-color: rgba(249, 248, 246, 0.95);
+}
+.orange.safari .popup {
+	background-color: rgba(249, 248, 246, 0.9);
+}
+#dark.orange [data-hint]:after,
+#dark.orange .card,
+#dark.orange .bigfoot-footnote__content,
+#dark.orange .bigfoot-footnote__wrapper,
+#dark.orange .bigfoot-footnote__tooltip,
+#dark.orange .bigfoot-footnote {
+	background-color: rgb(65, 62, 59);
+}
+#dark.orange .popup {
+	background-color: rgba(65, 62, 59, 0.95);
+}
+#dark.orange.safari .popup {
+	background-color: rgba(65, 62, 59, 0.9);
+}
+.orange hr {
+	background-color: rgb(240, 240, 240);
+	background: rgb(240, 240, 240); /* Old browsers */
+	background: -moz-linear-gradient(left,  #FFFEFC 0%, rgb(240, 240, 240) 25%, rgb(240, 240, 240) 50%, rgb(240, 240, 240) 75%, #FFFEFC 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,#FFFEFC), color-stop(25%,rgb(240, 240, 240)), color-stop(50%,rgb(240, 240, 240)), color-stop(75%,rgb(240, 240, 240)), color-stop(100%,#FFFEFC)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(left,  #FFFEFC 0%, rgb(240, 240, 240) 25%, rgb(240, 240, 240) 50%, rgb(240, 240, 240) 75%, #FFFEFC 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(left, #FFFEFC 0%, rgb(240, 240, 240) 25%, rgb(240, 240, 240) 50%, rgb(240, 240, 240) 75%, #FFFEFC 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(left, #FFFEFC 0%, rgb(240, 240, 240) 25%, rgb(240, 240, 240) 50%, rgb(240, 240, 240) 75%, #FFFEFC 100%); /* IE10+ */
+	background: linear-gradient(to right, #FFFEFC 0%, rgb(240, 240, 240) 25%, rgb(240, 240, 240) 50%, rgb(240, 240, 240) 75%, #FFFEFC 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFFEFC', endColorstr='#FFFEFC',GradientType=1 ); /* IE6-9 */
+}
+#dark.orange hr {
+	background-color: #5A5B56;
+	background: #5A5B56;
+	background: -moz-linear-gradient(left, #292624 0%, #5A5B56 25%, #5A5B56 50%, #5A5B56 75%, #292624 100%);
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%, #292624), color-stop(25%, #5A5B56), color-stop(50%, #5A5B56), color-stop(75%, #5A5B56), color-stop(100%, #292624));
+	background: -webkit-linear-gradient(left, #292624 0%, #5A5B56 25%, #5A5B56 50%, #5A5B56 75%, #292624 100%);
+	background: -o-linear-gradient(left, #292624 0%, #5A5B56 25%, #5A5B56 50%, #5A5B56 75%, #292624 100%);
+	background: -ms-linear-gradient(left, #292624 0%, #5A5B56 25%, #5A5B56 50%, #5A5B56 75%, #292624 100%);
+	background: linear-gradient(to right, #292624 0%, #5A5B56 25%, #5A5B56 50%, #5A5B56 75%, #292624 100%);
+	filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#292624', endColorstr='#292624', GradientType=1 );
+}
+
+/******************
+ ***   YELLOW   ***
+ ******************/
+
+.yellow .active,
+.yellow .hover:hover:not(.active),
+.yellow main a,
+.yellow main a:link,
+.yellow main a:visited,
+.yellow .anchor,
+.yellow #settings-toggle:hover {
+	color: #FFCC00;
+}
+.yellow .block-list a:hover h3,
+#dark.yellow .block-list a:hover h3 {
+	color: #FFCC00 !important
+}
+.yellow .anchor:hover,
+.yellow main a:hover {
+	color: hsl(48, 100%, 40%);
+}
+#dark.yellow .anchor:hover,
+#dark.yellow main a:hover {
+	color: hsl(48, 100%, 60%);
+}
+.yellow .anchor:hover,
+.yellow main a:not(.link-button):hover,
+.yellow menu a:hover, .yellow menu a.light-hover,
+.yellow .hover:hover:not(.active),
+.yellow #submenu {
+	background-color: rgba(255, 204, 0, 0.15);
+}
+#dark.yellow main a:not(.link-button):hover,
+#dark.yellow menu a:hover, #dark.yellow menu a.light-hover,
+#dark.yellow .anchor:hover,
+#dark.yellow .hover:hover:not(.active),
+#dark.yellow #submenu {
+	background-color: rgba(255, 204, 0, 0.1);
+}
+.yellow h1 a:hover {
+	color: #FFCC00 !important;
+}
+.yellow a .fill-color {
+	fill: #FFCC00;
+}
+.yellow button.bigfoot-footnote__button {
+	background-color: #FFCC00;
+}
+	.yellow button.bigfoot-footnote__button:after {
+		color: hsl(48, 100%, 40%);
+	}
+	#dark.yellow button.bigfoot-footnote__button:after {
+		color: hsl(48, 100%, 57%);
+	}
+	.yellow button.bigfoot-footnote__button {
+		background-color: rgba(255, 204, 0, 0.15);
+	}
+	#dark.yellow button.bigfoot-footnote__button {
+		background-color: rgba(255, 204, 0, 0.1);
+	}
+.yellow button.bigfoot-footnote__button:hover {
+	background-color: hsl(48, 100%, 40%);
+}
+	.yellow button.bigfoot-footnote__button:hover,
+	.yellow button.bigfoot-footnote__button:hover,
+	.yellow button.bigfoot-footnote__button:focus {
+		background-color: #FFCC00 !important;
+	}
+	.yellow button.bigfoot-footnote__button:active,
+	.yellow button.bigfoot-footnote__button.is-active {
+		background-color: hsl(48, 100%, 40%) !important;
+	}
+.yellow button:not(.bigfoot-footnote__button),
+.yellow .link-button {
+	background-color: hsl(48, 100%, 48%);
+	box-shadow: inset 0 .65em 1.3em rgba(255, 255, 255, 0.25), 0 0.43em 0.87em -0.2em rgba(255, 204, 0, 0.2);
+}
+	.yellow button:not(.bigfoot-footnote__button):hover,
+	.yellow .link-button:hover {
+		background-color: hsl(48, 100%, 45%);
+	}
+	.yellow button:not(.bigfoot-footnote__button):active,
+	.yellow .link-button:active {
+		background-color: hsl(48, 100%, 45%);
+		box-shadow: inset 0 .65em 1.3em rgba(0, 0, 0, 0.0625), 0 0.43em 0.87em -0.2em rgba(255, 204, 0, 0.2);
+	}
+.yellow input:focus,
+.yellow textarea:focus {
+	border-color: #FFCC00 !important;
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0.43em 0.87em -0.2em rgba(255, 204, 0, 0.2) !important;
+}
+.yellow a:hover .fill-color {
+	fill: hsl(48, 100%, 40%) !important;
+}
+#dark.yellow .hover:hover:not(.active) {
+	color: #FFCC00;
+}
+.yellow #logo:hover .signature-color {
+	fill: #FFCC00 !important;
+}
+.yellow a .fill-color {
+	fill: #FFCC00;
+}
+#dark.yellow .active {
+	background-color: unset;
+	color: #FFCC00;
+}
+/* Highlights (must be seperate, combining them breaks the style) */
+.yellow ::selection { /* Safari */
+	background: rgba(255, 204, 0, 0.99);
+	color: white;
+}
+.yellow ::-moz-selection { /* Firefox */
+	background: rgba(255, 204, 0, 0.99);
+	color: white;
+}
+#dark.yellow ::selection { /* Safari */
+	background: rgba(255, 204, 0, 0.85);
+}
+#dark.yellow ::-moz-selection { /* Firefox */
+	background: rgba(255, 204, 0, 0.85);
+}
+.yellow .backdrop {
+	background-color: #FFCC00;
+}
+.yellow menu {
+	background-color: rgba(255, 255, 252, 0.95);
+}
+#dark.yellow menu {
+	background-color: rgba(28, 27, 23, 0.95);
+}
+.yellow.safari menu {
+	background-color: rgba(255, 255, 252, 0.7);
+}
+#dark.yellow.safari menu {
+	background-color: rgba(28, 27, 23, 0.7);
+}
+.yellow [data-hint]:after,
+.yellow .card,
+.yellow .bigfoot-footnote__content,
+.yellow .bigfoot-footnote__wrapper,
+.yellow .bigfoot-footnote__tooltip,
+.yellow .bigfoot-footnote {
+	background-color: rgb(249, 249, 246);
+}
+.yellow .popup {
+	background-color: rgb(249, 249, 246, 0.95);
+}
+.yellow.safari .popup {
+	background-color: rgb(249, 249, 246, 0.9);
+}
+#dark.yellow [data-hint]:after,
+#dark.yellow .card,
+#dark.yellow .bigfoot-footnote__content,
+#dark.yellow .bigfoot-footnote__wrapper,
+#dark.yellow .bigfoot-footnote__tooltip,
+#dark.yellow .bigfoot-footnote {
+	background-color: rgb(65, 64, 60);
+}
+#dark.yellow .popup {
+	background-color: rgba(65, 64, 60, 0.95);
+}
+#dark.yellow.safari .popup {
+	background-color: rgba(65, 64, 60, 0.9);
+}
+.yellow hr {
+	background-color: rgb(240, 240, 240);
+	background: rgb(240, 240, 240); /* Old browsers */
+	background: -moz-linear-gradient(left,  #FFFFFD 0%, rgb(240, 240, 240) 25%, rgb(240, 240, 240) 50%, rgb(240, 240, 240) 75%, #FFFFFD 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,#FFFFFD), color-stop(25%,rgb(240, 240, 240)), color-stop(50%,rgb(240, 240, 240)), color-stop(75%,rgb(240, 240, 240)), color-stop(100%,#FFFFFD)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(left,  #FFFFFD 0%, rgb(240, 240, 240) 25%, rgb(240, 240, 240) 50%, rgb(240, 240, 240) 75%, #FFFFFD 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(left, #FFFFFD 0%, rgb(240, 240, 240) 25%, rgb(240, 240, 240) 50%, rgb(240, 240, 240) 75%, #FFFFFD 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(left, #FFFFFD 0%, rgb(240, 240, 240) 25%, rgb(240, 240, 240) 50%, rgb(240, 240, 240) 75%, #FFFFFD 100%); /* IE10+ */
+	background: linear-gradient(to right, #FFFFFD 0%, rgb(240, 240, 240) 25%, rgb(240, 240, 240) 50%, rgb(240, 240, 240) 75%, #FFFFFD 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFFFFD', endColorstr='#FFFFFD',GradientType=1 ); /* IE6-9 */
+}
+#dark.yellow hr {
+	background-color: #5A5B56;
+	background: #5A5B56;
+	background: -moz-linear-gradient(left, #292824 0%, #5A5B56 25%, #5A5B56 50%, #5A5B56 75%, #292824 100%);
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%, #292824), color-stop(25%, #5A5B56), color-stop(50%, #5A5B56), color-stop(75%, #5A5B56), color-stop(100%, #292824));
+	background: -webkit-linear-gradient(left, #292824 0%, #5A5B56 25%, #5A5B56 50%, #5A5B56 75%, #292824 100%);
+	background: -o-linear-gradient(left, #292824 0%, #5A5B56 25%, #5A5B56 50%, #5A5B56 75%, #292824 100%);
+	background: -ms-linear-gradient(left, #292824 0%, #5A5B56 25%, #5A5B56 50%, #5A5B56 75%, #292824 100%);
+	background: linear-gradient(to right, #292824 0%, #5A5B56 25%, #5A5B56 50%, #5A5B56 75%, #292824 100%);
+	filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#292824', endColorstr='#292824', GradientType=1 );
+}
+
+/******************
+ ***    GREEN   ***
+ ******************/
+
+.green .active,
+.green .hover:hover:not(.active),
+.green main a,
+.green main a:link,
+.green main a:visited,
+.green .anchor,
+.green #settings-toggle:hover {
+	color: #4CD964;
+}
+.green .block-list a:hover h3,
+#dark.green .block-list a:hover h3 {
+	color: #4CD964 !important
+}
+.green .anchor:hover,
+.green main a:hover {
+	color: hsl(130, 65%, 47%);
+}
+#dark.green .anchor:hover,
+#dark.green main a:hover {
+	color: hsl(130, 65%, 67%);
+}
+.green .anchor:hover,
+.green main a:not(.link-button):hover,
+.green menu a:hover, .green menu a.light-hover,
+.green .hover:hover:not(.active),
+.green #submenu {
+	background-color: rgba(76, 217, 100, 0.1);
+}
+#dark.green main a:not(.link-button):hover,
+#dark.green menu a:hover, #dark.green menu a.light-hover,
+#dark.green .anchor:hover,
+#dark.green .hover:hover:not(.active),
+#dark.green #submenu {
+	background-color: rgba(76, 217, 100, 0.15);
+}
+.green h1 a:hover {
+	color: #4CD964 !important;
+}
+.green a .fill-color {
+	fill: #4CD964;
+}
+.green button.bigfoot-footnote__button {
+	background-color: #4CD964;
+}
+	.green button.bigfoot-footnote__button:after {
+		color: hsl(130, 65%, 47%);
+	}
+	#dark.green button.bigfoot-footnote__button:after {
+		color: hsl(130, 65%, 67%);
+	}
+	.green button.bigfoot-footnote__button {
+		background-color: rgba(76, 217, 100, 0.1);
+	}
+	#dark.green button.bigfoot-footnote__button {
+		background-color: rgba(76, 217, 100, 0.15);
+	}
+.green button.bigfoot-footnote__button:hover {
+	background-color: hsl(130, 65%, 47%);
+}
+	.green button.bigfoot-footnote__button:hover,
+	.green button.bigfoot-footnote__button:hover,
+	.green button.bigfoot-footnote__button:focus {
+		background-color: #4CD964 !important;
+	}
+	.green button.bigfoot-footnote__button:active,
+	.green button.bigfoot-footnote__button.is-active {
+		background-color: hsl(130, 65%, 47%) !important;
+	}
+.green button:not(.bigfoot-footnote__button),
+.green .link-button {
+	background-color: hsl(130, 65%, 55%);
+	box-shadow: inset 0 .65em 1.3em rgba(255, 255, 255, .25), 0 0.43em 0.87em -0.2em rgba(76, 217, 100, 0.2);
+}
+	.green button:not(.bigfoot-footnote__button):hover,
+	.green .link-button:hover {
+		background-color: hsl(130, 65%, 50%);
+	}
+	.green button:not(.bigfoot-footnote__button):active,
+	.green .link-button:active {
+		background-color: hsl(130, 65%, 50%);
+		box-shadow: inset 0 .65em 1.3em rgba(0, 0, 0, .0625), 0 0.43em 0.87em -0.2em rgba(76, 217, 100, 0.2);
+	}
+.green input:focus,
+.green textarea:focus {
+	border-color: #4CD964 !important;
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0.43em 0.87em -0.2em rgba(76, 217, 100, 0.2) !important;
+}
+.green a:hover .fill-color {
+	fill: hsl(130, 65%, 47%) !important;
+}
+#dark.green .hover:hover:not(.active) {
+	color: #4CD964;
+}
+.green #logo:hover .signature-color {
+	fill: #4CD964 !important;
+}
+.green a .fill-color {
+	fill: #4CD964;
+}
+#dark.green .active {
+	background-color: unset;
+	color: #4CD964;
+}
+/* Highlights (must be seperate, combining them breaks the style) */
+.green ::selection { /* Safari */
+	background: rgba(76, 217, 100, 0.99);
+	color: white;
+}
+.green ::-moz-selection { /* Firefox */
+	background: rgba(76, 217, 100, 0.99);
+	color: white;
+}
+#dark.green ::selection { /* Safari */
+	background: rgba(76, 217, 100, 0.85);
+}
+#dark.green ::-moz-selection { /* Firefox */
+	background: rgba(76, 217, 100, 0.85);
+}
+.green .backdrop {
+	background-color: #4CD964;
+}
+.green menu {
+	background-color: rgba(253, 255, 253, 0.95);
+}
+#dark.green menu {
+	background-color: rgba(24, 27, 24, 0.95);
+}
+.green.safari menu {
+	background-color: rgba(253, 255, 253, 0.95);
+}
+#dark.green.safari menu {
+	background-color: rgba(24, 27, 24, 0.7);
+}
+.green [data-hint]:after,
+.green .card,
+.green .bigfoot-footnote__content,
+.green .bigfoot-footnote__wrapper,
+.green .bigfoot-footnote__tooltip,
+.green .bigfoot-footnote {
+	background-color: rgb(247, 249, 247);
+}
+.green .popup {
+	background-color: rgba(247, 249, 247, 0.95);
+}
+.green.safari .popup {
+	background-color: rgba(247, 249, 247, 0.9);
+}
+#dark.green [data-hint]:after,
+#dark.green .card,
+#dark.green .bigfoot-footnote__content,
+#dark.green .bigfoot-footnote__wrapper,
+#dark.green .bigfoot-footnote__tooltip,
+#dark.green .bigfoot-footnote {
+	background-color: rgb(61, 64, 61);
+}
+#dark.green .popup {
+	background-color: rgba(61, 64, 61, 0.95);
+}
+#dark.green.safari .popup {
+	background-color: rgba(61, 64, 61, 0.9);
+}
+.green hr {
+	background-color: rgb(240, 240, 240);
+	background: rgb(240, 240, 240); /* Old browsers */
+	background: -moz-linear-gradient(left,  #FDFFFD 0%, rgb(240, 240, 240) 25%, rgb(240, 240, 240) 50%, rgb(240, 240, 240) 75%, #FDFFFD 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,#FDFFFD), color-stop(25%,rgb(240, 240, 240)), color-stop(50%,rgb(240, 240, 240)), color-stop(75%,rgb(240, 240, 240)), color-stop(100%,#FDFFFD)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(left,  #FDFFFD 0%, rgb(240, 240, 240) 25%, rgb(240, 240, 240) 50%, rgb(240, 240, 240) 75%, #FDFFFD 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(left, #FDFFFD 0%, rgb(240, 240, 240) 25%, rgb(240, 240, 240) 50%, rgb(240, 240, 240) 75%, #FDFFFD 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(left, #FDFFFD 0%, rgb(240, 240, 240) 25%, rgb(240, 240, 240) 50%, rgb(240, 240, 240) 75%, #FDFFFD 100%); /* IE10+ */
+	background: linear-gradient(to right, #FDFFFD 0%, rgb(240, 240, 240) 25%, rgb(240, 240, 240) 50%, rgb(240, 240, 240) 75%, #FDFFFD 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FDFFFD', endColorstr='#FDFFFD',GradientType=1 ); /* IE6-9 */
+}
+#dark.green hr {
+	background-color: #5A5B56;
+	background: #5A5B56;
+	background: -moz-linear-gradient(left, #262826 0%, #5A5B56 25%, #5A5B56 50%, #5A5B56 75%, #262826 100%);
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%, #262826), color-stop(25%, #5A5B56), color-stop(50%, #5A5B56), color-stop(75%, #5A5B56), color-stop(100%, #262826));
+	background: -webkit-linear-gradient(left, #262826 0%, #5A5B56 25%, #5A5B56 50%, #5A5B56 75%, #262826 100%);
+	background: -o-linear-gradient(left, #262826 0%, #5A5B56 25%, #5A5B56 50%, #5A5B56 75%, #262826 100%);
+	background: -ms-linear-gradient(left, #262826 0%, #5A5B56 25%, #5A5B56 50%, #5A5B56 75%, #262826 100%);
+	background: linear-gradient(to right, #262826 0%, #5A5B56 25%, #5A5B56 50%, #5A5B56 75%, #262826 100%);
+	filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#262826', endColorstr='#262826', GradientType=1 );
+}
+
+/******************
+ ***   PURPLE   ***
+ ******************/
+
+.purple .active,
+.purple .hover:hover:not(.active),
+.purple main a,
+.purple main a:link,
+.purple main a:visited,
+.purple .anchor,
+.purple #settings-toggle:hover {
+	color: #5856D6;
+}
+.purple .block-list a:hover h3,
+#dark.purple .block-list a:hover h3 {
+	color: #5856D6 !important
+}
+.purple .anchor:hover,
+.purple main a:hover {
+	color: hsl(241, 61%, 49%);
+}
+#dark.purple .anchor:hover,
+#dark.purple main a:hover {
+	color: hsl(241, 61%, 69%);
+}
+.purple .anchor:hover,
+.purple main a:not(.link-button):hover,
+.purple menu a:hover, .purple menu a.light-hover,
+.purple .hover:hover:not(.active),
+.purple #submenu {
+	background-color: rgba(88, 86, 214, 0.1);
+}
+#dark.purple main a:not(.link-button):hover,
+#dark.purple menu a:hover, #dark.purple menu a.light-hover,
+#dark.purple .anchor:hover,
+#dark.purple .hover:hover:not(.active),
+#dark.purple #submenu {
+	background-color: rgba(88, 86, 214, 0.15);
+}
+.purple h1 a:hover {
+	color: #5856D6 !important;
+}
+.purple a .fill-color {
+	fill: #5856D6;
+}
+.purple button.bigfoot-footnote__button {
+	background-color: #5856D6;
+}
+	.purple button.bigfoot-footnote__button:after {
+		color: hsl(241, 61%, 49%);
+	}
+	#dark.purple button.bigfoot-footnote__button:after {
+		color: hsl(241, 61%, 69%);
+	}
+	.purple button.bigfoot-footnote__button {
+		background-color: rgba(88, 86, 214, 0.1);
+	}
+	#dark.purple button.bigfoot-footnote__button {
+		background-color: rgba(88, 86, 214, 0.15);
+	}
+.purple button.bigfoot-footnote__button:hover {
+	background-color: hsl(241, 61%, 49%);
+}
+	.purple button.bigfoot-footnote__button:hover,
+	.purple button.bigfoot-footnote__button:hover,
+	.purple button.bigfoot-footnote__button:focus {
+		background-color: #5856D6 !important;
+	}
+	.purple button.bigfoot-footnote__button:active,
+	.purple button.bigfoot-footnote__button.is-active {
+		background-color: hsl(241, 61%, 49%) !important;
+	}
+.purple button:not(.bigfoot-footnote__button),
+.purple .link-button {
+	background-color: hsl(241, 61%, 57%);
+	box-shadow: inset 0 .65em 1.3em rgba(255, 255, 255, 0.25), 0 0.43em 0.87em -0.2em rgba(88, 86, 214, 0.2);
+}
+	.purple button:not(.bigfoot-footnote__button):hover,
+	.purple .link-button:hover {
+		background-color: hsl(241, 61%, 55%);
+	}
+	.purple button:not(.bigfoot-footnote__button):active,
+	.purple .link-button:active {
+		background-color: hsl(241, 61%, 55%);
+		box-shadow: inset 0 .65em 1.3em rgba(0, 0, 0, .0625), 0 0.43em 0.87em -0.2em rgba(88, 86, 214, 0.2);
+	}
+.purple input:focus,
+.purple textarea:focus {
+	border-color: #5856D6 !important;
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0.43em 0.87em -0.2em rgba(88, 86, 214, 0.2) !important;
+}
+.purple a:hover .fill-color {
+	fill: hsl(241, 61%, 49%) !important;
+}
+#dark.purple .hover:hover:not(.active) {
+	color: #5856D6;
+}
+.purple #logo:hover .signature-color {
+	fill: #5856D6 !important;
+}
+.purple a .fill-color {
+	fill: #5856D6;
+}
+#dark.purple .active {
+	background-color: unset;
+	color: #5856D6;
+}
+/* Highlights (must be seperate, combining them breaks the style) */
+.purple ::selection { /* Safari */
+	background: rgba(88, 86, 214, 0.99);
+	color: white;
+}
+.purple ::-moz-selection { /* Firefox */
+	background: rgba(88, 86, 214, 0.99);
+	color: white;
+}
+#dark.purple ::selection { /* Safari */
+	background: rgba(88, 86, 214, 0.85);
+}
+#dark.purple ::-moz-selection { /* Firefox */
+	background: rgba(88, 86, 214, 0.85);
+}
+.purple .backdrop {
+	background-color: #5856D6;
+}
+.purple menu {
+	background-color: rgba(253, 253, 255, 0.95);
+}
+#dark.purple menu {
+	background-color: rgba(24, 24, 27, 0.95);
+}
+.purple.safari menu {
+	background-color: rgba(253, 253, 255, 0.7);
+}
+#dark.purple.safari menu {
+	background-color: rgba(24, 24, 27, 0.7);
+}
+.purple [data-hint]:after,
+.purple .card,
+.purple .bigfoot-footnote__content,
+.purple .bigfoot-footnote__wrapper,
+.purple .bigfoot-footnote__tooltip,
+.purple .bigfoot-footnote {
+	background-color: rgb(247, 247, 249);
+}
+.purple .popup {
+	background-color: rgba(247, 247, 249, 0.95);
+}
+.purple.safari .popup {
+	background-color: rgba(247, 247, 249, 0.9);
+}
+#dark.purple [data-hint]:after,
+#dark.purple .card,
+#dark.purple .bigfoot-footnote__content,
+#dark.purple .bigfoot-footnote__wrapper,
+#dark.purple .bigfoot-footnote__tooltip,
+#dark.purple .bigfoot-footnote {
+	background-color: rgb(61, 61, 64);
+}
+#dark.purple .popup {
+	background-color: rgba(61, 61, 64, 0.95);
+}
+#dark.purple.safari .popup {
+	background-color: rgba(61, 61, 64, 0.9);
+}
+.purple hr {
+	background-color: rgb(240, 240, 240);
+	background: rgb(240, 240, 240); /* Old browsers */
+	background: -moz-linear-gradient(left,  #FDFDFF 0%, rgb(240, 240, 240) 25%, rgb(240, 240, 240) 50%, rgb(240, 240, 240) 75%, #FDFDFF 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,#FDFDFF), color-stop(25%,rgb(240, 240, 240)), color-stop(50%,rgb(240, 240, 240)), color-stop(75%,rgb(240, 240, 240)), color-stop(100%,#FDFDFF)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(left,  #FDFDFF 0%, rgb(240, 240, 240) 25%, rgb(240, 240, 240) 50%, rgb(240, 240, 240) 75%, #FDFDFF 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(left, #FDFDFF 0%, rgb(240, 240, 240) 25%, rgb(240, 240, 240) 50%, rgb(240, 240, 240) 75%, #FDFDFF 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(left, #FDFDFF 0%, rgb(240, 240, 240) 25%, rgb(240, 240, 240) 50%, rgb(240, 240, 240) 75%, #FDFDFF 100%); /* IE10+ */
+	background: linear-gradient(to right, #FDFDFF 0%, rgb(240, 240, 240) 25%, rgb(240, 240, 240) 50%, rgb(240, 240, 240) 75%, #FDFDFF 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FDFDFF', endColorstr='#FDFDFF',GradientType=1 ); /* IE6-9 */
+}
+#dark.purple hr {
+	background-color: #5A5B56;
+	background: #5A5B56;
+	background: -moz-linear-gradient(left, #252528 0%, #5A5B56 25%, #5A5B56 50%, #5A5B56 75%, #252528 100%);
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%, #252528), color-stop(25%, #5A5B56), color-stop(50%, #5A5B56), color-stop(75%, #5A5B56), color-stop(100%, #252528));
+	background: -webkit-linear-gradient(left, #252528 0%, #5A5B56 25%, #5A5B56 50%, #5A5B56 75%, #252528 100%);
+	background: -o-linear-gradient(left, #252528 0%, #5A5B56 25%, #5A5B56 50%, #5A5B56 75%, #252528 100%);
+	background: -ms-linear-gradient(left, #252528 0%, #5A5B56 25%, #5A5B56 50%, #5A5B56 75%, #252528 100%);
+	background: linear-gradient(to right, #252528 0%, #5A5B56 25%, #5A5B56 50%, #5A5B56 75%, #252528 100%);
+	filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#252528', endColorstr='#252528', GradientType=1 );
+}
+
+/******************
+ ***    PINK    ***
+ ******************/
+
+.pink .active,
+.pink .hover:hover:not(.active),
+.pink main a,
+.pink main a:link,
+.pink main a:visited,
+.pink .anchor,
+.pink #settings-toggle:hover {
+	color: #FF2D55;
+}
+.pink .block-list a:hover h3,
+#dark.pink .block-list a:hover h3 {
+	color: #FF2D55 !important;
+}
+.pink .anchor:hover,
+.pink main a:hover {
+	color: hsl(349, 100%, 49%);
+}
+#dark.pink .anchor:hover,
+#dark.pink main a:hover {
+	color: hsl(349, 100%, 69%);
+}
+.pink .anchor:hover,
+.pink main a:not(.link-button):hover,
+.pink menu a:hover, .pink menu a.light-hover,
+.pink .hover:hover:not(.active),
+.pink #submenu {
+	background-color: hsla(342, 100%, 65%, 0.1);
+}
+#dark.pink main a:not(.link-button):hover,
+#dark.pink menu a:hover, #dark.pink menu a.light-hover,
+#dark.pink .anchor:hover,
+#dark.pink .hover:hover:not(.active),
+#dark.pink #submenu {
+	background-color: hsla(342, 100%, 65%, 0.15);
+}
+.pink h1 a:hover {
+	color: #FF2D55 !important;
+}
+.pink a .fill-color {
+	fill: #FF2D55;
+}
+.pink button.bigfoot-footnote__button {
+	background-color: #FF2D55;
+}
+	.pink button.bigfoot-footnote__button:after {
+		color: hsl(349, 100%, 49%);
+	}
+	#dark.pink button.bigfoot-footnote__button:after {
+		color: hsl(349, 100%, 69%);
+	}
+	.pink button.bigfoot-footnote__button {
+		background-color: hsla(342, 100%, 65%, 0.1);
+	}
+	#dark.pink button.bigfoot-footnote__button {
+		background-color: hsla(342, 100%, 65%, 0.15);
+	}
+.pink button.bigfoot-footnote__button:hover {
+	background-color: hsl(349, 100%, 49%);
+}
+	.pink button.bigfoot-footnote__button:hover,
+	.pink button.bigfoot-footnote__button:hover,
+	.pink button.bigfoot-footnote__button:focus {
+		background-color: #FF2D55 !important;
+	}
+	.pink button.bigfoot-footnote__button:active,
+	.pink button.bigfoot-footnote__button.is-active {
+		background-color: hsl(349, 100%, 49%) !important;
+	}
+.pink button:not(.bigfoot-footnote__button),
+.pink .link-button {
+	background-color: hsl(349, 100%, 57%);
+	box-shadow: inset 0 .65em 1.3em rgba(255, 255, 255, 0.25), 0 0.43em 0.87em -0.2em rgba(255, 45, 85, 0.2);
+}
+	.pink button:not(.bigfoot-footnote__button):hover,
+	.pink .link-button:hover {
+		background-color: hsl(349, 100%, 52%);
+	}
+	.pink button:not(.bigfoot-footnote__button):active,
+	.pink .link-button:active {
+		background-color: hsl(349, 100%, 52%);
+		box-shadow: inset 0 .65em 1.3em rgba(0, 0, 0, .0625), 0 0.43em 0.87em -0.2em rgba(255, 45, 85, 0.2);
+	}
+.pink input:focus,
+.pink textarea:focus {
+	border-color: #FF2D55 !important;
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0.43em 0.87em -0.2em rgba(255, 45, 85, 0.2) !important;
+}
+.pink a:hover .fill-color {
+	fill: hsl(349, 100%, 49%) !important;
+}
+#dark.pink .hover:hover:not(.active) {
+	color: #FF2D55;
+}
+.pink #logo:hover .signature-color {
+	fill: #FF2D55 !important;
+}
+.pink a .fill-color {
+	fill: #FF2D55;
+}
+#dark.pink .active {
+	background-color: unset;
+	color: #FF2D55;
+}
+/* Highlights (must be seperate, combining them breaks the style) */
+.pink ::selection { /* Safari */
+	background: rgba(255, 45, 85, 0.99);
+	color: white;
+}
+.pink ::-moz-selection { /* Firefox */
+	background: rgba(255, 45, 85, 0.99);
+	color: white;
+}
+#dark.pink ::selection { /* Safari */
+	background: rgba(255, 45, 85, 0.85);
+}
+#dark.pink ::-moz-selection { /* Firefox */
+	background: rgba(255, 45, 85, 0.85);
+}
+.pink .backdrop {
+	background-color: #FF2D55;
+}
+.pink menu {
+	background-color: rgba(255, 252, 253, 0.95);
+}
+#dark.pink menu {
+	background-color: rgba(28, 23, 24, 0.95);
+}
+.pink.safari menu {
+	background-color: rgba(255, 252, 253, 0.7);
+}
+#dark.pink.safari menu {
+	background-color: rgba(28, 23, 24, 0.7);
+}
+.pink [data-hint]:after,
+.pink .card,
+.pink .bigfoot-footnote__content,
+.pink .bigfoot-footnote__wrapper,
+.pink .bigfoot-footnote__tooltip,
+.pink .bigfoot-footnote {
+	background-color: rgb(249, 246, 247);
+}
+.pink .popup {
+	background-color: rgba(249, 246, 247, 0.95);
+}
+.pink.safari .popup {
+	background-color: rgba(249, 246, 247, 0.9);
+}
+#dark.pink [data-hint]:after,
+#dark.pink .card,
+#dark.pink .bigfoot-footnote__content,
+#dark.pink .bigfoot-footnote__wrapper,
+#dark.pink .bigfoot-footnote__tooltip,
+#dark.pink .bigfoot-footnote {
+	background-color: rgb(65, 60, 61);
+}
+#dark.pink .popup {
+	background-color: rgba(65, 60, 61, 0.95);
+}
+#dark.pink.safari .popup {
+	background-color: rgba(65, 60, 61, 0.9);
+}
+.purple hr {
+	background-color: rgb(240, 240, 240);
+	background: rgb(240, 240, 240); /* Old browsers */
+	background: -moz-linear-gradient(left,  #FFFDFD 0%, rgb(240, 240, 240) 25%, rgb(240, 240, 240) 50%, rgb(240, 240, 240) 75%, #FFFDFD 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,#FFFDFD), color-stop(25%,rgb(240, 240, 240)), color-stop(50%,rgb(240, 240, 240)), color-stop(75%,rgb(240, 240, 240)), color-stop(100%,#FFFDFD)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(left,  #FFFDFD 0%, rgb(240, 240, 240) 25%, rgb(240, 240, 240) 50%, rgb(240, 240, 240) 75%, #FFFDFD 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(left, #FFFDFD 0%, rgb(240, 240, 240) 25%, rgb(240, 240, 240) 50%, rgb(240, 240, 240) 75%, #FFFDFD 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(left, #FFFDFD 0%, rgb(240, 240, 240) 25%, rgb(240, 240, 240) 50%, rgb(240, 240, 240) 75%, #FFFDFD 100%); /* IE10+ */
+	background: linear-gradient(to right, #FFFDFD 0%, rgb(240, 240, 240) 25%, rgb(240, 240, 240) 50%, rgb(240, 240, 240) 75%, #FFFDFD 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFFDFD', endColorstr='#FFFDFD',GradientType=1 ); /* IE6-9 */
+}
+#dark.purple hr {
+	background-color: #5A5B56;
+	background: #5A5B56;
+	background: -moz-linear-gradient(left, #282425 0%, #5A5B56 25%, #5A5B56 50%, #5A5B56 75%, #282425 100%);
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%, #282425), color-stop(25%, #5A5B56), color-stop(50%, #5A5B56), color-stop(75%, #5A5B56), color-stop(100%, #282425));
+	background: -webkit-linear-gradient(left, #282425 0%, #5A5B56 25%, #5A5B56 50%, #5A5B56 75%, #282425 100%);
+	background: -o-linear-gradient(left, #282425 0%, #5A5B56 25%, #5A5B56 50%, #5A5B56 75%, #282425 100%);
+	background: -ms-linear-gradient(left, #282425 0%, #5A5B56 25%, #5A5B56 50%, #5A5B56 75%, #282425 100%);
+	background: linear-gradient(to right, #282425 0%, #5A5B56 25%, #5A5B56 50%, #5A5B56 75%, #282425 100%);
+	filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#282425', endColorstr='#282425', GradientType=1 );
+}

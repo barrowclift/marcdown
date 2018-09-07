@@ -29,21 +29,25 @@
 	transition-duration: 0.25s;
 }
 #dark .bigfoot-footnote__button {
-	background-color: rgba(0, 122, 255, 0.25);
+	background-color: rgba(0, 122, 255, 0.15);
 }
 
 .bigfoot-footnote__button:hover,
-.bigfoot-footnote__button:focus {
+.bigfoot-footnote__button:focus,
+#dark .bigfoot-footnote__button:hover,
+#dark .bigfoot-footnote__button:focus {
 	outline: none;
-	background-color: rgb(0, 99, 206) !important;
+	background-color: #007AFF;
 }
 
-.bigfoot-footnote__button:active {
-	background-color: rgb(0, 99, 206) !important;
+.bigfoot-footnote__button:active,
+#dark .bigfoot-footnote__button:active {
+	background-color: rgb(0, 99, 206);
 }
 
-.bigfoot-footnote__button.is-active {
-	background-color: rgb(0, 99, 206) !important;
+.bigfoot-footnote__button.is-active,
+#dark .bigfoot-footnote__button.is-active {
+	background-color: rgb(0, 99, 206);
 	-webkit-transition-delay: 0.1s;
 	transition-delay: 0.1s;
 }
@@ -315,9 +319,12 @@
 	display: block;
 	font-size: 0.75em;
 	font-weight: bold;
-	color: #007AFF;
+	color: #0063CE;
 	-webkit-transition: color 0.25s ease;
 	transition: color 0.25s ease;
+}
+#dark .bigfoot-footnote__button:after {
+	color: hsl(211, 100%, 60%);
 }
 .bigfoot-footnote__button:active:after,
 .bigfoot-footnote__button:focus:after {
@@ -326,7 +333,7 @@
 
 .bigfoot-footnote__button:hover:after,
 .bigfoot-footnote__button.is-active:after {
-	color: white;
+	color: white !important;
 }
 
 .bigfoot-footnote__button__circle {

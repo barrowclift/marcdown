@@ -35,7 +35,7 @@ menu {
 	display: inline-block;
 	width: 100%;
 	z-index: 100;
-	box-shadow: none;
+	box-shadow: none !important;
 	-webkit-box-shadow: none;
 	-moz-box-shadow: none;
 	background-image: none;
@@ -53,8 +53,12 @@ menu,
 
 /* ----- ACCESSIBILITY TOGGLES ----- */
 
-#dark-mode-toggle {
+.popup {
+	top: 2.75em;
+}
+#settings-toggle {
 	border-radius: 0 0 0 .5em;
+	display: inline-block;
 	padding: 1em;
 	margin: 0;
 	text-align: right;
@@ -69,19 +73,93 @@ menu,
 	color: #007AFF;
 	transition: background-color 0.2s ease, color 0.2s ease;
 }
-.safari #dark-mode-toggle {
+	.blue #settings-toggle {
+		color: #007AFF;
+	}
+		.blue #settings-toggle:hover,
+		#settings-toggle:hover,
+		.blue #settings-toggle.active,
+		#settings-toggle.active {
+			color: #0063CE;
+		}
+		#dark.blue #settings-toggle:hover,
+		#dark #settings-toggle:hover,
+		#dark.blue #settings-toggle.active,
+		#dark #settings-toggle.active {
+			color: hsl(211, 100%, 60%);
+		}
+	.red #settings-toggle {
+		color: #FF3B30;
+	}
+		.red #settings-toggle:hover,
+		.red #settings-toggle.active {
+			color: hsl(3, 100%, 49%);
+		}
+		#dark.red #settings-toggle:hover,
+		#dark.red #settings-toggle.active {
+			color: hsl(3, 100%, 69%);
+		}
+	.orange #settings-toggle {
+		color: #FF8100;
+	}
+		.orange #settings-toggle:hover,
+		.orange #settings-toggle.active {
+			color: hsl(30, 100%, 40%);
+		}
+		#dark.orange #settings-toggle:hover,
+		#dark.orange #settings-toggle.active {
+			color: hsl(30, 100%, 60%);
+		}
+	.yellow #settings-toggle {
+		color: #FFCC00;
+	}
+		.yellow #settings-toggle:hover,
+		.yellow #settings-toggle.active {
+			color: hsl(48, 100%, 40%);
+		}
+		#dark.yellow #settings-toggle:hover,
+		#dark.yellow #settings-toggle.active {
+			color: hsl(48, 100%, 60%);
+		}
+	.green #settings-toggle {
+		color: #4CD964;
+	}
+		.green #settings-toggle:hover,
+		.green #settings-toggle.active {
+			color: hsl(130, 65%, 47%);
+		}
+		#dark.green #settings-toggle:hover,
+		#dark.green #settings-toggle.active {
+			color: hsl(130, 65%, 67%);
+		}
+	.purple #settings-toggle {
+		color: #5856D6;
+	}
+		.purple #settings-toggle:hover,
+		.purple #settings-toggle.active {
+			color: hsl(241, 61%, 49%);
+		}
+		#dark.purple #settings-toggle:hover,
+		#dark.purple #settings-toggle.active {
+			color: hsl(241, 61%, 69%);
+		}
+	.pink #settings-toggle {
+		color: #FF2D55;
+	}
+		.pink #settings-toggle:hover,
+		.pink #settings-toggle.active {
+			color: hsl(349, 100%, 49%);
+		}
+		#dark.pink #settings-toggle:hover,
+		#dark.pink #settings-toggle.active {
+			color: hsl(349, 100%, 69%);
+		}
+.safari #settings-toggle {
 	-webkit-backdrop-filter: saturate(180%) blur(20px);
 	backdrop-filter: saturate(180%) blur(20px);
 }
-#dark #dark-mode-toggle,
-#dark #dark-mode-toggle:hover {
+#dark #settings-toggle {
 	background-color: rgba(39, 40, 34, 0.7);
-}
-#dark-mode-toggle:hover {
-	background-color: rgba(0, 122, 255, .1);
-}
-#dark #dark-mode-toggle:hover {
-	background-color: rgba(0, 122, 255, .25);
 }
 
 /* ----- FORMS & BUTTONS ----- */
@@ -94,9 +172,6 @@ form, input, button, textarea, .link-button {
 /* Prevents the "double button" effect on anchor links */
 .headeranchor-link:hover {
 	background-color: unset !important;
-}
-.link-button:hover {
-	background-color: #007AFF !important;
 }
 
 a.link-button:hover {
@@ -113,7 +188,7 @@ main > p > img {
 
 /* Tiny devices (width smaller than 320px, the original iPhone screen) */
 @media(max-width: 319px) {
-	#dark-mode-toggle {
+	#settings-toggle {
 		display: inline;
 	}
 }
@@ -138,16 +213,16 @@ Font size: 19px, ~Margin&Padding: 28.5px
 		display: block;
 		width: 100%;
 		z-index: 100;
-		pointer-events: none;
 	}
-	#dark-mode-checkbox,
-	#dark-mode-toggle {
+	#settings-checkbox,
+	#settings-toggle {
 		pointer-events: initial;
 	}
-	#dark-mode-toggle {
+	#settings-toggle {
 		margin-left: 0 !important;
 		padding: 0.5em !important;
 		padding-left: 0.6em !important;
+		padding-bottom: 0.2em !important;
 		width: auto;
 		max-width: 1.3em;
 	}
