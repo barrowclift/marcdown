@@ -166,31 +166,13 @@ var uml = (function (converter, className, settings) {
 .codehilite .il { color: #ae81ff } /* Literal.Number.Integer.Long */</style><title>advanced-features</title>
   <link href="https://barrowclift.me/marcdown/src/css/min/reset.min.css" rel="stylesheet" type="text/css" />
   <link href="https://barrowclift.me/marcdown/src/css/min/accents.min.css" rel="stylesheet" type="text/css" />
+  <link href="https://barrowclift.me/marcdown/src/css/min/bigfoot-number.min.css" rel="stylesheet" type="text/css" />
   <link href="https://barrowclift.me/marcdown/src/css/min/core.min.css" rel="stylesheet" type="text/css" />
   <link href="https://barrowclift.me/marcdown/src/css/min/marcdown-specific.min.css" rel="stylesheet" type="text/css" />
-  <link href="https://barrowclift.me/marcdown/src/css/min/bigfoot-number.min.css" rel="stylesheet" type="text/css" />
   <link media="print" href="https://barrowclift.me/marcdown/src/css/min/print.min.css" rel="stylesheet" type="text/css" />
-  <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+  <script src="https://barrowclift.me/marcdown/src/js/min/jquery-2.2.1.min.js" type="text/javascript"></script>
   <script src="https://barrowclift.me/marcdown/src/js/min/core.min.js" type="text/javascript"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <link rel="canonical" href="https://barrowclift.me/marcdown/">
-  <meta property="og:locale" content="en_US"/>
-  <meta property="og:type" content="website"/>
-  <meta property="og:title" content="Marcdown"/>
-  <meta property="og:description" content="A Markdown theme for humans"/>
-  <meta name="description" content="A Markdown theme for humans">
-  <meta property="og:url" content="https://barrowclift.me/marcdown/"/>
-  <meta property="og:image" content="https://barrowclift.me/marcdown/img/share-banner.png"/>
-  <meta property="og:site_name" content="Marcdown"/>
-  <meta property="fb:admins" content="1665270112"/>
-   
-  <meta name="twitter:card" content="summary_large_image"/>
-  <meta name="twitter:site" content="@barrowclift"/>
-  <meta name="twitter:title" content="Marcdown"/>
-  <meta name="twitter:description" content="A Markdown theme for humans"/>
-  <meta name="twitter:image" content="https://barrowclift.me/marcdown/img/share-banner.png"/>
-  <meta name="twitter:url" content="https://barrowclift.me/marcdown/"/>
 </head>
 <body>
   <div class="backdrop"></div>
@@ -222,7 +204,7 @@ var uml = (function (converter, className, settings) {
           </div>
         </div>
       </menu>
-      <main>
+      <main id="marcdown-body">
         <article>
           <h1 id="uml">UML</h1>
 <p>Rarely, I&rsquo;ll find myself needing some way to render a flow chart or sequence diagram. For those times, UML with <a href="http://flowchart.js.org">flowchart.js</a> and <a href="https://bramp.github.io/js-sequence-diagrams/">sequence-diagram.js</a> is fully supported (though the <code>enable_uml</code> option and <code>superfences</code> extension will need to be enabled in Markdown Preview&rsquo;s settings). This includes full support for Marcdown&rsquo;s dark mode, too!</p>

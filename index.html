@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <style>.codehilite .hll { background-color: #49483e }
+	<meta charset="utf-8">
+	<style>.codehilite .hll { background-color: #49483e }
 .codehilite  { background: #272822; color: #f8f8f2 }
 .codehilite .c { color: #75715e } /* Comment */
 .codehilite .err { color: #960050; background-color: #1e0010 } /* Error */
@@ -67,67 +67,49 @@
 .codehilite .vg { color: #f8f8f2 } /* Name.Variable.Global */
 .codehilite .vi { color: #f8f8f2 } /* Name.Variable.Instance */
 .codehilite .il { color: #ae81ff } /* Literal.Number.Integer.Long */</style><title>marcdown</title>
-  <link href="https://barrowclift.me/marcdown/src/css/min/reset.min.css" rel="stylesheet" type="text/css" />
-  <link href="https://barrowclift.me/marcdown/src/css/min/accents.min.css" rel="stylesheet" type="text/css" />
-  <link href="https://barrowclift.me/marcdown/src/css/min/core.min.css" rel="stylesheet" type="text/css" />
-  <link href="https://barrowclift.me/marcdown/src/css/min/marcdown-specific.min.css" rel="stylesheet" type="text/css" />
-  <link href="https://barrowclift.me/marcdown/src/css/min/bigfoot-number.min.css" rel="stylesheet" type="text/css" />
-  <link media="print" href="https://barrowclift.me/marcdown/src/css/min/print.min.css" rel="stylesheet" type="text/css" />
-  <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
-  <script src="https://barrowclift.me/marcdown/src/js/min/core.min.js" type="text/javascript"></script>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <link rel="canonical" href="https://barrowclift.me/marcdown/">
-  <meta property="og:locale" content="en_US"/>
-  <meta property="og:type" content="website"/>
-  <meta property="og:title" content="Marcdown"/>
-  <meta property="og:description" content="A Markdown theme for humans"/>
-  <meta name="description" content="A Markdown theme for humans">
-  <meta property="og:url" content="https://barrowclift.me/marcdown/"/>
-  <meta property="og:image" content="https://barrowclift.me/marcdown/img/share-banner.png"/>
-  <meta property="og:site_name" content="Marcdown"/>
-  <meta property="fb:admins" content="1665270112"/>
-   
-  <meta name="twitter:card" content="summary_large_image"/>
-  <meta name="twitter:site" content="@barrowclift"/>
-  <meta name="twitter:title" content="Marcdown"/>
-  <meta name="twitter:description" content="A Markdown theme for humans"/>
-  <meta name="twitter:image" content="https://barrowclift.me/marcdown/img/share-banner.png"/>
-  <meta name="twitter:url" content="https://barrowclift.me/marcdown/"/>
+	<link href="https://barrowclift.me/marcdown/src/css/min/reset.min.css" rel="stylesheet" type="text/css" />
+	<link href="https://barrowclift.me/marcdown/src/css/min/accents.min.css" rel="stylesheet" type="text/css" />
+	<link href="https://barrowclift.me/marcdown/src/css/min/bigfoot-number.min.css" rel="stylesheet" type="text/css" />
+	<link href="https://barrowclift.me/marcdown/src/css/min/core.min.css" rel="stylesheet" type="text/css" />
+	<link href="https://barrowclift.me/marcdown/src/css/min/marcdown-specific.min.css" rel="stylesheet" type="text/css" />
+	<link media="print" href="https://barrowclift.me/marcdown/src/css/min/print.min.css" rel="stylesheet" type="text/css" />
+	<script src="https://barrowclift.me/marcdown/src/js/min/jquery-2.2.1.min.js" type="text/javascript"></script>
+	<script src="https://barrowclift.me/marcdown/src/js/min/core.min.js" type="text/javascript"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-  <div class="backdrop"></div>
-  <div id="wrap">
-    <div id="content" class="center">
-      <menu>
-        <div onclick="settingsClicked();" class="setting-toggles no-select" id="settings-toggle">
-          <input type="checkbox" name="settings-checkbox" id="settings-checkbox" value="settings" onclick="settingsToggled(this);" />
-          <span><span class="small-caps">A</span>A</span>
-          <!-- https://stackoverflow.com/questions/23072351/css-box-with-arrow-and-shadow -->
-        </div>
-        <div class="popup" id="settings-popup">
-          <div id="dark-mode-settings" class="group checkbox ios-switch">
-            <label>
-              <input onclick="darkModeToggled(this);" value="dark-mode" type="checkbox"><span>Dark Mode:</span>
-            </label>
-          </div>
-          <div id="accent-color-settings" class="group">
-            <label>Accent Color:</label>
-            <ul class="accent-colors">
-              <li><div onclick="changeAccentColor('red')" class="accent-color red"></div></li>
-              <li><div onclick="changeAccentColor('orange')" class="accent-color orange"></div></li>
-              <li><div onclick="changeAccentColor('yellow')" class="accent-color yellow"></div></li>
-              <li><div onclick="changeAccentColor('green')" class="accent-color green"></div></li>
-              <li><div onclick="changeAccentColor('blue')" class="accent-color blue"></div></li>
-              <li><div onclick="changeAccentColor('purple')" class="accent-color purple"></div></li>
-              <li><div onclick="changeAccentColor('pink')" class="accent-color pink"></div></li>
-            </ul>
-          </div>
-        </div>
-      </menu>
-      <main>
-        <article>
-          <h1 id="a-markdown-theme-for-humansmarcdown"><time>A Markdown theme for humans</time>Marcdown</h1>
+	<div class="backdrop"></div>
+	<div id="wrap">
+		<div id="content" class="center">
+			<menu>
+				<div onclick="settingsClicked();" class="setting-toggles no-select" id="settings-toggle">
+					<input type="checkbox" name="settings-checkbox" id="settings-checkbox" value="settings" onclick="settingsToggled(this);" />
+					<span><span class="small-caps">A</span>A</span>
+					<!-- https://stackoverflow.com/questions/23072351/css-box-with-arrow-and-shadow -->
+				</div>
+				<div class="popup" id="settings-popup">
+					<div id="dark-mode-settings" class="group checkbox ios-switch">
+						<label>
+							<input onclick="darkModeToggled(this);" value="dark-mode" type="checkbox"><span>Dark Mode:</span>
+						</label>
+					</div>
+					<div id="accent-color-settings" class="group">
+						<label>Accent Color:</label>
+						<ul class="accent-colors">
+							<li><div onclick="changeAccentColor('red')" class="accent-color red"></div></li>
+							<li><div onclick="changeAccentColor('orange')" class="accent-color orange"></div></li>
+							<li><div onclick="changeAccentColor('yellow')" class="accent-color yellow"></div></li>
+							<li><div onclick="changeAccentColor('green')" class="accent-color green"></div></li>
+							<li><div onclick="changeAccentColor('blue')" class="accent-color blue"></div></li>
+							<li><div onclick="changeAccentColor('purple')" class="accent-color purple"></div></li>
+							<li><div onclick="changeAccentColor('pink')" class="accent-color pink"></div></li>
+						</ul>
+					</div>
+				</div>
+			</menu>
+			<main id="marcdown-body">
+				<article>
+					<h1 id="a-markdown-theme-for-humansmarcdown"><time>A Markdown theme for humans</time>Marcdown</h1>
 <p>I write everything in <a href="https://daringfireball.net/projects/markdown">Markdown</a>, but I&rsquo;ve never been particularly satisfied with the available themes. Sure, <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet">Github Flavored Markdown</a> is a fine default, but its overemphasis on dividing lines adds too much visual noise for my tastes. I have similar issues with other popular themes; while they each have their own strengths, they all fall short of meeting my three requirements:</p>
 <ol>
 <li>Tasteful typography</li>
@@ -173,8 +155,8 @@
 <p>All six headers adhere to a <a href="http://type-scale.com">1.2 minor third scale</a> with subtle font weighting changes every level to establish and maintain its hierarchy, all <a href="http://practicaltypography.com/headings.html">without distracting underlines</a>. You can see all the headers stacked together <a href="/marcdown/headers.html">here</a>.</p>
 <h3 id="links">Links</h3>
 <p>As you&rsquo;ve already seen, <a href="#links">this is what links look like</a>, and hovering them adds a subtle blue glow. In Marcdown, color is used to indicate actionable items.</p>
-<p>For those times button links are desired, you can use <code>[Text](url){: .link-button }</code> to create buttons like this:</p>
-<p><a class="link-button" href="http://barrowclift.design">Go To barrowclift.design</a></p>
+<p>For those times button links are desired, you can use <code>[Text](url){: .button }</code> to create buttons like this:</p>
+<p><a class="button" href="http://barrowclift.design">Go To barrowclift.design</a></p>
 <h3 id="lists">Lists</h3>
 <ul>
 <li>Unordered lists look like this</li>
@@ -436,7 +418,7 @@ lines</code></pre></div>
 </pre>
 
 <h3 id="tables">Tables</h3>
-<p>By default, tables use spacing and font weights to establish structure.</p>
+<p>Tables are lightly decorated to distinguish the header and rows.</p>
 <table>
 <thead>
 <tr>
@@ -463,42 +445,6 @@ lines</code></pre></div>
 </tr>
 </tbody>
 </table>
-<p>For more complicated data, a more strictly defined, decorated table is desired. That option can be enabled by providing the <code>fancy</code> class to the table element. Regrettably, this means the table must then be defined in <abbr title="Hyper Text Markup Language">HTML</abbr> instead of Markdown.</p>
-<table class="fancy">
-<thead>
-<tr>
-<th align="left">Band Name</th>
-<th align="left">Favorite Record</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">The Beach Boys</td>
-<td align="left">Pet Sounds &amp; SMiLE</td>
-</tr>
-<tr>
-<td align="left">Fleet Foxes</td>
-<td align="left">Helplessness Blues</td>
-</tr>
-<tr>
-<td align="left">Joanna Newsom</td>
-<td align="left">Divers</td>
-</tr>
-<tr>
-<td align="left">The Beatles</td>
-<td align="left">Sgt. Pepper&rsquo;s Lonely Hearts Club Band</td>
-</tr>
-</tbody>
-</table>
-
-<p>Alternatively, you can continue to write tables in Markdown format, but surround the table with the following <abbr title="Hyper Text Markup Language">HTML</abbr> flags to convert the table in a <em>fancy</em> table (decidedly <strong>much</strong> easier than writing tables in <abbr title="Hyper Text Markup Language">HTML</abbr>).</p>
-<div class="codehilite"><pre><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;fancy-tables-start&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-| Element | Type  |
-|:--------|:------|
-| Table   | Fancy |
-<span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;fancy-tables-end&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-</pre></div>
-
 <h3 id="admonitions">Admonitions</h3>
 <p>In rare cases, you may want to preface a document or a section with a prominent announcement communicating some kind of information to the reader. Perhaps this is an &ldquo;Update&rdquo; block that provides some new information to the writing below while still preserving the original writing. Or maybe this is a &ldquo;Warning&rdquo; block of some kind to forewarn that what follows may trigger those with PTSD or other mental trauma. Whatever the reason, there&rsquo;s an admonition flavor for it.</p>
 <p>Here&rsquo;s some examples with the various supported flavors:</p>
@@ -519,9 +465,9 @@ lines</code></pre></div>
 <p>Generic admonition block.</p>
 </div>
 <h3 id="highlighting">Highlighting</h3>
-<p>While organizing reference materials or studying, there are times we <em>really</em> want to emphasis a word or snippet, so much so that even <strong>bolding</strong> the text won&rsquo;t suffice. For situations like this, <mark>highlighting is fully supported</mark> using the <code>==text to highlight==</code> syntax. For the highlight-lovers out there, multiple flavors like <mark class="red">Red</mark>, <mark class="orange">Orange</mark>, <mark class="yellow">Yellow</mark>, <mark class="blue">Blue</mark>, <mark class="green">Green</mark>, <mark class="purple">Purple</mark>, and <mark class="light-gray">Light Gray</mark> are supported.</p>
+<p>While organizing reference materials or studying, there are times we <em>really</em> want to emphasis a word or snippet, so much so that even <strong>bolding</strong> the text won&rsquo;t suffice. For situations like this, <mark>highlighting is fully supported</mark> using the <code>==text to highlight==</code> syntax. For the highlight-lovers out there, multiple flavors like <mark class="red">Red</mark>, <mark class="orange">Orange</mark>, <mark class="yellow">Yellow</mark>, <mark class="blue">Blue</mark>, <mark class="green">Green</mark>, <mark class="purple">Purple</mark>, and <mark class="gray">Gray</mark> are supported.</p>
 <p>Additionally, if you want your highlights to function as tags instead, just provide the additional <code>tag</code> class:</p>
-<p><mark class="tag red">Red</mark> <mark class="tag orange">Orange</mark> <mark class="tag yellow">Yellow</mark> <mark class="tag blue">Blue</mark> <mark class="tag green">Green</mark> <mark class="tag purple">Purple</mark> <mark class="tag light-gray">Light Gray</mark> <mark class="tag gray">Gray</mark></p>
+<p><mark class="tag red">Red</mark> <mark class="tag orange">Orange</mark> <mark class="tag yellow">Yellow</mark> <mark class="tag blue">Blue</mark> <mark class="tag green">Green</mark> <mark class="tag purple">Purple</mark> <mark class="tag gray">Gray</mark></p>
 <h3 id="definitions">Definitions</h3>
 <p>If you&rsquo;re writing a technical document or studying, having a nice definitions section is crucial to ensuring you and any other readers can follow along. Definition lists look like this:</p>
 <dl>
@@ -572,10 +518,10 @@ lines</code></pre></div>
 </li>
 </ol>
 </div>
-        </article>
-      </main>
-    </div>
-  </div>
+				</article>
+			</main>
+		</div>
+	</div>
 </body>
 <script>
 //http://www.beardedhacker.com/blog/2015/08/28/add-class-attribute-to-markdown-table/

@@ -52,9 +52,9 @@ All six headers adhere to a [1.2 minor third scale](http://type-scale.com) with 
 
 As you've already seen, [this is what links look like](#links), and hovering them adds a subtle blue glow. In Marcdown, color is used to indicate actionable items.
 
-For those times button links are desired, you can use `[Text](url){: .link-button }` to create buttons like this:
+For those times button links are desired, you can use `[Text](url){: .button }` to create buttons like this:
 
-[Go To barrowclift.design](http://barrowclift.design){: .link-button }
+[Go To barrowclift.design](http://barrowclift.design){: .button }
 
 ### Lists
 
@@ -352,7 +352,7 @@ For the ASCII artists out there, you can also easily tighten the font's line hei
 
 ### Tables
 
-By default, tables use spacing and font weights to establish structure.
+Tables are lightly decorated to distinguish the header and rows.
 
 | Band Name      | Favorite Record                       |
 |:---------------|:--------------------------------------|
@@ -360,45 +360,6 @@ By default, tables use spacing and font weights to establish structure.
 | Fleet Foxes    | Helplessness Blues                    |
 | Joanna Newsom  | Divers                                |
 | The Beatles    | Sgt. Pepper's Lonely Hearts Club Band |
-
-For more complicated data, a more strictly defined, decorated table is desired. That option can be enabled by providing the `fancy` class to the table element. Regrettably, this means the table must then be defined in HTML instead of Markdown.
-
-<table class="fancy">
-<thead>
-<tr>
-<th align="left">Band Name</th>
-<th align="left">Favorite Record</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">The Beach Boys</td>
-<td align="left">Pet Sounds &amp; SMiLE</td>
-</tr>
-<tr>
-<td align="left">Fleet Foxes</td>
-<td align="left">Helplessness Blues</td>
-</tr>
-<tr>
-<td align="left">Joanna Newsom</td>
-<td align="left">Divers</td>
-</tr>
-<tr>
-<td align="left">The Beatles</td>
-<td align="left">Sgt. Pepper&rsquo;s Lonely Hearts Club Band</td>
-</tr>
-</tbody>
-</table>
-
-Alternatively, you can continue to write tables in Markdown format, but surround the table with the following HTML flags to convert the table in a *fancy* table (decidedly __much__ easier than writing tables in HTML).
-
-```html
-<div class="fancy-tables-start"></div>
-| Element | Type  |
-|:--------|:------|
-| Table   | Fancy |
-<div class="fancy-tables-end"></div>
-```
 
 ### Admonitions
 
@@ -420,11 +381,11 @@ Here's some examples with the various supported flavors:
 
 ### Highlighting
 
-While organizing reference materials or studying, there are times we *really* want to emphasis a word or snippet, so much so that even __bolding__ the text won't suffice. For situations like this, <mark>highlighting is fully supported</mark> using the `==text to highlight==` syntax. For the highlight-lovers out there, multiple flavors like <mark class="red">Red</mark>, <mark class="orange">Orange</mark>, <mark class="yellow">Yellow</mark>, <mark class="blue">Blue</mark>, <mark class="green">Green</mark>, <mark class="purple">Purple</mark>, and <mark class="light-gray">Light Gray</mark> are supported.
+While organizing reference materials or studying, there are times we *really* want to emphasis a word or snippet, so much so that even __bolding__ the text won't suffice. For situations like this, <mark>highlighting is fully supported</mark> using the `==text to highlight==` syntax. For the highlight-lovers out there, multiple flavors like <mark class="red">Red</mark>, <mark class="orange">Orange</mark>, <mark class="yellow">Yellow</mark>, <mark class="blue">Blue</mark>, <mark class="green">Green</mark>, <mark class="purple">Purple</mark>, and <mark class="gray">Gray</mark> are supported.
 
 Additionally, if you want your highlights to function as tags instead, just provide the additional `tag` class:
 
-<mark class="tag red">Red</mark> <mark class="tag orange">Orange</mark> <mark class="tag yellow">Yellow</mark> <mark class="tag blue">Blue</mark> <mark class="tag green">Green</mark> <mark class="tag purple">Purple</mark> <mark class="tag light-gray">Light Gray</mark> <mark class="tag gray">Gray</mark>
+<mark class="tag red">Red</mark> <mark class="tag orange">Orange</mark> <mark class="tag yellow">Yellow</mark> <mark class="tag blue">Blue</mark> <mark class="tag green">Green</mark> <mark class="tag purple">Purple</mark> <mark class="tag gray">Gray</mark>
 
 ### Definitions
 

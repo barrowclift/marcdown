@@ -55,6 +55,9 @@ menu,
 
 .popup {
 	top: 2.75em;
+	-webkit-transform-origin: top right;
+	-ms-transform-origin: top right;
+	transform-origin: top right;
 }
 #settings-toggle {
 	border-radius: 0 0 0 .5em;
@@ -70,97 +73,15 @@ menu,
 	float: right;
 	text-align: right;
 	line-height: 1em;
-	color: #007AFF;
 	transition: background-color 0.2s ease, color 0.2s ease;
 }
-	.blue #settings-toggle {
-		color: #007AFF;
+	.safari #settings-toggle {
+		-webkit-backdrop-filter: saturate(180%) blur(20px);
+		backdrop-filter: saturate(180%) blur(20px);
 	}
-		.blue #settings-toggle:hover,
-		#settings-toggle:hover,
-		.blue #settings-toggle.active,
-		#settings-toggle.active {
-			color: #0063CE;
-		}
-		#dark.blue #settings-toggle:hover,
-		#dark #settings-toggle:hover,
-		#dark.blue #settings-toggle.active,
-		#dark #settings-toggle.active {
-			color: hsl(211, 100%, 60%);
-		}
-	.red #settings-toggle {
-		color: #FF3B30;
+	#dark #settings-toggle {
+		background-color: rgba(39, 40, 34, 0.7);
 	}
-		.red #settings-toggle:hover,
-		.red #settings-toggle.active {
-			color: hsl(3, 100%, 49%);
-		}
-		#dark.red #settings-toggle:hover,
-		#dark.red #settings-toggle.active {
-			color: hsl(3, 100%, 69%);
-		}
-	.orange #settings-toggle {
-		color: #FF8100;
-	}
-		.orange #settings-toggle:hover,
-		.orange #settings-toggle.active {
-			color: hsl(30, 100%, 40%);
-		}
-		#dark.orange #settings-toggle:hover,
-		#dark.orange #settings-toggle.active {
-			color: hsl(30, 100%, 60%);
-		}
-	.yellow #settings-toggle {
-		color: #FFCC00;
-	}
-		.yellow #settings-toggle:hover,
-		.yellow #settings-toggle.active {
-			color: hsl(48, 100%, 40%);
-		}
-		#dark.yellow #settings-toggle:hover,
-		#dark.yellow #settings-toggle.active {
-			color: hsl(48, 100%, 60%);
-		}
-	.green #settings-toggle {
-		color: #4CD964;
-	}
-		.green #settings-toggle:hover,
-		.green #settings-toggle.active {
-			color: hsl(130, 65%, 47%);
-		}
-		#dark.green #settings-toggle:hover,
-		#dark.green #settings-toggle.active {
-			color: hsl(130, 65%, 67%);
-		}
-	.purple #settings-toggle {
-		color: #5856D6;
-	}
-		.purple #settings-toggle:hover,
-		.purple #settings-toggle.active {
-			color: hsl(241, 61%, 49%);
-		}
-		#dark.purple #settings-toggle:hover,
-		#dark.purple #settings-toggle.active {
-			color: hsl(241, 61%, 69%);
-		}
-	.pink #settings-toggle {
-		color: #FF2D55;
-	}
-		.pink #settings-toggle:hover,
-		.pink #settings-toggle.active {
-			color: hsl(349, 100%, 49%);
-		}
-		#dark.pink #settings-toggle:hover,
-		#dark.pink #settings-toggle.active {
-			color: hsl(349, 100%, 69%);
-		}
-.safari #settings-toggle {
-	-webkit-backdrop-filter: saturate(180%) blur(20px);
-	backdrop-filter: saturate(180%) blur(20px);
-}
-#dark #settings-toggle {
-	background-color: rgba(39, 40, 34, 0.7);
-}
 
 /* ----- FORMS & BUTTONS ----- */
 
