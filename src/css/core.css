@@ -161,7 +161,7 @@ menu,
 	font-size: 1.3rem;
 }
 /*
-Following the 1.2 Minor Third type scale 
+Following the 1.2 Minor Third type scale
 http://type-scale.com
 */
 h1 {
@@ -460,7 +460,7 @@ menu {
 
 		font-size: 0.833em;
 		margin-top: 1px;
-		
+
 		overflow: hidden;
 		opacity: 0;
 		height: 0;
@@ -595,7 +595,7 @@ menu {
 	vertical-align: top;
 	width: 48px;
 	height: 48px;
-	
+
 	image-rendering: -moz-crisp-edges;
 	image-rendering: -o-crisp-edges;
 	image-rendering: -webkit-optimize-contrast;
@@ -1451,7 +1451,7 @@ pre code {
 /**
  * Changes the highlight style for code blocks so it more closely matches that
  * of Sublime Text's Monokai theme.
- * 
+ *
  * These must be separate, otherwise the highlighting doesn't work.
  */
 pre::selection {
@@ -1531,7 +1531,7 @@ main,
 html {
 	transition: background-color 0.2s cubic-bezier(0.28, 0.11, 0.32, 0);
 }
-input, textarea { 
+input, textarea {
 	transition: background-color 0.2s ease, border 0.2s ease;
 }
 menu ul a,
@@ -1716,7 +1716,7 @@ kbd {
 	}
 }
 
-/* 
+/*
 Medium devices (iPads)
 Font size: 19px, ~Margin&Padding: 28.5px
 */
@@ -2105,6 +2105,10 @@ Font size: 19px, ~Margin&Padding: 28.5px
 	.edge-to-edge.infinite > pre > code {
 		max-width: 34rem;
 	}
+	article > pre > code {
+		margin-left: 0;
+		margin-right: 0;
+	}
 
 
 	/* FOOTER ------------------------------------- */
@@ -2137,7 +2141,7 @@ Font size: 19px, ~Margin&Padding: 28.5px
 	}
 }
 
-/* 
+/*
 Large devices (Macs)
 Font size: 21px, ~Margin&Padding: 31.5px
 */
@@ -2215,7 +2219,7 @@ Font size: 21px, ~Margin&Padding: 31.5px
 		padding-bottom: 0.1375rem;
 		padding-top: 0.9em;
 	}
-	
+
 
 	/* ELEMENTS ------------------------------------- */
 
@@ -2223,7 +2227,7 @@ Font size: 21px, ~Margin&Padding: 31.5px
 	/* --- CARDS --- */
 	.card,
 	.card.large-when-small {
-		width: 42.5vw; 
+		width: 42.5vw;
 		min-width: 18.5em;
 		max-width: 23.5em;
 	}
