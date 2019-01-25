@@ -1353,6 +1353,7 @@ article > pre,
 }
 article > pre > code {
 	width: 100%;
+	max-width: 44em;
 	text-align: left;
 	margin-left: 5.5%;
 	margin-right: 5.5%;
@@ -2106,6 +2107,7 @@ Font size: 19px, ~Margin&Padding: 28.5px
 		max-width: 34rem;
 	}
 	article > pre > code {
+		max-width: unset;
 		margin-left: 0;
 		margin-right: 0;
 	}
