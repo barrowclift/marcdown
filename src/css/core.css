@@ -61,6 +61,10 @@ main {
 	padding-left: 5%;
 	padding-right: 5%;
 }
+	main.projects {
+		display: block;
+		margin-top: 0;
+	}
 @supports(padding: max(0px)) {
 	main {
 		padding-left: max(5%, env(safe-area-inset-left));
@@ -417,6 +421,9 @@ menu {
 		z-index: 5000;
 		height: 100%;
 	}
+	#mainmenu a:hover {
+		background-color: unset !important;
+	}
 	#submenu-toggle {
 		cursor: pointer;
 	}
@@ -435,7 +442,7 @@ menu {
 			margin: 0;
 			padding-bottom: 0.5em;
 			padding-top: 0.725em;
-			min-width: 33vw;
+			min-width: 32vw;
 		}
 		menu ul a {
 			margin-bottom: 0;
@@ -475,7 +482,7 @@ menu {
 		#submenu ul li {
 			padding-top: 0.833em;
 			padding-bottom: 0.833em;
-			min-width: 33vw;
+			min-width: 32vw;
 		}
 
 /* Settings "button" (aA) */
@@ -645,6 +652,17 @@ menu header:hover #logo #logo-eye-opened {
 .watchos-screenshot a:hover img,
 .watchos-screenshot:hover video {
 	transform: scale(1.025);
+}
+button:hover,
+.button:hover {
+	transform: scale(1.05);
+}
+button.active,
+button:active
+.button:hover,
+.button.active,
+.button:active {
+	transform: scale(0.95);
 }
 
 .card {
@@ -1034,6 +1052,15 @@ mark {
 .admonition table:last-child,
 .admonition .admonition {
 	margin-bottom: 0;
+}
+
+
+/* ----- HINTS ----- */
+[data-hint]:after {
+	z-index: 100;
+}
+[data-hint]:before {
+	z-index: 101;
 }
 
 
@@ -1545,11 +1572,6 @@ menu {
 	transition: background-color 0.2s cubic-bezier(0.28, 0.11, 0.32, 0), opacity 0.2s ease;
 }
 
-.button,
-button {
-	transition: background 0.2s ease, box-shadow 0.2s ease;
-}
-
 /* Transitioning background */
 hr {
 	transition: background 0.2s cubic-bezier(0.28, 0.11, 0.32, 0);
@@ -1557,7 +1579,6 @@ hr {
 
 /* Transitioning shadows */
 .project,
-.threeDHover,
 .shadow a img,
 .shadow video { /* For hovering special project "cards" on the project page (TODO refactor to generic .cards) */
 	transition: box-shadow 0.2s ease;
@@ -1596,7 +1617,6 @@ input, textarea {
 
 /* Resizing / Transformations */
 .card,
-.project,
 .threeDHover,
 .shadow a img,
 .shadow video {
@@ -1604,6 +1624,10 @@ input, textarea {
 }
 .card-animation {
 	transition: transform 600ms ease;
+}
+.button,
+button {
+	transition: background 0.2s ease, box-shadow 0.2s ease, transform 300ms ease;
 }
 
 .show-when-hovered,
@@ -1679,6 +1703,9 @@ kbd {
 .show-when-light {
 	display: inline-block !important;
 }
+#hidden-logo-link {
+	display: none;
+}
 
 .hide-when-small {
 	display: none !important;
@@ -1686,6 +1713,9 @@ kbd {
 .show-when-small {
 	display: inline !important;
 }
+	menu li.show-when-small {
+		display: inline-block !important;
+	}
 
 
 /* MEDIA QUERIES ==================================================================== */
@@ -1729,6 +1759,10 @@ Font size: 19px, ~Margin&Padding: 28.5px
 		margin-top: 5.2em;
 		max-width: 34em;
 	}
+		main.projects {
+			margin-top: 0;
+			padding-top: 5.2em !important;
+		}
 	div:not(.full-width-page) > main {
 		padding-left: env(safe-area-inset-left);
 		padding-right: env(safe-area-inset-right);
@@ -2125,7 +2159,11 @@ Font size: 19px, ~Margin&Padding: 28.5px
 	.hide-when-small {
 		display: initial !important;
 	}
-	.show-when-small {
+		menu li.hide-when-small {
+			display: inline-block !important;
+		}
+	.show-when-small,
+	menu li.show-when-small {
 		display: none !important;
 	}
 	main a,
@@ -2380,17 +2418,22 @@ menu,
 .bigfoot-footnote__tooltip {
 	background-color: rgba(255, 255, 255, 0.9);
 }
-.hint--right:before {
+.hint--right[data-hint]:before {
 	border-right-color: rgba(255, 255, 255, 0.9);
+}
+.hint--top[data-hint]:before {
+	border-top-color: rgba(255, 255, 255, 0.9);
+}
+.hint--bottom[data-hint]:before {
+	border-bottom-color: rgba(255, 255, 255, 0.9);
+}
+.hint--left[data-hint]:before {
+	border-left-color: rgba(255, 255, 255, 0.9);
 }
 	.safari menu,
 	.safari .popup,
-	.safari [data-hint]:after,
 	.safari .bigfoot-footnote__content {
 		background-color: rgba(255, 255, 255, 0.7);
-	}
-	.safari .hint--right:before {
-		border-right-color: rgba(255, 255, 255, 0.7);
 	}
 /**
  * Secondary backgrounds
@@ -2580,6 +2623,7 @@ menu {
 .threeDHover,
 .shadow img,
 .shadow video,
+.project,
 .ios-screenshot img,
 .ios-screenshot video,
 .watchos-screenshot img,
@@ -2589,6 +2633,7 @@ menu {
 	.threeDHover:hover,
 	.shadow a:hover img,
 	.shadow:hover video,
+	.project:hover,
 	.ios-screenshot a:hover img,
 	.ios-screenshot:hover video,
 	.watchos-screenshot a:hover img,
@@ -2611,7 +2656,7 @@ a,
 #mainmenu .active,
 #mainmenu a:hover,
 #settings-toggle:hover,
-#settings-toggle.active,
+#settings-toggle.active a,
 #submenu a:hover,
 .header a:hover,
 a:hover .header  {
@@ -2647,13 +2692,13 @@ button,
 }
 	button:hover,
 	.button:hover {
-		background-color: hsl(211, 100%, 45%) !important;
-		box-shadow: inset 0 .65em 1.3em rgba(255, 255, 255, 0.1875), 0 0.43em 0.87em -0.2em hsla(211, 100%, 40%, 0.2);
+		background-color: hsl(211, 100%, 55%) !important;
+		box-shadow: inset 0 .65em 1.3em rgba(255, 255, 255, 0.1875), 0 0.43em 0.87em -0.2em hsla(211, 100%, 55%, 0.2);
 	}
 	button:active,
 	.button:active {
 		background-color: hsl(211, 100%, 45%) !important;
-		box-shadow: inset 0 .65em 1.3em rgba(0, 0, 0, 0.0625), 0 0.43em 0.87em -0.2em hsla(211, 100%, 40%, 0.2);
+		box-shadow: inset 0 .65em 1.3em rgba(0, 0, 0, 0.0625), 0 0.43em 0.87em -0.2em hsla(211, 100%, 45%, 0.2);
 	}
 button.bigfoot-footnote__button {
 	box-shadow: none;
@@ -2662,7 +2707,7 @@ button.bigfoot-footnote__button {
 		box-shadow: 0 0.43em 0.87em -0.2em hsla(211, 100%, 50%, 0.2);
 	}
 	button.bigfoot-footnote__button.is-active {
-		box-shadow: 0 0.43em 0.87em -0.2em hsla(211, 100%, 40%, 0.2);
+		box-shadow: 0 0.43em 0.87em -0.2em hsla(211, 100%, 45%, 0.2);
 	}
 	button.bigfoot-footnote__button:hover:after,
 	button.bigfoot-footnote__button.is-active:after {
@@ -2708,19 +2753,24 @@ html#dark {
 #dark .popup {
 	background-color: rgba(46, 46, 46, 0.95);
 }
-#dark .hint--right:before {
+#dark .hint--right[data-hint]:before {
 	border-right-color: rgba(46, 46, 46, 0.95);
+}
+#dark .hint--top[data-hint]:before {
+	border-top-color: rgba(46, 46, 46, 0.95);
+}
+#dark .hint--bottom[data-hint]:before {
+	border-bottom-color: rgba(46, 46, 46, 0.95);
+}
+#dark .hint--left[data-hint]:before {
+	border-left-color: rgba(46, 46, 46, 0.95);
 }
 	#dark.safari menu {
 		background-color: rgba(23, 23, 23, 0.7);
 	}
-	#dark.safari [data-hint]:after,
 	#dark.safari .bigfoot-footnote__content,
 	#dark.safari .popup {
 		background-color: rgba(46, 46, 46, 0.7);
-	}
-	#dark.safari .hint--right:before {
-		border-right-color: rgba(46, 46, 46, 0.7);
 	}
 /**
  * Secondary backgrounds
@@ -2777,15 +2827,10 @@ html#dark {
 #dark blockquote,
 #dark .bigfoot-footnote,
 #dark .bigfoot-footnote__tooltip,
-#dark .ios-switch input + span:before {
-	border-color: rgba(150, 150, 150, 0.1);
-}
-/**
- * Secondary
- */
+#dark .ios-switch input + span:before,
 #dark thead tr,
 #dark tbody tr {
-	border-color: rgba(0, 0, 0, 0.25);
+	border-color: rgba(150, 150, 150, 0.1);
 }
 #dark hr {
 	background-color: rgba(150, 150, 150, 0.1);
@@ -2798,6 +2843,9 @@ html#dark {
 	background: linear-gradient(to right, rgba(255, 255, 255, 0.0) 0%, rgba(150, 150, 150, 0.1) 25%, rgba(150, 150, 150, 0.1) 50%, rgba(150, 150, 150, 0.1) 75%, rgba(255, 255, 255, 0.0) 100%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='rgba(150, 150, 150, 0.1)', endColorstr='rgba(255, 255, 255, 0.0)',GradientType=1 ); /* IE6-9 */
 }
+/**
+ * Secondary
+ */
 /**
  * Special
  */
@@ -2941,6 +2989,7 @@ html#dark,
 #dark .threeDHover,
 #dark .shadow img,
 #dark .shadow video,
+#dark .project,
 #dark .ios-screenshot img,
 #dark .ios-screenshot video,
 #dark .watchos-screenshot img,
@@ -2950,6 +2999,7 @@ html#dark,
 	#dark .threeDHover:hover,
 	#dark .shadow a:hover img,
 	#dark .shadow:hover video,
+	#dark .project:hover,
 	#dark .ios-screenshot a:hover img,
 	#dark .ios-screenshot:hover video,
 	#dark .watchos-screenshot a:hover img,
