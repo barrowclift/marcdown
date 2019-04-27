@@ -315,17 +315,20 @@ ul {
 	margin-top: 0;
 }
 /* Checklists */
-.task-list input {
-	padding: 0;
-	margin-top: 0;
-	margin-bottom: 0;
-	margin-left: -0.1em;
-	margin-right: 0.1em;
-}
 .task-list {
 	list-style-type: none;
-	margin-left: 0.5em;
+	margin-left: 0.49em;
 }
+	.task-list-item {
+		text-indent: -1.25em;
+		padding-left: 1.25em;
+	}
+	.task-list input {
+		padding: 0;
+		margin: 0;
+		height: 1em;
+		width: 1em;
+	}
 /* Definition Lists */
 dt, dd {
 	text-align: left;
@@ -989,6 +992,9 @@ thead tr {
 }
 tbody tr {
 	border-bottom: 1px solid #000000;
+}
+tbody tr:last-child {
+	border-bottom: unset;
 }
 th {
 	padding-bottom: 0.15em;
@@ -1808,7 +1814,7 @@ Font size: 19px, ~Margin&Padding: 28.5px
 
 	/* ----- LISTS ----- */
 	.task-list {
-		margin-left: 0.65em;
+		margin-left: 0.62em;
 	}
 
 
@@ -2215,7 +2221,7 @@ Font size: 21px, ~Margin&Padding: 31.5px
 
 	/* ----- LISTS ----- */
 	.task-list {
-		margin-left: .74rem;
+		margin-left: .73em;
 	}
 
 
