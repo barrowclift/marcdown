@@ -417,9 +417,14 @@ menu {
 	padding-left: env(safe-area-inset-left);
 	padding-right: env(safe-area-inset-right);
 }
-.safari menu,
+.safari menu #mainmenu ul,
+.safari menu #submenu ul,
 .safari .bigfoot-footnote__content,
-.safari .bigfoot-footnote__tooltip { /* Use Safari's lovely translucency, if available (see core.js) */
+.safari .bigfoot-footnote__tooltip,
+.chrome menu #mainmenu ul,
+.chrome menu #submenu ul,
+.chrome .bigfoot-footnote__content,
+.chrome .bigfoot-footnote__tooltip {
 	-webkit-backdrop-filter: saturate(180%) blur(20px);
 	backdrop-filter: saturate(180%) blur(20px);
 }
@@ -470,9 +475,7 @@ menu {
 		transition: background-color 0.5s cubic-bezier(0.28, 0.11, 0.32, 0);
 
 		z-index: -5000;
-
 		font-size: 0.833em;
-		margin-top: 1px;
 
 		overflow: hidden;
 		opacity: 0;
@@ -505,8 +508,9 @@ menu {
 	opacity: 0;
 	height: auto;
 	width: auto;
-	padding: 0.65em;
-	border: 1px solid #000000;
+	padding: 0;
+	border: unset;
+	background-color: transparent;
 	border-radius: 0.25em;
 	text-align: left;
 
@@ -530,10 +534,6 @@ menu {
 	top: 10.6em;
 	z-index: 10000;
 }
-.safari .popup {
-	-webkit-backdrop-filter: saturate(180%) blur(20px);
-	backdrop-filter: saturate(180%) blur(20px);
-}
 	.popup.show {
 		-webkit-transform: scale(1) translateZ(0);
 		-ms-transform: scale(1) translateZ(0);
@@ -544,7 +544,7 @@ menu {
 		margin-bottom: 0.325em;
 	}
 	.popup .group:last-child {
-		margin-bottom: 0;
+		margin-bottom: -0.325em;
 	}
 	/* Accent color "buttons" */
 	.accent-colors {
@@ -580,6 +580,15 @@ menu {
 	.enforce-dark-mode .accent-colors li {
 		margin-top: 0.25em;
 	}
+	#popup-background {
+		border-radius: 0.25em;
+		padding: 0.65em;
+	}
+		.safari #popup-background,
+		.chrome #popup-background {
+			-webkit-backdrop-filter: saturate(180%) blur(20px);
+			backdrop-filter: saturate(180%) blur(20px);
+		}
 
 .float-menu-for-hiding menu {
 	position: fixed;
@@ -627,7 +636,8 @@ menu header:hover #logo #logo-eye-closed {
 	opacity: 1;
 }
 #logo-eye-closed,
-menu header:hover #logo #logo-eye-opened {
+menu header:hover #logo #logo-eye-opened,
+#dark menu header:hover #logo #logo-eye-closed {
 	opacity: 0;
 }
 #sunglasses,
@@ -1866,8 +1876,8 @@ Font size: 19px, ~Margin&Padding: 28.5px
 			padding-left: 0.48em;
 			padding-top: 0.48em;
 		}
-		menu ul {
-			margin-left: 9em;
+		menu > ul {
+			padding-left: 9em;
 			text-align: left;
 		}
 			menu ul li {
@@ -2247,8 +2257,8 @@ Font size: 21px, ~Margin&Padding: 31.5px
 			padding-left: 0.78em;
 			padding-top: 0.50em;
 		}
-			menu ul {
-				margin-left: 0;
+			menu > ul {
+				padding-left: 0;
 				text-align: center;
 			}
 				menu ul li {
@@ -2425,7 +2435,7 @@ html,
  * Primary floating backgrounds
  */
 menu,
-.popup,
+#popup-background,
 [data-hint]:after,
 .bigfoot-footnote__content,
 .bigfoot-footnote__tooltip {
@@ -2444,8 +2454,11 @@ menu,
 	border-left-color: rgba(255, 255, 255, 0.9);
 }
 	.safari menu,
-	.safari .popup,
-	.safari .bigfoot-footnote__content {
+	.safari #popup-background,
+	.safari .bigfoot-footnote__content,
+	.chrome menu,
+	.chrome #popup-background,
+	.chrome .bigfoot-footnote__content {
 		background-color: rgba(255, 255, 255, 0.7);
 	}
 /**
@@ -2468,7 +2481,8 @@ kbd {
 #parallax-foreground {
 	background-color: rgba(255, 255, 255, 0.975);
 }
-	.safari #parallax-foreground {
+	.safari #parallax-foreground,
+	.chrome #parallax-foreground {
 		background-color: rgba(255, 255, 255, 0.95);
 	}
 input,
@@ -2763,7 +2777,7 @@ html#dark {
 #dark [data-hint]:after,
 #dark .bigfoot-footnote__content,
 #dark .bigfoot-footnote__tooltip,
-#dark .popup {
+#dark #popup-background {
 	background-color: rgba(46, 46, 46, 0.95);
 }
 #dark .hint--right[data-hint]:before {
@@ -2778,11 +2792,14 @@ html#dark {
 #dark .hint--left[data-hint]:before {
 	border-left-color: rgba(46, 46, 46, 0.95);
 }
-	#dark.safari menu {
+	#dark.safari menu,
+	#dark.chrome menu {
 		background-color: rgba(23, 23, 23, 0.7);
 	}
 	#dark.safari .bigfoot-footnote__content,
-	#dark.safari .popup {
+	#dark.safari #popup-background,
+	#dark.chrome .bigfoot-footnote__content,
+	#dark.chrome #popup-background {
 		background-color: rgba(46, 46, 46, 0.7);
 	}
 /**
@@ -2815,7 +2832,8 @@ html#dark {
 #dark #parallax-foreground {
 	background-color: rgba(46, 46, 46, 0.975);
 }
-	#dark.safari #parallax-foreground {
+	#dark.safari #parallax-foreground,
+	#dark.chrome #parallax-foreground {
 		background-color: rgba(46, 46, 46, 0.95);
 	}
 #dark input,

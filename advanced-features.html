@@ -185,22 +185,24 @@ var uml = (function (converter, className, settings) {
           <!-- https://stackoverflow.com/questions/23072351/css-box-with-arrow-and-shadow -->
         </div>
         <div class="popup" id="settings-popup">
-          <div id="dark-mode-settings" class="group checkbox ios-switch">
-            <label>
-              <input onclick="darkModeToggled(this);" value="dark-mode" type="checkbox"><span>Dark Mode:</span>
-            </label>
-          </div>
-          <div id="accent-color-settings" class="group">
-            <label>Accent Color:</label>
-            <ul class="accent-colors">
-              <li><div onclick="changeAccentColor('red')" class="accent-color red"></div></li>
-              <li><div onclick="changeAccentColor('orange')" class="accent-color orange"></div></li>
-              <li><div onclick="changeAccentColor('yellow')" class="accent-color yellow"></div></li>
-              <li><div onclick="changeAccentColor('green')" class="accent-color green"></div></li>
-              <li><div onclick="changeAccentColor('blue')" class="accent-color blue"></div></li>
-              <li><div onclick="changeAccentColor('purple')" class="accent-color purple"></div></li>
-              <li><div onclick="changeAccentColor('pink')" class="accent-color pink"></div></li>
-            </ul>
+          <div id="popup-background">
+            <div id="dark-mode-settings" class="group checkbox ios-switch">
+              <label>
+                <input onclick="darkModeToggled(this);" value="dark-mode" type="checkbox"><span>Dark Mode:</span>
+              </label>
+            </div>
+            <div id="accent-color-settings" class="group">
+              <label>Accent Color:</label>
+              <ul class="accent-colors">
+                <li><div onclick="changeAccentColor('red')" class="accent-color red"></div></li>
+                <li><div onclick="changeAccentColor('orange')" class="accent-color orange"></div></li>
+                <li><div onclick="changeAccentColor('yellow')" class="accent-color yellow"></div></li>
+                <li><div onclick="changeAccentColor('green')" class="accent-color green"></div></li>
+                <li><div onclick="changeAccentColor('blue')" class="accent-color blue"></div></li>
+                <li><div onclick="changeAccentColor('purple')" class="accent-color purple"></div></li>
+                <li><div onclick="changeAccentColor('pink')" class="accent-color pink"></div></li>
+              </ul>
+            </div>
           </div>
         </div>
       </menu>
