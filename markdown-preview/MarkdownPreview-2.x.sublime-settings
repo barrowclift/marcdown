@@ -32,7 +32,7 @@
         // Extra's Markdown parsing in raw HTML cannot be
         // included by itself, but "pymdownx" exposes it so we can.
         "pymdownx.extrarawhtml",
-        
+
         "markdown.extensions.admonition",
         "markdown.extensions.meta",
         "markdown.extensions.sane_lists",
@@ -58,7 +58,11 @@
             "pymdownx.emoji": {  // Provide GitHub's emojis
                 "emoji_index": {"!!python/name": "pymdownx.emoji.gemoji"},
                 "emoji_generator": {"!!python/name": "pymdownx.emoji.to_png"},
-                "alt": "short"
+                "alt": "short",
+                "options": {
+                    // The default emoji path is currently broken, we must manually override in the meantime
+                    "image_path": "https://github.githubassets.com/images/icons/emoji/unicode/"
+                }
             }
         }
     ],
