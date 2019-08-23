@@ -2,6 +2,17 @@
 <html>
 <head>
 	<meta charset="utf-8">
+
+	<!-- Add dark mode ID (if enabled) to minimize flash of white as much as possible -->
+	<script type="text/javascript">
+		/* See simple-get-cookie.js */
+		function c(n){var dc=document.cookie;var p=n+"=";var b=dc.indexOf("; "+p);if(b==-1){b=dc.indexOf(p);if(b!=0){return null;}}else{b+=2;}var e=document.cookie.indexOf(";",b);if(e==-1){e=dc.length;}return decodeURI(dc.substring(b+p.length, e));}
+		/* See main.js */
+		var inSystemDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+		if(c("dark-mode") == "on" || (inSystemDarkMode && c("dark-mode") == null)){document.getElementsByTagName("html")[0].setAttribute("id", "dark");}
+		if(c("accent-color")){document.getElementsByTagName("html")[0].className+=" "+c("accent-color")}
+	</script>
+
 	{{ HEAD }}
 	<link href="/usr/local/marcdown/src/css/min/reset.min.css" rel="stylesheet" type="text/css" />
 	<link href="/usr/local/marcdown/src/css/min/accents.min.css" rel="stylesheet" type="text/css" />

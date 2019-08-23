@@ -11,14 +11,14 @@ main {
    have to make the lists in HTML far more often than not. Thus, to better
    accomidate my Markdown writing habits outside of barrowclift.me the default
    list style is compact.*/
-ol ul,
+/*ol ul,
 ol ol,
 ul ol,
 ul ul,
 li {
 	margin-bottom: 0 !important;
 	margin-top: 0 !important;
-}
+}*/
 li p,
 li pre {
 	margin-top: 0;

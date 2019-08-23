@@ -2,6 +2,17 @@
 <html>
 <head>
 	<meta charset="utf-8">
+
+	<!-- Add dark mode ID (if enabled) to minimize flash of white as much as possible -->
+	<script type="text/javascript">
+		/* See simple-get-cookie.js */
+		function c(n){var dc=document.cookie;var p=n+"=";var b=dc.indexOf("; "+p);if(b==-1){b=dc.indexOf(p);if(b!=0){return null;}}else{b+=2;}var e=document.cookie.indexOf(";",b);if(e==-1){e=dc.length;}return decodeURI(dc.substring(b+p.length, e));}
+		/* See main.js */
+		var inSystemDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+		if(c("dark-mode") == "on" || (inSystemDarkMode && c("dark-mode") == null)){document.getElementsByTagName("html")[0].setAttribute("id", "dark");}
+		if(c("accent-color")){document.getElementsByTagName("html")[0].className+=" "+c("accent-color")}
+	</script>
+
 	<style>.codehilite .hll { background-color: #49483e }
 .codehilite  { background: #272822; color: #f8f8f2 }
 .codehilite .c { color: #75715e } /* Comment */
@@ -73,12 +84,29 @@
 	<link href="https://barrowclift.me/marcdown/src/css/min/core.min.css" rel="stylesheet" type="text/css" />
 	<link href="https://barrowclift.me/marcdown/src/css/min/marcdown-specific.min.css" rel="stylesheet" type="text/css" />
 	<link media="print" href="https://barrowclift.me/marcdown/src/css/min/print.min.css" rel="stylesheet" type="text/css" />
-	<script src="https://barrowclift.me/marcdown/src/js/min/jquery-2.2.1.min.js" type="text/javascript"></script>
+	<script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
 	<script src="https://barrowclift.me/marcdown/src/js/min/core.min.js" type="text/javascript"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="canonical" href="https://barrowclift.me/marcdown/">
+	<meta property="og:locale" content="en_US"/>
+	<meta property="og:type" content="website"/>
+	<meta property="og:title" content="Marcdown"/>
+	<meta property="og:description" content="A Markdown theme for humans"/>
+	<meta name="description" content="A Markdown theme for humans">
+	<meta property="og:url" content="https://barrowclift.me/marcdown/"/>
+	<meta property="og:image" content="https://barrowclift.me/marcdown/img/share-banner.png"/>
+	<meta property="og:site_name" content="Marcdown"/>
+	<meta property="fb:admins" content="1665270112"/>
+
+	<meta name="twitter:card" content="summary_large_image"/>
+	<meta name="twitter:site" content="@barrowclift"/>
+	<meta name="twitter:title" content="Marcdown"/>
+	<meta name="twitter:description" content="A Markdown theme for humans"/>
+	<meta name="twitter:image" content="https://barrowclift.me/marcdown/img/share-banner.png"/>
+	<meta name="twitter:url" content="https://barrowclift.me/marcdown/"/>
 </head>
 <body>
-	<div class="backdrop"></div>
 	<div id="wrap">
 		<div id="content" class="center">
 			<menu>
@@ -109,7 +137,7 @@
 					</div>
 				</div>
 			</menu>
-			<main id="marcdown-body">
+			<main>
 				<article>
 					<h1 id="header-1">Header 1</h1>
 <h2 id="header-2">Header 2</h2>
@@ -122,8 +150,4 @@
 		</div>
 	</div>
 </body>
-<script>
-//http://www.beardedhacker.com/blog/2015/08/28/add-class-attribute-to-markdown-table/
-$('div.fancy-tables-start').nextUntil('div.fancy-tables-end', 'table').addClass('table fancy');
-</script>
 </html>
