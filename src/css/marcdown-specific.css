@@ -82,8 +82,49 @@ menu,
 		-webkit-backdrop-filter: saturate(180%) blur(20px);
 		backdrop-filter: saturate(180%) blur(20px);
 	}
-	#dark #settings-toggle {
-		background-color: rgba(39, 40, 34, 0.7);
+	.red #settings-toggle {
+		background-color: rgba(255, 253, 252, 0.7);
+	}
+	.orange #settings-toggle {
+		background-color: rgba(255, 254, 252, 0.7);
+	}
+	.yellow #settings-toggle {
+		background-color: rgba(255, 255, 253, 0.7);
+	}
+	.green #settings-toggle {
+		background-color: rgba(253, 255, 253, 0.7);
+	}
+	#settings-toggle,
+	.blue #settings-toggle {
+		background-color: rgba(252, 253, 255, 0.7);
+	}
+	.purple #settings-toggle {
+		background-color: rgba(253, 253, 255, 0.7);
+	}
+	.pink #settings-toggle {
+		background-color: rgba(255, 253, 253, 0.7);
+	}
+	#dark.red #settings-toggle {
+		background-color: rgba(41, 37, 36, 0.7);
+	}
+	#dark.orange #settings-toggle {
+		background-color: rgba(41, 38, 36, 0.7);
+	}
+	#dark.yellow #settings-toggle {
+		background-color: rgba(41, 40, 36, 0.7);
+	}
+	#dark.green #settings-toggle {
+		background-color: rgba(38, 40, 38, 0.7);
+	}
+	#dark #settings-toggle,
+	#dark.blue #settings-toggle {
+		background-color: rgba(36, 38, 41, 0.7);
+	}
+	#dark.purple #settings-toggle {
+		background-color: rgba(37, 37, 40, 0.7);
+	}
+	#dark.pink #settings-toggle {
+		background-color: rgba(41, 36, 37, 0.7);
 	}
 
 /* ----- FORMS & BUTTONS ----- */

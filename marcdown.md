@@ -367,17 +367,23 @@ In rare cases, you may want to preface a document or a section with a prominent 
 
 Here's some examples with the various supported flavors:
 
-!!! Update "Update: March 17, 2017"
+!!! Yellow "Update: March 17, 2017"
 	This process has changed as of iOS 10. While the steps below still apply for those on older versions, those running iOS 10+ must follow follow [these steps](#admonitions) instead.
 
-!!! Warning "Trigger Warning"
+!!! Red "Trigger Warning"
 	What follows are recounts of graphically violent stories that may not be suitable for those dealing with trauma such as PTSD. Reader discretion is advised.
 
-!!! Success "All Tests Passed"
+!!! Green "All Tests Passed"
 	All tests passed full regression testing.
 
-!!! Unknown "Title"
-	Generic admonition block.
+!!! Blue "Pro Tip"
+	Infomation block, useful for small bits of information like tips.
+
+!!! Info ""
+	Information block without a header.
+
+!!! Aside "Tangent"
+	This is an example of an aside.
 
 ### Highlighting
 

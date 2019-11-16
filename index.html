@@ -148,7 +148,7 @@
 <li>Dark / light themes, with the option to switch between them at will in the rendered documents themselves</li>
 </ol>
 <p>Given the nature of such specific requirements, I had no choice but to create my own Markdown theme. That theme is Marcdown&mdash;a Markdown theme designed to be just as beautiful for late night journal entries as it is functional for intense computer science notes. Give it a try, I think you&rsquo;re going to love it.</p>
-<ul>
+<ul class="compact-list">
 <li><a href="#design">Design</a><ul>
 <li><a href="#typeface">Typeface</a></li>
 <li><a href="#headers">Headers</a></li>
@@ -478,21 +478,28 @@ lines</code></pre></div>
 <h3 id="admonitions">Admonitions</h3>
 <p>In rare cases, you may want to preface a document or a section with a prominent announcement communicating some kind of information to the reader. Perhaps this is an &ldquo;Update&rdquo; block that provides some new information to the writing below while still preserving the original writing. Or maybe this is a &ldquo;Warning&rdquo; block of some kind to forewarn that what follows may trigger those with PTSD or other mental trauma. Whatever the reason, there&rsquo;s an admonition flavor for it.</p>
 <p>Here&rsquo;s some examples with the various supported flavors:</p>
-<div class="admonition update">
+<div class="admonition yellow">
 <p class="admonition-title">Update: March 17, 2017</p>
 <p>This process has changed as of iOS 10. While the steps below still apply for those on older versions, those running iOS 10+ must follow follow <a href="#admonitions">these steps</a> instead.</p>
 </div>
-<div class="admonition warning">
+<div class="admonition red">
 <p class="admonition-title">Trigger Warning</p>
 <p>What follows are recounts of graphically violent stories that may not be suitable for those dealing with trauma such as PTSD. Reader discretion is advised.</p>
 </div>
-<div class="admonition success">
+<div class="admonition green">
 <p class="admonition-title">All Tests Passed</p>
 <p>All tests passed full regression testing.</p>
 </div>
-<div class="admonition unknown">
-<p class="admonition-title">Title</p>
-<p>Generic admonition block.</p>
+<div class="admonition blue">
+<p class="admonition-title">Pro Tip</p>
+<p>Infomation block, useful for small bits of information like tips.</p>
+</div>
+<div class="admonition info">
+<p>Information block without a header.</p>
+</div>
+<div class="admonition aside">
+<p class="admonition-title">Tangent</p>
+<p>This is an example of an aside.</p>
 </div>
 <h3 id="highlighting">Highlighting</h3>
 <p>While organizing reference materials or studying, there are times we <em>really</em> want to emphasis a word or snippet, so much so that even <strong>bolding</strong> the text won&rsquo;t suffice. For situations like this, <mark>highlighting is fully supported</mark> using the <code>==text to highlight==</code> syntax. For the highlight-lovers out there, multiple flavors like <mark class="red">Red</mark>, <mark class="orange">Orange</mark>, <mark class="yellow">Yellow</mark>, <mark class="blue">Blue</mark>, <mark class="green">Green</mark>, <mark class="purple">Purple</mark>, and <mark class="gray">Gray</mark> are supported.</p>

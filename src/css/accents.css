@@ -9,21 +9,30 @@
  */
 mark.gray,
 mark.grey {
-	background: unset;
-	background-image: linear-gradient(to bottom right, hsla(0, 0%, 85%, 0.75) 38.66%, hsla(3, 0%, 85%, 0.75))
+    background: unset;
+    background-image: linear-gradient(to bottom right, hsla(0, 0%, 85%, 0.75) 38.66%, hsla(3, 0%, 85%, 0.75))
 }
 mark.tag.gray,
 mark.tag.grey {
-	background: unset;
-	background-image: linear-gradient(to bottom right, hsla(0, 0%, 50%, 0.9) 38.66%, hsla(3, 0%, 50%, 0.9))
+    background: unset;
+    background-image: linear-gradient(to bottom right, hsla(0, 0%, 50%, 0.9) 38.66%, hsla(3, 0%, 50%, 0.9))
 }
-.admonition,
-.admonition.hint,
-.admonition.question,
-.admonition.note,
-.admonition.info {
-	/* Default style is inline code colors */
-	background-color: hsla(0, 0%, 85%, 0.7);
+.admonition {
+    background-color: rgba(245, 245, 245, .9);
+    border-color: rgb(192, 192, 192);
+}
+.admonition .admonition-title:before,
+.admonition > p:first-child:before {
+    background-color: rgb(192, 192, 192);
+}
+
+#dark .admonition {
+    background-color: rgba(46, 46, 46, 0.9);
+    border-color: rgba(124, 124, 124, 0.9);
+}
+#dark .admonition > p:first-child:before,
+#dark .admonition .admonition-title:before {
+    background-color: rgb(116, 116, 116);
 }
 
 /******************
@@ -36,108 +45,157 @@ mark.tag.grey {
  * HSL: hsl(211, 100%, 50%);
  */
 .accent-color.blue {
-	background-color: #007AFF;
+    background-color: #007AFF;
 }
 mark.blue {
-	background: unset;
-	background-image: linear-gradient(to bottom right, hsla(211, 100%, 50%, 0.75) 38.66%, hsla(214, 100%, 50%, 0.75));
+    background: unset;
+    background-image: linear-gradient(to bottom right, hsla(211, 100%, 50%, 0.75) 38.66%, hsla(214, 100%, 50%, 0.75));
 }
 mark.tag.blue {
-	background: unset;
-	background-image: linear-gradient(to bottom right, hsla(211, 100%, 50%, 0.9) 38.66%, hsla(214, 100%, 50%, 0.9));
+    background: unset;
+    background-image: linear-gradient(to bottom right, hsla(211, 100%, 50%, 0.9) 38.66%, hsla(214, 100%, 50%, 0.9));
+}
+
+.admonition.question,
+.admonition.hint,
+.admonition.note,
+.admonition.info,
+.admonition.tip,
+.admonition.example,
+.admonition.blue {
+    background-color: hsla(211, 100%, 50%, 0.1);
+    border-color: hsl(211, 100%, 50%) !important;
+}
+.admonition.question .admonition-title:before,
+.admonition.hint .admonition-title:before,
+.admonition.note .admonition-title:before,
+.admonition.info .admonition-title:before,
+.admonition.tip .admonition-title:before,
+.admonition.example .admonition-title:before,
+.admonition.blue .admonition-title:before,
+.admonition.question p:first-child:before,
+.admonition.hint p:first-child:before,
+.admonition.note p:first-child:before,
+.admonition.info p:first-child:before,
+.admonition.tip p:first-child:before,
+.admonition.example p:first-child:before,
+.admonition.blue p:first-child:before {
+    background-color: hsla(211, 100%, 50%) !important;
 }
 
 .blue a,
 .blue #mainmenu .active,
 .blue #mainmenu a:hover,
 .blue #settings-toggle:hover,
-.blue #settings-toggle.active,
+.blue #settings-toggle.active a,
 .blue #submenu a:hover,
 .blue .header a:hover,
 .blue a:hover .header  {
-	color: hsl(211, 100%, 50%);
+    color: hsl(211, 100%, 50%);
 }
-.blue #logo:hover .signature-color {
-	fill: hsl(211, 100%, 50%);
+.blue #logo:hover .signature-color,
+.blue #signature.active .signature-color {
+    fill: hsl(211, 100%, 50%);
 }
 .blue .backdrop {
-	background-color: hsl(211, 100%, 50%);
+    background-color: hsl(211, 100%, 50%);
 }
 
 .blue a:hover,
 .blue #submenu {
-	background-color: hsla(211, 100%, 50%, 0.1);
+    background-color: hsla(211, 100%, 50%, 0.1);
 }
 
 /* Highlights (must be seperate, combining them breaks the style) */
 .blue ::selection { /* Safari */
-	background: hsla(211, 100%, 50%, 0.99);
-	color: white;
+    background: hsla(211, 100%, 50%, 0.99);
+    color: white;
 }
 .blue ::-moz-selection { /* Firefox */
-	background: hsla(211, 100%, 50%, 0.99);
-	color: white;
+    background: hsla(211, 100%, 50%, 0.99);
+    color: white;
 }
 
 .blue button,
 .blue .button {
-	background-color: hsl(211, 100%, 50%);
-	box-shadow: inset 0 .65em 1.3em rgba(255, 255, 255, 0.1875), 0 0.43em 0.87em -0.2em hsla(211, 100%, 50%, 0.2);
+    background-color: hsl(211, 100%, 50%);
+    box-shadow: inset 0 .65em 1.3em rgba(255, 255, 255, 0.1875), 0 0.43em 0.87em -0.2em hsla(211, 100%, 50%, 0.2);
 }
-	.blue button:hover,
-	.blue .button:hover {
-		background-color: hsl(211, 100%, 40%) !important;
-		box-shadow: inset 0 .65em 1.3em rgba(255, 255, 255, 0.1875), 0 0.43em 0.87em -0.2em hsla(211, 100%, 40%, 0.2);
-	}
-	.blue button:active,
-	.blue .button:active {
-		background-color: hsl(211, 100%, 40%) !important;
-		box-shadow: inset 0 .65em 1.3em rgba(0, 0, 0, 0.0625), 0 0.43em 0.87em -0.2em hsla(211, 100%, 40%, 0.2);
-	}
+    .blue button:hover,
+    .blue .button:hover {
+        background-color: hsl(211, 100%, 55%) !important;
+        box-shadow: inset 0 .65em 1.3em rgba(255, 255, 255, 0.1875), 0 0.43em 0.87em -0.2em hsla(211, 100%, 55%, 0.2);
+    }
+    .blue button:active,
+    .blue .button:active {
+        background-color: hsl(211, 100%, 45%) !important;
+        box-shadow: inset 0 .65em 1.3em rgba(0, 0, 0, 0.0625), 0 0.43em 0.87em -0.2em hsla(211, 100%, 45%, 0.2);
+    }
 .blue button.bigfoot-footnote__button {
-	background-color: hsla(211, 100%, 50%, 0.1);
-	box-shadow: none;
+    background-color: hsla(211, 100%, 50%, 0.1);
+    box-shadow: none;
 }
-	.blue button.bigfoot-footnote__button:after {
-		color: hsl(211, 100%, 50%) !important;
-	}
-	.blue button.bigfoot-footnote__button:hover {
-		background-color: hsl(211, 100%, 50%) !important;
-		box-shadow: 0 0.43em 0.87em -0.2em hsla(211, 100%, 50%, 0.2);
-	}
-	.blue button.bigfoot-footnote__button:active,
-	.blue button.bigfoot-footnote__button.is-active {
-		background-color: hsl(211, 100%, 40%) !important;
-		box-shadow: 0 0.43em 0.87em -0.2em hsla(211, 100%, 40%, 0.2);
-	}
+    .blue button.bigfoot-footnote__button:after {
+        color: hsl(211, 100%, 50%) !important;
+    }
+    .blue button.bigfoot-footnote__button:hover {
+        background-color: hsl(211, 100%, 50%) !important;
+        box-shadow: 0 0.43em 0.87em -0.2em hsla(211, 100%, 50%, 0.2);
+    }
+    .blue button.bigfoot-footnote__button:active,
+    .blue button.bigfoot-footnote__button.is-active {
+        background-color: hsl(211, 100%, 45%) !important;
+        box-shadow: 0 0.43em 0.87em -0.2em hsla(211, 100%, 45%, 0.2);
+    }
 
 .blue input:focus,
 .blue textarea:focus {
-	border-color: hsl(211, 100%, 50%) !important;
-	box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0.43em 0.87em -0.2em hsla(211, 100%, 50%, 0.2) !important;
+    border-color: hsl(211, 100%, 50%) !important;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0.43em 0.87em -0.2em hsla(211, 100%, 50%, 0.2) !important;
 }
 
 .blue .codehilite,
 .blue .highlight {
-	background-color: rgb(33, 34, 36);
+    background-color: rgb(33, 34, 36);
 }
+
+.blue .summary-list li a {
+    border-color: hsla(211, 100%, 50%, 0.1);
+}
+    .blue .summary-list li a:hover {
+        border-color: hsl(211, 100%, 50%) !important;
+    }
 
 #dark.blue .header a:hover,
 #dark.blue a:hover .header {
-	color: hsl(211, 100%, 50%);
+    color: hsl(211, 100%, 50%);
 }
 #dark.blue a:hover,
 #dark.blue #submenu,
 #dark.blue button.bigfoot-footnote__button {
-	background-color: hsla(211, 100%, 50%, 0.15);
+    background-color: hsla(211, 100%, 50%, 0.15);
 }
 
 /* Highlights (must be seperate, combining them breaks the style) */
 #dark.blue ::selection { /* Safari */
-	background: hsla(211, 100%, 50%, 0.85);
+    background: hsla(211, 100%, 50%, 0.85);
 }
 #dark.blue ::-moz-selection { /* Firefox */
-	background: hsla(211, 100%, 50%, 0.85);
+    background: hsla(211, 100%, 50%, 0.85);
+}
+
+#dark.blue .summary-list li a {
+    border-color: hsla(211, 100%, 50%, 0.15);
+}
+
+#dark .admonition.question,
+#dark .admonition.hint,
+#dark .admonition.note,
+#dark .admonition.info,
+#dark .admonition.tip,
+#dark .admonition.example,
+#dark .admonition.blue {
+    background-color: hsla(211, 100%, 50%, 0.15);
 }
 
 /******************
@@ -150,113 +208,144 @@ mark.tag.blue {
  * HSL: hsl(3, 100%, 59%);
  */
 .accent-color.red {
-	background-color: #FF3B30;
+    background-color: #FF3B30;
 }
 mark.red {
-	background: unset;
-	background-image: linear-gradient(to bottom right, hsla(3, 100%, 59%, 0.75) 38.66%, hsla(6, 100%, 59%, 0.75));
+    background: unset;
+    background-image: linear-gradient(to bottom right, hsla(3, 100%, 59%, 0.75) 38.66%, hsla(6, 100%, 59%, 0.75));
 }
 mark.tag.red {
-	background: unset;
-	background-image: linear-gradient(to bottom right, hsla(3, 100%, 59%, 0.9) 38.66%, hsla(6, 100%, 59%, 0.9));
+    background: unset;
+    background-image: linear-gradient(to bottom right, hsla(3, 100%, 59%, 0.9) 38.66%, hsla(6, 100%, 59%, 0.9));
 }
 .admonition.error,
 .admonition.danger,
-.admonition.warning {
-	background-color: hsla(3, 100%, 59%, 0.7);
+.admonition.warning,
+.admonition.red {
+    background-color: hsla(3, 100%, 59%, 0.1);
+    border-color: hsl(3, 100%, 59%) !important;
+}
+.admonition.error .admonition-title:before,
+.admonition.danger .admonition-title:before,
+.admonition.warning .admonition-title:before,
+.admonition.red .admonition-title:before,
+.admonition.error p:first-child:before,
+.admonition.danger p:first-child:before,
+.admonition.warning p:first-child:before,
+.admonition.red p:first-child:before {
+    background-color: hsl(3, 100%, 59%) !important;
 }
 
 .red a,
 .red #mainmenu .active,
 .red #mainmenu a:hover,
 .red #settings-toggle:hover,
-.red #settings-toggle.active,
+.red #settings-toggle.active a,
 .red #submenu a:hover,
 .red .header a:hover,
 .red a:hover .header {
-	color: hsl(3, 100%, 59%);
+    color: hsl(3, 100%, 59%);
 }
-.red #logo:hover .signature-color {
-	fill: hsl(3, 100%, 59%);
+.red #logo:hover .signature-color,
+.red #signature.active .signature-color {
+    fill: hsl(3, 100%, 59%);
 }
 .red .backdrop {
-	background-color: hsl(3, 100%, 59%);
+    background-color: hsl(3, 100%, 59%);
 }
 
 .red a:hover,
 .red #submenu {
-	background-color: hsla(3, 100%, 59%, 0.1);
+    background-color: hsla(3, 100%, 59%, 0.1);
 }
 
 /* Highlights (must be seperate, combining them breaks the style) */
 .red ::selection { /* Safari */
-	background: hsla(3, 100%, 59%, 0.99);
-	color: white;
+    background: hsla(3, 100%, 59%, 0.99);
+    color: white;
 }
 .red ::-moz-selection { /* Firefox */
-	background: hsla(3, 100%, 59%, 0.99);
-	color: white;
+    background: hsla(3, 100%, 59%, 0.99);
+    color: white;
 }
 
 .red button,
 .red .button {
-	background-color: hsl(3, 100%, 59%);
-	box-shadow: inset 0 .65em 1.3em rgba(255, 255, 255, 0.1875), 0 0.43em 0.87em -0.2em hsla(3, 100%, 59%, 0.2);
+    background-color: hsl(3, 100%, 59%);
+    box-shadow: inset 0 .65em 1.3em rgba(255, 255, 255, 0.1875), 0 0.43em 0.87em -0.2em hsla(3, 100%, 59%, 0.2);
 }
-	.red button:hover,
-	.red .button:hover {
-		background-color: hsl(3, 100%, 49%) !important;
-		box-shadow: inset 0 .65em 1.3em rgba(255, 255, 255, 0.1875), 0 0.43em 0.87em -0.2em hsla(3, 100%, 49%, 0.2);
-	}
-	.red button:active,
-	.red .button:active {
-		background-color: hsl(3, 100%, 49%) !important;
-		box-shadow: inset 0 .65em 1.3em rgba(0, 0, 0, 0.0625), 0 0.43em 0.87em -0.2em hsla(3, 100%, 49%, 0.2);
-	}
+    .red button:hover,
+    .red .button:hover {
+        background-color: hsl(3, 100%, 64%) !important;
+        box-shadow: inset 0 .65em 1.3em rgba(255, 255, 255, 0.1875), 0 0.43em 0.87em -0.2em hsla(3, 100%, 64%, 0.2);
+    }
+    .red button:active,
+    .red .button:active {
+        background-color: hsl(3, 100%, 54%) !important;
+        box-shadow: inset 0 .65em 1.3em rgba(0, 0, 0, 0.0625), 0 0.43em 0.87em -0.2em hsla(3, 100%, 54%, 0.2);
+    }
 .red button.bigfoot-footnote__button {
-	background-color: hsla(3, 100%, 59%, 0.1);
-	box-shadow: none;
+    background-color: hsla(3, 100%, 59%, 0.1);
+    box-shadow: none;
 }
-	.red button.bigfoot-footnote__button:after {
-		color: hsl(3, 100%, 59%) !important;
-	}
-	.red button.bigfoot-footnote__button:hover {
-		background-color: hsl(3, 100%, 59%) !important;
-		box-shadow: 0 0.43em 0.87em -0.2em hsla(3, 100%, 59%, 0.2);
-	}
-	.red button.bigfoot-footnote__button:active,
-	.red button.bigfoot-footnote__button.is-active {
-		background-color: hsl(3, 100%, 49%) !important;
-		box-shadow: 0 0.43em 0.87em -0.2em hsla(3, 100%, 49%, 0.2);
-	}
+    .red button.bigfoot-footnote__button:after {
+        color: hsl(3, 100%, 59%) !important;
+    }
+    .red button.bigfoot-footnote__button:hover {
+        background-color: hsl(3, 100%, 59%) !important;
+        box-shadow: 0 0.43em 0.87em -0.2em hsla(3, 100%, 59%, 0.2);
+    }
+    .red button.bigfoot-footnote__button:active,
+    .red button.bigfoot-footnote__button.is-active {
+        background-color: hsl(3, 100%, 54%) !important;
+        box-shadow: 0 0.43em 0.87em -0.2em hsla(3, 100%, 54%, 0.2);
+    }
 
 .red input:focus,
 .red textarea:focus {
-	border-color: hsl(3, 100%, 59%) !important;
-	box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0.43em 0.87em -0.2em hsla(3, 100%, 59%, 0.2) !important;
+    border-color: hsl(3, 100%, 59%) !important;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0.43em 0.87em -0.2em hsla(3, 100%, 59%, 0.2) !important;
 }
 
 .red .codehilite,
 .red .highlight {
-	background-color: rgb(36, 34, 33);
+    background-color: rgb(36, 34, 33);
 }
+
+.red .summary-list li a {
+    border-color: hsla(3, 100%, 59%, 0.1);
+}
+    .red .summary-list li a:hover {
+        border-color: hsl(3, 100%, 59%) !important;
+    }
 
 #dark.red .header a:hover,
 #dark.red a:hover .header {
-	color: hsl(3, 100%, 59%);
+    color: hsl(3, 100%, 59%);
 }
 #dark.red a:hover,
 #dark.red #submenu,
 #dark.red button.bigfoot-footnote__button {
-	background-color: hsla(3, 100%, 59%, 0.15);
+    background-color: hsla(3, 100%, 59%, 0.15);
 }
 
 /* Highlights (must be seperate, combining them breaks the style) */
 #dark.red ::selection { /* Safari */
-	background: hsla(3, 100%, 59%, 0.85);
+    background: hsla(3, 100%, 59%, 0.85);
 }
 #dark.red ::-moz-selection { /* Firefox */
-	background: hsla(3, 100%, 59%, 0.85);
+    background: hsla(3, 100%, 59%, 0.85);
+}
+
+#dark.red .summary-list li a {
+    border-color: hsla(3, 100%, 59%, 0.15);
+}
+
+#dark .admonition.error,
+#dark .admonition.danger,
+#dark .admonition.warning,
+#dark .admonition.red {
+    background-color: hsla(3, 100%, 59%, 0.15);
 }
 
 /******************
@@ -269,108 +358,120 @@ mark.tag.red {
  * HSL: hsl(30, 100%, 50%);
  */
 .accent-color.orange {
-	background-color: #FF8100;
+    background-color: #FF8100;
 }
 mark.orange {
-	background: unset;
-	background-image: linear-gradient(to bottom right, hsla(30, 100%, 50%, 0.75) 38.66%, hsla(33, 100%, 50%, 0.75));
+    background: unset;
+    background-image: linear-gradient(to bottom right, hsla(30, 100%, 50%, 0.75) 38.66%, hsla(33, 100%, 50%, 0.75));
 }
 mark.tag.orange {
-	background: unset;
-	background-image: linear-gradient(to bottom right, hsla(30, 100%, 50%, 0.9) 38.66%, hsla(33, 100%, 50%, 0.9));
+    background: unset;
+    background-image: linear-gradient(to bottom right, hsla(30, 100%, 50%, 0.9) 38.66%, hsla(33, 100%, 50%, 0.9));
 }
 
 .orange a,
 .orange #mainmenu .active,
 .orange #mainmenu a:hover,
 .orange #settings-toggle:hover,
-.orange #settings-toggle.active,
+.orange #settings-toggle.active a,
 .orange #submenu a:hover,
 .orange .header a:hover,
 .orange a:hover .header {
-	color: hsl(30, 100%, 50%);
+    color: hsl(30, 100%, 50%);
 }
-.orange #logo:hover .signature-color {
-	fill: hsl(30, 100%, 50%);
+.orange #logo:hover .signature-color,
+.orange #signature.active .signature-color {
+    fill: hsl(30, 100%, 50%);
 }
 .orange .backdrop {
-	background-color: hsl(30, 100%, 50%);
+    background-color: hsl(30, 100%, 50%);
 }
 
 .orange a:hover,
 .orange #submenu {
-	background-color: hsla(30, 100%, 50%, 0.1);
+    background-color: hsla(30, 100%, 50%, 0.1);
 }
 
 /* Highlights (must be seperate, combining them breaks the style) */
 .orange ::selection { /* Safari */
-	background: hsla(30, 100%, 50%, 0.99);
-	color: white;
+    background: hsla(30, 100%, 50%, 0.99);
+    color: white;
 }
 .orange ::-moz-selection { /* Firefox */
-	background: hsla(30, 100%, 50%, 0.99);
-	color: white;
+    background: hsla(30, 100%, 50%, 0.99);
+    color: white;
 }
 
 .orange button,
 .orange .button {
-	background-color: hsl(30, 100%, 50%);
-	box-shadow: inset 0 .65em 1.3em rgba(255, 255, 255, 0.1875), 0 0.43em 0.87em -0.2em hsla(30, 100%, 50%, 0.2);
+    background-color: hsl(30, 100%, 50%);
+    box-shadow: inset 0 .65em 1.3em rgba(255, 255, 255, 0.1875), 0 0.43em 0.87em -0.2em hsla(30, 100%, 50%, 0.2);
 }
-	.orange button:hover,
-	.orange .button:hover {
-		background-color: hsl(30, 100%, 47.5%) !important;
-		box-shadow: inset 0 .65em 1.3em rgba(255, 255, 255, 0.1875), 0 0.43em 0.87em -0.2em hsla(30, 100%, 47.5%, 0.2);
-	}
-	.orange button:active,
-	.orange .button:active {
-		background-color: hsl(30, 100%, 47.5%) !important;
-		box-shadow: inset 0 .65em 1.3em rgba(0, 0, 0, 0.0625), 0 0.43em 0.87em -0.2em hsla(30, 100%, 47.5%, 0.2);
-	}
+    .orange button:hover,
+    .orange .button:hover {
+        background-color: hsl(30, 100%, 55%) !important;
+        box-shadow: inset 0 .65em 1.3em rgba(255, 255, 255, 0.1875), 0 0.43em 0.87em -0.2em hsla(30, 100%, 55%, 0.2);
+    }
+    .orange button:active,
+    .orange .button:active {
+        background-color: hsl(30, 100%, 45%) !important;
+        box-shadow: inset 0 .65em 1.3em rgba(0, 0, 0, 0.0625), 0 0.43em 0.87em -0.2em hsla(30, 100%, 45%, 0.2);
+    }
 .orange button.bigfoot-footnote__button {
-	background-color: hsla(30, 100%, 50%, 0.1);
-	box-shadow: none;
+    background-color: hsla(30, 100%, 50%, 0.1);
+    box-shadow: none;
 }
-	.orange button.bigfoot-footnote__button:after {
-		color: hsl(30, 100%, 50%) !important;
-	}
-	.orange button.bigfoot-footnote__button:hover {
-		background-color: hsl(30, 100%, 50%) !important;
-		box-shadow: 0 0.43em 0.87em -0.2em hsla(30, 100%, 50%, 0.2);
-	}
-	.orange button.bigfoot-footnote__button:active,
-	.orange button.bigfoot-footnote__button.is-active {
-		background-color: hsl(30, 100%, 47.5%) !important;
-		box-shadow: 0 0.43em 0.87em -0.2em hsla(30, 100%, 47.5%, 0.2);
-	}
+    .orange button.bigfoot-footnote__button:after {
+        color: hsl(30, 100%, 50%) !important;
+    }
+    .orange button.bigfoot-footnote__button:hover {
+        background-color: hsl(30, 100%, 50%) !important;
+        box-shadow: 0 0.43em 0.87em -0.2em hsla(30, 100%, 50%, 0.2);
+    }
+    .orange button.bigfoot-footnote__button:active,
+    .orange button.bigfoot-footnote__button.is-active {
+        background-color: hsl(30, 100%, 45%) !important;
+        box-shadow: 0 0.43em 0.87em -0.2em hsla(30, 100%, 45%, 0.2);
+    }
 
 .orange input:focus,
 .orange textarea:focus {
-	border-color: hsl(30, 100%, 50%) !important;
-	box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0.43em 0.87em -0.2em hsla(30, 100%, 50%, 0.2) !important;
+    border-color: hsl(30, 100%, 50%) !important;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0.43em 0.87em -0.2em hsla(30, 100%, 50%, 0.2) !important;
 }
 
 .orange .codehilite,
 .orange .highlight {
-	background-color: rgb(36, 35, 33);
+    background-color: rgb(36, 35, 33);
 }
+
+.orange .summary-list li a {
+    border-color: hsla(30, 100%, 50%, 0.1);
+}
+    .orange .summary-list li a:hover {
+        border-color: hsl(30, 100%, 50%) !important;
+    }
 
 #dark.orange .header a:hover,
 #dark.orange a:hover .header {
-	color: hsl(30, 100%, 50%);
+    color: hsl(30, 100%, 50%);
 }
 #dark.orange a:hover,
 #dark.orange #submenu,
 #dark.orange button.bigfoot-footnote__button {
-	background-color: hsla(30, 100%, 50%, 0.15);
+    background-color: hsla(30, 100%, 50%, 0.15);
 }
 
 /* Highlights (must be seperate, combining them breaks the style) */
 #dark.orange ::selection { /* Safari */
-	background: hsla(30, 100%, 50%, 0.85);
+    background: hsla(30, 100%, 50%, 0.85);
 }
 #dark.orange ::-moz-selection { /* Firefox */
-	background: hsla(30, 100%, 50%, 0.85);
+    background: hsla(30, 100%, 50%, 0.85);
+}
+
+#dark.orange .summary-list li a {
+    border-color: hsla(30, 100%, 50%, 0.15);
 }
 
 /******************
@@ -383,113 +484,138 @@ mark.tag.orange {
  * HSL: hsl(48, 100%, 50%);
  */
 .accent-color.yellow {
-	background-color: #FFCC00;
+    background-color: #FFCC00;
 }
 mark,
 mark.yellow {
-	background: unset;
-	background-image: linear-gradient(to bottom right, hsla(48, 100%, 50%, 0.75) 38.66%, hsla(51, 100%, 50%, 0.75));
+    background: unset;
+    background-image: linear-gradient(to bottom right, hsla(48, 100%, 50%, 0.75) 38.66%, hsla(51, 100%, 50%, 0.75));
 }
 mark.tag,
 mark.tag.yellow {
-	background: unset;
-	background-image: linear-gradient(to bottom right, hsla(48, 100%, 50%, 0.9) 38.66%, hsla(51, 100%, 50%, 0.9));
+    background: unset;
+    background-image: linear-gradient(to bottom right, hsla(48, 100%, 50%, 0.9) 38.66%, hsla(51, 100%, 50%, 0.9));
 }
-.admonition.update {
-	background-color: hsla(48, 100%, 50%, 0.7);
+.admonition.update,
+.admonition.yellow {
+    background-color: hsla(48, 100%, 50%, 0.1);
+    border-color: hsl(48, 100%, 50%) !important;
+}
+.admonition.update .admonition-title:before,
+.admonition.update p:first-child:before,
+.admonition.yellow .admonition-title:before,
+.admonition.yellow p:first-child:before {
+    background-color: hsl(48, 100%, 50%) !important;
 }
 
 .yellow a,
 .yellow #mainmenu .active,
 .yellow #mainmenu a:hover,
 .yellow #settings-toggle:hover,
-.yellow #settings-toggle.active,
+.yellow #settings-toggle.active a,
 .yellow #submenu a:hover,
 .yellow .header a:hover,
 .yellow a:hover .header {
-	color: hsl(48, 100%, 50%);
+    color: hsl(48, 100%, 50%);
 }
-.yellow #logo:hover .signature-color {
-	fill: hsl(48, 100%, 50%);
+.yellow #logo:hover .signature-color,
+.yellow #signature.active .signature-color {
+    fill: hsl(48, 100%, 50%);
 }
 .yellow .backdrop {
-	background-color: hsl(48, 100%, 50%);
+    background-color: hsl(48, 100%, 50%);
 }
 
 .yellow a:hover,
 .yellow #submenu {
-	background-color: hsla(48, 100%, 50%, 0.1);
+    background-color: hsla(48, 100%, 50%, 0.1);
 }
 
 /* Highlights (must be seperate, combining them breaks the style) */
 .yellow ::selection { /* Safari */
-	background: hsla(48, 100%, 50%, 0.99);
-	color: white;
+    background: hsla(48, 100%, 50%, 0.99);
+    color: white;
 }
 .yellow ::-moz-selection { /* Firefox */
-	background: hsla(48, 100%, 50%, 0.99);
-	color: white;
+    background: hsla(48, 100%, 50%, 0.99);
+    color: white;
 }
 
 .yellow button,
 .yellow .button {
-	background-color: hsl(48, 100%, 50%);
-	box-shadow: inset 0 .65em 1.3em rgba(255, 255, 255, 0.1875), 0 0.43em 0.87em -0.2em hsla(48, 100%, 50%, 0.2);
+    background-color: hsl(48, 100%, 50%);
+    box-shadow: inset 0 .65em 1.3em rgba(255, 255, 255, 0.1875), 0 0.43em 0.87em -0.2em hsla(48, 100%, 50%, 0.2);
 }
-	.yellow button:hover,
-	.yellow .button:hover {
-		background-color: hsl(48, 100%, 47.5%) !important;
-		box-shadow: inset 0 .65em 1.3em rgba(255, 255, 255, 0.1875), 0 0.43em 0.87em -0.2em hsla(48, 100%, 47.5%, 0.2);
-	}
-	.yellow button:active,
-	.yellow .button:active {
-		background-color: hsl(48, 100%, 47.5%) !important;
-		box-shadow: inset 0 .65em 1.3em rgba(0, 0, 0, 0.0625), 0 0.43em 0.87em -0.2em hsla(48, 100%, 47.5%, 0.2);
-	}
+    .yellow button:hover,
+    .yellow .button:hover {
+        background-color: hsl(48, 100%, 55%) !important;
+        box-shadow: inset 0 .65em 1.3em rgba(255, 255, 255, 0.1875), 0 0.43em 0.87em -0.2em hsla(48, 100%, 55%, 0.2);
+    }
+    .yellow button:active,
+    .yellow .button:active {
+        background-color: hsl(48, 100%, 45%) !important;
+        box-shadow: inset 0 .65em 1.3em rgba(0, 0, 0, 0.0625), 0 0.43em 0.87em -0.2em hsla(48, 100%, 45%, 0.2);
+    }
 .yellow button.bigfoot-footnote__button {
-	background-color: hsla(48, 100%, 50%, 0.1);
-	box-shadow: none;
+    background-color: hsla(48, 100%, 50%, 0.1);
+    box-shadow: none;
 }
-	.yellow button.bigfoot-footnote__button:after {
-		color: hsl(48, 100%, 50%) !important;
-	}
-	.yellow button.bigfoot-footnote__button:hover {
-		background-color: hsl(48, 100%, 50%) !important;
-		box-shadow: 0 0.43em 0.87em -0.2em hsla(48, 100%, 50%, 0.2);
-	}
-	.yellow button.bigfoot-footnote__button:active,
-	.yellow button.bigfoot-footnote__button.is-active {
-		background-color: hsl(48, 100%, 47.5%) !important;
-		box-shadow: 0 0.43em 0.87em -0.2em hsla(48, 100%, 47.5%, 0.2);
-	}
+    .yellow button.bigfoot-footnote__button:after {
+        color: hsl(48, 100%, 50%) !important;
+    }
+    .yellow button.bigfoot-footnote__button:hover {
+        background-color: hsl(48, 100%, 50%) !important;
+        box-shadow: 0 0.43em 0.87em -0.2em hsla(48, 100%, 50%, 0.2);
+    }
+    .yellow button.bigfoot-footnote__button:active,
+    .yellow button.bigfoot-footnote__button.is-active {
+        background-color: hsl(48, 100%, 45%) !important;
+        box-shadow: 0 0.43em 0.87em -0.2em hsla(48, 100%, 45%, 0.2);
+    }
 
 .yellow input:focus,
 .yellow textarea:focus {
-	border-color: hsl(48, 100%, 50%) !important;
-	box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0.43em 0.87em -0.2em hsla(48, 100%, 50%, 0.2) !important;
+    border-color: hsl(48, 100%, 50%) !important;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0.43em 0.87em -0.2em hsla(48, 100%, 50%, 0.2) !important;
 }
 
 .yellow .codehilite,
 .yellow .highlight {
-	background-color: rgb(36, 36, 34);
+    background-color: rgb(36, 36, 34);
 }
+
+.yellow .summary-list li a {
+    border-color: hsla(48, 100%, 50%, 0.15);
+}
+    .yellow .summary-list li a:hover {
+        border-color: hsl(48, 100%, 50%) !important;
+    }
 
 #dark.yellow .header a:hover,
 #dark.yellow a:hover .header {
-	color: hsl(48, 100%, 50%);
+    color: hsl(48, 100%, 50%);
 }
 #dark.yellow a:hover,
 #dark.yellow #submenu,
 #dark.yellow button.bigfoot-footnote__button {
-	background-color: hsla(48, 100%, 50%, 0.15);
+    background-color: hsla(48, 100%, 50%, 0.15);
 }
 
 /* Highlights (must be seperate, combining them breaks the style) */
 #dark.yellow ::selection { /* Safari */
-	background: hsla(48, 100%, 50%, 0.85);
+    background: hsla(48, 100%, 50%, 0.85);
 }
 #dark.yellow ::-moz-selection { /* Firefox */
-	background: hsla(48, 100%, 50%, 0.85);
+    background: hsla(48, 100%, 50%, 0.85);
+}
+
+#dark.yellow .summary-list li a {
+    border-color: hsla(48, 100%, 50%, 0.15);
+}
+
+#dark .admonition.update,
+#dark .admonition.yellow {
+    background-color: hsla(48, 100%, 50%, 0.15);
 }
 
 /******************
@@ -502,111 +628,136 @@ mark.tag.yellow {
  * HSL: hsl(130, 65%, 57%);
  */
 .accent-color.green {
-	background-color: #4CD964;
+    background-color: #4CD964;
 }
 mark.green {
-	background: unset;
-	background-image: linear-gradient(to bottom right, hsla(130, 65%, 57%, 0.75) 38.66%, hsla(133, 65%, 57%, 0.75));
+    background: unset;
+    background-image: linear-gradient(to bottom right, hsla(130, 65%, 57%, 0.75) 38.66%, hsla(133, 65%, 57%, 0.75));
 }
 mark.tag.green {
-	background: unset;
-	background-image: linear-gradient(to bottom right, hsla(130, 65%, 57%, 0.9) 38.66%, hsla(133, 65%, 57%, 0.9));
+    background: unset;
+    background-image: linear-gradient(to bottom right, hsla(130, 65%, 57%, 0.9) 38.66%, hsla(133, 65%, 57%, 0.9));
 }
-.admonition.success {
-	background-color: hsla(130, 65%, 57%, 0.7);
+.admonition.success,
+.admonition.green {
+    background-color: hsla(130, 65%, 57%, 0.1);
+    border-color: hsl(130, 65%, 57%) !important;
+}
+.admonition.success .admonition-title:before,
+.admonition.success p:first-child:before,
+.admonition.green .admonition-title:before,
+.admonition.green p:first-child:before {
+    background-color: hsl(130, 65%, 57%) !important;
 }
 
 .green a,
 .green #mainmenu .active,
 .green #mainmenu a:hover,
 .green #settings-toggle:hover,
-.green #settings-toggle.active,
+.green #settings-toggle.active a,
 .green #submenu a:hover,
 .green .header a:hover,
 .green a:hover .header {
-	color: hsl(130, 65%, 57%);
+    color: hsl(130, 65%, 57%);
 }
-.green #logo:hover .signature-color {
-	fill: hsl(130, 65%, 57%);
+.green #logo:hover .signature-color,
+.green #signature.active .signature-color {
+    fill: hsl(130, 65%, 57%);
 }
 .green .backdrop {
-	background-color: hsl(130, 65%, 57%);
+    background-color: hsl(130, 65%, 57%);
 }
 
 .green a:hover,
 .green #submenu {
-	background-color: hsla(130, 65%, 57%, 0.1);
+    background-color: hsla(130, 65%, 57%, 0.1);
 }
 
 /* Highlights (must be seperate, combining them breaks the style) */
 .green ::selection { /* Safari */
-	background: hsla(130, 65%, 57%, 0.99);
-	color: white;
+    background: hsla(130, 65%, 57%, 0.99);
+    color: white;
 }
 .green ::-moz-selection { /* Firefox */
-	background: hsla(130, 65%, 57%, 0.99);
-	color: white;
+    background: hsla(130, 65%, 57%, 0.99);
+    color: white;
 }
 
 .green button,
 .green .button {
-	background-color: hsl(130, 65%, 57%);
-	box-shadow: inset 0 .65em 1.3em rgba(255, 255, 255, 0.1875), 0 0.43em 0.87em -0.2em hsla(130, 65%, 57%, 0.2);
+    background-color: hsl(130, 65%, 57%);
+    box-shadow: inset 0 .65em 1.3em rgba(255, 255, 255, 0.1875), 0 0.43em 0.87em -0.2em hsla(130, 65%, 57%, 0.2);
 }
-	.green button:hover,
-	.green .button:hover {
-		background-color: hsl(130, 65%, 47%) !important;
-		box-shadow: inset 0 .65em 1.3em rgba(255, 255, 255, 0.1875), 0 0.43em 0.87em -0.2em hsla(130, 65%, 47%, 0.2);
-	}
-	.green button:active,
-	.green .button:active {
-		background-color: hsl(130, 65%, 47%) !important;
-		box-shadow: inset 0 .65em 1.3em rgba(0, 0, 0, 0.0625), 0 0.43em 0.87em -0.2em hsla(130, 65%, 47%, 0.2);
-	}
+    .green button:hover,
+    .green .button:hover {
+        background-color: hsl(130, 65%, 62%) !important;
+        box-shadow: inset 0 .65em 1.3em rgba(255, 255, 255, 0.1875), 0 0.43em 0.87em -0.2em hsla(130, 65%, 62%, 0.2);
+    }
+    .green button:active,
+    .green .button:active {
+        background-color: hsl(130, 65%, 52%) !important;
+        box-shadow: inset 0 .65em 1.3em rgba(0, 0, 0, 0.0625), 0 0.43em 0.87em -0.2em hsla(130, 65%, 52%, 0.2);
+    }
 .green button.bigfoot-footnote__button {
-	background-color: hsla(130, 65%, 57%, 0.1);
-	box-shadow: none;
+    background-color: hsla(130, 65%, 57%, 0.1);
+    box-shadow: none;
 }
-	.green button.bigfoot-footnote__button:after {
-		color: hsl(130, 65%, 57%) !important;
-	}
-	.green button.bigfoot-footnote__button:hover {
-		background-color: hsl(130, 65%, 57%) !important;
-		box-shadow: 0 0.43em 0.87em -0.2em hsla(130, 65%, 57%, 0.2);
-	}
-	.green button.bigfoot-footnote__button:active,
-	.green button.bigfoot-footnote__button.is-active {
-		background-color: hsl(130, 65%, 47%) !important;
-		box-shadow: 0 0.43em 0.87em -0.2em hsla(130, 65%, 47%, 0.2);
-	}
+    .green button.bigfoot-footnote__button:after {
+        color: hsl(130, 65%, 57%) !important;
+    }
+    .green button.bigfoot-footnote__button:hover {
+        background-color: hsl(130, 65%, 57%) !important;
+        box-shadow: 0 0.43em 0.87em -0.2em hsla(130, 65%, 57%, 0.2);
+    }
+    .green button.bigfoot-footnote__button:active,
+    .green button.bigfoot-footnote__button.is-active {
+        background-color: hsl(130, 65%, 52%) !important;
+        box-shadow: 0 0.43em 0.87em -0.2em hsla(130, 65%, 52%, 0.2);
+    }
 
 .green input:focus,
 .green textarea:focus {
-	border-color: hsl(130, 65%, 57%) !important;
-	box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0.43em 0.87em -0.2em hsla(130, 65%, 57%, 0.2) !important;
+    border-color: hsl(130, 65%, 57%) !important;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0.43em 0.87em -0.2em hsla(130, 65%, 57%, 0.2) !important;
 }
 
 .green .codehilite,
 .green .highlight {
-	background-color: rgb(34, 36, 34);
+    background-color: rgb(34, 36, 34);
 }
+
+.green .summary-list li a {
+    border-color: hsla(130, 65%, 57%, 0.1);
+}
+    .green .summary-list li a:hover {
+        border-color: hsl(130, 65%, 57%) !important;
+    }
 
 #dark.green .header a:hover,
 #dark.green a:hover .header {
-	color: hsl(130, 65%, 57%);
+    color: hsl(130, 65%, 57%);
 }
 #dark.green a:hover,
 #dark.green #submenu,
 #dark.green button.bigfoot-footnote__button {
-	background-color: hsla(130, 65%, 57%, 0.15);
+    background-color: hsla(130, 65%, 57%, 0.15);
 }
 
 /* Highlights (must be seperate, combining them breaks the style) */
 #dark.green ::selection { /* Safari */
-	background: hsla(130, 65%, 57%, 0.85);
+    background: hsla(130, 65%, 57%, 0.85);
 }
 #dark.green ::-moz-selection { /* Firefox */
-	background: hsla(130, 65%, 57%, 0.85);
+    background: hsla(130, 65%, 57%, 0.85);
+}
+
+#dark.green .summary-list li a {
+    border-color: hsla(130, 65%, 57%, 0.15);
+}
+
+#dark .admonition.success,
+#dark .admonition.green {
+    background-color: hsla(130, 65%, 57%, 0.15);
 }
 
 /******************
@@ -619,108 +770,120 @@ mark.tag.green {
  * HSL: hsl(241, 61%, 59%);
  */
 .accent-color.purple {
-	background-color: #5856D6;
+    background-color: #5856D6;
 }
 mark.purple {
-	background: unset;
-	background-image: linear-gradient(to bottom right, hsla(241, 61%, 59%, 0.75) 38.66%, hsla(244, 61%, 59%, 0.75));
+    background: unset;
+    background-image: linear-gradient(to bottom right, hsla(241, 61%, 59%, 0.75) 38.66%, hsla(244, 61%, 59%, 0.75));
 }
 mark.tag.purple {
-	background: unset;
-	background-image: linear-gradient(to bottom right, hsla(241, 61%, 59%, 0.9) 38.66%, hsla(244, 61%, 59%, 0.9));
+    background: unset;
+    background-image: linear-gradient(to bottom right, hsla(241, 61%, 59%, 0.9) 38.66%, hsla(244, 61%, 59%, 0.9));
 }
 
 .purple a,
 .purple #mainmenu .active,
 .purple #mainmenu a:hover,
 .purple #settings-toggle:hover,
-.purple #settings-toggle.active,
+.purple #settings-toggle.active a,
 .purple #submenu a:hover,
 .purple .header a:hover,
 .purple a:hover .header {
-	color: hsl(241, 61%, 59%);
+    color: hsl(241, 61%, 59%);
 }
-.purple #logo:hover .signature-color {
-	fill: hsl(241, 61%, 59%);
+.purple #logo:hover .signature-color,
+.purple #signature.active .signature-color {
+    fill: hsl(241, 61%, 59%);
 }
 .purple .backdrop {
-	background-color: hsl(241, 61%, 59%);
+    background-color: hsl(241, 61%, 59%);
 }
 
 .purple a:hover,
 .purple #submenu {
-	background-color: hsla(241, 61%, 59%, 0.1);
+    background-color: hsla(241, 61%, 59%, 0.1);
 }
 
 /* Highlights (must be seperate, combining them breaks the style) */
 .purple ::selection { /* Safari */
-	background: hsla(241, 61%, 59%, 0.99);
-	color: white;
+    background: hsla(241, 61%, 59%, 0.99);
+    color: white;
 }
 .purple ::-moz-selection { /* Firefox */
-	background: hsla(241, 61%, 59%, 0.99);
-	color: white;
+    background: hsla(241, 61%, 59%, 0.99);
+    color: white;
 }
 
 .purple button,
 .purple .button {
-	background-color: hsl(241, 61%, 59%);
-	box-shadow: inset 0 .65em 1.3em rgba(255, 255, 255, 0.1875), 0 0.43em 0.87em -0.2em hsla(241, 61%, 59%, 0.2);
+    background-color: hsl(241, 61%, 59%);
+    box-shadow: inset 0 .65em 1.3em rgba(255, 255, 255, 0.1875), 0 0.43em 0.87em -0.2em hsla(241, 61%, 59%, 0.2);
 }
-	.purple button:hover,
-	.purple .button:hover {
-		background-color: hsl(241, 61%, 54%) !important;
-		box-shadow: inset 0 .65em 1.3em rgba(255, 255, 255, 0.1875), 0 0.43em 0.87em -0.2em hsla(241, 61%, 54%, 0.2);
-	}
-	.purple button:active,
-	.purple .button:active {
-		background-color: hsl(241, 61%, 54%) !important;
-		box-shadow: inset 0 .65em 1.3em rgba(0, 0, 0, 0.0625), 0 0.43em 0.87em -0.2em hsla(241, 61%, 54%, 0.2);
-	}
+    .purple button:hover,
+    .purple .button:hover {
+        background-color: hsl(241, 61%, 64%) !important;
+        box-shadow: inset 0 .65em 1.3em rgba(255, 255, 255, 0.1875), 0 0.43em 0.87em -0.2em hsla(241, 61%, 64%, 0.2);
+    }
+    .purple button:active,
+    .purple .button:active {
+        background-color: hsl(241, 61%, 54%) !important;
+        box-shadow: inset 0 .65em 1.3em rgba(0, 0, 0, 0.0625), 0 0.43em 0.87em -0.2em hsla(241, 61%, 54%, 0.2);
+    }
 .purple button.bigfoot-footnote__button {
-	background-color: hsla(241, 61%, 59%, 0.1);
-	box-shadow: none;
+    background-color: hsla(241, 61%, 59%, 0.1);
+    box-shadow: none;
 }
-	.purple button.bigfoot-footnote__button:after {
-		color: hsl(241, 61%, 59%) !important;
-	}
-	.purple button.bigfoot-footnote__button:hover {
-		background-color: hsl(241, 61%, 59%) !important;
-		box-shadow: 0 0.43em 0.87em -0.2em hsla(241, 61%, 59%, 0.2);
-	}
-	.purple button.bigfoot-footnote__button:active,
-	.purple button.bigfoot-footnote__button.is-active {
-		background-color: hsl(241, 61%, 54%) !important;
-		box-shadow: 0 0.43em 0.87em -0.2em hsla(241, 61%, 54%, 0.2);
-	}
+    .purple button.bigfoot-footnote__button:after {
+        color: hsl(241, 61%, 59%) !important;
+    }
+    .purple button.bigfoot-footnote__button:hover {
+        background-color: hsl(241, 61%, 59%) !important;
+        box-shadow: 0 0.43em 0.87em -0.2em hsla(241, 61%, 59%, 0.2);
+    }
+    .purple button.bigfoot-footnote__button:active,
+    .purple button.bigfoot-footnote__button.is-active {
+        background-color: hsl(241, 61%, 54%) !important;
+        box-shadow: 0 0.43em 0.87em -0.2em hsla(241, 61%, 54%, 0.2);
+    }
 
 .purple input:focus,
 .purple textarea:focus {
-	border-color: hsl(241, 61%, 59%) !important;
-	box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0.43em 0.87em -0.2em hsla(241, 61%, 59%, 0.2) !important;
+    border-color: hsl(241, 61%, 59%) !important;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0.43em 0.87em -0.2em hsla(241, 61%, 59%, 0.2) !important;
 }
 
 .purple .codehilite,
 .purple .highlight {
-	background-color: rgb(34, 34, 36);
+    background-color: rgb(34, 34, 36);
 }
+
+.purple .summary-list li a {
+    border-color: hsla(241, 61%, 59%, 0.1);
+}
+    .purple .summary-list li a:hover {
+        border-color: hsl(241, 61%, 59%) !important;
+    }
 
 #dark.purple .header a:hover,
 #dark.purple a:hover .header {
-	color: hsl(241, 61%, 59%);
+    color: hsl(241, 61%, 59%);
 }
 #dark.purple a:hover,
 #dark.purple #submenu,
 #dark.purple button.bigfoot-footnote__button {
-	background-color: hsla(241, 61%, 59%, 0.15);
+    background-color: hsla(241, 61%, 59%, 0.15);
 }
 
 /* Highlights (must be seperate, combining them breaks the style) */
 #dark.purple ::selection { /* Safari */
-	background: hsla(241, 61%, 59%, 0.85);
+    background: hsla(241, 61%, 59%, 0.85);
 }
 #dark.purple ::-moz-selection { /* Firefox */
-	background: hsla(241, 61%, 59%, 0.85);
+    background: hsla(241, 61%, 59%, 0.85);
+}
+
+#dark.purple .summary-list li a {
+    border-color: hsla(241, 61%, 59%, 0.15);
 }
 
 /******************
@@ -733,106 +896,118 @@ mark.tag.purple {
  * HSL: hsl(349, 100%, 59%);
  */
 .accent-color.pink {
-	background-color: #FF2D55;
+    background-color: #FF2D55;
 }
 mark.pink {
-	background: unset;
-	background-image: linear-gradient(to bottom right, hsla(349, 100%, 59%, 0.75) 38.66%, hsla(352, 100%, 59%, 0.75));
+    background: unset;
+    background-image: linear-gradient(to bottom right, hsla(349, 100%, 59%, 0.75) 38.66%, hsla(352, 100%, 59%, 0.75));
 }
 mark.tag.pink {
-	background: unset;
-	background-image: linear-gradient(to bottom right, hsla(349, 100%, 59%, 0.9) 38.66%, hsla(352, 100%, 59%, 0.9));	
+    background: unset;
+    background-image: linear-gradient(to bottom right, hsla(349, 100%, 59%, 0.9) 38.66%, hsla(352, 100%, 59%, 0.9));
 }
 
 .pink a,
 .pink #mainmenu .active,
 .pink #mainmenu a:hover,
 .pink #settings-toggle:hover,
-.pink #settings-toggle.active,
+.pink #settings-toggle.active a,
 .pink #submenu a:hover,
 .pink .header a:hover,
 .pink a:hover .header {
-	color: hsl(349, 100%, 59%);
+    color: hsl(349, 100%, 59%);
 }
-.pink #logo:hover .signature-color {
-	fill: hsl(349, 100%, 59%);
+.pink #logo:hover .signature-color,
+.pink #signature.active .signature-color {
+    fill: hsl(349, 100%, 59%);
 }
 .pink .backdrop {
-	background-color: hsl(349, 100%, 59%);
+    background-color: hsl(349, 100%, 59%);
 }
 
 .pink a:hover,
 .pink #submenu {
-	background-color: hsla(349, 100%, 59%, 0.1);
+    background-color: hsla(349, 100%, 59%, 0.1);
 }
 
 /* Highlights (must be seperate, combining them breaks the style) */
 .pink ::selection { /* Safari */
-	background: hsla(349, 100%, 59%, 0.99);
-	color: white;
+    background: hsla(349, 100%, 59%, 0.99);
+    color: white;
 }
 .pink ::-moz-selection { /* Firefox */
-	background: hsla(349, 100%, 59%, 0.99);
-	color: white;
+    background: hsla(349, 100%, 59%, 0.99);
+    color: white;
 }
 
 .pink button,
 .pink .button {
-	background-color: hsl(349, 100%, 59%);
-	box-shadow: inset 0 .65em 1.3em rgba(255, 255, 255, 0.1875), 0 0.43em 0.87em -0.2em hsla(349, 100%, 59%, 0.2);
+    background-color: hsl(349, 100%, 59%);
+    box-shadow: inset 0 .65em 1.3em rgba(255, 255, 255, 0.1875), 0 0.43em 0.87em -0.2em hsla(349, 100%, 59%, 0.2);
 }
-	.pink button:hover,
-	.pink .button:hover {
-		background-color: hsl(349, 100%, 49%) !important;
-		box-shadow: inset 0 .65em 1.3em rgba(255, 255, 255, 0.1875), 0 0.43em 0.87em -0.2em hsla(349, 100%, 49%, 0.2);
-	}
-	.pink button:active,
-	.pink .button:active {
-		background-color: hsl(349, 100%, 49%) !important;
-		box-shadow: inset 0 .65em 1.3em rgba(0, 0, 0, 0.0625), 0 0.43em 0.87em -0.2em hsla(349, 100%, 49%, 0.2);
-	}
+    .pink button:hover,
+    .pink .button:hover {
+        background-color: hsl(349, 100%, 64%) !important;
+        box-shadow: inset 0 .65em 1.3em rgba(255, 255, 255, 0.1875), 0 0.43em 0.87em -0.2em hsla(349, 100%, 64%, 0.2);
+    }
+    .pink button:active,
+    .pink .button:active {
+        background-color: hsl(349, 100%, 54%) !important;
+        box-shadow: inset 0 .65em 1.3em rgba(0, 0, 0, 0.0625), 0 0.43em 0.87em -0.2em hsla(349, 100%, 54%, 0.2);
+    }
 .pink button.bigfoot-footnote__button {
-	background-color: hsla(349, 100%, 59%, 0.1);
-	box-shadow: none;
+    background-color: hsla(349, 100%, 59%, 0.1);
+    box-shadow: none;
 }
-	.pink button.bigfoot-footnote__button:after {
-		color: hsl(349, 100%, 59%) !important;
-	}
-	.pink button.bigfoot-footnote__button:hover {
-		background-color: hsl(349, 100%, 59%) !important;
-		box-shadow: 0 0.43em 0.87em -0.2em hsla(349, 100%, 59%, 0.2);
-	}
-	.pink button.bigfoot-footnote__button:active,
-	.pink button.bigfoot-footnote__button.is-active {
-		background-color: hsl(349, 100%, 49%) !important;
-		box-shadow: 0 0.43em 0.87em -0.2em hsla(349, 100%, 49%, 0.2);
-	}
+    .pink button.bigfoot-footnote__button:after {
+        color: hsl(349, 100%, 59%) !important;
+    }
+    .pink button.bigfoot-footnote__button:hover {
+        background-color: hsl(349, 100%, 59%) !important;
+        box-shadow: 0 0.43em 0.87em -0.2em hsla(349, 100%, 59%, 0.2);
+    }
+    .pink button.bigfoot-footnote__button:active,
+    .pink button.bigfoot-footnote__button.is-active {
+        background-color: hsl(349, 100%, 54%) !important;
+        box-shadow: 0 0.43em 0.87em -0.2em hsla(349, 100%, 54%, 0.2);
+    }
 
 .pink input:focus,
 .pink textarea:focus {
-	border-color: hsl(349, 100%, 59%) !important;
-	box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0.43em 0.87em -0.2em hsla(349, 100%, 59%, 0.2) !important;
+    border-color: hsl(349, 100%, 59%) !important;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0.43em 0.87em -0.2em hsla(349, 100%, 59%, 0.2) !important;
 }
 
 .pink .codehilite,
 .pink .highlight {
-	background-color: rgb(36, 34, 34);
+    background-color: rgb(36, 34, 34);
 }
+
+.pink .summary-list li a {
+    border-color: hsla(349, 100%, 59%, 0.1);
+}
+    .pink .summary-list li a:hover {
+        border-color: hsl(349, 100%, 59%) !important;
+    }
 
 #dark.pink .header a:hover,
 #dark.pink a:hover .header {
-	color: hsl(349, 100%, 59%);
+    color: hsl(349, 100%, 59%);
 }
 #dark.pink a:hover,
 #dark.pink #submenu,
 #dark.pink button.bigfoot-footnote__button {
-	background-color: hsla(349, 100%, 59%, 0.15);
+    background-color: hsla(349, 100%, 59%, 0.15);
 }
 
 /* Highlights (must be seperate, combining them breaks the style) */
 #dark.pink ::selection { /* Safari */
-	background: hsla(349, 100%, 59%, 0.85);
+    background: hsla(349, 100%, 59%, 0.85);
 }
 #dark.pink ::-moz-selection { /* Firefox */
-	background: hsla(349, 100%, 59%, 0.85);
+    background: hsla(349, 100%, 59%, 0.85);
+}
+
+#dark.pink .summary-list li a {
+    border-color: hsla(349, 100%, 59%, 0.15);
 }
