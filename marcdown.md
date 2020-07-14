@@ -1,5 +1,4 @@
-<time>A Markdown theme for humans</time>Marcdown
-================================================
+# <time>A Markdown theme for humans</time>Marcdown
 
 I write everything in [Markdown](https://daringfireball.net/projects/markdown), but I've never been particularly satisfied with the available themes. Sure, [Github Flavored Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) is a fine default, but its overemphasis on dividing lines adds too much visual noise for my tastes. I have similar issues with other popular themes; while they each have their own strengths, they all fall short of meeting my three requirements:
 
@@ -10,33 +9,38 @@ I write everything in [Markdown](https://daringfireball.net/projects/markdown), 
 
 Given the nature of such specific requirements, I had no choice but to create my own Markdown theme. That theme is Marcdown&mdash;a Markdown theme designed to be just as beautiful for late night journal entries as it is functional for intense computer science notes. Give it a try, I think you're going to love it.
 
-* [Design](#design)
-	- [Typeface](#typeface)
-	- [Headers](#headers)
-	- [Links](#links)
-	- [Lists](#lists)
-	- [Strikethroughs](#strikethroughs)
-	- [Footnotes](#footnotes)
-	- [Block Quotes](#block-quotes)
-	- [Images](#images)
-		* [Edge-to-Edge Options](#edgetoedge-options)
-		* [General Options](#general-options)
-		* [Captions](#captions)
-	- [Code](#code)
-	- [Tables](#tables)
-	- [Admonitions](#admonitions)
-	- [Highlighting](#highlighting)
-	- [Definitions](#definitions)
-	- [Abbreviations](#abbreviations)
-	- [Keyboard Keys](#keyboard-keys)
-	- [Advanced Features](#advanced-features)
-* [Installation](#installation)
-* [About the Author](#about-the-author)
+<ul class="toc">
+<li><a href="#design">Design</a><ul>
+<li><a href="#typeface">Typeface</a></li>
+<li><a href="#headers">Headers</a></li>
+<li><a href="#links">Links</a></li>
+<li><a href="#lists">Lists</a></li>
+<li><a href="#strikethroughs">Strikethroughs</a></li>
+<li><a href="#footnotes">Footnotes</a></li>
+<li><a href="#block-quotes">Block Quotes</a></li>
+<li><a href="#images">Images</a><ul>
+<li><a href="#edgetoedge-options">Edge-to-Edge Options</a></li>
+<li><a href="#general-options">General Options</a></li>
+<li><a href="#captions">Captions</a></li>
+</ul>
+</li>
+<li><a href="#code">Code</a></li>
+<li><a href="#tables">Tables</a></li>
+<li><a href="#admonitions">Admonitions</a></li>
+<li><a href="#highlighting">Highlighting</a></li>
+<li><a href="#definitions">Definitions</a></li>
+<li><a href="#abbreviations">Abbreviations</a></li>
+<li><a href="#keyboard-keys">Keyboard Keys</a></li>
+<li><a href="#advanced-features">Advanced Features</a></li>
+</ul>
+</li>
+<li><a href="#installation">Installation</a></li>
+<li><a href="#about-the-author">About the Author</a></li>
+</ul>
 
 --------------
 
-Design
-------
+## Design
 
 ### Typeface
 
@@ -183,7 +187,7 @@ The following image options are supported for __all__ image types:
 * `shadow`: Render a nice, general drop-shadow on the image (includes hover animation for linked images)
 
 <figure markdown="1" class="half-inline shadow">
-[![Example image with the shadow option](img/logo.jpg)](img/logo.jpg)
+[![Example image with the shadow option](img/logo.png)](img/logo.png)
 </figure>
 
 * `macos-window-screenshot`: For macOS window screenshots taken [with the shadows disabled](https://www.macgasm.net/2011/05/23/disable-dropshadow-mac-os-window-screenshots/), you can let Marcdown add back in the appropriate border, border radius, and drop shadow to match the macOS look and feel.
@@ -216,7 +220,7 @@ While image comments are not supported in traditional Markdown, they're fully su
 The basic markup follows:
 
 ```html
-<figure markdown="1">
+<figure markdown="1" class="$type $option1 $option2 ...">
 ![Alt text](image.jpg)
 <figcaption>Your photo caption goes here.</figcaption>
 </figure>
@@ -421,8 +425,7 @@ Representing keyboard keys for things like keyboard shortcuts can be difficult w
 
 While not enabled by default, Marcdown is fully capable of rendering complex UML diagrams with [flowchart.js](http://flowchart.js.org) and [sequence-diagram.js](https://bramp.github.io/js-sequence-diagrams/). [Click here to see these features in action](/marcdown/advanced-features.html)
 
-Installation
-------------
+## Installation
 
 Due to Marcdown relying on Markdown extensions for things like syntax highlighting and the necessary scripting required for enabling/disabling dark mode, some installation is required for Marcdown to operate at its fullest potential. Thankfully, if you already do your writing in [Sublime Text](http://www.sublimetext.com) like I do, the installation is very straightforward:
 
@@ -433,8 +436,7 @@ Due to Marcdown relying on Markdown extensions for things like syntax highlighti
 
 Regrettably, there's no detailed guides currently available for setting up Marcdown with other popular Markdown build systems (yet), so your only option at the moment is to use Sublime Text with Markdown Preview or to work it out yourself with your preferred system. More setup instructions for other environments are planned to be added over time, so stay tuned!
 
-About the Author
-----------------
+## About the Author
 
 ![Picture of myself on a hike at Smoky Mountains National Park](img/marc.jpg)
 

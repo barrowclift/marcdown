@@ -115,6 +115,7 @@ textarea { /* Must explicitly add textarea for Firefox bug, proving once again i
     the text a bit and makes it more crisp and pleasing to read. */
     -webkit-font-smoothing: antialiased;
 }
+* {-webkit-font-smoothing: antialiased;}
 pre,
 code {
     /* This isn't perfect. Ideally, we'd use a monospace variant of the "system-ui"
@@ -226,6 +227,9 @@ dl, table,
         margin-top: 0.65em; /* 1.3 base type bottom margin / 2 */
         margin-bottom: 0;
     }
+        li ol.bare-list, li ul.bare-list {
+            margin-top: 0;
+        }
 ol, ul,
 dl dd {
     margin-left: 1.95em; /* 1.3 base type bottom margin * 1.5 */
@@ -259,6 +263,11 @@ code,
 mark {
     padding: 0 0.325em;
 }
+code a {
+    padding: 0 0.325em !important;
+    margin-left: -0.325em !important;
+    margin-right: -0.325em !important;
+}
 mark.tag {
     padding: 0.25em 0.75em;
     line-height: 2.6em;
@@ -284,17 +293,20 @@ ul {
     ul ul {
         list-style-type: none;
     }
-        ul ul li:before {
+        ul ul:not(.bare-list) li:before {
             content: "-";
             position: absolute;
-            margin-left: -1.3em;
+            margin-left: -1em;
         }
         ul ul ul {
             list-style-type: circle;
         }
-            ul ul ul li:before {
+            ul ul ul:not(.bare-list) li:before {
                 content: none;
                 margin-left: 0;
+            }
+            ul ul ul ul {
+                list-style-type: square
             }
 /* Raw list of items, no bullets, padding, or frills at all (good for UI element lists) */
 .bare-list {
@@ -307,10 +319,16 @@ ul {
     .compact-list li {
         margin: 0;
     }
+.emoji-list {
+    margin-left: 0.25em !important;
+}
 /* No paragraph margins, keep them one logical block (good for short lists) */
 .compact-list li,
 .compact-list ul,
-.compact-list ol {
+.compact-list ol,
+.toc li,
+.toc ul,
+.toc ol {
     margin-bottom: 0;
     margin-top: 0;
 }
@@ -437,12 +455,8 @@ menu {
 }
 .safari menu #mainmenu ul,
 .safari menu #submenu ul,
-.safari .bigfoot-footnote__content,
-.safari .bigfoot-footnote__tooltip,
 .chrome menu #mainmenu ul,
-.chrome menu #submenu ul,
-.chrome .bigfoot-footnote__content,
-.chrome .bigfoot-footnote__tooltip {
+.chrome menu #submenu ul {
     -webkit-backdrop-filter: saturate(180%) blur(20px);
     backdrop-filter: saturate(180%) blur(20px);
 }
@@ -549,7 +563,7 @@ menu {
     float: right;
     position: absolute;
     left: 100%;
-    margin-left: -19.5em;
+    margin-left: -20em;
     top: 8.75em;
     z-index: 10000;
 }
@@ -566,13 +580,13 @@ menu {
         margin-bottom: -0.325em;
     }
     /* Accent color "buttons" */
-    .accent-colors {
-        margin-left: 0.5em;
+    .colors {
+        margin-left: 0.25em;
         text-align: center;
         display: inline;
         vertical-align: middle;
     }
-    .accent-colors li {
+    .colors li {
         display: inline-block;
         min-width: unset;
         margin-left: 0.15em;
@@ -581,11 +595,26 @@ menu {
         padding-top: 0;
         padding-bottom: 0;
     }
-    .accent-color {
+    .color-well {
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1), 0 4px 8px 0 rgba(0, 0, 0, 0.05);
+        border: 1px solid rgba(0, 0, 0, 0.1);
         cursor: pointer;
         width: 1em;
         height: 1em;
-        border-radius: 0.25em;
+        border-radius: 50%;
+    }
+    .color-well.appearance {
+        border-color: #E5E5E5;
+        border-radius: 0.25em !important;
+    }
+    .color-well.auto {
+        background-image: linear-gradient(-45deg, rgb(36, 36, 36) 50%, white 50%);
+    }
+    .color-well.light {
+        background-color: white;
+    }
+    .color-well.dark {
+        background-color: rgb(36, 36, 36);
     }
     /* Setting popup groups visibility and padding */
     .ignore-accent-color #accent-color-settings,
@@ -600,12 +629,15 @@ menu {
         width: 9.375em;
         margin-left: -9.875em;
     }
-    .enforce-dark-mode .accent-colors li {
+    .enforce-dark-mode .colors li {
         margin-top: 0.25em;
     }
     #popup-background {
         border-radius: 0.25em;
+
         padding: 0.65em;
+        padding-bottom: 0.975em;
+        padding-top: 0.325em;
     }
         .safari #popup-background,
         .chrome #popup-background {
@@ -635,7 +667,40 @@ menu {
     display: inline-block;
     cursor: pointer;
 }
+#logo:after {
+    transition: opacity 150ms cubic-bezier(0.165, 0.165, 0.44, 0.44), transform 150ms cubic-bezier(0.165, 0.165, 0.44, 0.44);
+    opacity: 0;
+    transform: scale(0.5);
+    background-size: contain;
+    z-index: -5;
+    /*top: -0.24rem;
+    left: 0;
+    height: 3rem;
+    width: 3rem;*/
+    top: 0.75rem;
+    left: calc(50% - 8.9rem);
+    height: 5.5rem;
+    width: 5.5rem;
+    background-repeat: no-repeat;
+    position: absolute;
+    content: "";
+    background-image: url("/images/logo/light-rainbow-watercolor.png");
+}
+menu header:hover #logo:after {
+    opacity: 1;
+    transform: scale(1);
+}
+/*menu header:hover #mac {
+    transform: scale(1.075);
+}*/
+.mac-background-color {
+    transition: background-color 150ms cubic-bezier(0.165, 0.165, 0.44, 0.44);
+}
+menu header:hover .mac-background-color {
+    fill: rgba(255, 255, 255, 1);
+}
 #mac {
+    transition: opacity 150ms cubic-bezier(0.165, 0.165, 0.44, 0.44), transform 150ms cubic-bezier(0.165, 0.165, 0.44, 0.44);
     display: inline-block;
     vertical-align: top;
     width: 48px;
@@ -728,9 +793,9 @@ menu header:hover #logo #logo-eye-opened,
 /* ----- CARDS ----- */
 .threeDHover:hover,
 .shadow a:hover img,
-.shadow:hover video,
+.shadow video:hover,
 .ios-screenshot a:hover img,
-.ios-screenshot:hover video,
+.ios-screenshot video:hover,
 .watchos-screenshot a:hover img,
 .watchos-screenshot:hover video,
 .summary-list li a:hover {
@@ -740,10 +805,14 @@ button:hover,
 .button:hover {
     transform: scale(1.05);
 }
+.color-well:hover {
+    transform: scale(1.1);
+}
 button.active,
 button:active,
 .button.active,
-.button:active {
+.button:active,
+.color-well:active {
     transform: scale(0.95);
 }
 
@@ -904,11 +973,6 @@ button:disabled {
         margin-left: 0.325em;
         margin-right: 0.325em;
     }
-input,
-textarea {
-    border: 1px solid #000000;
-    width: 100%;
-}
 input[type='checkbox'] {
     width: 1rem;
     display: inline-block;
@@ -923,6 +987,19 @@ textarea {
     -moz-appearance: none !important;
     appearance: none !important;
     box-shadow: none !important;
+}
+input,
+input[type="text"],
+input[type="submit"],
+input[type="email"],
+input[type="password"],
+textarea {
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), inset 0 0.1075em 0.2175em -0.2em rgba(0, 0, 0, 0.2) !important;
+}
+input,
+textarea {
+    border: 1px solid #000000;
+    width: 100%;
 }
 input:focus, textarea:focus {
     outline: 0;
@@ -975,110 +1052,13 @@ a:hover {
     margin-bottom: 0;
 }
 
-
-/* iOS "switch" checkbox
-   Thanks to Fiddle user Yeyene, https://jsfiddle.net/yeyene/42p6s7ps/ */
-.ios-switch {
-    position: relative;
+.app-download img {
+    border-radius: 0.7rem;
+    height: 40px;
+    width: auto;
 }
-.ios-switch input {
-    display: block;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    width: 0%;
-    height: 0%;
-    margin: 0 0;
-    cursor: pointer;
-    opacity: 0;
-    filter: alpha(opacity=0);
-}
-.ios-switch input + span {
-    cursor: pointer;
-    -webkit-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
-}
-.ios-switch input + span:before {
-    position: absolute;
-    left: 6em;
-    display: inline-block;
-}
-.ios-switch input + span > h4 {
-    display: inline;
-}
-.ios-switch input + span:before {
-    content: "";
-    height: 20px;
-    width: 40px;
-    border: 1px solid #e5e5e5;
-    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.8);
-    transition: background 0.2s ease-out;
-    margin-top: 0;
-}
-.ios-switch input + span:after {
-    width: 20px;
-    height: 20px;
-    position: absolute;
-    left: 6em;
-    top: 0;
-    display: block;
-    transition: margin-left 0.1s ease-in-out;
+.app-download {
     text-align: center;
-    font-weight: bold;
-    content: "";
-    margin-top: 0.05em;
-}
-.ios-switch input:checked + span:before {
-    background-color: #4CD964;
-}
-.ios-switch input:checked + span:after {
-    margin-left: 21px;
-    content: "";
-}
-.ios-switch input:checked + span:before {
-    transition: background 0.2s ease-in;
-}
-.ios-switch input + span:before {
-    border-radius: 20px;
-    width: 40px;
-}
-.ios-switch input + span:after {
-    content: "";
-    width: 20px;
-    background-clip: padding-box;
-    border-radius: 20px;
-    margin-left: 1px;
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1), 0 4px 8px 0 rgba(0, 0, 0, 0.05);
-}
-.ios-switch input:not(:checked) + span:after {
-    -webkit-animation: popOut ease-in 0.3s normal;
-            animation: popOut ease-in 0.3s normal;
-}
-.ios-switch input:checked + span:after {
-    content: "";
-    margin-left: 21px;
-    background-clip: padding-box;
-    -webkit-animation: popIn ease-in 0.3s normal;
-            animation: popIn ease-in 0.3s normal;
-}
-.ios-switch.checkbox-slider-md input + span:before {
-    border-radius: 30px;
-}
-.ios-switch.checkbox-slider-md input + span:after {
-    border-radius: 30px;
-}
-.ios-switch.checkbox-slider-lg input + span:before {
-    border-radius: 40px;
-}
-.ios-switch.checkbox-slider-lg input + span:after {
-    border-radius: 40px;
-}
-.ios-switch input + span:before {
-    box-shadow: none;
 }
 
 
@@ -1098,48 +1078,37 @@ td,
 th {
     text-align: left;
 }
-thead tr {
-    border-bottom: 2px solid #000000;
+table td,
+table th {
+    border: 1px solid black;
 }
-tbody tr {
-    border-bottom: 1px solid #000000;
+tr td,
+tr th {
+    padding-left: 1.3em;
+    padding-right: 1.3em;
+}
+tr td:first-child,
+tr th:first-child {
+    padding-left: 1.3em;
+}
+tr td:last-child,
+tr th:last-child {
+    padding-right: 1.3em;
 }
 tbody tr:last-child {
     border-bottom: unset;
 }
-th {
-    padding-bottom: 0.15em;
+th,
+td {
+    padding-top: 0.1625em;
+    padding-bottom: 0.1625em;
 }
 td {
     border: none;
-    padding-top: 0.15em;
-    padding-bottom: 0.15em;
 }
-    td[align="left"],
-    th[align="left"],
-    thead[align="left"] {
-        padding-right: 2em;
-        padding-left: 0;
-    }
-    td[align="left"]:last-child,
-    th[align="left"]:last-child,
-    thead[align="left"]:last-child {
-        padding-right: 0;
-    }
-    td[align="right"],
-    th[align="right"],
-    thead[align="right"] {
-        padding-left: 2em;
-        padding-right: 0;
-    }
-    td[align="right"]:first-child,
-    th[align="right"]:first-child,
-    thead[align="right"]:first-child, {
-        padding-left: 0;
-    }
-    tr:last-child td {
-        padding-bottom: 0;
-    }
+tr:last-child td {
+    padding-bottom: 0;
+}
 
 
 /* ----- TAGS & HIGHLIGHTING ----- */
@@ -1157,7 +1126,8 @@ mark {
         text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
     }
         p mark.tag,
-        time mark.tag {
+        time mark.tag,
+        li mark.tag {
             vertical-align: text-top;
         }
 
@@ -1226,6 +1196,52 @@ mark {
     content: none !important;
 }
 
+.admonition.tweet {
+    background-color: hsla(203, 89%, 53%, 0.1);
+    border-color: #1DA1F2 !important;
+}
+.admonition.tweet > p:first-child:before,
+.admonition.tweet .admonition-title:before {
+    position: absolute;
+    content: url("data:image/svg+xml; utf8, <svg viewBox='0 0 250 250' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'> <g stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'><path d='M78.62,249.59 C172.96,249.59 224.56,171.43 224.56,103.65 C224.56,101.43 224.56,99.22 224.41,97.02 C234.448314,89.7591086 243.113555,80.768794 250,70.47 C240.638791,74.6180177 230.708293,77.3382865 220.54,78.54 C231.24744,72.1298206 239.261235,62.0477199 243.09,50.17 C233.021575,56.1445532 222.006461,60.3551202 210.52,62.62 C194.620828,45.7139428 169.357194,41.5761258 148.895493,52.5267993 C128.433792,63.4774727 117.86275,86.7932573 123.11,109.4 C81.8689574,107.332495 43.4447578,87.8532327 17.4,55.81 C3.78622756,79.2464473 10.7398788,109.228595 33.28,124.28 C25.117412,124.038075 17.1327937,121.836132 10,117.86 C10,118.07 10,118.29 10,118.51 C10.0066813,142.92593 27.2175149,163.955352 51.15,168.79 C43.598696,170.8494 35.6758059,171.150443 27.99,169.67 C34.7094793,190.564228 53.9657456,204.877839 75.91,205.29 C57.7473504,219.564319 35.3105951,227.313277 12.21,227.29 C8.12903569,227.282165 4.05204065,227.035075 0,226.55 C23.4563595,241.602766 50.749134,249.587169 78.62,249.55' id='Path' fill='#FFFFFF' fill-rule='nonzero'></path></g></svg>");
+    border-radius: 25%;
+    height: 1.45em;
+    width: 0.875em;
+    padding-left: 0.3125em;
+    padding-right: 0.3125em;
+    margin-left: -2em;
+}
+.admonition.tweet g {
+    fill: white;
+}
+.admonition.tweet a {
+    color: #1DA1F2;
+}
+.admonition.tweet a:hover {
+    background-color: hsla(203, 89%, 53%, 0.1);
+}
+#dark .admonition.tweet a:hover {
+    background-color: hsla(203, 89%, 53%, 0.15);
+}
+.admonition.tweet .admonition-title:before,
+.admonition.tweet p:first-child:before {
+    background-color: #1DA1F2 !important;
+}
+#dark .admonition.tweet {
+    background-color: hsla(203, 89%, 53%, 0.15);
+}
+.admonition.award > p:first-child:before,
+.admonition.award .admonition-title:before {
+    position: absolute;
+    content: '★';
+    border-radius: 25%;
+    height: 1.45em;
+    width: 0.875em;
+    padding-left: 0.2125em;
+    padding-right: 0.3625em;
+    margin-left: -1.975em;
+}
+
 
 /* ----- HINTS ----- */
 [data-hint]:after {
@@ -1245,6 +1261,9 @@ video {
     max-width: 100%;
     width: 100%;
     height: auto;
+}
+video:focus {
+    outline: none;
 }
 img {
     max-width: 100%;
@@ -1283,6 +1302,12 @@ figcaption + p {
 }
 .inline.shadow {
     margin-top: 1.3em;
+    margin-bottom: 1.3em;
+}
+.one-image,
+.two-images,
+.three-images {
+    width: 100%;
     margin-bottom: 1.3em;
 }
 
@@ -1361,7 +1386,10 @@ video.rounded {
 }
 
 .edge-to-edge a:hover,
-figure a:hover {
+figure a:hover,
+.one-image a:hover,
+.two-images a:hover,
+.three-images a:hover {
     background-color: transparent !important;
 }
 
@@ -1407,15 +1435,32 @@ figure a:hover {
 }
 .two-images img,
 .two-images video {
+    max-width: 28vw;
+    width: 25vw;
+    margin-left: 1.75vw;
+    margin-right: 1.75vw;
+}
+.edge-to-edge.two-images img,
+.edge-to-edge.two-images video {
     max-width: 44vw;
     margin-left: 1.5vw;
     margin-right: 1.5vw;
 }
 .three-images img,
 .three-images video {
+    width: 25vw;
+    margin-left: 1.25vw;
+    margin-right: 1.25vw;
+    max-width: 9.25em;
+}
+.edge-to-edge.three-images img,
+.edge-to-edge.three-images video {
     max-width: 28vw;
     margin-left: 1.75vw;
     margin-right: 1.75vw;
+}
+figure:not(.edge-to-edge) figcaption {
+    margin-bottom: 0;
 }
 
 .stroke-transparent {
@@ -1471,6 +1516,33 @@ h2 img {
 
 .gemoji {
     width: 1em;
+}
+.gemoji,
+.emoji {
+    vertical-align: text-top;
+}
+
+.bullet .emoji,
+.bullet .gemoji {
+    vertical-align: text-bottom;
+}
+.bullet {
+    margin-right: 0.5em;
+}
+
+.twitter-logo svg {
+    vertical-align: baseline;
+    height: 0.75em;
+}
+.twitter-logo g {
+    fill: #1DA1F2 !important;
+}
+.twitter-logo,
+.twitter-logo:hover {
+    color: #1DA1F2 !important;
+}
+.twitter-logo:hover {
+    background-color: transparent !important;
 }
 
 
@@ -1571,13 +1643,47 @@ article > pre > code {
 .edge-to-edge.infinite > pre {
     margin-top: 0;
 }
+.highlighter-rouge div.highlight {
+    padding: 0;
+}
+.highlighter-rouge pre.highlight {
+    padding: 1.3rem;
+    margin-bottom: 0;
+}
+.highlighter-rouge .highlight {
+    text-align: left;
+    max-width: 1600px;
+    width: 100%;
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 1.3em;
+    display: block;
+    border-radius: 0.25em;
+    padding: 1.3em;
+    box-shadow: unset;
+}
+li .highlighter-rouge .highlight {
+    margin-top: 0.65em;
+    margin-bottom: 0.65em;
+}
+.highlighter-rouge pre {
+    margin-left: 0;
+    margin-right: 0;
+    overflow-x: scroll;
+}
+.highlighter-rouge pre,
+.highlighter-rouge .highlight {
+    border-radius: 0.25em;
+}
 .codehilite pre,
 .highlight pre {
     -webkit-overflow-scrolling: none;
 }
 li .codehilite,
 li .highlight {
-    margin-top: 1.3em;
+    margin-top: 0.65em;
+    margin-bottom: 0.65em;
 }
 pre {
     border: 1px solid #000000;
@@ -1702,6 +1808,10 @@ pre ::selection {
     background: hsla(54, 8%, 26%, 0.9);
 }
 
+span.gp {
+    color: #c65d09;
+}
+
 
 /* FOOTER --------------------------------------------------------------------------- */
 
@@ -1766,22 +1876,22 @@ html {
     transition: background-color 0.2s cubic-bezier(0.28, 0.11, 0.32, 0);
 }
 input, textarea {
-    transition: background-color 0.2s ease, border 0.2s ease;
+    transition: background-color 0.2s ease, border 0.2s ease-in-out;
 }
 menu ul a,
 main a,
 .anchor,
 #settings-toggle {
-    transition: background-color 0.2s ease, color 0.2s ease;
+    transition: background-color 0.3s cubic-bezier(0.165, 0.84, 0.44, 1), color 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 .summary-list li a {
-    transition: background-color 0.2s ease, color 0.2s ease, border 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+    transition: background-color 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), color 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), border 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 .summary-list h3 {
-    transition: color 0.2s ease;
+    transition: color 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 menu {
-    transition: background-color 0.2s cubic-bezier(0.28, 0.11, 0.32, 0), opacity 0.2s ease;
+    transition: background-color 0.2s cubic-bezier(0.28, 0.11, 0.32, 0), opacity 0.2s ease-in-out;
 }
 
 /* Transitioning background */
@@ -1790,56 +1900,56 @@ hr {
 }
 
 /* Transitioning shadows */
-.project,
-.shadow a img,
-.shadow video { /* For hovering special project "cards" on the project page (TODO refactor to generic .cards) */
-    transition: box-shadow 0.2s ease;
+.project { /* For hovering special project "cards" on the project page (TODO refactor to generic .cards) */
+    transition: box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 /* SVG Stroke */
 .stroke-transparent,
 .stroke-color {
-    transition: stroke 0.2s ease;
+    transition: stroke 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 .card .stroke-transparent,
 .card .stroke-color {
-    transition: stroke 200ms ease;
+    transition: stroke 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 /* SVG Fill */
 .fill-transparent,
 .fill-color,
-.signature-color {
-    transition: fill 0.2s ease;
-}
+.signature-color,
 .card .fill-transparent,
 .card .fill-color,
-.card .signature-color {
-    transition: fill 200ms ease;
+.card .signature-color,
+.twitter-logo g {
+    transition: fill 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 /* Everything */
 .anchor {
-    transition: all 0.2s ease;
+    transition: all 0.2s ease-in-out;
 }
 
 /* Border */
 input, textarea {
-    transition: border 0.1s ease;
+    transition: border 0.1s ease-in-out;
 }
 
 /* Resizing / Transformations */
 .card,
 .threeDHover,
 .shadow a img,
-.shadow video {
-    transition: box-shadow 200ms ease, transform 200ms ease;
+.shadow video,
+.ios-screenshot img,
+.ios-screenshot video {
+    transition: box-shadow .4s cubic-bezier(0.165, 0.84, 0.44, 1), transform .4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 .card-animation {
-    transition: transform 200ms ease;
+    transition: transform .4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 .button,
-button {
-    transition: background 0.2s ease, box-shadow 0.2s ease, transform 200ms ease;
+button,
+.color-well {
+    transition: background 0.3s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.3s cubic-bezier(0.165, 0.84, 0.44, 1), transform .3s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .show-when-hovered,
@@ -1848,14 +1958,14 @@ button {
 #logo-eye-closed,
 #logo-eye-opened,
 #smirk {
-    transition: opacity 0.2s ease;
+    transition: opacity 0.2s ease-in-out;
 }
 
 #menu-height-offset {
     transition: height 0.2s ease-out;
 }
 #submenu {
-    transition: height 0.2s ease-out, opacity 0.2s ease-out, background-color 0.2s ease;
+    transition: height 0.2s ease-out, opacity 0.2s ease-out, background-color 0.2s ease-in-out;
 }
 
 pre
@@ -1947,15 +2057,18 @@ kbd {
 }
 
 @media(max-width: 320px) {
-    .accent-colors {
+    .colors {
         margin-left: 0;
         display: block;
     }
     .popup .group {
-        margin-bottom: 1.3em;
+        margin-bottom: 0.65em;
     }
     .popup {
         margin-left: -13.75em;
+    }
+    #popup-background {
+        padding: 0.975em;
     }
 }
 
@@ -1977,8 +2090,8 @@ Font size: 19px, ~Margin&Padding: 28.5px
     }
     .wide-page main {
         max-width: 36em;
-        padding-left: 5%;
-        padding-right: 5%;
+        padding-left: 5% !important;
+        padding-right: 5% !important;
     }
     @supports(padding: max(0px)) {
         .wide-page main {
@@ -1997,6 +2110,8 @@ Font size: 19px, ~Margin&Padding: 28.5px
     }
     menu ul {
         line-height: 1.8em; /* 1.2 header line height * 1.5 */
+        margin-top: -1px;
+        padding-bottom: 1px;
     }
     menu {
         font-weight: 500;
@@ -2010,6 +2125,9 @@ Font size: 19px, ~Margin&Padding: 28.5px
     /* ----- LISTS ----- */
     .task-list {
         margin-left: 0.62em;
+    }
+    .emoji-list {
+        margin-left: 0.75em !important;
     }
 
 
@@ -2034,20 +2152,17 @@ Font size: 19px, ~Margin&Padding: 28.5px
     .float-menu-for-hiding #logo {
         transform: none;
     }
-    .ios-switch input + span:before {
-        margin-top: 0.1em;
-    }
-    .ios-switch input + span:after {
-        margin-top: 0.15em;
-    }
     .popup {
         -webkit-transform-origin: top right;
         -ms-transform-origin: top right;
         transform-origin: top right;
-        margin-left: -19.6em;
+        margin-left: -20.675em;
         top: 3.25em;
     }
-    .enforce-dark-mode .accent-colors li {
+    #popup-background {
+        padding: 0.975em;
+    }
+    .enforce-dark-mode .colors li {
         margin-top: 0.5em;
     }
         menu header {
@@ -2094,6 +2209,12 @@ Font size: 19px, ~Margin&Padding: 28.5px
         height: 47px;
         margin-left: 0;
     }
+    #logo:after {
+        top: 0rem;
+        left: 0.05rem;
+        height: 2.5rem;
+        width: 2.5rem;
+    }
 
 
     /* --- ACCESSIBILITY TOGGLES --- */
@@ -2128,7 +2249,7 @@ Font size: 19px, ~Margin&Padding: 28.5px
         .column > h2,
         .column > h3 {
             margin-top: 0.707em;
-        }  
+        }
         .column > h1:first-child,
         .column > h2:first-child,
         .column > h3:first-child {
@@ -2139,10 +2260,14 @@ Font size: 19px, ~Margin&Padding: 28.5px
         .column h6 {
             margin-top: 0;
         }
-        .column:first-child {
+        .column.w6:nth-child(odd) {
             margin-left: 5%;
         }
-        .column:last-child {
+        .column.w6:nth-child(even) {
+            margin-right: 5%;
+        }
+        .column.w12 {
+            margin-left: 5%;
             margin-right: 5%;
         }
     .flex main {
@@ -2259,6 +2384,11 @@ Font size: 19px, ~Margin&Padding: 28.5px
         margin-left: 0;
         margin-right: 0;
         width: 100%;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    /* Extra padding in case of figcaption */
+    figure.edge-to-edge.small {
         margin-top: 1.3em;
         margin-bottom: 1.3em;
     }
@@ -2289,18 +2419,31 @@ Font size: 19px, ~Margin&Padding: 28.5px
         margin-top: 0.65em;
     }
 
-    .one-image img,
-    .one-image video,
     .two-images img,
-    .two-images video,
+    .two-images video {
+        max-width: 10em;
+        margin-left: 2vw;
+        margin-right: 2vw;
+    }
     .three-images img,
     .three-images video {
+        width: 10em;
+        margin-left: 0.5em;
+        margin-right: 0.5em;
+        max-width: unset;
+    }
+    .edge-to-edge.one-image img,
+    .edge-to-edge.one-image video,
+    .edge-to-edge.two-images img,
+    .edge-to-edge.two-images video,
+    .edge-to-edge.three-images img,
+    .edge-to-edge.three-images video {
         max-width: 28vw;
     }
-    .two-images img,
-    .two-images video,
-    .three-images img,
-    .three-images video {
+    .edge-to-edge.two-images img,
+    .edge-to-edge.two-images video,
+    .edge-to-edge.three-images img,
+    .edge-to-edge.three-images video {
         margin-left: 2vw;
         margin-right: 2vw;
     }
@@ -2452,6 +2595,9 @@ Font size: 21px, ~Margin&Padding: 31.5px
     .task-list {
         margin-left: .73em;
     }
+    .summary-list img {
+        max-width: 20em;
+    }
 
 
     /* NAVBAR ------------------------------------- */
@@ -2463,20 +2609,18 @@ Font size: 21px, ~Margin&Padding: 31.5px
         box-sizing: border-box;
         height: 2.55em;
     }
-    .ios-switch input + span:before {
-        margin-top: 0.2em;
-    }
-    .ios-switch input + span:after {
-        margin-top: 0.25em;
-    }
     .popup {
         top: 3.1em;
-        margin-left: -19.25em;
+        margin-left: -20.25em;
     }
         menu header {
             padding-left: 0.78em;
             padding-top: 0.50em;
         }
+            menu ul {
+                margin-top: -2px;
+                padding-bottom: 3px;
+            }
             menu > ul {
                 padding-left: 0;
                 text-align: center;
@@ -2491,6 +2635,9 @@ Font size: 21px, ~Margin&Padding: 31.5px
     menu.hide-for-medium-and-larger-devices {
         opacity: 1;
         pointer-events: auto;
+    }
+    #logo:after {
+        left: 0.25rem;
     }
 
 
@@ -2546,14 +2693,6 @@ Font size: 21px, ~Margin&Padding: 31.5px
     .edge-to-edge.large video {
         border-radius: 0;
     }
-    .one-image img,
-    .two-images img,
-    .three-images img,
-    .one-image video,
-    .two-images video,
-    .three-images video {
-        border-radius: 0.75em !important;
-    }
     .edge-to-edge.medium {
         max-width: 1000px;
         width: 100vw;
@@ -2570,18 +2709,40 @@ Font size: 21px, ~Margin&Padding: 31.5px
     /* Lets iOS Screenshots spill beyond the text width bounds when in post view,
        but stay bound for home view. */
     .one-image img,
-    .one-image video,
     .two-images img,
+    .three-images img,
+    .one-image video,
     .two-images video,
+    .three-images video {
+        border-radius: 0.75em !important;
+    }
+    .two-images img,
+    .two-images video {
+        max-width: 14rem;
+        margin-left: 1em;
+        margin-right: 1em;
+        width: 100%;
+    }
     .three-images img,
     .three-images video {
+        width: 10.25em;
+        margin-left: 0.5em;
+        margin-right: 0.5em;
+        max-width: unset;
+    }
+    .edge-to-edge.one-image img,
+    .edge-to-edge.one-image video,
+    .edge-to-edge.two-images img,
+    .edge-to-edge.two-images video,
+    .edge-to-edge.three-images img,
+    .edge-to-edge.three-images video {
         width: 25vw;
         max-width: 17rem;
     }
-    .two-images img,
-    .two-images video,
-    .three-images img,
-    .three-images video {
+    .edge-to-edge.two-images img,
+    .edge-to-edge.two-images video,
+    .edge-to-edge.three-images img,
+    .edge-to-edge.three-images video {
         margin-left: 1.3rem;
         margin-right: 1.3rem;
     }
@@ -2590,7 +2751,6 @@ Font size: 21px, ~Margin&Padding: 31.5px
     .macos-window-screenshot video {
         border-radius: 8px !important;
     }
-
 
     /* CODE --------------------------------------- */
 
@@ -2646,19 +2806,19 @@ Font size: 21px, ~Margin&Padding: 31.5px
 /**
  * Primary white background
  */
-html,
-.ios-switch input + span:before,
-.ios-switch input + span:after {
+html {
     background-color: rgba(255, 255, 255, 1);
 }
 /**
  * Primary floating backgrounds
  */
-menu,
-#popup-background,
-[data-hint]:after,
 .bigfoot-footnote__content,
 .bigfoot-footnote__tooltip {
+    background-color: rgb(255, 255, 255);
+}
+menu,
+#popup-background,
+[data-hint]:after {
     background-color: rgba(255, 255, 255, 0.9);
 }
 .hint--right[data-hint]:before {
@@ -2675,10 +2835,8 @@ menu,
 }
     .safari menu,
     .safari #popup-background,
-    .safari .bigfoot-footnote__content,
     .chrome menu,
-    .chrome #popup-background,
-    .chrome .bigfoot-footnote__content {
+    .chrome #popup-background {
         background-color: rgba(255, 255, 255, 0.7);
     }
 /**
@@ -2690,7 +2848,11 @@ code,
 kbd {
     background-color: rgba(245, 245, 245, 0.25);
 }
-kbd {
+tbody tr:nth-child(even) {
+    background-color: rgba(245, 245, 245, 0.75);
+}
+kbd,
+table th {
     background-image: -moz-linear-gradient(rgba(255, 255, 255, 0.975), rgba(245, 245, 245, 0.9));
     background-image: -webkit-linear-gradient(rgba(255, 255, 255, 0.975), rgba(245, 245, 245, 0.9));
     background-image: linear-gradient(rgba(255, 255, 255, 0.975), rgba(245, 245, 245, 0.9));
@@ -2725,7 +2887,6 @@ textarea {
  */
 menu,
 .popup,
-.ios-switch input + span:before,
 input,
 textarea,
 .ios-screenshot img,
@@ -2741,10 +2902,6 @@ blockquote,
 /**
  * Secondary
  */
-thead tr,
-tbody tr {
-    border-color: rgba(150, 150, 150, 0.1);
-}
 hr {
     background-color: rgba(150, 150, 150, 0.1);
     background: rgba(150, 150, 150, 0.1); /* Old browsers */
@@ -2763,12 +2920,9 @@ hr {
 .macos-window-screenshot video {
     border-color: rgba(50, 50, 50, 0.25);
 }
-kbd {
-    border-bottom-color: rgba(50, 50, 50, 0.25);
-    -webkit-box-shadow: inset 0 -1px 0 rgba(50, 50, 50, 0.25);
-    -moz-box-shadow: inset 0 -1px 0 rgba(50, 50, 50, 0.25);
-    -ms-box-shadow: inset 0 -1px 0 rgba(50, 50, 50, 0.25);
-    box-shadow: inset 0 -1px 0 rgba(50, 50, 50, 0.25);
+table td,
+table th {
+    border-color: rgb(224, 224, 224);
 }
 
 /* ----- FOREGROUNDS ----- */
@@ -2781,7 +2935,8 @@ html,
 .admonition,
 [data-hint]:after,
 .card .primary,
-.summary-list p {
+.summary-list p,
+table th {
     color: rgba(30, 30, 30, 0.9);
 }
 .apple-logo path {
@@ -2890,10 +3045,10 @@ menu {
     .admonition.aside,
     .threeDHover:hover,
     .shadow a:hover img,
-    .shadow:hover video,
+    .shadow video:hover,
     .project:hover,
     .ios-screenshot a:hover img,
-    .ios-screenshot:hover video,
+    .ios-screenshot video:hover,
     .watchos-screenshot a:hover img,
     .watchos-screenshot:hover video,
     .popup,
@@ -3000,6 +3155,10 @@ textarea:focus {
     background-color: rgb(33, 34, 36);
 }
 
+.color-well.active {
+    box-shadow: 0 0em 0.5em 0em hsl(211, 100%, 50%);
+}
+
 
 /* DARK THEME ======================================================================= */
 
@@ -3024,9 +3183,11 @@ html#dark {
 #dark menu {
     background-color: rgba(23, 23, 23, 0.95);
 }
-#dark [data-hint]:after,
 #dark .bigfoot-footnote__content,
-#dark .bigfoot-footnote__tooltip,
+#dark .bigfoot-footnote__tooltip {
+    background-color: rgb(46, 46, 46);
+}
+#dark [data-hint]:after,
 #dark #popup-background {
     background-color: rgba(46, 46, 46, 0.95);
 }
@@ -3046,29 +3207,28 @@ html#dark {
     #dark.chrome menu {
         background-color: rgba(23, 23, 23, 0.7);
     }
-    #dark.safari .bigfoot-footnote__content,
     #dark.safari #popup-background,
-    #dark.chrome .bigfoot-footnote__content,
     #dark.chrome #popup-background {
         background-color: rgba(46, 46, 46, 0.7);
     }
 /**
  * Secondary backgrounds
  */
-#dark .card,
-#dark kbd {
+#dark .card {
     background-color: rgba(46, 46, 46, 0.9);
 }
-#dark kbd {
-    background-image: -moz-linear-gradient(rgba(46, 46, 46, 0.9), rgba(23, 23, 23, 0.975));
-    background-image: -webkit-linear-gradient(rgba(46, 46, 46, 0.9), rgba(23, 23, 23, 0.975));
-    background-image: linear-gradient(rgba(46, 46, 46, 0.9), rgba(23, 23, 23, 0.975));
+#dark kbd,
+#dark table th {
+    background-image: linear-gradient(rgba(46, 46, 46, 0.9), rgba(23, 23, 23, 0));
 }
 /**
  * Special backgrounds
  */
 #dark code,
-#dark pre {
+#dark pre,
+#dark tbody tr:nth-child(even),
+#dark table th,
+#dark kbd {
     background-color: rgba(15, 15, 15, 0.25);
 }
 #dark .codehilite,
@@ -3092,7 +3252,6 @@ html#dark {
 #dark textarea {
     background-color: rgba(15, 15, 15, 0.375);
 }
-
 #dark .admonition > p:first-child:before,
 #dark .admonition .admonition-title:before {
     background-color: rgb(116, 116, 116);
@@ -3105,7 +3264,6 @@ html#dark {
  */
 #dark menu,
 #dark .popup,
-#dark .ios-switch input + span:before,
 #dark input,
 #dark textarea,
 #dark .ios-screenshot img,
@@ -3114,10 +3272,7 @@ html#dark {
 #dark code,
 #dark blockquote,
 #dark .bigfoot-footnote,
-#dark .bigfoot-footnote__tooltip,
-#dark .ios-switch input + span:before,
-#dark thead tr,
-#dark tbody tr {
+#dark .bigfoot-footnote__tooltip {
     border-color: rgba(150, 150, 150, 0.1);
 }
 #dark hr {
@@ -3130,6 +3285,11 @@ html#dark {
     background: -ms-linear-gradient(left, rgba(255, 255, 255, 0.0) 0%, rgba(150, 150, 150, 0.1) 25%, rgba(150, 150, 150, 0.1) 50%, rgba(150, 150, 150, 0.1) 75%, rgba(255, 255, 255, 0.0) 100%); /* IE10+ */
     background: linear-gradient(to right, rgba(255, 255, 255, 0.0) 0%, rgba(150, 150, 150, 0.1) 25%, rgba(150, 150, 150, 0.1) 50%, rgba(150, 150, 150, 0.1) 75%, rgba(255, 255, 255, 0.0) 100%); /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='rgba(150, 150, 150, 0.1)', endColorstr='rgba(255, 255, 255, 0.0)',GradientType=1 ); /* IE6-9 */
+}
+#dark table td,
+#dark table th,
+#dark thead tr {
+    border-color: rgba(75, 75, 75);
 }
 /**
  * Secondary
@@ -3167,11 +3327,6 @@ html#dark {
 
 #dark kbd {
     border-color: rgba(0, 0, 0, 0.5);
-    border-bottom-color: rgba(0, 0, 0, 0.5);
-    -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.5);
-    -moz-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.5);
-    -ms-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.5);
-    box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.5);
 }
 
 /* ----- FOREGROUNDS ----- */
@@ -3185,7 +3340,8 @@ html#dark,
 #dark [data-hint]:after,
 #dark .card .primary,
 #dark .summary-list p,
-#dark .admonition .admonition-title {
+#dark .admonition .admonition-title,
+#dark table th {
     color: rgba(255, 255, 255, 0.9);
 }
 #dark .apple-logo path {
@@ -3250,6 +3406,9 @@ html#dark,
 #dark .mac-background-color {
     fill: rgba(255, 255, 255, 0.6);
 }
+#dark menu header:hover .mac-background-color {
+    fill: rgba(255, 255, 255, 0.9);
+}
 #dark #sunglasses,
 #dark #logo:hover #smirk {
     opacity: 1;
@@ -3287,10 +3446,10 @@ html#dark,
     #dark .admonition.aside,
     #dark .threeDHover:hover,
     #dark .shadow a:hover img,
-    #dark .shadow:hover video,
+    #dark .shadow video:hover,
     #dark .project:hover,
     #dark .ios-screenshot a:hover img,
-    #dark .ios-screenshot:hover video,
+    #dark .ios-screenshot video:hover,
     #dark .watchos-screenshot a:hover img,
     #dark .watchos-screenshot:hover video,
     #dark .popup,

@@ -1,7 +1,31 @@
 /* ----- CONTAINER ----- */
 
 main {
-	margin-top: 3.328rem; /* Adding a bit more space for the dark mode toggle */
+    margin-top: 3.328rem; /* Adding a bit more space for the dark mode toggle */
+}
+h1 {
+    font-weight: 900;
+    font-size: 2em;
+}
+h2 {
+    font-weight: 800;
+    font-size: 1.5em;
+}
+h3,.admonition-title {
+    font-weight: 700;
+    font-size: 1.3em;
+}
+h4 {
+    font-weight: 500;
+    font-size: 1.1em;
+}
+h5 {
+    font-weight: 400;
+    font-size: 1em;
+}
+h6 {
+    font-weight: 300;
+    font-size: 0.9em;
 }
 
 /* ----- LISTS ----- */
@@ -11,35 +35,35 @@ main {
    have to make the lists in HTML far more often than not. Thus, to better
    accomidate my Markdown writing habits outside of barrowclift.me the default
    list style is compact.*/
-/*ol ul,
-ol ol,
-ul ol,
-ul ul,
-li {
-	margin-bottom: 0 !important;
-	margin-top: 0 !important;
-}*/
-li p,
-li pre {
-	margin-top: 0;
-	margin-bottom: 0;
+#marcdown-body ol ul,
+#marcdown-body ol ol,
+#marcdown-body ul ol,
+#marcdown-body ul ul,
+#marcdown-body li {
+    margin-bottom: 0 !important;
+    margin-top: 0 !important;
+}
+#marcdown-body li p,
+#marcdown-body li pre {
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 /* ----- MENU ----- */
 
 /* The "menu" is much simplier for Marcdown, it's just the dark mode toggle */
 menu {
-	position: absolute;
-	top: 0;
-	left :0;
-	display: inline-block;
-	width: 100%;
-	z-index: 100;
-	box-shadow: none !important;
-	-webkit-box-shadow: none;
-	-moz-box-shadow: none;
-	background-image: none;
-	background-color: unset !important;
+    position: absolute;
+    top: 0;
+    left :0;
+    display: inline-block;
+    width: 100%;
+    z-index: 100;
+    box-shadow: none !important;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    background-image: none;
+    background-color: unset !important;
 }
 menu,
 .safari menu,
@@ -47,100 +71,100 @@ menu,
 #dark menu,
 #dark.safari menu,
 #dark.chrome menu {
-	border: none;
-	-webkit-backdrop-filter: none;
-	backdrop-filter: none;
+    border: none;
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
 }
 
 
 /* ----- ACCESSIBILITY TOGGLES ----- */
 
 .popup {
-	top: 2.75em;
-	-webkit-transform-origin: top right;
-	-ms-transform-origin: top right;
-	transform-origin: top right;
+    top: 2.75em;
+    -webkit-transform-origin: top right;
+    -ms-transform-origin: top right;
+    transform-origin: top right;
 }
 #settings-toggle {
-	border-radius: 0 0 0 .5em;
-	display: inline-block;
-	padding: 1em;
-	margin: 0;
-	text-align: right;
-	line-height: 1em;
-	background-color: rgba(255, 255, 255, 0.7);
-	left: 0;
-	min-width: unset;
-	position: relative;
-	float: right;
-	text-align: right;
-	line-height: 1em;
-	transition: background-color 0.2s ease, color 0.2s ease;
+    border-radius: 0 0 0 .5em;
+    display: inline-block;
+    padding: 1em;
+    margin: 0;
+    text-align: right;
+    line-height: 1em;
+    background-color: rgba(255, 255, 255, 0.7);
+    left: 0;
+    min-width: unset;
+    position: relative;
+    float: right;
+    text-align: right;
+    line-height: 1em;
+    transition: background-color 0.2s ease, color 0.2s ease;
 }
-	.safari #settings-toggle,
-	.chrome #settings-toggle {
-		-webkit-backdrop-filter: saturate(180%) blur(20px);
-		backdrop-filter: saturate(180%) blur(20px);
-	}
-	.red #settings-toggle {
-		background-color: rgba(255, 253, 252, 0.7);
-	}
-	.orange #settings-toggle {
-		background-color: rgba(255, 254, 252, 0.7);
-	}
-	.yellow #settings-toggle {
-		background-color: rgba(255, 255, 253, 0.7);
-	}
-	.green #settings-toggle {
-		background-color: rgba(253, 255, 253, 0.7);
-	}
-	#settings-toggle,
-	.blue #settings-toggle {
-		background-color: rgba(252, 253, 255, 0.7);
-	}
-	.purple #settings-toggle {
-		background-color: rgba(253, 253, 255, 0.7);
-	}
-	.pink #settings-toggle {
-		background-color: rgba(255, 253, 253, 0.7);
-	}
-	#dark.red #settings-toggle {
-		background-color: rgba(41, 37, 36, 0.7);
-	}
-	#dark.orange #settings-toggle {
-		background-color: rgba(41, 38, 36, 0.7);
-	}
-	#dark.yellow #settings-toggle {
-		background-color: rgba(41, 40, 36, 0.7);
-	}
-	#dark.green #settings-toggle {
-		background-color: rgba(38, 40, 38, 0.7);
-	}
-	#dark #settings-toggle,
-	#dark.blue #settings-toggle {
-		background-color: rgba(36, 38, 41, 0.7);
-	}
-	#dark.purple #settings-toggle {
-		background-color: rgba(37, 37, 40, 0.7);
-	}
-	#dark.pink #settings-toggle {
-		background-color: rgba(41, 36, 37, 0.7);
-	}
+    .safari #settings-toggle,
+    .chrome #settings-toggle {
+        -webkit-backdrop-filter: saturate(180%) blur(20px);
+        backdrop-filter: saturate(180%) blur(20px);
+    }
+    .red #settings-toggle {
+        background-color: rgba(255, 253, 252, 0.7);
+    }
+    .orange #settings-toggle {
+        background-color: rgba(255, 254, 252, 0.7);
+    }
+    .yellow #settings-toggle {
+        background-color: rgba(255, 255, 253, 0.7);
+    }
+    .green #settings-toggle {
+        background-color: rgba(253, 255, 253, 0.7);
+    }
+    #settings-toggle,
+    .blue #settings-toggle {
+        background-color: rgba(252, 253, 255, 0.7);
+    }
+    .purple #settings-toggle {
+        background-color: rgba(253, 253, 255, 0.7);
+    }
+    .pink #settings-toggle {
+        background-color: rgba(255, 253, 253, 0.7);
+    }
+    #dark.red #settings-toggle {
+        background-color: rgba(41, 37, 36, 0.7);
+    }
+    #dark.orange #settings-toggle {
+        background-color: rgba(41, 38, 36, 0.7);
+    }
+    #dark.yellow #settings-toggle {
+        background-color: rgba(41, 40, 36, 0.7);
+    }
+    #dark.green #settings-toggle {
+        background-color: rgba(38, 40, 38, 0.7);
+    }
+    #dark #settings-toggle,
+    #dark.blue #settings-toggle {
+        background-color: rgba(36, 38, 41, 0.7);
+    }
+    #dark.purple #settings-toggle {
+        background-color: rgba(37, 37, 40, 0.7);
+    }
+    #dark.pink #settings-toggle {
+        background-color: rgba(41, 36, 37, 0.7);
+    }
 
 /* ----- FORMS & BUTTONS ----- */
 
 form, input, button, textarea, .link-button {
-	display: inline-block;
-	margin-bottom: 0;
+    display: inline-block;
+    margin-bottom: 0;
 }
 
 /* Prevents the "double button" effect on anchor links */
 .headeranchor-link:hover {
-	background-color: unset !important;
+    background-color: unset !important;
 }
 
 a.link-button:hover {
-	background-color: unset;
+    background-color: unset;
 }
 
 /* ----- IMAGES & VIDEO ----- */
@@ -148,21 +172,21 @@ a.link-button:hover {
 /* Adding border radius to traditional Markdown images while not overriding
    Marcdown styles*/
 main > p > img {
-	border-radius: 0.25em;
+    border-radius: 0.25em;
 }
 
 /* Tiny devices (width smaller than 320px, the original iPhone screen) */
 @media(max-width: 319px) {
-	#settings-toggle {
-		display: inline;
-	}
+    #settings-toggle {
+        display: inline;
+    }
 }
 
 /* ----- CODE ----- */
 
 /* Bash shell session '$' highlighting */
 span.gp {
-	color: rgb(198, 93, 9);
+    color: rgb(198, 93, 9);
 }
 
 /*
@@ -170,25 +194,28 @@ Medium devices (iPads)
 Font size: 19px, ~Margin&Padding: 28.5px
 */
 @media (min-width: 700px) {
-	main {
-		margin-top: 2.828rem; /* 1.414 base header top margin * 2 */
-	}
-	menu {
-		position: fixed;
-		display: block;
-		width: 100%;
-		z-index: 100;
-	}
-	#settings-checkbox,
-	#settings-toggle {
-		pointer-events: initial;
-	}
-	#settings-toggle {
-		margin-left: 0 !important;
-		padding: 0.5em !important;
-		padding-left: 0.6em !important;
-		padding-bottom: 0.2em !important;
-		width: auto;
-		max-width: 1.3em;
-	}
+    main {
+        margin-top: 2.828rem; /* 1.414 base header top margin * 2 */
+    }
+    menu {
+        position: fixed;
+        display: block;
+        width: 100%;
+        z-index: 100;
+    }
+    #settings-checkbox,
+    #settings-toggle {
+        pointer-events: initial;
+    }
+    #settings-toggle {
+        margin-left: 0 !important;
+        padding: 0.5em !important;
+        padding-left: 0.6em !important;
+        padding-bottom: 0.2em !important;
+        width: auto;
+        max-width: 1.3em;
+    }
+    .colors li {
+        margin-top: 0 !important;
+    }
 }

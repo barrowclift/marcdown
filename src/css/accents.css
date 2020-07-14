@@ -44,7 +44,7 @@ mark.tag.grey {
  * RGB: rgb(0, 122, 255);
  * HSL: hsl(211, 100%, 50%);
  */
-.accent-color.blue {
+.color-well.blue {
     background-color: #007AFF;
 }
 mark.blue {
@@ -81,6 +81,10 @@ mark.tag.blue {
 .admonition.example p:first-child:before,
 .admonition.blue p:first-child:before {
     background-color: hsla(211, 100%, 50%) !important;
+}
+
+.blue .color-well.active {
+    box-shadow: 0 0em 0.5em 0em hsl(211, 100%, 50%);
 }
 
 .blue a,
@@ -207,7 +211,7 @@ mark.tag.blue {
  * RGB: rgb(255, 59, 48);
  * HSL: hsl(3, 100%, 59%);
  */
-.accent-color.red {
+.color-well.red {
     background-color: #FF3B30;
 }
 mark.red {
@@ -234,6 +238,10 @@ mark.tag.red {
 .admonition.warning p:first-child:before,
 .admonition.red p:first-child:before {
     background-color: hsl(3, 100%, 59%) !important;
+}
+
+.red .color-well.active {
+    box-shadow: 0 0em 0.5em 0em hsl(3, 100%, 59%);
 }
 
 .red a,
@@ -357,7 +365,7 @@ mark.tag.red {
  * RGB: rgb(255, 129, 0);
  * HSL: hsl(30, 100%, 50%);
  */
-.accent-color.orange {
+.color-well.orange {
     background-color: #FF8100;
 }
 mark.orange {
@@ -367,6 +375,10 @@ mark.orange {
 mark.tag.orange {
     background: unset;
     background-image: linear-gradient(to bottom right, hsla(30, 100%, 50%, 0.9) 38.66%, hsla(33, 100%, 50%, 0.9));
+}
+
+.orange .color-well.active {
+    box-shadow: 0 0em 0.5em 0em hsl(30, 100%, 50%);
 }
 
 .orange a,
@@ -483,7 +495,7 @@ mark.tag.orange {
  * RGB: rgb(255, 204, 0);
  * HSL: hsl(48, 100%, 50%);
  */
-.accent-color.yellow {
+.color-well.yellow {
     background-color: #FFCC00;
 }
 mark,
@@ -506,6 +518,10 @@ mark.tag.yellow {
 .admonition.yellow .admonition-title:before,
 .admonition.yellow p:first-child:before {
     background-color: hsl(48, 100%, 50%) !important;
+}
+
+.yellow .color-well.active {
+    box-shadow: 0 0em 0.5em 0em hsl(48, 100%, 50%);
 }
 
 .yellow a,
@@ -627,7 +643,7 @@ mark.tag.yellow {
  * RGB: rgb(76, 217, 100);
  * HSL: hsl(130, 65%, 57%);
  */
-.accent-color.green {
+.color-well.green {
     background-color: #4CD964;
 }
 mark.green {
@@ -648,6 +664,10 @@ mark.tag.green {
 .admonition.green .admonition-title:before,
 .admonition.green p:first-child:before {
     background-color: hsl(130, 65%, 57%) !important;
+}
+
+.green .color-well.active {
+    box-shadow: 0 0em 0.5em 0em hsl(130, 65%, 57%);
 }
 
 .green a,
@@ -769,7 +789,7 @@ mark.tag.green {
  * RGB: rgb(88, 86, 214);
  * HSL: hsl(241, 61%, 59%);
  */
-.accent-color.purple {
+.color-well.purple {
     background-color: #5856D6;
 }
 mark.purple {
@@ -779,6 +799,10 @@ mark.purple {
 mark.tag.purple {
     background: unset;
     background-image: linear-gradient(to bottom right, hsla(241, 61%, 59%, 0.9) 38.66%, hsla(244, 61%, 59%, 0.9));
+}
+
+.purple .color-well.active {
+    box-shadow: 0 0em 0.5em 0em hsl(241, 61%, 59%);
 }
 
 .purple a,
@@ -895,7 +919,7 @@ mark.tag.purple {
  * RGB: rgb(255, 45, 85);
  * HSL: hsl(349, 100%, 59%);
  */
-.accent-color.pink {
+.color-well.pink {
     background-color: #FF2D55;
 }
 mark.pink {
@@ -905,6 +929,10 @@ mark.pink {
 mark.tag.pink {
     background: unset;
     background-image: linear-gradient(to bottom right, hsla(349, 100%, 59%, 0.9) 38.66%, hsla(352, 100%, 59%, 0.9));
+}
+
+.pink .color-well.active {
+    box-shadow: 0 0em 0.5em 0em hsl(349, 100%, 59%);
 }
 
 .pink a,
