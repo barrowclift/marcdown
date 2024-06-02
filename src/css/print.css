@@ -4,10 +4,10 @@ body, html, main {
     padding: 0;
 }
 main {
-    max-width: 40em;
-    margin-left: 10%;
-    margin-right: 10%;
-    margin-bottom: 2.6em;
+    max-width: 48em;
+    margin-left: 8%;
+    margin-right: 8%;
+    margin-bottom: 0;
 }
 .anchor {
     display: none !important;
@@ -16,17 +16,38 @@ body,html,main,h1,h2,h3,h4,h5,h6,
 code span, code, pre, pre span, a, a[href^="http://"] {
     color: black !important;
 }
+pre {
+    font-size: 0.833em !important;
+}
 pre, code,
 .codehilite,
+article > figure.highlight,
+article > pre,
+div.highlighter-rouge,
 .highlight {
     background-color: transparent !important;
     border: unset;
 }
+pre.ascii-art code {
+    text-align: left !important;
+    white-space: pre !important;
+}
+del, del code, small, .weak {
+    color: var(--secondary-foreground-color) !important;
+}
+kbd {
+    background: unset !important;
+}
+article > figure.highlight {
+    margin-top: 0 !important;
+    margin-bottom: var(--gap) !important;
+}
 code {
     padding: 0 !important;
+    white-space: break-spaces !important;
 }
 button,
-.link-button {
+.button {
     box-shadow: unset !important;
     text-shadow: unset !important;
 }
@@ -41,10 +62,6 @@ button,
 .macos-window-screenshot video {
     box-shadow: unset !important;
 }
-.watchos-screenshot.inline img,
-.watchos-screenshot.inline video {
-    width: auto !important;
-}
 small {
     color: #979797;
 }
@@ -53,19 +70,19 @@ small {
 }
 .bigfoot-footnote__button {
     padding-right: 0em !important;
-    padding-left: 1.3em !important;
+    padding-left: var(--gap) !important;
     background-color: transparent;
     margin: -0.75em -0.25em 0 -0.25em !important;
     font-size: 0.8125em;
 }
 /* Hiding elements that shouldn't be printed */
-menu, footer, .hide-for-print, .permalink, .reversefootnote {
+#menubar, footer, .hide-for-print, .permalink, .reversefootnote {
     display:none;
 }
 
 /* ----- FONT SIZES ----- */
 html {
-    font-size: 12pt;
+    font-size: 10pt;
     font-weight: 400;
 }
 body,
@@ -78,8 +95,8 @@ small {
     /* 1.5 is too loose, ~1.2-1.45 is desired, depending on typeface */
     line-height: 1.45em;
 }
-menu ul {
-    font-size: 1.3em;
+#menubar menu {
+    font-size: var(--gap);
     margin: 0.75rem 0;
 }
 /*
@@ -120,6 +137,9 @@ h1, h2, h3, h4, h5, h6, time {
     line-height: 1.2em;
     margin: 1.414em 0 0.5em;
 }
+header h1 {
+    margin-top: 0 !important;
+}
 time {
     margin-bottom: 0;
     margin-top: 0.25em; /* Or 0.5em */
@@ -130,8 +150,7 @@ time {
 p,
 blockquote,
 ol, ul, ol li, ul li,
-table,
-.highlight {
+table {
     margin-top: 0;
     margin-bottom: 1.3rem;
 }
@@ -153,16 +172,22 @@ code {
     font-size: 0.9em;
 }
 .footnotes ol, .footnotes ol li p,
-figcaption,
 small {
     font-size: 0.833em;
     margin-top: 0;
-    margin-bottom: 1.3em;
+    margin-bottom: var(--gap);
+}
+figcaption {
+    font-size: 0.833em;
+    margin-top: var(--gap) !important;
+}
+blockquote {
+    color: black !important;
 }
 input, button, select, textarea {
     font-size: 1em;
     margin-top: 0;
-    margin-bottom: 1.3em;
+    margin-bottom: var(--gap);
 }
 pre code {
     font-size: 0.75em;
@@ -172,9 +197,9 @@ strong {
     font-weight: 700;
 }
 mark.tag {
-    box-shadow: unset;
+    box-shadow: unset !important;
     text-shadow: unset;
-    color: rgba(0, 0, 0, 0.5);
+    color: black;
     border: 1px solid rgba(0, 0, 0, 0.5);
 }
     mark,
@@ -213,28 +238,25 @@ mark {
 
 /* ----- IMAGES & VIDEO ----- */
 
-img:not(.emoji), .edge-to-edge, .inline {
+img:not(.emoji),
+video,
+.edge-to-edge,
+.inline {
     width: 20vw !important;
 }
-.edge-to-edge.one-image,
-.edge-to-edge.two-images,
-.edge-to-edge.three-images {
-    width: 50vw !important;
+.watchos-screenshot img,
+.watchos-screenshot video {
+    width: 10vw !important;
 }
-.edge-to-edge.one-image img {
+.array img,
+.array video {
     width: 8vw !important;
 }
-.edge-to-edge.two-images img {
-    width: 8vw !important;
-}
-.edge-to-edge.three-images img {
-    width: 8vw !important;
-}
-.half-inline {
+.restrict-growth-to-half {
     width: 15vw !important;
 }
-.one-image, .two-images, .three-images {
-    width: 18vw !important;
+.array {
+    text-align: center;
 }
 ul + figure,
 ol + figure,
@@ -255,10 +277,36 @@ figure {
 .edge-to-edge img {
     border-radius: 0.25em;
 }
-.one-image img,
-.two-images img:first-child,
-.three-images img:first-child {
+.array img,
+.array img:first-child,
+.array img:first-child {
     margin-left: 0 !important;
+}
+/* This used to work for the parent element of button divs */
+/* But it does not work with newer browsers, the below doesn't hide the play button parent div */
+
+*::-webkit-media-controls-panel {
+  display: none!important;
+  -webkit-appearance: none;
+}
+
+/* Old shadow dom for play button */
+
+*::-webkit-media-controls-play-button {
+  display: none!important;
+  -webkit-appearance: none;
+}
+
+/* New shadow dom for play button */
+
+/* This one works! */
+
+*::-webkit-media-controls-start-playback-button {
+  display: none!important;
+  -webkit-appearance: none;
+}
+video::-webkit-media-controls-start-playback-button {
+  display: none !important;
 }
 
 /* ----- WRITING LAYOUT ----- */
@@ -270,6 +318,10 @@ sup .footnote {
     margin: 0em 0.25em 0 0.25em !important;
     font-size: 0.5em;
 }
+summary,
+details {
+    display: none !important;
+}
 pre {
     margin: 0;
     padding: 0 !important;
@@ -279,13 +331,6 @@ pre {
     font-size: 0.9em;
     word-wrap: break-word;
 }
-/*.edge-to-edge.infinite pre code,
-.codehilite pre,
-.highlight pre {
-    width: 100% !important;
-    margin-left: 0 !important;
-    max-width: unset !important;
-}*/
 pre {
     width: 100% !important;
     max-width: unset !important;
@@ -294,7 +339,6 @@ pre {
 }
 .codehilite,
 .highlight {
-    /*width: 85vw !important;*/
     width: 100% !important;
     padding-left: 0;
     padding-top: 0 !important;
@@ -316,7 +360,7 @@ hr.gray, article hr, footer hr, hr.small {
     border-top: 1px solid #E5E5E5 !important;
     height: 1px !important;
     background-color: #E5E5E5 !important;
-    margin: 2.6rem 0 !important;
+    margin: var(--gap2) 0 !important;
     max-width: 100% !important;
     display: block !important;
 }
@@ -338,5 +382,14 @@ table.fancy td {
 
 .admonition {
     background-color: transparent !important;
+    box-shadow: unset !important;
     color: black;
+}
+.admonition > p:first-child:before, .admonition .admonition-title:before {
+    content: none !important;
+}
+button,
+.button,
+.app-download {
+    display: none !important;
 }

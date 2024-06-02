@@ -1,77 +1,77 @@
 abbr[title] {
-	position:relative;
-	display:inline-block;
+    position:relative;
+    display:inline-block;
 }
 abbr[title]:after,
 abbr[title]:before {
-	position:absolute;
-	visibility:hidden;
-	opacity:0;
-	z-index:1000000;
-	pointer-events:none;
-	-webkit-transition:opacity .2s ease,visibility .2s ease,-webkit-transform .2s cubic-bezier(.71,1.7,.77,1.24);
-	-moz-transition:opacity .2s ease,visibility .2s ease,-moz-transform .2s cubic-bezier(.71,1.7,.77,1.24);
-	transition:opacity .2s ease,visibility .2s ease,transform .2s cubic-bezier(.71,1.7,.77,1.24);
+    position:absolute;
+    visibility:hidden;
+    opacity:0;
+    z-index:1000000;
+    pointer-events:none;
+    -webkit-transition:opacity .2s ease,visibility .2s ease,-webkit-transform .2s cubic-bezier(.71,1.7,.77,1.24);
+    -moz-transition:opacity .2s ease,visibility .2s ease,-moz-transform .2s cubic-bezier(.71,1.7,.77,1.24);
+    transition:opacity .2s ease,visibility .2s ease,transform .2s cubic-bezier(.71,1.7,.77,1.24);
 }
 abbr[title]:after {
-	content:attr(title);
-	-moz-font-feature-settings: normal;
+    content:attr(title);
+    -moz-font-feature-settings: normal;
     -ms-font-feature-settings: normal;
     -webkit-font-feature-settings: normal;
     font-feature-settings: normal;
-	background:#F9F9F9;
-	color:black;
-	padding:8px 10px;
-	
-	font-size:13px;
-	line-height:13px;
+    background:#F9F9F9;
+    color:black;
+    padding:8px 10px;
+    
+    font-size:13px;
+    line-height:13px;
 
-	/*padding: 0.5em 0.75em;
-	font-size: 0.833em;
-	line-height: 1.2em;*/
+    /*padding: 0.5em 0.75em;
+    font-size: 0.833em;
+    line-height: 1.2em;*/
 
-	white-space:nowrap;
-	box-shadow:4px 4px 8px rgba(0,0,0,.3)
+    white-space:nowrap;
+    box-shadow:4px 4px 8px rgba(0,0,0,.3)
 }
 abbr[title]:before {
-	content:'';
-	position:absolute;
-	background:0 0;
-	border:6px solid transparent;
-	z-index:1000001;
+    content:'';
+    position:absolute;
+    background:0 0;
+    border:6px solid transparent;
+    z-index:1000001;
 }
 abbr[title]:hover:after,
 abbr[title]:hover:before {
-	visibility:visible;
-	opacity:1;
-	-webkit-transition-delay:100ms;
-	-moz-transition-delay:100ms;
-	transition-delay:100ms
+    visibility:visible;
+    opacity:1;
+    -webkit-transition-delay:100ms;
+    -moz-transition-delay:100ms;
+    transition-delay:100ms
 }
 abbr[title='']:after,
 abbr[title='']:before {
-	display:none !important;
+    display:none !important;
 }
 abbr:before {
-	border-top-color:#F9F9F9 !important;
-	margin-bottom:-12px;
+    border-top-color:#F9F9F9 !important;
+    margin-bottom:-12px;
 }
 abbr:after,
 abbr:before {
-	bottom:100%;
-	left:50% !important;
-	-webkit-transform:translateX(-50%) !important;
-	-moz-transform:translateX(-50%) !important;
-	transform:translateX(-50%) !important;
+    bottom:100%;
+    left:50% !important;
+    -webkit-transform:translateX(-50%) !important;
+    -moz-transform:translateX(-50%) !important;
+    transform:translateX(-50%) !important;
 }
 abbr:after {
-	border-radius:4px;
+    border-radius:4px;
 }
 abbr:focus:after,
 abbr:focus:before,
 abbr:hover:after,
 abbr:hover:before {
-	-webkit-transform:translateX(-50%) translateY(-8px) !important;
-	-moz-transform:translateX(-50%) translateY(-8px) !important;
-	transform:translateX(-50%) translateY(-8px) !important;
+    -webkit-transform:translateX(-50%) translateY(-8px) !important;
+    -moz-transform:translateX(-50%) translateY(-8px) !important;
+    transform:translateX(-50%) translateY(-8px) !important;
 }

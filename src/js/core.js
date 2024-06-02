@@ -5,32 +5,14 @@ $.bigfoot({ /* Settings */
     numberResetSelector: "article"
 });
 
-/* anchor.min.js | http://www.jqueryscript.net/other/jQuery-Plugin-To-Add-Unique-Anchor-Links-To-Headlines-anchor-js.html */
-$.fn.anchor=function(a){var b={headingClass:"anchored",anchorClass:"anchor",symbol:"¶",maxLength:100},c=$.extend({},b,a),d=$(this),e=[],f=function(a){var b=a.replace(/[^a-z0-9\s]/gi,"").replace(/[_\s]/g,"-").replace(/\s+/g,"-").toLowerCase();return b};d.each(function(){var a,b=$(this),d=b.text(),g=1;d.length>c.maxLength&&(d=d.substring(0,c.maxLength)),d=f(d),e[d]>=1?(g=e[d]+1,a=d+"-"+g):a=d,b.addClass(c.headingClass).attr("id",a),b.append('<a class="'+c.anchorClass+'" href="#'+a+'">'+c.symbol+"</a>"),e[d]=g})};
-
 /* jquery.cookie v1.4.1 | MIT */
 !function(a){"function"==typeof define&&define.amd?define(["jquery"],a):"object"==typeof exports?a(require("jquery")):a(jQuery)}(function(a){function b(a){return h.raw?a:encodeURIComponent(a)}function c(a){return h.raw?a:decodeURIComponent(a)}function d(a){return b(h.json?JSON.stringify(a):String(a))}function e(a){0===a.indexOf('"')&&(a=a.slice(1,-1).replace(/\\"/g,'"').replace(/\\\\/g,"\\"));try{return a=decodeURIComponent(a.replace(g," ")),h.json?JSON.parse(a):a}catch(b){}}function f(b,c){var d=h.raw?b:e(b);return a.isFunction(c)?c(d):d}var g=/\+/g,h=a.cookie=function(e,g,i){if(void 0!==g&&!a.isFunction(g)){if(i=a.extend({},h.defaults,i),"number"==typeof i.expires){var j=i.expires,k=i.expires=new Date;k.setTime(+k+864e5*j)}return document.cookie=[b(e),"=",d(g),i.expires?"; expires="+i.expires.toUTCString():"",i.path?"; path="+i.path:"",i.domain?"; domain="+i.domain:"",i.secure?"; secure":""].join("")}for(var l=e?void 0:{},m=document.cookie?document.cookie.split("; "):[],n=0,o=m.length;o>n;n++){var p=m[n].split("="),q=c(p.shift()),r=p.join("=");if(e&&e===q){l=f(r,g);break}e||void 0===(r=f(r))||(l[q]=r)}return l};h.defaults={},a.removeCookie=function(b,c){return void 0===a.cookie(b)?!1:(a.cookie(b,"",a.extend({},c,{expires:-1})),!a.cookie(b))}});
 
-/* We can have nice translucency effects in Safari, enable them if using Safari */
-var is_chrome = navigator.userAgent.indexOf("Chrome") > -1;
-var is_safari = navigator.userAgent.indexOf("Safari") > -1;
-var is_ios_safari = navigator.userAgent.match(/iPad/i) || navigator.userAgent.match(/iPhone/i)
-var is_opera = navigator.userAgent.toLowerCase().indexOf("op") > -1;
-if ((is_chrome)&&(is_safari)) {is_safari=false;}
-if ((is_chrome)&&(is_opera)) {is_chrome=false;}
-if (is_safari || is_ios_safari) {
-    document.getElementsByTagName("html")[0].setAttribute("class", "safari");
-} else if (!is_safari && !is_ios_safari && !is_opera && !is_chrome) {
-    document.getElementsByTagName("html")[0].setAttribute("class", "firefox");
-} else if (!is_safari && !is_ios_safari && !is_opera && is_chrome) {
-    document.getElementsByTagName("html")[0].setAttribute("class", "chrome");
-}
-
 function changeAppearance(appearance) {
-    $(".color-well.light").removeClass("active");
-    $(".color-well.dark").removeClass("active");
-    $(".color-well.auto").removeClass("active");
-    $("menu").css("background-color", "");
+    $(".well.light").removeClass("active");
+    $(".well.dark").removeClass("active");
+    $(".well.auto").removeClass("active");
+    $("#menubar").css("background-color", "");
     if (appearance == null) {
         appearance = $.cookie("dark-mode");
     }
@@ -38,16 +20,16 @@ function changeAppearance(appearance) {
         $.cookie("dark-mode", "off");
         $('#logo-speech-bubble').text("Hi there! Hope you're having a good day.");
         document.getElementsByTagName("html")[0].removeAttribute("id");
-        $(".color-well.light").addClass("active");
+        $(".well.light").addClass("active");
     } else if ("dark" == appearance) {
         $.cookie("dark-mode", "on");
         $('#logo-speech-bubble').text("Stay cool, dude.");
         document.getElementsByTagName("html")[0].setAttribute("id", "dark");
-        $(".color-well.dark").addClass("active");
+        $(".well.dark").addClass("active");
     } else {
         $.cookie("dark-mode", "auto");
         var inSystemDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        $(".color-well.auto").addClass("active");
+        $(".well.auto").addClass("active");
         if (inSystemDarkMode) {
             $('#logo-speech-bubble').text("Stay cool, dude.");
             document.getElementsByTagName("html")[0].setAttribute("id", "dark");
@@ -56,13 +38,10 @@ function changeAppearance(appearance) {
             document.getElementsByTagName("html")[0].removeAttribute("id", "dark");
         }
     }
+    updateThemeColor();
 }
 /* Allow clicking the area AROUND the buttons to trigger the effect as well */
-function settingsClicked() {
-    $("#settings-checkbox").click();
-    return false;
-}
-function settingsToggled(checkbox) {
+function settingsToggled() {
     var popup = document.getElementById("settings-popup");
     popup.classList.toggle("show");
     var settingToggles = document.getElementsByClassName("setting-toggles");
@@ -72,7 +51,7 @@ function settingsToggled(checkbox) {
 }
 
 function changeAccentColor(color) {
-    if (!$("body").hasClass("ignore-accent-color") && !$("html").hasClass(color)) {
+    if (!$("html").hasClass("ignore-accent-color") && !$("html").hasClass(color)) {
         $("html").removeClass("blue");
         $("html").removeClass("red");
         $("html").removeClass("orange");
@@ -80,15 +59,15 @@ function changeAccentColor(color) {
         $("html").removeClass("green");
         $("html").removeClass("purple");
         $("html").removeClass("pink");
-        $(".color-well.blue").removeClass("active");
-        $(".color-well.red").removeClass("active");
-        $(".color-well.orange").removeClass("active");
-        $(".color-well.yellow").removeClass("active");
-        $(".color-well.green").removeClass("active");
-        $(".color-well.purple").removeClass("active");
-        $(".color-well.pink").removeClass("active");
+        $(".well.blue").removeClass("active");
+        $(".well.red").removeClass("active");
+        $(".well.orange").removeClass("active");
+        $(".well.yellow").removeClass("active");
+        $(".well.green").removeClass("active");
+        $(".well.purple").removeClass("active");
+        $(".well.pink").removeClass("active");
 
-        $(".color-well." + color).addClass("active");
+        $(".well." + color).addClass("active");
         if (color == "blue") {
             $.removeCookie("accent-color");
         } else {
@@ -96,12 +75,69 @@ function changeAccentColor(color) {
             $.cookie("accent-color", color);
         }
     }
+    updateThemeColor();
 }
 
-/* Better style image alt text when/if images fail to load */
-$("img").error(function(){
-    $(this).addClass("failed-to-load");
-});
+function updateThemeColor(a_accentColor) {
+    let accentColor = a_accentColor || $.cookie("accent-color") || "blue";
+    let darkBaseThemeColor;
+    let lightBaseThemeColor;
+    if (accentColor === "purple") {
+        darkBaseThemeColor = "#1F1A22";
+        lightBaseThemeColor = "#FDFBFE";
+    } else if (accentColor === "pink") {
+        darkBaseThemeColor = "#221A1E";
+        lightBaseThemeColor = "#FEFBFD";
+    } else if (accentColor === "red") {
+        darkBaseThemeColor = "#221A1A";
+        lightBaseThemeColor = "#FEFBFB";
+    } else if (accentColor === "orange") {
+        darkBaseThemeColor = "#22201B";
+        lightBaseThemeColor = "#FEFCFB";
+    } else if (accentColor === "yellow") {
+        darkBaseThemeColor = "#23221B";
+        lightBaseThemeColor = "#FEFDFB";
+    } else if (accentColor === "green") {
+        darkBaseThemeColor = "#1C231D";
+        lightBaseThemeColor = "#FCFEFC";
+    } else {
+        darkBaseThemeColor = "#1B1F23";
+        lightBaseThemeColor = "#FBFCFE";
+    }
+    let darkModeCookie = $.cookie("dark-mode");
+    if (darkModeCookie === "off") {
+        document.querySelector("meta#dark-base-theme-color")?.setAttribute("content", lightBaseThemeColor);
+    } else {
+        document.querySelector("meta#dark-base-theme-color")?.setAttribute("content", darkBaseThemeColor);
+    }
+    if (darkModeCookie === "on") {
+        document.querySelector("meta#light-base-theme-color")?.setAttribute("content", darkBaseThemeColor);
+    } else {
+        document.querySelector("meta#light-base-theme-color")?.setAttribute("content", lightBaseThemeColor);
+    }
+    let darkOverride = document.querySelector("meta#override-dark-base-theme-color");
+    let lightOverride = document.querySelector("meta#override-light-base-theme-color");
+    var inSystemDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (lightOverride && darkOverride) {
+        if (inSystemDarkMode) {
+            if (darkModeCookie === "off") {
+                lightOverride.setAttribute("content", darkBaseThemeColorOverride);
+                darkOverride.setAttribute("content", lightBaseThemeColorOverride);
+            } else if (darkModeCookie === "on" || (darkModeCookie === "auto" && inSystemDarkMode)) {
+                lightOverride.setAttribute("content", lightBaseThemeColorOverride);
+                darkOverride.setAttribute("content", darkBaseThemeColorOverride);
+            }
+        } else {
+            if (darkModeCookie === "off" || (darkModeCookie === "auto" && !inSystemDarkMode)) {
+                lightOverride.setAttribute("content", lightBaseThemeColorOverride);
+                darkOverride.setAttribute("content", darkBaseThemeColorOverride);
+            } else if (darkModeCookie === "on") {
+                lightOverride.setAttribute("content", darkBaseThemeColorOverride);
+                darkOverride.setAttribute("content", lightBaseThemeColorOverride);
+            }
+        }
+    }
+}
 
 /* When ready... */
 $(document).ready(function() {
@@ -115,16 +151,22 @@ $(document).ready(function() {
 
     var cachedDarkModeSetting = $.cookie("dark-mode");
     var inSystemDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    window.matchMedia('(prefers-color-scheme: dark)').addListener(changeAppearance);
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(() => {
+        var pageForcesDarkMode = document.getElementsByTagName("html")[0].classList.contains("force-dark-mode");
+        var userPrefersAutoTheme = $.cookie("dark-mode") == "auto";
+        if (!pageForcesDarkMode && userPrefersAutoTheme) {
+            changeAppearance("auto");
+        }
+    });
     if ("on" == cachedDarkModeSetting) {
         document.getElementsByTagName("html")[0].setAttribute("id", "dark");
         $('#logo-speech-bubble').text("Stay cool, dude.");
-        $(".color-well.dark").addClass("active");
+        $(".well.dark").addClass("active");
     } else if ("off" == cachedDarkModeSetting) {
         $('#logo-speech-bubble').text("Hi there! Hope you're having a good day.");
-        $(".color-well.light").addClass("active");
+        $(".well.light").addClass("active");
     } else {
-        $(".color-well.auto").addClass("active");
+        $(".well.auto").addClass("active");
         if (inSystemDarkMode) {
             document.getElementsByTagName("html")[0].setAttribute("id", "dark");
             $('#logo-speech-bubble').text("Stay cool, dude.");
@@ -132,17 +174,95 @@ $(document).ready(function() {
             $('#logo-speech-bubble').text("Hi there! Hope you're having a good day.");
         }
     }
+    updateThemeColor();
 
-    if ($.cookie("accent-color") && !document.getElementsByTagName("body")[0].classList.contains("ignore-accent-color")) {
-        document.getElementsByTagName("html")[0].className += " " + $.cookie("accent-color");
-        $(".color-well." + $.cookie("accent-color")).addClass("active");
+    if (document.getElementsByTagName("html")[0].classList.contains("ignore-accent-color")) {
+        $("html").removeClass("blue");
+        $("html").removeClass("red");
+        $("html").removeClass("orange");
+        $("html").removeClass("yellow");
+        $("html").removeClass("green");
+        $("html").removeClass("purple");
+        $("html").removeClass("pink");
+    }
+    if ($.cookie("accent-color") && !document.getElementsByTagName("html")[0].classList.contains("ignore-accent-color")) {
+        $(".well." + $.cookie("accent-color")).addClass("active");
     } else {
-        $(".color-well.blue").addClass("active");
+        $(".well.blue").addClass("active");
     }
 
-    /* anchor.min.js - Settings */
-    $('h2,h3,h4,h5,h6').anchor({
-        symbol: '¶'
+    /***
+     * DYNAMIC MENU
+     ***/
+    // Initial starting position for browsers that remember and persist scroll position through reloads
+    var html = $("html");
+    var menubar = $("#menubar");
+    var settingsPopup = $("#settings-popup");
+    if ($(this).scrollTop() > 50) {
+        menubar.addClass("hide-when-scrolling-on-larger-screens");
+        settingsPopup.addClass("hide-when-scrolling-on-larger-screens");
+    }
+    if ($(this).scrollTop() > 125) {
+        menubar.addClass("hide-when-scrolling-on-small-screens");
+        settingsPopup.addClass("hide-when-scrolling-on-small-screens");
+    } else if (html.scrollTop() > 102) {
+        menubar.addClass("float");
+        settingsPopup.addClass("float");
+    }
+
+    // Dynamic hiding based on scroll position and page type
+    var previousScrollTop = $(this).scrollTop();
+    $(function() {
+        var menuBar = $("#menubar");
+        var settingsPopup = $("#settings-popup");
+        var skip = true;
+        $(window).scroll(function () {
+            var newScrollTop = $(this).scrollTop();
+            if (newScrollTop > 50) {
+                menuBar.addClass("hide-when-scrolling-on-larger-screens");
+                settingsPopup.addClass("hide-when-scrolling-on-larger-screens");
+            } else {
+                menuBar.removeClass("hide-when-scrolling-on-larger-screens");
+                settingsPopup.removeClass("hide-when-scrolling-on-larger-screens");
+            }
+
+            if (newScrollTop > 125) {
+                menubar.addClass("hide-when-scrolling-on-small-screens");
+                menubar.addClass("float");
+                settingsPopup.addClass("hide-when-scrolling-on-small-screens");
+                settingsPopup.addClass("float");
+            } else if (newScrollTop > 102) {
+                menubar.addClass("float");
+                menubar.removeClass("hide-when-scrolling-on-small-screens");
+                settingsPopup.addClass("float");
+                settingsPopup.removeClass("hide-when-scrolling-on-small-screens");
+            } else if (newScrollTop <= 102) {
+                menubar.removeClass("hide-when-scrolling-on-small-screens");
+                menubar.removeClass("float");
+                settingsPopup.removeClass("hide-when-scrolling-on-small-screens");
+                settingsPopup.removeClass("float");
+            }
+
+            if (newScrollTop > 50) {
+                if (newScrollTop - previousScrollTop < 0) {
+                    menubar.removeClass("hide-when-scrolling-on-larger-screens");
+                    settingsPopup.removeClass("hide-when-scrolling-on-larger-screens");
+                } else {
+                    menubar.addClass("hide-when-scrolling-on-larger-screens");
+                    settingsPopup.addClass("hide-when-scrolling-on-larger-screens");
+                }
+            }
+            if (newScrollTop > 125) {
+                if (newScrollTop - previousScrollTop < 0) {
+                    menubar.removeClass("hide-when-scrolling-on-small-screens");
+                    settingsPopup.removeClass("hide-when-scrolling-on-small-screens");
+                } else {
+                    menubar.addClass("hide-when-scrolling-on-small-screens");
+                    settingsPopup.addClass("hide-when-scrolling-on-small-screens");
+                }
+            }
+            previousScrollTop = newScrollTop;
+        });
     });
 
     /* If just a single line of code, it's a poor experience to have to scroll. It's
@@ -166,8 +286,8 @@ $(document).ready(function() {
     // https://stackoverflow.com/a/3028037
     $(document).on(clickEventName, function(event) {
         if ($("#settings-popup").hasClass("show")) {
-            if (!$(event.target).closest("#settings-popup").length && !$(event.target).closest("#settings-toggle").length) {
-                settingsClicked();
+            if (!$(event.target).closest("#settings-popup").length && !$(event.target).closest("#settings-button-wrapper").length) {
+                settingsToggled()
             }
         }
     });

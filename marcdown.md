@@ -1,16 +1,15 @@
-# <time>A Markdown theme for humans</time>Marcdown
+# <small>A Markdown theme for humans</small>Marcdown
 
-I write everything in [Markdown](https://daringfireball.net/projects/markdown), but I've never been particularly satisfied with the available themes. Sure, [Github Flavored Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) is a fine default, but its overemphasis on dividing lines adds too much visual noise for my tastes. I have similar issues with other popular themes; while they each have their own strengths, they all fall short of meeting my three requirements:
+I write everything in [Markdown](https://daringfireball.net/projects/markdown), but I've never been particularly satisfied with the available themes. Sure, [Github Flavored Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) is a fine default, but its overemphasis on dividing lines adds too much visual noise for my tastes. I have similar issues with other popular themes; while they each have their own strengths, they all fall short of meeting my two primary requirements:
 
 1. Tasteful typography
-2. Complete support for styling most "unofficial" Markdown features (such as syntax highlighting, tables, etc.)
-3. Wide selection of image formatting options
-4. Dark / light themes, with the option to switch between them at will in the rendered documents themselves
+2. Appearance & accent color controls
 
 Given the nature of such specific requirements, I had no choice but to create my own Markdown theme. That theme is Marcdown&mdash;a Markdown theme designed to be just as beautiful for late night journal entries as it is functional for intense computer science notes. Give it a try, I think you're going to love it.
 
 <ul class="toc">
 <li><a href="#design">Design</a><ul>
+<li><a href="#appearance-controls">Appearance Controls</a></li>
 <li><a href="#typeface">Typeface</a></li>
 <li><a href="#headers">Headers</a></li>
 <li><a href="#links">Links</a></li>
@@ -18,20 +17,14 @@ Given the nature of such specific requirements, I had no choice but to create my
 <li><a href="#strikethroughs">Strikethroughs</a></li>
 <li><a href="#footnotes">Footnotes</a></li>
 <li><a href="#block-quotes">Block Quotes</a></li>
-<li><a href="#images">Images</a><ul>
-<li><a href="#edgetoedge-options">Edge-to-Edge Options</a></li>
-<li><a href="#general-options">General Options</a></li>
-<li><a href="#captions">Captions</a></li>
-</ul>
-</li>
+<li><a href="#images">Images</a></li>
 <li><a href="#code">Code</a></li>
 <li><a href="#tables">Tables</a></li>
 <li><a href="#admonitions">Admonitions</a></li>
 <li><a href="#highlighting">Highlighting</a></li>
 <li><a href="#definitions">Definitions</a></li>
 <li><a href="#abbreviations">Abbreviations</a></li>
-<li><a href="#keyboard-keys">Keyboard Keys</a></li>
-<li><a href="#advanced-features">Advanced Features</a></li>
+<li><a href="#keyboard-descriptions">Keyboard Descriptions</a></li>
 </ul>
 </li>
 <li><a href="#installation">Installation</a></li>
@@ -42,25 +35,36 @@ Given the nature of such specific requirements, I had no choice but to create my
 
 ## Design
 
+### Appearance Controls
+
+A lovely settings button hovers at the very top-right of the page, and disappears on scroll to not distract when reading. Clicking it reveals a suite of appearance controls, allowing you to adjust the theme to be permanently dark, permanently light, or to auto-match your system's reported theme.
+
+Additionally, here you can change the accent color to further customize to your taste.
+
 ### Typeface
 
 Marcdown was crafted for Apple's [San Francisco](https://developer.apple.com/fonts/) typeface, one of the [finest sans serif typefaces in recent years](https://medium.com/@mach/the-secret-of-san-francisco-fonts-4b5295d9a745#.34yepmqos). However, due to [the restrictive license](https://stackoverflow.com/a/32178596), San Francisco can't be legally bundled with Marcdown.
 
-To account for this (while Marcdown is intended to be used with San Francisco) it leverages [Craig Hockenberry's CSS](https://furbo.org/2018/03/28/system-fonts-in-css/) to use the default system font. This has a number of benefits, both in terms of load speed (no fonts to download, if viewing over the web) and in terms of platform consistency (it'll better "fit in" to your platform of choice).
+To account for this, it instead leverages [Craig Hockenberry's CSS](https://furbo.org/2018/03/28/system-fonts-in-css/) to use the default system font. This has a number of benefits, both in terms of load speed (no fonts to download, if viewing over the web) and in terms of platform consistency (it'll better "fit in" to your platform of choice, and if you're on an Apple platfrom, San Francisco will be used).
 
 ### Headers
 
-All six headers adhere to a [1.2 minor third scale](http://type-scale.com) with subtle font weighting changes every level to establish and maintain its hierarchy, all [without distracting underlines](http://practicaltypography.com/headings.html). You can see all the headers stacked together [here](/marcdown/headers.html).
+All six headers adhere to a [1.2 minor third scale](http://type-scale.com) with subtle font weighting changes every level to establish and maintain its hierarchy, all without distracting underlines.
+
+# Header 1
+## Header 2
+### Header 3
+#### Header 4
+##### Header 5
+###### Header 6
 
 ### Links
 
-As you've already seen, [this is what links look like](#links), and hovering them adds a subtle blue glow. In Marcdown, color is used to indicate actionable items.
-
-For those times button links are desired, you can use `[Text](url){: .button }` to create buttons like this:
-
-[Go To barrowclift.design](http://barrowclift.design){: .button }
+As you've already seen, [this is what links look like](#links). They're rendered without an underline, and on hover yield a soft background glow with rounded corners.
 
 ### Lists
+
+For unordered lists...
 
 * Unordered lists look like this
 * The root level uses filled in circles
@@ -68,175 +72,51 @@ For those times button links are desired, you can use `[Text](url){: .button }` 
 	- And then...
 		* The last available level uses empty circles
 
+For ordered lists...
+
 1. Ordered lists look like this
 2. The root level uses numbers
 	1. Sub levels use Latin alphabet characters
 	2. And then...
 		1. The last available level uses Roman numerals
 
-And of course, checklists are also styled appropriately as well.
-
-* [ ] Thing to do
-* [ ] Another thing to do
-* [X] Something I've actually done
-
 ### Strikethroughs
 
 ~~A good chunk of the writing process is drafting~~ Drafting is a crucial phase of the writing process. Sentences can go through countless revisions before they begin to take proper shape, and strikethroughs are perfect for maintaining a nondestructive backlog of your previous approaches for context and future reference.
 
-Due to the nature of strikethroughs being text you want to deemphasis, strikethroughs are one of the few textual elements that have a lighter color than the surrounding text to help guide your eyes over the strikethrough towards its replacement.
+Since strikethroughs are naturally text to deemphasize, strikethroughs are one of the few textual elements rendered with a lighter foreground color than the surrounding text to help guide your eyes *over* the strikethrough towards its replacement.
 
 ### Footnotes
 
-Footnotes look like this[^example-footnote] and are displayed Instapaper-style using [bigfoot.js](http://www.bigfootjs.com). They are also appended inline at the end of the document.
+Footnotes look like this[^example-footnote], rendered with an Instapaper-inspired popup using [bigfoot.js](http://www.bigfootjs.com). The footnotes are also still appended at the end of the document, as usual.
 
 ### Block Quotes
 
-Marcdown uses a slightly deemphasized color and line along with italics to distinguish quotes from the rest of the text.
+Marcdown renders block quotes with a slightly deemphasized foreground color, a bold left border, and italics to better distinguish quotes from surrounding prose.
 
 > Here's to the crazy ones. The misfits. The rebels. The troublemakers. The round pegs in the square holes. The ones who see things differently. They're not fond of rules. And they have no respect for the status quo. You can quote them, disagree with them, glorify or vilify them. About the only thing you can't do is ignore them. Because they change things. They push the human race forward. And while some may see them as the crazy ones, we see genius. Because the people who are crazy enough to think they can change the world, are the ones who do.
 >
-> &ndash; Rob Siltanen
+> —Rob Siltanen
 
 ### Images
 
-By default, images are inline and span the full width of the text or stop at their own width, whatever comes first.
+Images span the full prose width with a pleasing border radius & drop shadow.
 
-![Rocky Mountains National Park - Photo in a misty forest, with light breaking through the tree lines](img/rocky-mountains.jpg)
-
-This isn't nearly enough for my purposes, which is why Marcdown shamelessly breaks Markdown's rules to allow for an assortment of image options for every occasion using the following structure:
-
-```html
-<figure markdown="1" class="$type $option1 $option2 ...">
-![Alt text](image.jpg)
-</figure>
-```
-
-The following types are supported:
-
-* __edge-to-edge__: Further detailed in the [Edge-to-Edge Options](#edge-to-edge-options) section.
-* __inline__: Caps the image width to the surrounding text's width. If the image's width is smaller than that, the image will *not* be stretched to fill. This is the same style applied to default Markdown images.
-* __half-inline__: Caps the image width to exactly half of the surrounding text's width.
-
-While `inline` and `half-inline` are self-explanatory, `edge-to-edge` has a myriad of additional options.
-
-#### Edge-to-Edge Options
-
-Edge-to-edge images types are the most flexible of them all and support an array of size and layout options.
-
-Size options:
-
-* `small`: The image will only "spill" to fill the page's width on mobile devices. It returns to be inline with the text for all larger devices.
-* `medium`: Like `small`, but will continue to "spill" a bit beyond the bounding text's width for medium and larger devices to a maximum width of 1000px;
-* `large`: Like `medium`, but the amount of "spillage" continues to a maximum width of 1303px.
-* `infinite`: The image never stops expanding!
-
-Layout options:
-
-* `two-images`: Display two images side-by-side (most useful for tall images, like iOS screenshots).
-* `three-images`: Display three images side-by-side (most useful for tall images, like iOS screenshots).
-
-Here's an example `edge-to-edge` image with no sub-type options provided. This is perfect for very long panoramas.
-
-<figure markdown="1" class="edge-to-edge">
-![Zion National Park - Panorama atop Angels Landing](img/zion.jpg)
-</figure>
-
-Compare that to a taller panorama, this time with the `large` option. This stops the image from expanding beyond 1303px.
-
-<figure markdown="1" class="edge-to-edge large">
-![Smoky Mountains National Park - Mountaintop panorama](img/smoky-mountains.jpg)
-</figure>
-
-For long images with a reasonable amount of height to them&mdash;like desktop screenshots&mdash;consider using the `medium` option.
-
-<figure markdown="1" class="edge-to-edge medium">
-![Smoky Mountains National Park - Photo of a sunset during one of our hikes](img/smoky-mountains-sunset.jpg)
-</figure>
-
-If the image is pretty tall but you still want that "edge-to-edge" experience, you can provide the `small` option to be edge-to-edge on mobile devices only. This is good for ~4:3 aspect ratio images that look uncomfortable going edge-to-edge medium devices or bigger but can can still do so comfortably on small devices.
-
-<figure markdown="1" class="edge-to-edge small">
-![Smoky Mountains National Park - Photo of a stream in the forest](img/smoky-mountains-2.jpg)
-</figure>
-
-For all the above size sub-types, `two-images` or `three-images` could also be used as additional options to render side-by-side images. In vanilla Markdown, you'd be forced to export a composite image in a separate application to achieve this, but with Marcdown you can just write!
-
-<div markdown="1" class="edge-to-edge large three-images ios-screenshot">
-![Overcast iOS Screenshot - home screen](img/ios-1.jpg)
-![Overcast iOS Screenshot 2 - playlist view](img/ios-2.jpg)
-![Overcast iOS Screenshot 3 - player view](img/ios-3.jpg)
-</div>
-
-However, as you'd expect for something more complicated like this, the markup for this element is almost entirely HTML, as Markdown wasn't intended for such things[^intended]. Below is a basic example for `three-images`, and for two images you'd simply use `two-images` instead:
-
-```html
-<div markdown="1" class="edge-to-edge large three-images">
-![Alt text 1](image-1.jpg)
-![Alt text 2](image-2.jpg)
-![Alt text 3](image-3.jpg)
-</div>
-```
-
-Be advised that different Markdown parsers handle the above syntax differently, and you may have to remove all newlines from the block for it to work propely with your parser and parser extensions.
-
-#### General Options
-
-The following image options are supported for __all__ image types:
-
-* `shadow`: Render a nice, general drop-shadow on the image (includes hover animation for linked images)
-
-<figure markdown="1" class="half-inline shadow">
-[![Example image with the shadow option](img/logo.png)](img/logo.png)
-</figure>
-
-* `macos-window-screenshot`: For macOS window screenshots taken [with the shadows disabled](https://www.macgasm.net/2011/05/23/disable-dropshadow-mac-os-window-screenshots/), you can let Marcdown add back in the appropriate border, border radius, and drop shadow to match the macOS look and feel.
-
-<figure markdown="1" class="inline macos-window-screenshot">
-![Example image with the macOS screenshot option](img/macos-window.png)
-</figure>
-
-* `watchos-screenshot`: Intended for watchOS screenshots. watchOS screenshots are different from the others in that the OS takes into consideration the OLED display and surrounding bezel and makes the OS "edge-to-edge" to take advantage of this. Unfortunately, this makes screenshots look quite horrible by default since the contents are taken out of their padded context, making everything look crowded. With this option, the appropriate padding, border, border radius, and drop shadow will be reapplied to best emulate the watch face itself.
-
-<figure markdown="1" class="true-width watchos-screenshot">
-![Example image with the macOS screenshot option](img/watchos-screenshot.png)
-</figure>
-
-* `ios-screenshot`: Intended for iOS screenshots; a light border, border radius, and drop shadow will be added.
-
-<figure markdown="1" class="edge-to-edge one-image shadow ios-screenshot">
-![Example image with the macOS screenshot option](img/ios-screenshot.jpg)
-</figure>
-
-#### Captions
-
-While image comments are not supported in traditional Markdown, they're fully supported in Marcdown for all image types by means of the standard HTML `<figcaption>` element. Below is an example applied to a `small` `edge-to-edge` image:
-
-<figure markdown="1" class="edge-to-edge small">
-![My siblings and I on the fourth annual "Sibs Trip", photo taken just before beginning the Wild Cave Tour at Mammoth Cave Nation Park](img/sibs.jpg)
-<figcaption>My siblings and I on the fourth annual "Sibs Trip", photo taken just before beginning the Wild Cave Tour at Mammoth Cave Nation Park</figcaption>
-</figure>
-
-The basic markup follows:
-
-```html
-<figure markdown="1" class="$type $option1 $option2 ...">
-![Alt text](image.jpg)
-<figcaption>Your photo caption goes here.</figcaption>
-</figure>
-```
+![Photo of an empty common area inside the Comcast Technology Center in Philadelphia](img/example-photo.webp)
 
 ### Code
 
-Markdown's standard inline code snippets with the back-tick (<code>\`</code>) allow you to jot down variable names or short lines of code without breaking your train of thought, they look like this: `exampleMethod()`.
+Markdown's inline code snippets allow you to jot down variable names or short lines of code without breaking your train of thought. These are rendered in Marcdown with a soft background & border color with rounded corners, like so: `exampleMethod()`.
 
-The usual syntax for code blocks remains the same. You can indent blocks of text or surround it with <code>```</code> to render a pre-formatted text block with a dark theme, like so:
+When writing code blocks without a specified syntax, the same style used for inline code is applied as a block:
 
 	Pre-formatted text
 	A format best suited for
 	Writing lots of code
 
-If using the <code>```</code> notation, you can [provide a language](https://help.github.com/articles/creating-and-highlighting-code-blocks/#syntax-highlighting) to syntax highlight code with a [Sublime Text](http://www.sublimetext.com) flavored Monokai theme.
+Finally, [when a syntax *is* specified](https://help.github.com/articles/creating-and-highlighting-code-blocks/#syntax-highlighting), a custom theme is applied inspired by Marcdown's available [accent colors](#appearance-controls).
+
+*:warning: Technically non-standard. While most Markdown parsers support [syntax highlighting](https://www.markdownguide.org/extended-syntax/#syntax-highlighting), not all do.*
 
 ```java
 public class Example {
@@ -246,117 +126,9 @@ public class Example {
 }
 ```
 
-For *large* code blocks, you may want to surround your code with an `infinite` `edge-to-edge` style, like described in the [Images section](#images)
-
-<div markdown="1" class="edge-to-edge infinite">
-```java
-// Example below sourced from Robert Sedgewick and Kevin Wayne's Princeton website
-// https://introcs.cs.princeton.edu/java/23recursion/Fibonacci.java.html
-
-/******************************************************************************
- *  Compilation:  javac Fibonacci.java
- *  Execution:    java Fibonacci n
- *
- *  Computes and prints the first n Fibonacci numbers.
- *
- *  WARNING:  this program is spectacularly inefficient and is meant
- *            to illustrate a performance bug, e.g., set n = 45.
- *
- *
- *   % java Fibonacci 7
- *   1: 1
- *   2: 1
- *   3: 2
- *   4: 3
- *   5: 5
- *   6: 8
- *   7: 13
- *
- *   Remarks
- *   -------
- *    - The 93rd Fibonacci number would overflow a long, but this
- *      will take so long to compute with this function that we
- *      don't bother to check for overflow.
- *
- ******************************************************************************/
-public class Fibonacci {
-	public static long fibonacci(int n) {
-		if (n <= 1) return n;
-		else return fibonacci(n-1) + fibonacci(n-2);
-	}
-
-	public static void main(String[] args) {
-		int n = Integer.parseInt(args[0]);
-		for (int i = 1; i <= n; i++) {
-			StdOut.println(i + ": " + fibonacci(i));
-		}
-	}
-}
-```
-</div>
-
-However, as great as dark themes are, they're not always necessary. Sometimes you just want pre-formatted text that doesn't break the flow of reading too much. In cases like these, you must manually wrap your text with the HTML `<pre>` and `<code>` elements. While not ideal, Markdown by design only allows one particular style to be set to any given element[^one-style-only], so in an effort to address not *always* wanting the Monokai theme to be applied to pre-formatted text blocks, plain old `<pre><code>Your text</code></pre>` is assumed to be regular text and the Monokai theme will not be applied.
-
-<pre><code>I'm performed text,
-not code.
- (please
-   respect
-     my
-       spacing!)</code></pre>
-
-And of course, you can still use the `infinite` `edge-to-edge` style for light-themed blocks as well.
-
-<div class="edge-to-edge infinite"><pre><code>I'm performed text,
-and I'm filling the screen this time!
-It's best
-suited
-for
-when
-you
-have
-lots
-of
-lines</code></pre></div>
-
-For the ASCII artists out there, you can also easily tighten the font's line height by providing the `ascii-art` class to the `<pre>` element (example below created by [grp](http://www.ascii-code.com/ascii-art/computers/apple.php)).
-
-<pre class="ascii-art">
-<code>                   __________________________
-		   __..--/".'                        '.
-   __..--""      | |                          |
-  /              | |                          |
- /               | |    ___________________   |
-;                | |   :__________________/:  |
-|                | |   |                 '.|  |
-|                | |   |                  ||  |
-|                | |   |                  ||  |
-|                | |   |                  ||  |
-|                | |   |                  ||  |
-|                | |   |                  ||  |
-|                | |   |                  ||  |
-|                | |   |                  ||  |
-|                | |   |______......-----"\|  |
-|                | |   |_______......-----"   |
-|                | |                          |
-|                | |                          |
-|                | |                  ____----|
-|                | |_____.....----|#######|---|
-|                | |______.....----""""       |
-|                | |                          |
-|. ..            | |   ,                      |
-|... ....        | |  (c ----- """           .'
-|..... ......  |\|_|    ____......------"""|"
-|. .... .......| |""""""                   |
-'... ..... ....| |                         |
-  "-._ .....  .| |                         |
-	  "-._.....| |             ___...---"""'
-		  "-._.| | ___...---"""
-			  """""             grp</code>
-</pre>
-
 ### Tables
 
-Tables are lightly decorated to distinguish the header and rows.
+Tables are lightly decorated with a "washboard" effect on the table body, background & border colors similar to those used in code blocks, and lovely rounded corners.
 
 | Band Name      | Favorite Record                       |
 |:---------------|:--------------------------------------|
@@ -367,39 +139,94 @@ Tables are lightly decorated to distinguish the header and rows.
 
 ### Admonitions
 
-In rare cases, you may want to preface a document or a section with a prominent announcement communicating some kind of information to the reader. Perhaps this is an "Update" block that provides some new information to the writing below while still preserving the original writing. Or maybe this is a "Warning" block of some kind to forewarn that what follows may trigger those with PTSD or other mental trauma. Whatever the reason, there's an admonition flavor for it.
+*:warning: Non-standard, requires the [Admonition extension](https://python-markdown.github.io/extensions/admonition/).*
 
-Here's some examples with the various supported flavors:
+In rare cases, you may want to preface a document or section with a prominent announcement. Perhaps this is an "update" of some kind that provides some additional context to the prose. Or maybe this is a "warning" block of some kind to forewarn that what follows may require caution. Whatever the need, there's an admonition flavor for it in Marcdown.
 
-!!! Yellow "Update: March 17, 2017"
-	This process has changed as of iOS 10. While the steps below still apply for those on older versions, those running iOS 10+ must follow follow [these steps](#admonitions) instead.
+Here's the general syntax for Markdown admonitions:
 
-!!! Red "Trigger Warning"
-	What follows are recounts of graphically violent stories that may not be suitable for those dealing with trauma such as PTSD. Reader discretion is advised.
+```
+* !!! Type "Title"
+	Description
+```
 
-!!! Green "All Tests Passed"
-	All tests passed full regression testing.
+For admonitions intended for light asides (which do *not* come with a left border & logo), use the `aside` type.
 
-!!! Blue "Pro Tip"
-	Infomation block, useful for small bits of information like tips.
+!!! aside "Aside Admonition"
+	This is an example of the `aside` type.
 
-!!! Info ""
-	Information block without a header.
+Otherwise, for any other general-purpose admonition, use the `generic` type:
 
-!!! Aside "Tangent"
-	This is an example of an aside.
+!!! generic "Generic Admonition"
+	This is an example of the `generic` type.
+
+From there, we get "specialty" admonitions, starting with `blue` type; this comes with a pleasing blue color to attract more attention than the general-purpose admonition types above and sport the standard `i` "information" logo.
+
+In addition to the `blue` type, can use any of the following types, instead (they're interchangeable and treated equivalently):
+
+* `example`
+* `hint`
+* `info`
+* `note`
+* `tip`
+
+!!! blue "Info Admonition"
+	This is an example of the `blue` type.
+
+As a minor alternative to the `blue` type, you can instead use `question` to have Marcdown use a `?` logo, instead.
+
+!!! question "Question Admonition"
+	This is an example of the `question` type. Note that it's similar in all ways to the above `info` type, only this time sporting a `?` logo.
+
+There's also the `green` admonition type, which acts the same as `info` above but utilizes a soothing green color.
+
+!!! green "Green Admonition"
+	This is an example of the `green` type.
+
+As a minor alternative to the `green` type, you can instead use `success` to have Marcdown use a `✓` logo, instead.
+
+!!! success "Success Admonition"
+	This is an example of the `success` type. Note that it's similar in all ways to the above `green` type, only this time sporting a `✓` logo.
+
+Next, there's the `yellow` admonition type, which naturally comes with an attention-grabbing yellow color and again sports the standard `i` information logo. You can also use `update` for this type as well, as they're treated equivalently and are interchangeable.
+
+!!! yellow "Yellow Admonition"
+	This is an example of the `yellow` type.
+
+As a minor alternative to the `yellow` type, you can instead use `star` to have Marcdown use a `★` logo, instead.
+
+!!! star "Star Admonition"
+	This is an example of the `star` type. Note that it's similar in all ways to the above `yellow` type, only this time sporting a `★` logo.
+
+Finally, there's the `red` type, which sports a concerning red color and the standard `i` logo.
+
+!!! red "Red Admonition"
+	This is an example of the `red` type.
+
+As a minor alternative to the `red` type, you can instead use any of the follow types below to have Marcdown use a `!` logo, instead.
+
+* `danger`
+* `error`
+* `warning`
+
+!!! error "Danger Admonition"
+	This is an example of the `danger`/`error`/`warning` types.
 
 ### Highlighting
 
+*:warning: Non-standard, not all Markdown parsers support the `==` ["highlight" syntax](https://www.markdownguide.org/extended-syntax/#highlight).*
+
 While organizing reference materials or studying, there are times we *really* want to emphasis a word or snippet, so much so that even __bolding__ the text won't suffice. For situations like this, <mark>highlighting is fully supported</mark> using the `==text to highlight==` syntax. For the highlight-lovers out there, multiple flavors like <mark class="red">Red</mark>, <mark class="orange">Orange</mark>, <mark class="yellow">Yellow</mark>, <mark class="blue">Blue</mark>, <mark class="green">Green</mark>, <mark class="purple">Purple</mark>, and <mark class="gray">Gray</mark> are supported.
 
-Additionally, if you want your highlights to function as tags instead, just provide the additional `tag` class:
+Additionally, if you want your highlights to function instead as tags, just provide the additional `tag` class:
 
 <mark class="tag red">Red</mark> <mark class="tag orange">Orange</mark> <mark class="tag yellow">Yellow</mark> <mark class="tag blue">Blue</mark> <mark class="tag green">Green</mark> <mark class="tag purple">Purple</mark> <mark class="tag gray">Gray</mark>
 
 ### Definitions
 
-If you're writing a technical document or studying, having a nice definitions section is crucial to ensuring you and any other readers can follow along. Definition lists look like this:
+*:warning: Non-standard, not all Markdown parsers support the `:` ["definition list" syntax](https://www.markdownguide.org/extended-syntax/#definition-lists).*
+
+If you're writing a technical document or studying, having a nice definitions section is crucial to ensuring you and any other readers can follow along. Definition lists in Marcdown feature bolded keys and indented values, like so:
 
 Extensible Markup Language (XML)
 
@@ -415,39 +242,32 @@ Markdown
 
 ### Abbreviations
 
+*:warning: Non-standard, not all Markdown parsers support abbreviations.*
+
 Marcdown abbreviations are styled in native small caps (assuming support from the user's platform of choice). Readers with pointing devices can hover over them to read the expanded abbreviation with their browser's standard tooltip. Give it a try with "HTML"!
 
-### Keyboard Keys
+### Keyboard Descriptions
 
-Representing keyboard keys for things like keyboard shortcuts can be difficult with plain text. Sure, I could write ctrl+alt+del or even `ctrl+alt+del`, but that doesn't look very nice at all. Thankfully, HTML has the `<kbd>` element for exactly this purpose, so you can have <kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>del</kbd> instead. Your keyboard shortcuts never looked this good.
-
-### Advanced Features
-
-While not enabled by default, Marcdown is fully capable of rendering complex UML diagrams with [flowchart.js](http://flowchart.js.org) and [sequence-diagram.js](https://bramp.github.io/js-sequence-diagrams/). [Click here to see these features in action](/marcdown/advanced-features.html)
+Representing keyboard keys for things like keyboard shortcuts can be difficult with plain text. Sure, you could write ctrl+alt+del or even `ctrl+alt+del`, but that reads poorly in context. Thankfully, HTML has the `<kbd>` element for exactly this purpose, so you can have <kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>del</kbd> instead. Your keyboard shortcuts never looked this good.
 
 ## Installation
 
-Due to Marcdown relying on Markdown extensions for things like syntax highlighting and the necessary scripting required for enabling/disabling dark mode, some installation is required for Marcdown to operate at its fullest potential. Thankfully, if you already do your writing in [Sublime Text](http://www.sublimetext.com) like I do, the installation is very straightforward:
+Marcdown requires using its own HTML template (to expose the handy appearance settings button in rendered documents, among other customization), so installation is more involved than simply importing the stylesheet.
 
-1. Clone or download the Marcdown project and place at `/usr/local` on your file system. You can place it wherever you want on your system, but do note then you must update the paths in the `local-template.html` file accordingly.
+If you happen to already do your writing in [Sublime Text](http://www.sublimetext.com) like I do, you can follow the steps below to get it set up:
+
+1. Clone or download the Marcdown project and place at `/usr/local` on your file system. You can technically place it wherever you want, but do note that if you do you then you must update all paths in the `local-template.html` file to reflect.
 2. Install the [Markdown Preview](https://github.com/revolunet/sublimetext-markdown-preview) plugin.
-3. Open the Markdown Preview user settings and edit to match [this one](https://github.com/barrowclift/marcdown/blob/master/markdown-preview/MarkdownPreview-2.x.sublime-settings), as desired. Do note that removing or adding new plugins may negatively affect Marcdown rendering.
-	* Remember, if you want any [advanced features](/marcdown/advanced-features.html) like UML or MathJax, you'll have to ensure the proper `js` files are included (they're commented out in the provided example settings file).
-
-Regrettably, there's no detailed guides currently available for setting up Marcdown with other popular Markdown build systems (yet), so your only option at the moment is to use Sublime Text with Markdown Preview or to work it out yourself with your preferred system. More setup instructions for other environments are planned to be added over time, so stay tuned!
+3. Open the Markdown Preview user settings and edit to match [this one](https://github.com/barrowclift/marcdown/blob/master/markdown-preview/MarkdownPreview-2.x.sublime-settings), as desired. Do note that removing or adding new plugins may negatively impair Marcdown rendering.
 
 ## About the Author
 
-![Picture of myself on a hike at Smoky Mountains National Park](img/marc.jpg)
+![Picture of myself with my husband posing behind our gingerbread houses at Christmas](img/portrait.webp)
 
-Hey there :wave:, my name is Marc Barrowclift and I'm a designer and developer who loves making nice things. You can follow my writings over at [barrowclift.design](http://barrowclift.design) or check out my other projects on [Github](https://github.com/barrowclift).
+Hey there :wave:, my name is Marc Barrowclift (pictured on the right with my husband, Kai) and I'm a full-stack engineer who loves making nice things. You can follow my writings over at [barrowclift.me](http://barrowclift.me) or check out my other projects [here](https://barrowclift.me/projects).
 
 [^example-footnote]: This is an example footnote. You can insert asides, references, inside jokes, and all other sorts of things with footnotes.
-[^intended]: As if that would stop me. :wink:
-[^one-style-only]: Yes, [classes can be added to simple elements](https://michelf.ca/projects/php-markdown/extra/#spe-attr) like links and standard images, but unfortunately this does not extend to more complicated elements like lists or code blocks.
 
-*[ASCII]: American Standard Code for Information Interchange
 *[CSS]: Cascading Style Sheets
 *[HTML]: Hyper Text Markup Language
-*[UML]: Unified Modeling Language
 *[XML]: Extensible Markup Language

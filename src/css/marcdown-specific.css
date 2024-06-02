@@ -1,221 +1,152 @@
-/* ----- CONTAINER ----- */
-
+/**
+ * Only necessary for barrowclift.me where there's an opaque floating menu bar
+ * we need to "offset" the <main> content for. There is not opaque floating
+ * menu bar for Marcodwn, so remove that offset.
+ */
 main {
-    margin-top: 3.328rem; /* Adding a bit more space for the dark mode toggle */
-}
-h1 {
-    font-weight: 900;
-    font-size: 2em;
-}
-h2 {
-    font-weight: 800;
-    font-size: 1.5em;
-}
-h3,.admonition-title {
-    font-weight: 700;
-    font-size: 1.3em;
-}
-h4 {
-    font-weight: 500;
-    font-size: 1.1em;
-}
-h5 {
-    font-weight: 400;
-    font-size: 1em;
-}
-h6 {
-    font-weight: 300;
-    font-size: 0.9em;
-}
-
-/* ----- LISTS ----- */
-
-/* The vast majority of the time I'm making lists in my writing, it's short
-   lists. While this is supported with the .compact-list class, that means I'd
-   have to make the lists in HTML far more often than not. Thus, to better
-   accomidate my Markdown writing habits outside of barrowclift.me the default
-   list style is compact.*/
-#marcdown-body ol ul,
-#marcdown-body ol ol,
-#marcdown-body ul ol,
-#marcdown-body ul ul,
-#marcdown-body li {
-    margin-bottom: 0 !important;
     margin-top: 0 !important;
 }
-#marcdown-body li p,
-#marcdown-body li pre {
+/**
+ * Allows the settings button to be visible despite hidding the rest of the
+ * menubar with a height of 0, and always have it floating.
+ */
+#menubar {
+    border: unset !important;
+    overflow: visible;
+    box-shadow: none;
+    background-color: unset;
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+    position: fixed !important;
+}
+/**
+ * Apply the same treatment to all Marcdown documents that we do in
+ * barrowclift.me article.html pages (where on scroll, the menubar magically
+ * hides itself)
+ */
+@media (min-width: 700px) {
+    #menubar.float.hide-when-scrolling-on-small-screens, #menubar.hide-when-scrolling-on-larger-screens, #settings-popup.float.hide-when-scrolling-on-small-screens, #settings-popup.hide-when-scrolling-on-larger-screens {
+        opacity: 0 !important;
+        pointer-events: none !important;
+    }
+}
+/**
+ * On small screens the menubar height is a fraction of the height on
+ * barrowclift.me (on account of not having the Happy Mac logo), so there's no
+ * need to adjust the height to compensate like on barrowclift.me
+ */
+#menubar.float {
+    transform: unset;
+}
+/**
+ * Ensure the only visible menu element—the settings button—is affixed to the
+ * right.
+ */
+#menubar menu {
+    text-align: right;
+}
+/**
+ * Minor adjustments to the #settings-popup to accomidate for the height
+ * difference between barrowclift.me's menu and Marcdown's "menu". Also ensure
+ * it's always fixed.
+ */
+#settings-popup {
+    left: 84%;
+    top: 3.5em;
+    position: fixed !important;
+}
+    #settings-popup.float {
+        top: 3.5em;
+    }
+    @media (min-width: 700px) {
+        #settings-popup {
+            left: 100%;
+        }
+    }
+/**
+ * Bigfoot buttons are rendered slightly differently in my Markdown Preview
+ * parser compared to the Jekyll Markdown parser. This is required to
+ * accomidate this minor difference and still have Bigfoot buttons rendered
+ * with a white foreground.
+ */
+.bigfoot-footnote__button:after {
+    color: white;
+}
+/**
+ * Markdown images are "simple" images, so carry over the otherwise optional
+ * .shadow class in barrowclift.me as a default style.
+ */
+img,
+video {
+    box-shadow: var(--shadow);
+}
+/**
+ * Again, the Markdown Preview parser renders code blocks very differently
+ * than the Jekyll Markdown parser. As a result, additional styling is
+ * required to have code blocks rendered correctly.
+ */
+article > .codehilite,
+article > .highlight {
+    margin-top: 0;
+    margin-bottom: var(--gap);
+    background-color: var(--code-background-color);
+    border: 1px solid var(--code-border-color);
+    border-radius: var(--img-border-radius);
+    transition: background-color var(--cubic-bezier-transition), color var(--cubic-bezier-transition), border-color var(--cubic-bezier-transition);
+    padding-top: var(--half-gap);
+    padding-bottom: var(--half-gap);
+    padding-left: var(--three-fourths-gap);
+    padding-right: var(--three-fourths-gap);
+}
+    @media(min-width: 700px) {
+        article > .codehilite,
+        article > .highlight {
+            padding: var(--gap);
+        }
+    }
+    article > .codehilite pre,
+    article > .highlight pre {
+        display: block;
+        overflow-x: scroll;
+    }
+    li .codehilite,
+    li .highlight {
+        margin-top: var(--half-gap);
+        margin-bottom: var(--half-gap);
+    }
+/**
+ * The Markdown Previous parser renders emoji with the .gemoji tag instead of
+ * the .emoji tag like the Jekyll Markdown parser.
+ */
+img.gemoji {
+    border-radius: 0;
+    height: 1em;
+    box-shadow: none;
+    vertical-align: text-top;
+}
+/**
+ * For Marcdown, render lists as "tight" always, instead of like in
+ * barrowclift.me where that's instead an optional .tight class. Tighter lists
+ * work better in the contexts Marcdown is used.
+ */
+ul li,
+ol li,
+ul ul,
+ol ol {
+    margin-bottom: 0;
+}
+ul ul,
+ul ol,
+ol ul,
+ol ol {
     margin-top: 0;
     margin-bottom: 0;
 }
-
-/* ----- MENU ----- */
-
-/* The "menu" is much simplier for Marcdown, it's just the dark mode toggle */
-menu {
-    position: absolute;
-    top: 0;
-    left :0;
-    display: inline-block;
-    width: 100%;
-    z-index: 100;
-    box-shadow: none !important;
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    background-image: none;
-    background-color: unset !important;
-}
-menu,
-.safari menu,
-.chrome menu
-#dark menu,
-#dark.safari menu,
-#dark.chrome menu {
-    border: none;
-    -webkit-backdrop-filter: none;
-    backdrop-filter: none;
-}
-
-
-/* ----- ACCESSIBILITY TOGGLES ----- */
-
-.popup {
-    top: 2.75em;
-    -webkit-transform-origin: top right;
-    -ms-transform-origin: top right;
-    transform-origin: top right;
-}
-#settings-toggle {
-    border-radius: 0 0 0 .5em;
-    display: inline-block;
-    padding: 1em;
-    margin: 0;
-    text-align: right;
-    line-height: 1em;
-    background-color: rgba(255, 255, 255, 0.7);
-    left: 0;
-    min-width: unset;
-    position: relative;
-    float: right;
-    text-align: right;
-    line-height: 1em;
-    transition: background-color 0.2s ease, color 0.2s ease;
-}
-    .safari #settings-toggle,
-    .chrome #settings-toggle {
-        -webkit-backdrop-filter: saturate(180%) blur(20px);
-        backdrop-filter: saturate(180%) blur(20px);
-    }
-    .red #settings-toggle {
-        background-color: rgba(255, 253, 252, 0.7);
-    }
-    .orange #settings-toggle {
-        background-color: rgba(255, 254, 252, 0.7);
-    }
-    .yellow #settings-toggle {
-        background-color: rgba(255, 255, 253, 0.7);
-    }
-    .green #settings-toggle {
-        background-color: rgba(253, 255, 253, 0.7);
-    }
-    #settings-toggle,
-    .blue #settings-toggle {
-        background-color: rgba(252, 253, 255, 0.7);
-    }
-    .purple #settings-toggle {
-        background-color: rgba(253, 253, 255, 0.7);
-    }
-    .pink #settings-toggle {
-        background-color: rgba(255, 253, 253, 0.7);
-    }
-    #dark.red #settings-toggle {
-        background-color: rgba(41, 37, 36, 0.7);
-    }
-    #dark.orange #settings-toggle {
-        background-color: rgba(41, 38, 36, 0.7);
-    }
-    #dark.yellow #settings-toggle {
-        background-color: rgba(41, 40, 36, 0.7);
-    }
-    #dark.green #settings-toggle {
-        background-color: rgba(38, 40, 38, 0.7);
-    }
-    #dark #settings-toggle,
-    #dark.blue #settings-toggle {
-        background-color: rgba(36, 38, 41, 0.7);
-    }
-    #dark.purple #settings-toggle {
-        background-color: rgba(37, 37, 40, 0.7);
-    }
-    #dark.pink #settings-toggle {
-        background-color: rgba(41, 36, 37, 0.7);
-    }
-
-/* ----- FORMS & BUTTONS ----- */
-
-form, input, button, textarea, .link-button {
-    display: inline-block;
-    margin-bottom: 0;
-}
-
-/* Prevents the "double button" effect on anchor links */
-.headeranchor-link:hover {
-    background-color: unset !important;
-}
-
-a.link-button:hover {
-    background-color: unset;
-}
-
-/* ----- IMAGES & VIDEO ----- */
-
-/* Adding border radius to traditional Markdown images while not overriding
-   Marcdown styles*/
-main > p > img {
-    border-radius: 0.25em;
-}
-
-/* Tiny devices (width smaller than 320px, the original iPhone screen) */
-@media(max-width: 319px) {
-    #settings-toggle {
-        display: inline;
-    }
-}
-
-/* ----- CODE ----- */
-
-/* Bash shell session '$' highlighting */
-span.gp {
-    color: rgb(198, 93, 9);
-}
-
-/*
-Medium devices (iPads)
-Font size: 19px, ~Margin&Padding: 28.5px
-*/
-@media (min-width: 700px) {
-    main {
-        margin-top: 2.828rem; /* 1.414 base header top margin * 2 */
-    }
-    menu {
-        position: fixed;
-        display: block;
-        width: 100%;
-        z-index: 100;
-    }
-    #settings-checkbox,
-    #settings-toggle {
-        pointer-events: initial;
-    }
-    #settings-toggle {
-        margin-left: 0 !important;
-        padding: 0.5em !important;
-        padding-left: 0.6em !important;
-        padding-bottom: 0.2em !important;
-        width: auto;
-        max-width: 1.3em;
-    }
-    .colors li {
-        margin-top: 0 !important;
-    }
+/**
+ * Markdown Preview's parser renders footnotes at the bottom of the document
+ * with the .footnote class instead of the .footnotes class the Jekyll
+ * Markdown parser uses. We need to accomidate for that name change here.
+ */
+.footnote {
+    font-size: var(--h6-size);
 }
