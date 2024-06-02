@@ -44,10 +44,7 @@ function changeAppearance(appearance) {
 function settingsToggled() {
     var popup = document.getElementById("settings-popup");
     popup.classList.toggle("show");
-    var settingToggles = document.getElementsByClassName("setting-toggles");
-    for (var i = 0; i < settingToggles.length; i++) {
-        settingToggles[i].classList.toggle("active");
-    }
+    document.getElementById("settings-button").classList.toggle("active");
 }
 
 function changeAccentColor(color) {

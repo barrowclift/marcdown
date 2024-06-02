@@ -51,9 +51,10 @@ main {
  * it's always fixed.
  */
 #settings-popup {
-    left: 84%;
+    left: unset;
     top: 3.5em;
     position: fixed !important;
+    right: 0.85em;
 }
     #settings-popup.float {
         top: 3.5em;
@@ -61,8 +62,17 @@ main {
     @media (min-width: 700px) {
         #settings-popup {
             left: 100%;
+            right: unset;
         }
     }
+#menubar menu li {
+    min-width: unset;
+    padding-right: var(--half-gap);
+}
+#settings-button-wrapper button {
+    padding-left: var(--half-gap);
+    padding-right: var(--half-gap);
+}
 /**
  * Bigfoot buttons are rendered slightly differently in my Markdown Preview
  * parser compared to the Jekyll Markdown parser. This is required to
