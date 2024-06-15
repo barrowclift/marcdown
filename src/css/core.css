@@ -1667,6 +1667,10 @@ a.anchor {
     vertical-align: top;
     width: 48px;
     height: 48px;
+    /**
+     * Without this, the closed eyes smile rendering gets screwed up in Safari.
+     */
+    -webkit-transform: translateZ(0);
 }
     .imac-background-color {
         fill: white;
@@ -2054,7 +2058,7 @@ a.anchor {
         }
     #logo {
         position: absolute;
-        padding-left: 0.78em;
+        padding-left: max(var(--gap), env(safe-area-inset-left));
         padding-top: 0.85em;
         margin-top: 0;
     }
@@ -2077,8 +2081,11 @@ a.anchor {
     }
     #settings-button-wrapper {
         position: absolute;
-        left: 100%;
+        right: 0;
         top: 0;
+        padding-right: max(1.25em, env(safe-area-inset-right));
+        width: auto;
+        min-width: unset !important;
         margin-left: -4.36em !important;
         padding-top: 1em !important;
     }
@@ -2111,7 +2118,7 @@ a.anchor {
     }
     #settings-popup {
         position: fixed;
-        margin-left: -410px;
+        margin-left: -417px;
         left: 100%;
     }
     .ignore-accent-color #settings-popup {
@@ -2136,14 +2143,14 @@ a.anchor {
         padding-top: 1.25em;
     }
     #settings-popup {
-        margin-left: -446px;
+        margin-left: -455px;
     }
     #settings-button-wrapper {
         padding-top: 0.875em !important;
     }
-        @supports (margin-left: calc(-3.05em - env(safe-area-inset-right))) {
+        @supports (margin-left: calc(-3.55em - env(safe-area-inset-right))) {
             #settings-button-wrapper {
-                margin-left: calc(-3.05em - env(safe-area-inset-right)) !important;
+                margin-left: calc(-3.55em - env(safe-area-inset-right)) !important;
             }
         }
     .ignore-accent-color #settings-popup {
@@ -3353,6 +3360,7 @@ button,
     display: inline-block;
     box-sizing: border-box;
     cursor: pointer;
+    outline: none !important;
 
     border-radius: var(--rem-half-gap);
     border: none;
