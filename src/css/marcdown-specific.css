@@ -134,6 +134,12 @@ img.gemoji {
     box-shadow: none;
     vertical-align: text-top;
 }
+    /**
+     * Disable dark mode dimming for emoji.
+     */
+    #dark img.gemoji {
+        filter: brightness(1);
+    }
 /**
  * For Marcdown, render lists as "tight" always, instead of like in
  * barrowclift.me where that's instead an optional .tight class. Tighter lists
