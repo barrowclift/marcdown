@@ -67,7 +67,7 @@ main {
     }
 #menubar menu li {
     min-width: unset;
-    padding-right: var(--half-gap);
+    padding-right: max(1.25em, env(safe-area-inset-right));
 }
 #settings-button-wrapper button {
     padding-left: var(--half-gap);
